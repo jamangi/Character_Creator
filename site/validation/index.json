@@ -1,0 +1,18 @@
+{
+  "updated": "2026-08-25",
+  "entries": [
+    {
+      "task": "FOUNDATION",
+      "title": "Architecture and delivery roadmap",
+      "status": "accepted",
+      "summary": "The hybrid modular-rig direction, asset contract, starter-pack scope, and ordered implementation plan are documented.",
+      "href": "https://github.com/jamangi/Character_Creator/tree/main/shared",
+      "review": [
+        "Hybrid base-plus-replacement model",
+        "Multi-plane asset bundles",
+        "Nine-task dependency sequence"
+      ],
+      "commit": "b944104"
+    }
+  ]
+}

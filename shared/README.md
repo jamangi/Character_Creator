@@ -21,6 +21,7 @@ Everything in this directory is normative for implementation tasks unless a late
 8. Runtime packages never depend on the editor UI.
 9. Pixel-art and illustration packs do not share a rig family unless their dimensions, anchors, and sampling rules truly match.
 10. Tests must include adversarial asset combinations, not only curated hero characters.
+11. Tasks requiring visual or interactive acceptance publish labeled, stable artifacts through the GitHub Pages hub described in `site/README.md`.
 
 ## Decision hierarchy
 

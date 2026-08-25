@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#141225">
+    <meta name="description" content="Human validation hub for the modular JavaScript Character Creator project.">
+    <title>Character Creator — Validation Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Character Creator home">
+        <span class="brand-mark" aria-hidden="true">CC</span>
+        <span>Character Creator</span>
+      </a>
+      <nav aria-label="Project links">
+        <a href="#reviews">Reviews</a>
+        <a href="https://github.com/jamangi/Character_Creator">Repository</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Human validation hub</p>
+          <h1 id="hero-title">Build once.<br><span>Compose endlessly.</span></h1>
+          <p class="lede">A modular JavaScript character system designed to turn one portable recipe into portraits, full-body renders, and directional sprites.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#reviews">Review current work</a>
+            <a class="button button-secondary" href="https://github.com/jamangi/Character_Creator/blob/main/shared/ARCHITECTURE.md">Read the architecture</a>
+          </div>
+        </div>
+
+        <div class="composition-demo" aria-label="Illustration showing the character layer model">
+          <div class="demo-stage" aria-hidden="true">
+            <div class="avatar hair-back"></div>
+            <div class="avatar body"></div>
+            <div class="avatar face"></div>
+            <div class="avatar coat-back"></div>
+            <div class="avatar coat-front"></div>
+            <div class="avatar hair-front"></div>
+            <div class="avatar accent"></div>
+          </div>
+          <div class="layer-key">
+            <span><i class="key-dot key-back"></i>back fragments</span>
+            <span><i class="key-dot key-body"></i>body coverage</span>
+            <span><i class="key-dot key-front"></i>front fragments</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles" aria-label="Project principles">
+        <article>
+          <span class="principle-number">01</span>
+          <h2>One recipe</h2>
+          <p>The same versioned choices drive every output format.</p>
+        </article>
+        <article>
+          <span class="principle-number">02</span>
+          <h2>Many fragments</h2>
+          <p>One item can render across named planes without becoming several equip choices.</p>
+        </article>
+        <article>
+          <span class="principle-number">03</span>
+          <h2>Visible proof</h2>
+          <p>Every visual milestone publishes reviewable outputs here.</p>
+        </article>
+      </section>
+
+      <section class="roadmap" aria-labelledby="roadmap-title">
+        <div>
+          <p class="eyebrow">Current phase</p>
+          <h2 id="roadmap-title">Contracts before catalog scale</h2>
+        </div>
+        <p>We will prove layering, replacement anatomy, and deterministic rendering with a tiny vertical slice before commissioning the full starter pack.</p>
+        <div class="progress" aria-label="Roadmap progress: architecture complete, implementation not started">
+          <span class="progress-complete"></span>
+        </div>
+        <div class="phase-labels" aria-hidden="true">
+          <span>Architecture</span>
+          <span>Vertical slice</span>
+          <span>Studio</span>
+          <span>Release</span>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Review registry</p>
+            <h2 id="reviews-title">What needs human eyes</h2>
+          </div>
+          <p id="registry-date" class="registry-date" aria-live="polite"></p>
+        </div>
+        <div id="review-list" class="review-grid" aria-live="polite">
+          <p class="loading">Loading review artifacts…</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Character Creator is in its foundation stage. Visual output will appear here as implementation tasks land.</p>
+      <a href="https://github.com/jamangi/Character_Creator/blob/main/shared/tasks/README.md">View all development tasks</a>
+    </footer>
+  </body>
+</html>

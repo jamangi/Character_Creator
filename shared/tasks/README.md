@@ -22,4 +22,6 @@ Tasks are ordered by dependency, not by who performs them. Parallel work is safe
 - Do not silently broaden a rig, slot, or fallback to make one asset pass.
 - Every new diagnostic needs a failing fixture; every fixed bug needs a regression test.
 - Generated images, atlases, and contact sheets should not be committed unless the owning task defines them as fixtures or release artifacts.
+- Tasks marked `Human validation: Required` must update `site/validation/index.json` and publish their review artifact at the stable path named in the task. Technical success must not be recorded as human acceptance.
+- Preserve historical review URLs. When the Studio becomes the main Pages experience, keep earlier validation artifacts reachable.
 - Task completion must update this table and the task's handoff notes.

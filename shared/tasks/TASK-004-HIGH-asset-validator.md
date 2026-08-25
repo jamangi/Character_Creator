@@ -4,7 +4,7 @@
 - **Outcome:** Give asset creators a fast CLI/library that validates packs and generates useful visual review artifacts.
 - **Depends on:** 001, 002
 - **Unblocks:** 006, 007
-- **Owned paths:** `packages/asset-validator/`, validator fixtures and docs
+- **Owned paths:** `packages/asset-validator/`, validator fixtures and docs, `site/validation/task-004/`, `site/validation/index.json`
 
 ## Scope
 
@@ -21,7 +21,15 @@
 - [ ] Contact sheets identify recipe, profile, view/clip/frame, asset versions, and engine version.
 - [ ] CI can use a no-GUI mode and a nonzero exit status.
 - [ ] Reports distinguish errors, warnings, and review-required findings.
+- [ ] Representative contact sheets and a sanitized validation report are published to Pages.
 
 ## Validation
 
 Run against all contract fixtures plus deliberately corrupt images and manifests. Review sheets at native scale and on a high-DPI display.
+
+## Human validation
+
+- **Required:** Yes
+- **Pages path:** `site/validation/task-004/`
+
+Publish representative passing and failing reports plus labeled contact sheets. Ask the reviewer whether the report language is understandable, whether defects are easy to locate, and whether the sheets support efficient art review.

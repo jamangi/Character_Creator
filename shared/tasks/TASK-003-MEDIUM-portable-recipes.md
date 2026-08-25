@@ -25,3 +25,10 @@
 ## Validation
 
 Round-trip, migration, fuzz/size-limit, unknown-version, missing-asset, and security regression tests.
+
+## Human validation
+
+- **Required:** No
+- **Pages path:** Not applicable
+
+Acceptance is determined by deterministic fixtures and diagnostics. Import/export UI is reviewed with Task 005.

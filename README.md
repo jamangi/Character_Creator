@@ -2,6 +2,8 @@
 
 Character Creator is intended to be a portable JavaScript character-composition engine: a host application supplies asset packs and a UI, the engine produces a portrait, a full-body render, and animated directional sprites, and a versioned character recipe can be exported and imported without embedding image data.
 
+**Human validation hub:** [jamangi.github.io/Character_Creator](https://jamangi.github.io/Character_Creator/)
+
 ## Product direction
 
 The project will use a **hybrid modular rig**:
@@ -31,6 +33,7 @@ This repository currently contains the design and execution foundation:
 - [`root/`](root/README.md) — root-task operating notes, decisions, approvals, and the task template.
 - [`shared/`](shared/README.md) — architecture and contracts that every implementation task must follow.
 - [`shared/tasks/`](shared/tasks/README.md) — ordered, independently assignable development tasks.
+- [`site/`](site/README.md) — the GitHub Pages review hub and published validation artifacts.
 
 The intended implementation layout is documented in [`shared/ARCHITECTURE.md`](shared/ARCHITECTURE.md). Do not create the planned package directories until the task that owns them begins.
 

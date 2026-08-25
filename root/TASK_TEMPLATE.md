@@ -36,6 +36,13 @@ Explain why this work exists and the constraints that are easy to miss.
 
 List commands and/or visual checks. Include fixtures and failure cases, not only the happy path.
 
+## Human validation
+
+- **Required:** Yes or No
+- **Pages path:** `site/validation/task-nnn/` or `Not applicable`
+
+When required, name the exact artifact, reviewer questions, and acceptance signal. Follow `site/README.md`, update `site/validation/index.json`, and keep the published path stable. Deployment success is not human approval.
+
 ## Handoff notes
 
 Record decisions, changed contracts, remaining risks, and follow-up task suggestions here when completing the task.

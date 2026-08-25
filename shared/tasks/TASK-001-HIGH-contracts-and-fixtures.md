@@ -33,6 +33,13 @@ Read all files linked from `shared/README.md`.
 
 Run type-checking, schema tests, and a fixture table test that asserts both acceptance and exact failure diagnostics.
 
+## Human validation
+
+- **Required:** No
+- **Pages path:** Not applicable
+
+Schema behavior is accepted through executable fixtures and review of the versioned contract. A separate Pages artifact would not improve this task's acceptance signal.
+
 ## Non-goals
 
 Rendering, browser UI, complete artwork, remote pack loading, and arbitrary third-party script execution.

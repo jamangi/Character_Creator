@@ -4,7 +4,7 @@
 - **Outcome:** Deliver a reference browser Studio for creating, previewing, diagnosing, importing, and exporting characters.
 - **Depends on:** 002, 003
 - **Unblocks:** 008, 009
-- **Owned paths:** `packages/creator-ui/`, `apps/studio/`
+- **Owned paths:** `packages/creator-ui/`, `apps/studio/`, the interactive `site/` entry point, `site/validation/task-005/`, `site/validation/index.json`
 
 ## Scope
 
@@ -23,7 +23,15 @@
 - [ ] Preview switching does not mutate the recipe.
 - [ ] Core and renderer remain usable without the Studio.
 - [ ] Accessibility checks and representative keyboard workflows pass.
+- [ ] The current Studio build is usable from the GitHub Pages main route and links to historical review artifacts remain intact.
 
 ## Validation
 
 Component/unit tests, end-to-end creator flows, accessibility scan, keyboard-only review, and visual checks at narrow/wide viewport sizes.
+
+## Human validation
+
+- **Required:** Yes
+- **Pages path:** Main Pages route plus `site/validation/task-005/`
+
+Publish the interactive Studio and a concise review script covering discovery, equip conflicts, palette changes, undo/redo, output switching, and recipe round-trip. Ask the reviewer to accept or flag usability, clarity, visual hierarchy, and mobile/desktop behavior.

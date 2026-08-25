@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://character-creator.dev/schemas/0.1.0/common.schema.json",
+  "$defs": {
+    "schemaVersion": { "const": "0.1.0" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$",
+      "maxLength": 128
+    },
+    "localId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$",
+      "maxLength": 128
+    },
+    "rigFamily": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*@[1-9][0-9]*$",
+      "maxLength": 128
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "semverRange": {
+      "type": "string",
+      "pattern": "^(?:[<>=~^]{0,2}[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?)(?:\\s+(?:[<>=~^]{0,2}[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?))*$",
+      "maxLength": 128
+    },
+    "contentHash": {
+      "type": "string",
+      "pattern": "^sha256-[a-f0-9]{64}$"
+    },
+    "safePath": {
+      "type": "string",
+      "format": "safe-relative-path",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[A-Fa-f0-9]{6}(?:[A-Fa-f0-9]{2})?$"
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      }
+    },
+    "rect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "assetKind": {
+      "enum": [
+        "base-body",
+        "body-module",
+        "body-profile",
+        "hair",
+        "face",
+        "top",
+        "bottom",
+        "outerwear",
+        "shoes",
+        "accessory",
+        "outfit"
+      ]
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)+$"
+      },
+      "additionalProperties": true,
+      "maxProperties": 32
+    }
+  }
+}
+

@@ -1,6 +1,6 @@
 # TASK-003-MEDIUM-portable-recipes
 
-- **Status:** BLOCKED
+- **Status:** READY
 - **Outcome:** Export, import, validate, normalize, and migrate compact character recipes deterministically.
 - **Depends on:** 001
 - **Unblocks:** 005, 008

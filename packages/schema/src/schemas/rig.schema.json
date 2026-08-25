@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://character-creator.dev/schemas/0.1.0/rig.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "coordinateSystem",
+    "profiles",
+    "planes",
+    "localOrder",
+    "slots",
+    "regions",
+    "anchors",
+    "expressions",
+    "clips",
+    "fallbacks",
+    "masks",
+    "mirroring",
+    "budgets"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "id": { "$ref": "common.schema.json#/$defs/rigFamily" },
+    "version": { "$ref": "common.schema.json#/$defs/semver" },
+    "coordinateSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "units", "yAxis"],
+      "properties": {
+        "origin": { "const": "top-left" },
+        "units": { "const": "pixels" },
+        "yAxis": { "const": "down" }
+      }
+    },
+    "profiles": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "width", "height", "views", "requiredCoverage", "safeArea", "sampling"],
+        "properties": {
+          "id": { "enum": ["portrait", "full-body", "sprite"] },
+          "width": { "type": "integer", "minimum": 1, "maximum": 4096 },
+          "height": { "type": "integer", "minimum": 1, "maximum": 4096 },
+          "views": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "common.schema.json#/$defs/localId" }
+          },
+          "requiredCoverage": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "common.schema.json#/$defs/localId" }
+          },
+          "safeArea": { "$ref": "common.schema.json#/$defs/rect" },
+          "sampling": { "enum": ["nearest", "smooth"] }
+        }
+      }
+    },
+    "planes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/localId" }
+    },
+    "localOrder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": { "type": "integer", "minimum": -100, "maximum": 0 },
+        "max": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "exclusive", "allowedKinds"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/localId" },
+          "exclusive": { "type": "boolean" },
+          "allowedKinds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "common.schema.json#/$defs/assetKind" }
+          }
+        }
+      }
+    },
+    "regions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "anatomyCritical"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/localId" },
+          "anatomyCritical": { "type": "boolean" }
+        }
+      }
+    },
+    "anchors": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "profiles"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/localId" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "profiles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["portrait", "full-body", "sprite"] }
+          }
+        }
+      }
+    },
+    "expressions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "channels"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/localId" },
+          "channels": {
+            "type": "object",
+            "additionalProperties": { "$ref": "common.schema.json#/$defs/localId" }
+          }
+        }
+      }
+    },
+    "clips": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "loop", "directions", "frames"],
+        "properties": {
+          "id": { "enum": ["idle", "sit", "walk", "run"] },
+          "loop": { "type": "boolean" },
+          "directions": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["front", "back", "left", "right"] }
+          },
+          "frames": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "durationMs", "contacts"],
+              "properties": {
+                "id": { "$ref": "common.schema.json#/$defs/localId" },
+                "durationMs": { "type": "integer", "minimum": 16, "maximum": 10000 },
+                "contacts": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": { "$ref": "common.schema.json#/$defs/localId" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "fallbacks": {
+      "type": "array",
+      "items": { "$ref": "asset.schema.json#/$defs/fallback" }
+    },
+    "masks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/localId" }
+    },
+    "mirroring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "requiresCapability"],
+      "properties": {
+        "from": { "const": "left" },
+        "to": { "const": "right" },
+        "requiresCapability": { "$ref": "common.schema.json#/$defs/localId" }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxFragmentsPerAsset", "maxCanvasArea", "maxAssetBytes"],
+      "properties": {
+        "maxFragmentsPerAsset": { "type": "integer", "minimum": 1, "maximum": 1000 },
+        "maxCanvasArea": { "type": "integer", "minimum": 1 },
+        "maxAssetBytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "extensions": { "$ref": "common.schema.json#/$defs/extensions" }
+  }
+}

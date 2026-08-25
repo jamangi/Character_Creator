@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.neck-scarf",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Neck Scarf",
+    "tags": ["conflict", "scarf"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/accessory-neck-scarf.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["body:standard-v1"]
+  },
+  "equip": {
+    "slots": ["neck-accessory"],
+    "exclusiveGroup": "accessory.neck",
+    "requires": [],
+    "conflicts": ["asset:starter.outerwear.long-coat"],
+    "provides": ["appearance:scarf", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "scarf.base": { "default": "#F2BD66", "mode": "replace" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.front",
+      "selector": { "profile": "portrait", "view": "front", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/scarf.png",
+      "plane": "accessory-front",
+      "order": -1,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["scarf.base"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["accessory.scarf"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000016"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://character-creator.dev/schemas/0.1.0/recipe.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "engineVersion", "rigFamily", "equipped", "palette", "parameters", "seed"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "engineVersion": { "$ref": "common.schema.json#/$defs/semver" },
+    "rigFamily": { "$ref": "common.schema.json#/$defs/rigFamily" },
+    "equipped": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assetId"],
+        "properties": {
+          "assetId": { "$ref": "common.schema.json#/$defs/id" },
+          "version": { "$ref": "common.schema.json#/$defs/semver" },
+          "variant": { "$ref": "common.schema.json#/$defs/localId" }
+        }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "propertyNames": { "$ref": "common.schema.json#/$defs/localId" },
+      "additionalProperties": { "$ref": "common.schema.json#/$defs/hexColor" },
+      "maxProperties": 128
+    },
+    "parameters": {
+      "type": "object",
+      "propertyNames": { "$ref": "common.schema.json#/$defs/localId" },
+      "additionalProperties": { "type": ["number", "string", "boolean"] },
+      "maxProperties": 128
+    },
+    "seed": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "metadata": {
+      "type": "object",
+      "propertyNames": { "$ref": "common.schema.json#/$defs/localId" },
+      "additionalProperties": { "type": "string", "maxLength": 1000 },
+      "maxProperties": 32
+    },
+    "extensions": { "$ref": "common.schema.json#/$defs/extensions" }
+  }
+}
+

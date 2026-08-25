@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0d0b17">
+    <meta name="description" content="Human review artifact for TASK-002, the Character Creator composition vertical slice.">
+    <title>TASK-002 — Composition vertical slice</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <a class="back" href="../../">← Validation hub</a>
+      <span class="status">Ready for review</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">TASK-002 · Composition vertical slice</p>
+        <h1>One recipe.<br><span>Every output.</span></h1>
+        <p class="lede">These renders prove deterministic named-plane composition, targeted body-region replacement, and shared recipe intent across portrait, full-body, and directional sprite profiles.</p>
+        <dl class="metadata">
+          <div><dt>Recipe</dt><dd>Vertical Slice Hero</dd></div>
+          <div><dt>Engine</dt><dd>0.1.0</dd></div>
+          <div><dt>Rig</dt><dd>starter-humanoid@1 · 1.0.0</dd></div>
+          <div><dt>Source commit</dt><dd><code>__SOURCE_COMMIT__</code></dd></div>
+        </dl>
+        <div class="actions">
+          <a class="button primary" href="contact-sheet.png">Open labeled contact sheet</a>
+          <a class="button" href="provenance.json">View provenance</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="outputs-title">
+        <div class="heading">
+          <div>
+            <p class="eyebrow">Shared recipe proof</p>
+            <h2 id="outputs-title">Resolved outputs</h2>
+          </div>
+          <p>Checkerboards show actual transparency. Select any image to inspect its native PNG.</p>
+        </div>
+        <div class="output-grid">
+          <article class="output-card portrait">
+            <div class="card-meta"><span>Portrait</span><code>front · neutral</code></div>
+            <a class="checker" href="renders/portrait-front.png"><img src="renders/portrait-front.png" alt="Front portrait of the proof character"></a>
+            <p>256 × 256 · smooth sampling</p>
+          </article>
+          <article class="output-card full-body">
+            <div class="card-meta"><span>Full body</span><code>front · neutral</code></div>
+            <a class="checker" href="renders/full-body-front.png"><img src="renders/full-body-front.png" alt="Front full-body render of the same proof character"></a>
+            <p>256 × 384 · smooth sampling</p>
+          </article>
+          <article class="output-card sprite">
+            <div class="card-meta"><span>Sprite</span><code>front · idle.center</code></div>
+            <a class="checker pixel" href="renders/sprite-front-idle-center.png"><img src="renders/sprite-front-idle-center.png" alt="Front idle sprite of the same proof character"></a>
+            <p>96 × 96 · nearest-neighbor sampling</p>
+          </article>
+          <article class="output-card sprite">
+            <div class="card-meta"><span>Sprite</span><code>left · idle.center</code></div>
+            <a class="checker pixel" href="renders/sprite-left-idle-center.png"><img src="renders/sprite-left-idle-center.png" alt="Left-facing idle sprite of the same proof character"></a>
+            <p>96 × 96 · explicit directional artwork</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="layers-title">
+        <div class="heading">
+          <div>
+            <p class="eyebrow">Isolated evidence</p>
+            <h2 id="layers-title">Layer and replacement checks</h2>
+          </div>
+          <p>Each isolated view is composed from the same fragment files used above.</p>
+        </div>
+        <div class="isolation-grid">
+          <article>
+            <a class="checker" href="renders/isolated-hair.png"><img src="renders/isolated-hair.png" alt="Isolated back and front hair fragments"></a>
+            <h3>Two-plane hair</h3>
+            <p><code>hair-back</code> sits behind anatomy; <code>hair-front</code> restores the bangs in front of the face.</p>
+          </article>
+          <article>
+            <a class="checker" href="renders/isolated-coat.png"><img src="renders/isolated-coat.png" alt="Isolated rear coat tails and front coat fragments"></a>
+            <h3>Tailed coat</h3>
+            <p>The tail uses <code>garment-behind-body</code>; lapels and sleeves use <code>garment-overlap</code>.</p>
+          </article>
+          <article>
+            <a class="checker" href="renders/isolated-replacement.png"><img src="renders/isolated-replacement.png" alt="Isolated crystal left-arm replacement fragment"></a>
+            <h3>Targeted replacement</h3>
+            <p>The crystal module suppresses only <code>body.arm.left.base</code> and restores <code>body.arm.left.skin</code> coverage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="review" aria-labelledby="review-title">
+        <div>
+          <p class="eyebrow">Reviewer checklist</p>
+          <h2 id="review-title">What needs human eyes</h2>
+          <p>Technical validation and exact-pixel goldens are passing. Human acceptance remains separate.</p>
+        </div>
+        <ul>
+          <li>Hair reads continuously while clearly passing behind and in front of the head.</li>
+          <li>Coat tails remain behind the legs while the front coat remains above the shirt and body.</li>
+          <li>The crystal arm replaces only the normal left arm without creating an anatomy gap.</li>
+          <li>The character’s palette and silhouette remain recognizably consistent at all three scales.</li>
+        </ul>
+      </section>
+
+      <section class="details" aria-label="Versions and limitations">
+        <article>
+          <p class="eyebrow">Resolved asset versions</p>
+          <ul class="versions">
+            <li><code>starter.base.standard@1.0.0</code></li>
+            <li><code>starter.body.arm-left-crystal@1.0.0</code></li>
+            <li><code>starter.hair.long-wave@1.0.0</code></li>
+            <li><code>starter.outerwear.long-coat@1.0.0</code></li>
+            <li><code>starter.top.simple-shirt@1.0.0</code></li>
+          </ul>
+        </article>
+        <article>
+          <p class="eyebrow">Known limitations</p>
+          <ul>
+            <li>Proof artwork is deliberately small and geometric, not production catalog art.</li>
+            <li>Only the idle sprite frame is in scope; complete clips belong to TASK-006.</li>
+            <li>Palette values reach resolved draw items, while mask-based recoloring remains future work.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="concept" aria-labelledby="concept-title">
+        <div>
+          <p class="eyebrow">Art-direction reference</p>
+          <h2 id="concept-title">Silhouette before fragments</h2>
+          <p>A generated reference established the indigo/cyan/violet palette and made the back hair, coat tails, and crystal arm visually distinct. The executable proof translates those cues into deterministic, independently testable geometry.</p>
+        </div>
+        <img src="reference-concept.png" alt="Art-direction reference for the proof character">
+      </section>
+    </main>
+
+    <footer>
+      <a href="../../">Character Creator validation hub</a>
+      <span>Technical status: passing · Human status: awaiting review</span>
+    </footer>
+  </body>
+</html>

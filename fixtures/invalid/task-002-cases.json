@@ -1,0 +1,9 @@
+[
+  { "name": "missing replacement coverage", "kind": "missing-coverage", "expected": "MISSING_COVERAGE" },
+  { "name": "unmet asset dependency", "kind": "missing-requirement", "expected": "MISSING_REQUIREMENT" },
+  { "name": "declared asset conflict", "kind": "asset-conflict", "expected": "ASSET_CONFLICT" },
+  { "name": "unknown suppression target", "kind": "invalid-suppression", "expected": "INVALID_SUPPRESSION" },
+  { "name": "equally specific fragment selectors", "kind": "ambiguous-fragment", "expected": "AMBIGUOUS_FRAGMENT" },
+  { "name": "missing requested asset version", "kind": "version-mismatch", "expected": "ASSET_NOT_FOUND" },
+  { "name": "incompatible recipe engine", "kind": "engine-mismatch", "expected": "INCOMPATIBLE_ENGINE" }
+]

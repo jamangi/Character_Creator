@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.glasses",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Round Glasses",
+    "tags": ["dependency", "glasses"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/accessory-glasses.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["head:standard-v1"]
+  },
+  "equip": {
+    "slots": ["face-accessory"],
+    "exclusiveGroup": "accessory.face",
+    "requires": ["appearance:eyes"],
+    "conflicts": [],
+    "provides": ["appearance:glasses", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "frame.base": { "default": "#1A1830", "mode": "replace" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.front",
+      "selector": { "profile": "portrait", "view": "front", "expression": "neutral" },
+      "source": "fixtures/visual/task-002/fragments/portrait/glasses.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["frame.base"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["accessory.glasses"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000015"
+  }
+}

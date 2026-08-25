@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.proof-pack",
+  "version": "1.0.0",
+  "engine": ">=0.1.0 <1.0.0",
+  "rigFamilies": ["starter-humanoid@1"],
+  "assets": [
+    {
+      "id": "starter.base.standard",
+      "manifest": "assets/base-standard.json",
+      "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "id": "starter.body.arm-left-crystal",
+      "manifest": "assets/body-arm-left-crystal.json",
+      "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    {
+      "id": "starter.hair.long-wave",
+      "manifest": "assets/hair-long-wave.json",
+      "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    {
+      "id": "starter.outerwear.long-coat",
+      "manifest": "assets/outerwear-long-coat.json",
+      "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "id": "starter.top.simple-shirt",
+      "manifest": "assets/top-simple-shirt.json",
+      "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000005"
+    }
+  ],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null
+  }
+}

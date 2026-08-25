@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.hair.long-wave",
+  "version": "1.0.0",
+  "kind": "hair",
+  "display": {
+    "name": "Long Wave",
+    "tags": ["long", "multi-plane", "wavy"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/hair-long-wave.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["head:standard-v1"]
+  },
+  "equip": {
+    "slots": ["hair"],
+    "exclusiveGroup": "hair.primary",
+    "requires": ["anchor:head.crown"],
+    "conflicts": [],
+    "provides": ["appearance:hair", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "hair.base": { "default": "#3B335C", "mode": "multiply" },
+      "hair.highlight": { "default": "#8878FF", "mode": "screen" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.back",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/hair-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.back"]
+    },
+    {
+      "id": "portrait.front",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/hair-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.front"]
+    },
+    {
+      "id": "full-body.back",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/hair-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.back"]
+    },
+    {
+      "id": "full-body.front",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/hair-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.front"]
+    },
+    {
+      "id": "sprite.back",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/hair-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.back"]
+    },
+    {
+      "id": "sprite.front",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/hair-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.front"]
+    },
+    {
+      "id": "sprite-left.back",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/hair-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.back"]
+    },
+    {
+      "id": "sprite-left.front",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/hair-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["hair.base", "hair.highlight"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["hair.front"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000012"
+  }
+}

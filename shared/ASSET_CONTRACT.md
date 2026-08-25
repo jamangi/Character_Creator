@@ -2,6 +2,19 @@
 
 This document is the human-readable contract for the first executable schema. The schema task may refine field names, but must preserve the behavior and invariants unless it records a deliberate architecture change.
 
+## Executable v0.1 decisions
+
+The authoritative JSON Schemas and TypeScript types now live in `packages/schema/`. The following refinements are deliberate:
+
+- Contract objects are closed by default. Unknown fields fail validation; forward-compatible data belongs in an explicit `extensions` object whose keys are namespaced, for example `vendor.feature`.
+- Asset IDs are lowercase namespaced identifiers, rig families use `name@major`, versions use semantic versioning, and integrity values use `sha256-` followed by 64 lowercase hexadecimal characters.
+- File references are safe forward-slash relative paths. Absolute paths, traversal segments, backslashes, URL query/fragment syntax, percent-encoded segments, and drive-letter paths are rejected.
+- Fragment `order` is a bounded local value (`-10` through `10` for the starter rig). Only the rig defines the global plane order.
+- Suppression targets fragment tags. Replacement coverage is independently declared through fragment `covers` and `provide-coverage` effects.
+- Parsing returns structured diagnostics with stable codes and JSON paths. Prototype-pollution keys are rejected before schema evaluation.
+
+These choices are exercised by versioned valid and invalid fixtures under `fixtures/`.
+
 ## Design rule
 
 An **asset** is the thing selected by the user. A **fragment** is one drawable contribution from that asset. A hairstyle, coat, or wing set is one asset even when it contributes many fragments across several planes.

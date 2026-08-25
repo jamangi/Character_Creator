@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://character-creator.dev/schemas/0.1.0/diagnostic.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["code", "severity", "path", "message"],
+  "properties": {
+    "code": {
+      "enum": [
+        "SCHEMA_INVALID",
+        "UNSUPPORTED_SCHEMA_VERSION",
+        "UNSAFE_OBJECT_KEY",
+        "INVALID_SAFE_PATH",
+        "DUPLICATE_ASSET_ID",
+        "INCOMPATIBLE_RIG",
+        "INCOMPATIBLE_ENGINE",
+        "UNKNOWN_PROFILE",
+        "UNKNOWN_VIEW",
+        "UNKNOWN_CLIP",
+        "UNKNOWN_FRAME",
+        "UNKNOWN_PLANE",
+        "UNKNOWN_SLOT",
+        "UNKNOWN_REGION",
+        "UNKNOWN_ANCHOR",
+        "DEPENDENCY_CYCLE",
+        "MISSING_REQUIREMENT",
+        "ASSET_CONFLICT",
+        "AMBIGUOUS_SLOT",
+        "AMBIGUOUS_FRAGMENT",
+        "MISSING_COVERAGE",
+        "INVALID_SUPPRESSION",
+        "ASSET_NOT_FOUND",
+        "RENDER_FAILED"
+      ]
+    },
+    "severity": { "enum": ["error", "warning", "review-required"] },
+    "path": { "type": "string", "pattern": "^\\$" },
+    "message": { "type": "string", "minLength": 1 },
+    "assetId": { "$ref": "common.schema.json#/$defs/id" },
+    "details": { "type": "object", "additionalProperties": true }
+  }
+}

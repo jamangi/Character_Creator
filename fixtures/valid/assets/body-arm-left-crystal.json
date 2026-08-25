@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.body.arm-left-crystal",
+  "version": "1.0.0",
+  "kind": "body-module",
+  "display": {
+    "name": "Crystal Left Arm",
+    "tags": ["crystal", "replacement"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/arm-crystal.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["body:standard-v1"]
+  },
+  "equip": {
+    "slots": ["body-arm-left"],
+    "exclusiveGroup": "body.arm.left",
+    "requires": ["asset:starter.base.standard"],
+    "conflicts": [],
+    "provides": ["coverage:body.arm.left.skin", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "crystal.base": { "default": "#8878FF", "mode": "multiply" },
+      "crystal.glow": { "default": "#B9F5FF", "mode": "screen" }
+    }
+  },
+  "effects": [
+    { "kind": "suppress-tags", "targetTags": ["body.arm.left.base"] },
+    { "kind": "provide-coverage", "regions": ["body.arm.left.skin"] }
+  ],
+  "fragments": [
+    {
+      "id": "portrait.arm-left",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/crystal-arm-left.png",
+      "plane": "body-base",
+      "order": 2,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["crystal.base", "crystal.glow"],
+      "covers": [],
+      "suppresses": ["body.arm.left.base"],
+      "tags": ["body.arm.left.replacement"]
+    },
+    {
+      "id": "full-body.arm-left",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/crystal-arm-left.png",
+      "plane": "body-base",
+      "order": 2,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["crystal.base", "crystal.glow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": ["body.arm.left.base"],
+      "tags": ["body.arm.left.replacement"]
+    },
+    {
+      "id": "sprite.arm-left",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/crystal-arm-left.png",
+      "plane": "body-base",
+      "order": 2,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["crystal.base", "crystal.glow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": ["body.arm.left.base"],
+      "tags": ["body.arm.left.replacement"]
+    },
+    {
+      "id": "sprite-left.arm-left",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/crystal-arm-left.png",
+      "plane": "body-base",
+      "order": 2,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["crystal.base", "crystal.glow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": ["body.arm.left.base"],
+      "tags": ["body.arm.left.replacement"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000011"
+  }
+}

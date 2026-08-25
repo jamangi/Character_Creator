@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [
+    { "assetId": "starter.outerwear.long-coat", "version": "1.0.0" },
+    { "assetId": "starter.body.arm-left-crystal", "version": "1.0.0" },
+    { "assetId": "starter.hair.long-wave", "version": "1.0.0" },
+    { "assetId": "starter.top.simple-shirt", "version": "1.0.0" },
+    { "assetId": "starter.base.standard", "version": "1.0.0" }
+  ],
+  "palette": {
+    "coat.base": "#6658B5",
+    "hair.base": "#3B335C",
+    "shirt.base": "#4ED7E8",
+    "skin.base": "#D79A83"
+  },
+  "parameters": {
+    "expression": "neutral"
+  },
+  "seed": 424242,
+  "metadata": {
+    "name": "Vertical Slice Hero"
+  }
+}
+

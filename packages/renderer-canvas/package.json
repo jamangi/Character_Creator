@@ -1,0 +1,19 @@
+{
+  "name": "@character-creator/renderer-canvas",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "dependencies": {
+    "@character-creator/core": "workspace:*",
+    "@character-creator/schema": "workspace:*"
+  }
+}
+

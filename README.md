@@ -28,12 +28,16 @@ This preserves the extensibility of a bald-base system while supporting the stro
 
 ## Repository map
 
-This repository currently contains the design and execution foundation:
+This repository contains the design foundation plus the first executable vertical slice:
 
 - [`root/`](root/README.md) — root-task operating notes, decisions, approvals, and the task template.
 - [`shared/`](shared/README.md) — architecture and contracts that every implementation task must follow.
 - [`shared/tasks/`](shared/tasks/README.md) — ordered, independently assignable development tasks.
 - [`site/`](site/README.md) — the GitHub Pages review hub and published validation artifacts.
+- [`packages/schema/`](packages/schema/README.md) — executable JSON Schemas, TypeScript contracts, diagnostics, and normalization.
+- [`packages/core/`](packages/core/README.md) — framework-agnostic catalog and deterministic composition resolution.
+- [`packages/renderer-canvas/`](packages/renderer-canvas/README.md) — Canvas 2D rendering of resolved draw lists.
+- [`fixtures/`](fixtures/) — valid, invalid, and visual conformance fixtures.
 
 The intended implementation layout is documented in [`shared/ARCHITECTURE.md`](shared/ARCHITECTURE.md). Do not create the planned package directories until the task that owns them begins.
 
@@ -47,3 +51,15 @@ New tasks should read, in order:
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
 Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). There are no blocking approvals at present.
+
+## Development validation
+
+With Node.js and pnpm available:
+
+```text
+pnpm install
+pnpm validate
+pnpm visuals
+```
+
+`pnpm validate` runs project-reference type checking and all contract, resolver, and exact-pixel renderer tests. `pnpm visuals` regenerates the Task 002 fragment fixtures and Pages review artifact.

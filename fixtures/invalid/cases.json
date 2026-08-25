@@ -1,0 +1,113 @@
+[
+  {
+    "name": "unknown top-level fields are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["unexpected"], "value": true }],
+    "expected": { "code": "SCHEMA_INVALID", "path": "$.unexpected" }
+  },
+  {
+    "name": "traversal paths are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["display", "thumbnail"], "value": "../secret.png" }],
+    "expected": { "code": "INVALID_SAFE_PATH", "path": "$.display.thumbnail" }
+  },
+  {
+    "name": "unsupported schema versions are explicit",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["schemaVersion"], "value": "0.2.0" }],
+    "expected": { "code": "UNSUPPORTED_SCHEMA_VERSION", "path": "$.schemaVersion" }
+  },
+  {
+    "name": "semantic versions have a defined format",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["version"], "value": "one" }],
+    "expected": { "code": "SCHEMA_INVALID", "path": "$.version" }
+  },
+  {
+    "name": "content hashes have a defined format",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["provenance", "contentHash"], "value": "sha256-nope" }],
+    "expected": { "code": "SCHEMA_INVALID", "path": "$.provenance.contentHash" }
+  },
+  {
+    "name": "prototype pollution keys are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["extensions"], "value": { "__proto__": { "polluted": true } } }],
+    "expected": { "code": "UNSAFE_OBJECT_KEY", "path": "$.extensions.__proto__" }
+  },
+  {
+    "name": "unknown anchors are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["fragments", 0, "anchor"], "value": "head.unknown" }],
+    "expected": { "code": "UNKNOWN_ANCHOR", "path": "$.fragments[0].anchor" }
+  },
+  {
+    "name": "unknown planes are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["fragments", 0, "plane"], "value": "hair-over-everything" }],
+    "expected": { "code": "UNKNOWN_PLANE", "path": "$.fragments[0].plane" }
+  },
+  {
+    "name": "unknown slots are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["equip", "slots", 0], "value": "mystery-slot" }],
+    "expected": { "code": "UNKNOWN_SLOT", "path": "$.equip.slots[0]" }
+  },
+  {
+    "name": "unknown coverage regions are rejected",
+    "kind": "asset",
+    "base": "body-arm-left-crystal.json",
+    "mutations": [{ "path": ["fragments", 1, "covers", 0], "value": "body.wing.skin" }],
+    "expected": { "code": "UNKNOWN_REGION", "path": "$.fragments[1].covers[0]" }
+  },
+  {
+    "name": "incompatible rigs are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["compatibility", "rigFamilies", 0], "value": "other-rig@1" }],
+    "expected": { "code": "INCOMPATIBLE_RIG", "path": "$.compatibility.rigFamilies" }
+  },
+  {
+    "name": "incompatible engine ranges are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["compatibility", "engine"], "value": ">=1.0.0 <2.0.0" }],
+    "expected": { "code": "INCOMPATIBLE_ENGINE", "path": "$.compatibility.engine" }
+  },
+  {
+    "name": "duplicate fragment ids are rejected",
+    "kind": "asset",
+    "base": "hair-long-wave.json",
+    "mutations": [{ "path": ["fragments", 1, "id"], "value": "portrait.back" }],
+    "expected": { "code": "SCHEMA_INVALID", "path": "$.fragments[1].id" }
+  },
+  {
+    "name": "dependency cycles are rejected",
+    "kind": "catalog-cycle",
+    "expected": { "code": "DEPENDENCY_CYCLE", "path": "$" }
+  },
+  {
+    "name": "duplicate catalog ids are rejected",
+    "kind": "catalog-duplicate",
+    "expected": { "code": "DUPLICATE_ASSET_ID", "path": "$[1].id" }
+  },
+  {
+    "name": "exclusive slot ambiguity is rejected",
+    "kind": "selection-ambiguous",
+    "expected": { "code": "AMBIGUOUS_SLOT", "path": "$.equipped" }
+  },
+  {
+    "name": "missing selected assets are rejected",
+    "kind": "selection-missing",
+    "expected": { "code": "ASSET_NOT_FOUND", "path": "$.equipped[5].assetId" }
+  }
+]

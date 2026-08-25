@@ -1,0 +1,66 @@
+{
+  "task": "TASK-002",
+  "generatedAt": "2026-08-25",
+  "sourceCommit": "__SOURCE_COMMIT__",
+  "engineVersion": "0.1.0",
+  "schemaVersion": "0.1.0",
+  "rig": {
+    "id": "starter-humanoid@1",
+    "version": "1.0.0"
+  },
+  "recipe": "Vertical Slice Hero",
+  "recipeHash": "d4b322dc46ae0997e3a545f083c017a9e67af5f2bc0b14e58709c7f482cb3c47",
+  "assets": [
+    {
+      "id": "starter.base.standard",
+      "version": "1.0.0"
+    },
+    {
+      "id": "starter.body.arm-left-crystal",
+      "version": "1.0.0"
+    },
+    {
+      "id": "starter.hair.long-wave",
+      "version": "1.0.0"
+    },
+    {
+      "id": "starter.outerwear.long-coat",
+      "version": "1.0.0"
+    },
+    {
+      "id": "starter.top.simple-shirt",
+      "version": "1.0.0"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "renders/portrait-front.png",
+      "profile": "portrait",
+      "view": "front"
+    },
+    {
+      "file": "renders/full-body-front.png",
+      "profile": "full-body",
+      "view": "front"
+    },
+    {
+      "file": "renders/sprite-front-idle-center.png",
+      "profile": "sprite",
+      "view": "front",
+      "clip": "idle",
+      "frame": "center"
+    },
+    {
+      "file": "renders/sprite-left-idle-center.png",
+      "profile": "sprite",
+      "view": "left",
+      "clip": "idle",
+      "frame": "center"
+    }
+  ],
+  "knownLimitations": [
+    "Proof artwork is intentionally small and geometric rather than production catalog art.",
+    "Task 002 proves idle sprite resolution only; complete clips belong to Task 006.",
+    "Palette metadata resolves into draw items; mask-based recoloring is deferred to the validator/starter-pack work."
+  ]
+}

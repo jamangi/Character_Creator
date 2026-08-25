@@ -4,9 +4,9 @@ Tasks are ordered by dependency, not by who performs them. Parallel work is safe
 
 | Order | Task | Status | Depends on | Primary result |
 |---:|---|---|---|---|
-| 001 | [Contracts and fixtures](TASK-001-HIGH-contracts-and-fixtures.md) | READY | — | Executable schema and rig vocabulary |
-| 002 | [Composition vertical slice](TASK-002-HIGH-composition-vertical-slice.md) | BLOCKED | 001 | Resolver + Canvas proof across all outputs |
-| 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | BLOCKED | 001 | Versioned import/export and migration |
+| 001 | [Contracts and fixtures](TASK-001-HIGH-contracts-and-fixtures.md) | DONE | — | Executable schema and rig vocabulary |
+| 002 | [Composition vertical slice](TASK-002-HIGH-composition-vertical-slice.md) | IN PROGRESS | 001 | Resolver + Canvas proof across all outputs |
+| 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | READY | 001 | Versioned import/export and migration |
 | 004 | [Asset validator](TASK-004-HIGH-asset-validator.md) | BLOCKED | 001, 002 | Artist-facing conformance tooling |
 | 005 | [Creator Studio](TASK-005-HIGH-creator-studio.md) | BLOCKED | 002, 003 | Reference editing UI |
 | 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | BLOCKED | 002, 004 | Directional clips and sprite export |

@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://character-creator.dev/schemas/0.1.0/asset.schema.json",
+  "$defs": {
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axis", "from", "to", "allowedFor", "forbiddenFor"],
+      "properties": {
+        "axis": { "enum": ["expression", "view", "clip", "frame", "variant"] },
+        "from": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "to": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "allowedFor": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/assetKind" }
+        },
+        "forbiddenFor": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/assetKind" }
+        }
+      }
+    },
+    "selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile"],
+      "properties": {
+        "profile": { "enum": ["portrait", "full-body", "sprite"] },
+        "view": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "expression": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "clip": { "enum": ["idle", "sit", "walk", "run"] },
+        "frame": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "variant": { "$ref": "common.schema.json#/$defs/localId" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "profile": { "const": "sprite" } }, "required": ["profile"] },
+          "then": { "properties": { "view": {} }, "required": ["view"] },
+          "else": {
+            "not": {
+              "anyOf": [
+                { "properties": { "clip": {} }, "required": ["clip"] },
+                { "properties": { "frame": {} }, "required": ["frame"] }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "fragment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "selector",
+        "source",
+        "plane",
+        "order",
+        "anchor",
+        "pivot",
+        "paletteRoles",
+        "covers",
+        "suppresses",
+        "tags"
+      ],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/localId" },
+        "selector": { "$ref": "#/$defs/selector" },
+        "source": { "$ref": "common.schema.json#/$defs/safePath" },
+        "plane": { "$ref": "common.schema.json#/$defs/localId" },
+        "order": { "type": "integer", "minimum": -10, "maximum": 10 },
+        "anchor": { "$ref": "common.schema.json#/$defs/localId" },
+        "offset": {
+          "type": "array",
+          "prefixItems": [{ "type": "number" }, { "type": "number" }],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "pivot": {
+          "type": "array",
+          "prefixItems": [
+            { "type": "number", "minimum": 0, "maximum": 1 },
+            { "type": "number", "minimum": 0, "maximum": 1 }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "paletteRoles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "covers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "suppresses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "occludesWith": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "optional": { "type": "boolean" },
+        "mirrorSafe": { "type": "boolean" },
+        "bounds": { "$ref": "common.schema.json#/$defs/rect" },
+        "extensions": { "$ref": "common.schema.json#/$defs/extensions" }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "kind",
+    "display",
+    "compatibility",
+    "equip",
+    "palette",
+    "effects",
+    "fragments",
+    "fallbacks",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "version": { "$ref": "common.schema.json#/$defs/semver" },
+    "kind": { "$ref": "common.schema.json#/$defs/assetKind" },
+    "display": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "tags", "thumbnail"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 64,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "thumbnail": { "$ref": "common.schema.json#/$defs/safePath" }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rigFamilies", "engine", "fitTags"],
+      "properties": {
+        "rigFamilies": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/rigFamily" }
+        },
+        "engine": { "$ref": "common.schema.json#/$defs/semverRange" },
+        "fitTags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$" }
+        }
+      }
+    },
+    "equip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slots", "requires", "conflicts", "provides"],
+      "properties": {
+        "slots": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/localId" }
+        },
+        "exclusiveGroup": { "$ref": "common.schema.json#/$defs/localId" },
+        "requires": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+        },
+        "conflicts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+        },
+        "provides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+        }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["roles"],
+      "properties": {
+        "roles": {
+          "type": "object",
+          "propertyNames": { "$ref": "common.schema.json#/$defs/localId" },
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["default", "mode"],
+            "properties": {
+              "default": { "$ref": "common.schema.json#/$defs/hexColor" },
+              "mode": { "enum": ["multiply", "screen", "replace"] }
+            }
+          }
+        }
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "targetTags"],
+            "properties": {
+              "kind": { "const": "suppress-tags" },
+              "targetTags": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": { "$ref": "common.schema.json#/$defs/localId" }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "regions"],
+            "properties": {
+              "kind": { "const": "provide-coverage" },
+              "regions": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": { "$ref": "common.schema.json#/$defs/localId" }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "assetId", "variant"],
+            "properties": {
+              "kind": { "const": "select-variant" },
+              "assetId": { "$ref": "common.schema.json#/$defs/id" },
+              "variant": { "$ref": "common.schema.json#/$defs/localId" }
+            }
+          }
+        ]
+      }
+    },
+    "fragments": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "items": { "$ref": "#/$defs/fragment" }
+    },
+    "fallbacks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fallback" }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authors", "license", "source", "contentHash"],
+      "properties": {
+        "authors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 100 }
+        },
+        "license": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "source": { "type": ["string", "null"], "format": "uri-reference" },
+        "contentHash": { "$ref": "common.schema.json#/$defs/contentHash" }
+      }
+    },
+    "extensions": { "$ref": "common.schema.json#/$defs/extensions" }
+  }
+}

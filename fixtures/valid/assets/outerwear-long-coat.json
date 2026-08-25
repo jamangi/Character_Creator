@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.outerwear.long-coat",
+  "version": "1.0.0",
+  "kind": "outerwear",
+  "display": {
+    "name": "Long Tailed Coat",
+    "tags": ["long", "multi-plane", "tailed"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/outerwear-long-coat.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["body:standard-v1"]
+  },
+  "equip": {
+    "slots": ["outerwear"],
+    "exclusiveGroup": "garment.outerwear",
+    "requires": ["asset:starter.top.simple-shirt"],
+    "conflicts": ["asset:starter.accessory.neck-scarf"],
+    "provides": ["appearance:outerwear", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "coat.base": { "default": "#6658B5", "mode": "replace" },
+      "coat.shadow": { "default": "#423873", "mode": "multiply" },
+      "coat.trim": { "default": "#FF7D73", "mode": "replace" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.tail",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/coat-tail.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.tail"]
+    },
+    {
+      "id": "portrait.main",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/coat-main.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.trim"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.main"]
+    },
+    {
+      "id": "full-body.tail",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/coat-tail.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.tail"]
+    },
+    {
+      "id": "full-body.main",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/coat-main.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.trim"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.main"]
+    },
+    {
+      "id": "sprite.tail",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/coat-tail.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.tail"]
+    },
+    {
+      "id": "sprite.main",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/coat-main.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.trim"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.main"]
+    },
+    {
+      "id": "sprite-left.tail",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/coat-tail.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.tail"]
+    },
+    {
+      "id": "sprite-left.main",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/coat-main.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["coat.base", "coat.trim"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["coat.main"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000014"
+  }
+}

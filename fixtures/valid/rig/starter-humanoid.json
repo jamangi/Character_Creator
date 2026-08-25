@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter-humanoid@1",
+  "version": "1.0.0",
+  "coordinateSystem": {
+    "origin": "top-left",
+    "units": "pixels",
+    "yAxis": "down"
+  },
+  "profiles": [
+    {
+      "id": "portrait",
+      "width": 256,
+      "height": 256,
+      "views": ["front"],
+      "requiredCoverage": ["body.head.skin", "body.torso.skin", "face.eyes", "face.mouth"],
+      "safeArea": { "x": 16, "y": 16, "width": 224, "height": 224 },
+      "sampling": "smooth"
+    },
+    {
+      "id": "full-body",
+      "width": 256,
+      "height": 384,
+      "views": ["front", "back"],
+      "requiredCoverage": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.left.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "safeArea": { "x": 16, "y": 8, "width": 224, "height": 368 },
+      "sampling": "smooth"
+    },
+    {
+      "id": "sprite",
+      "width": 96,
+      "height": 96,
+      "views": ["front", "back", "left", "right"],
+      "requiredCoverage": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.left.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "safeArea": { "x": 4, "y": 4, "width": 88, "height": 88 },
+      "sampling": "nearest"
+    }
+  ],
+  "planes": [
+    "far-back",
+    "hair-back",
+    "accessory-back",
+    "garment-behind-body",
+    "body-back",
+    "body-base",
+    "face-base",
+    "under-garment",
+    "garment-main",
+    "garment-overlap",
+    "face-features",
+    "hair-mid",
+    "hair-front",
+    "accessory-front",
+    "foreground"
+  ],
+  "localOrder": { "min": -10, "max": 10 },
+  "slots": [
+    { "id": "base-body", "exclusive": true, "allowedKinds": ["base-body"] },
+    { "id": "body-arm-left", "exclusive": true, "allowedKinds": ["body-module"] },
+    { "id": "hair", "exclusive": true, "allowedKinds": ["hair"] },
+    { "id": "top", "exclusive": true, "allowedKinds": ["top", "outfit"] },
+    { "id": "outerwear", "exclusive": true, "allowedKinds": ["outerwear", "outfit"] },
+    { "id": "face-accessory", "exclusive": true, "allowedKinds": ["accessory"] },
+    { "id": "neck-accessory", "exclusive": true, "allowedKinds": ["accessory"] }
+  ],
+  "regions": [
+    { "id": "body.head.skin", "anatomyCritical": true },
+    { "id": "body.torso.skin", "anatomyCritical": true },
+    { "id": "body.arm.left.skin", "anatomyCritical": true },
+    { "id": "body.arm.right.skin", "anatomyCritical": true },
+    { "id": "body.leg.left.skin", "anatomyCritical": true },
+    { "id": "body.leg.right.skin", "anatomyCritical": true },
+    { "id": "face.eyes", "anatomyCritical": true },
+    { "id": "face.mouth", "anatomyCritical": true }
+  ],
+  "anchors": [
+    { "id": "canvas.origin", "x": 0, "y": 0, "profiles": ["portrait", "full-body", "sprite"] },
+    { "id": "head.origin", "x": 128, "y": 72, "profiles": ["portrait", "full-body"] },
+    { "id": "head.crown", "x": 128, "y": 24, "profiles": ["portrait", "full-body"] },
+    { "id": "hand.left.grip", "x": 83, "y": 214, "profiles": ["full-body"] },
+    { "id": "foot.left.sole", "x": 111, "y": 364, "profiles": ["full-body"] },
+    { "id": "foot.right.sole", "x": 145, "y": 364, "profiles": ["full-body"] },
+    { "id": "sprite.origin", "x": 0, "y": 0, "profiles": ["sprite"] }
+  ],
+  "expressions": [
+    { "id": "neutral", "channels": { "eyes": "open", "brows": "level", "mouth": "neutral" } },
+    { "id": "smirk", "channels": { "eyes": "open", "brows": "raised", "mouth": "smirk" } },
+    { "id": "concerned", "channels": { "eyes": "open", "brows": "concerned", "mouth": "concerned" } },
+    { "id": "focused", "channels": { "eyes": "narrow", "brows": "level", "mouth": "neutral" } },
+    { "id": "cheerful", "channels": { "eyes": "bright", "brows": "raised", "mouth": "smile" } },
+    { "id": "annoyed", "channels": { "eyes": "narrow", "brows": "low", "mouth": "flat" } },
+    { "id": "thoughtful", "channels": { "eyes": "side", "brows": "raised", "mouth": "neutral" } },
+    { "id": "surprised", "channels": { "eyes": "wide", "brows": "raised", "mouth": "open" } },
+    { "id": "tired", "channels": { "eyes": "tired", "brows": "level", "mouth": "flat" } },
+    { "id": "confident", "channels": { "eyes": "open", "brows": "raised", "mouth": "smirk" } },
+    { "id": "determined", "channels": { "eyes": "narrow", "brows": "low", "mouth": "firm" } },
+    { "id": "playful", "channels": { "eyes": "wink", "brows": "raised", "mouth": "smile" } }
+  ],
+  "clips": [
+    {
+      "id": "idle",
+      "loop": true,
+      "directions": ["front", "back", "left", "right"],
+      "frames": [{ "id": "center", "durationMs": 500, "contacts": ["foot.left.sole", "foot.right.sole"] }]
+    },
+    {
+      "id": "sit",
+      "loop": true,
+      "directions": ["front", "back", "left", "right"],
+      "frames": [{ "id": "seated", "durationMs": 500, "contacts": [] }]
+    },
+    {
+      "id": "walk",
+      "loop": true,
+      "directions": ["front", "back", "left", "right"],
+      "frames": [
+        { "id": "contact-left", "durationMs": 120, "contacts": ["foot.left.sole"] },
+        { "id": "pass-left", "durationMs": 120, "contacts": ["foot.left.sole"] },
+        { "id": "contact-right", "durationMs": 120, "contacts": ["foot.right.sole"] },
+        { "id": "pass-right", "durationMs": 120, "contacts": ["foot.right.sole"] }
+      ]
+    },
+    {
+      "id": "run",
+      "loop": true,
+      "directions": ["front", "back", "left", "right"],
+      "frames": [
+        { "id": "contact-left", "durationMs": 85, "contacts": ["foot.left.sole"] },
+        { "id": "flight-left", "durationMs": 85, "contacts": [] },
+        { "id": "contact-right", "durationMs": 85, "contacts": ["foot.right.sole"] },
+        { "id": "flight-right", "durationMs": 85, "contacts": [] }
+      ]
+    }
+  ],
+  "fallbacks": [
+    {
+      "axis": "expression",
+      "from": "smirk",
+      "to": "neutral",
+      "allowedFor": ["hair", "top", "outerwear", "accessory"],
+      "forbiddenFor": ["base-body", "body-module", "face"]
+    }
+  ],
+  "masks": ["head.hat-zone", "torso.coat-interior"],
+  "mirroring": {
+    "from": "left",
+    "to": "right",
+    "requiresCapability": "mirror.safe"
+  },
+  "budgets": {
+    "maxFragmentsPerAsset": 256,
+    "maxCanvasArea": 1048576,
+    "maxAssetBytes": 2097152
+  }
+}

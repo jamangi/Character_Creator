@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.top.simple-shirt",
+  "version": "1.0.0",
+  "kind": "top",
+  "display": {
+    "name": "Simple Shirt",
+    "tags": ["ordinary", "recolorable"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/top-simple-shirt.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["body:standard-v1"]
+  },
+  "equip": {
+    "slots": ["top"],
+    "exclusiveGroup": "garment.top",
+    "requires": ["asset:starter.base.standard"],
+    "conflicts": [],
+    "provides": ["appearance:top", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "shirt.base": { "default": "#4ED7E8", "mode": "replace" },
+      "shirt.shadow": { "default": "#278A9C", "mode": "multiply" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.main",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/shirt.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["shirt.base", "shirt.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["garment.top.main"]
+    },
+    {
+      "id": "full-body.main",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/shirt.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["shirt.base", "shirt.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["garment.top.main"]
+    },
+    {
+      "id": "sprite.main",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/shirt.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["shirt.base", "shirt.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["garment.top.main"]
+    },
+    {
+      "id": "sprite-left.main",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/shirt.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["shirt.base", "shirt.shadow"],
+      "covers": [],
+      "suppresses": [],
+      "tags": ["garment.top.main"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000013"
+  }
+}

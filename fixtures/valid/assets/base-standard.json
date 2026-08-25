@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.base.standard",
+  "version": "1.0.0",
+  "kind": "base-body",
+  "display": {
+    "name": "Standard Base",
+    "tags": ["standard", "foundation"],
+    "thumbnail": "fixtures/visual/task-002/thumbnails/base-standard.png"
+  },
+  "compatibility": {
+    "rigFamilies": ["starter-humanoid@1"],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": ["body:standard-v1"]
+  },
+  "equip": {
+    "slots": ["base-body"],
+    "exclusiveGroup": "body.primary",
+    "requires": [],
+    "conflicts": [],
+    "provides": ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"]
+  },
+  "palette": {
+    "roles": {
+      "skin.base": { "default": "#D79A83", "mode": "multiply" },
+      "skin.shadow": { "default": "#A86665", "mode": "multiply" }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "portrait.core",
+      "selector": { "profile": "portrait", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/portrait/base-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.head.skin", "body.torso.skin", "face.eyes", "face.mouth"],
+      "suppresses": [],
+      "tags": ["body.head.base", "body.torso.base", "face.base"]
+    },
+    {
+      "id": "full-body.core",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/base-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"],
+      "suppresses": [],
+      "tags": ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"]
+    },
+    {
+      "id": "full-body.arm-left",
+      "selector": { "profile": "full-body", "view": "*", "expression": "*" },
+      "source": "fixtures/visual/task-002/fragments/full-body/base-arm-left.png",
+      "plane": "body-base",
+      "order": 1,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": [],
+      "tags": ["body.arm.left.base"]
+    },
+    {
+      "id": "sprite.core",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/base-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"],
+      "suppresses": [],
+      "tags": ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"]
+    },
+    {
+      "id": "sprite.arm-left",
+      "selector": { "profile": "sprite", "view": "*", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite/base-arm-left.png",
+      "plane": "body-base",
+      "order": 1,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": [],
+      "tags": ["body.arm.left.base"]
+    },
+    {
+      "id": "sprite-left.core",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/base-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"],
+      "suppresses": [],
+      "tags": ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"]
+    },
+    {
+      "id": "sprite-left.arm-left",
+      "selector": { "profile": "sprite", "view": "left", "clip": "idle", "frame": "center" },
+      "source": "fixtures/visual/task-002/fragments/sprite-left/base-arm-left.png",
+      "plane": "body-base",
+      "order": 1,
+      "anchor": "canvas.origin",
+      "pivot": [0, 0],
+      "paletteRoles": ["skin.base", "skin.shadow"],
+      "covers": ["body.arm.left.skin"],
+      "suppresses": [],
+      "tags": ["body.arm.left.base"]
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": ["Character Creator contributors"],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-0000000000000000000000000000000000000000000000000000000000000010"
+  }
+}

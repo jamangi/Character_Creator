@@ -1,6 +1,6 @@
 # TASK-001-HIGH-contracts-and-fixtures
 
-- **Status:** READY
+- **Status:** DONE
 - **Outcome:** Publish executable recipe, rig, asset-pack, asset, fragment, and diagnostic contracts with representative valid and invalid fixtures.
 - **Depends on:** None
 - **Unblocks:** 002, 003, 004
@@ -22,12 +22,12 @@ Read all files linked from `shared/README.md`.
 
 ## Acceptance criteria
 
-- [ ] JSON and TypeScript representations agree through tests.
-- [ ] Unknown fields follow an explicit forward-compatibility policy.
-- [ ] IDs, semantic versions/ranges, safe relative paths, and hashes have defined formats.
-- [ ] Every invalid fixture fails with the intended stable diagnostic code.
-- [ ] The starter rig contains no arbitrary per-asset global layer values.
-- [ ] Shared contract documentation reflects any field-name refinements.
+- [x] JSON and TypeScript representations agree through tests.
+- [x] Unknown fields follow an explicit forward-compatibility policy.
+- [x] IDs, semantic versions/ranges, safe relative paths, and hashes have defined formats.
+- [x] Every invalid fixture fails with the intended stable diagnostic code.
+- [x] The starter rig contains no arbitrary per-asset global layer values.
+- [x] Shared contract documentation reflects any field-name refinements.
 
 ## Validation
 
@@ -43,3 +43,10 @@ Schema behavior is accepted through executable fixtures and review of the versio
 ## Non-goals
 
 Rendering, browser UI, complete artwork, remote pack loading, and arbitrary third-party script execution.
+
+## Handoff notes
+
+- Added a pnpm/TypeScript workspace using project references, Vitest, and strict ESM package boundaries.
+- Published executable schemas and public types in `packages/schema/` with parsing, normalization, catalog, and recipe-selection validation entry points.
+- Added one starter humanoid rig, seven representative valid asset fixtures, a pack and recipe fixture, and an invalid fixture table covering schema, security, rig vocabulary, dependency-cycle, duplicate-ID, and exclusive-slot failures.
+- `pnpm typecheck` and `pnpm test` pass. Task 001 does not require a Pages artifact.

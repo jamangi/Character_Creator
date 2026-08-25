@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
@@ -30,6 +31,13 @@ const fragmentRoot = join(root, "fixtures", "visual", "task-002", "fragments");
 const thumbnailRoot = join(root, "fixtures", "visual", "task-002", "thumbnails");
 const siteRoot = join(root, "site", "validation", "task-002");
 const renderRoot = join(siteRoot, "renders");
+const sourceCommit =
+  process.env["SOURCE_COMMIT"] ??
+  execFileSync(
+    "git",
+    ["-c", `safe.directory=${root.replaceAll("\\", "/")}`, "rev-parse", "--short", "HEAD"],
+    { cwd: root, encoding: "utf8" }
+  ).trim();
 
 const colors = {
   ink: "#18162b",
@@ -754,7 +762,7 @@ async function writeMetadata(
   const provenance = {
     task: "TASK-002",
     generatedAt: "2026-08-25",
-    sourceCommit: "__SOURCE_COMMIT__",
+    sourceCommit,
     engineVersion: "0.1.0",
     schemaVersion: "0.1.0",
     rig: { id: rig.id, version: rig.version },

@@ -13,6 +13,19 @@
         "Nine-task dependency sequence"
       ],
       "commit": "b944104"
+    },
+    {
+      "task": "TASK-002",
+      "title": "Composition vertical slice",
+      "status": "ready-for-review",
+      "summary": "One normalized recipe now resolves deterministically into transparent portrait, full-body, and explicit directional sprite outputs.",
+      "href": "validation/task-002/",
+      "review": [
+        "Hair and coat layer order",
+        "Crystal left-arm replacement seam and coverage",
+        "Silhouette and palette consistency across profiles"
+      ],
+      "commit": "4c235ed"
     }
   ]
 }

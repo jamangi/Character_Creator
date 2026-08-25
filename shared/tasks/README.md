@@ -1,0 +1,25 @@
+# Development tasks
+
+Tasks are ordered by dependency, not by who performs them. Parallel work is safe only where the dependency column permits it.
+
+| Order | Task | Status | Depends on | Primary result |
+|---:|---|---|---|---|
+| 001 | [Contracts and fixtures](TASK-001-HIGH-contracts-and-fixtures.md) | READY | — | Executable schema and rig vocabulary |
+| 002 | [Composition vertical slice](TASK-002-HIGH-composition-vertical-slice.md) | BLOCKED | 001 | Resolver + Canvas proof across all outputs |
+| 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | BLOCKED | 001 | Versioned import/export and migration |
+| 004 | [Asset validator](TASK-004-HIGH-asset-validator.md) | BLOCKED | 001, 002 | Artist-facing conformance tooling |
+| 005 | [Creator Studio](TASK-005-HIGH-creator-studio.md) | BLOCKED | 002, 003 | Reference editing UI |
+| 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | BLOCKED | 002, 004 | Directional clips and sprite export |
+| 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | BLOCKED | 004, 006 | Coherent, stress-testing content pack |
+| 008 | [Portable integration API](TASK-008-MEDIUM-portable-integration-api.md) | BLOCKED | 003, 005, 006 | Framework-agnostic consumption example |
+| 009 | [Release hardening](TASK-009-HIGH-release-hardening.md) | BLOCKED | 007, 008 | Tested and documented first release |
+
+## Coordination rules
+
+- Read the shared documents before changing code or contracts.
+- Claim owned paths in the task before broad edits. Preserve unrelated changes.
+- If an implementation reveals a contract defect, update the executable contract, this documentation, and affected fixtures together.
+- Do not silently broaden a rig, slot, or fallback to make one asset pass.
+- Every new diagnostic needs a failing fixture; every fixed bug needs a regression test.
+- Generated images, atlases, and contact sheets should not be committed unless the owning task defines them as fixtures or release artifacts.
+- Task completion must update this table and the task's handoff notes.

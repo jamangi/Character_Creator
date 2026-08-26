@@ -61,7 +61,7 @@
       "summary": "Option 1 is approved: Task 010 will narrow the starter rig to front idle/walk/run, then Task 011 repairs stuck equipped layers.",
       "href": "validation/task-006/",
       "review": ["Apply the approved reduced selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
-      "commit": "pending"
+      "commit": "b1c689d"
     },
     {
       "task": "TASK-007",

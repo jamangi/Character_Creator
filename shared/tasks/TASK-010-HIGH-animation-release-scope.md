@@ -1,9 +1,9 @@
 # TASK-010-HIGH-animation-release-scope
 
-- **Status:** BLOCKED
+- **Status:** READY
 - **Outcome:** Make the starter rig's advertised animation selectors exactly match the release scope approved by the owner.
 - **Tracks:** DEFECT-002, DEFECT-003, DEFECT-004, CHANGE-003
-- **Depends on:** 001, 002, APPROVAL-001
+- **Depends on:** 001, 002
 - **Unblocks:** 011, 016 and completion review for 006–007
 - **Owned paths:** starter-rig clip/profile definitions and fixtures, related schema/type contract only if required, `shared/ARCHITECTURE.md`, `shared/ASSET_CONTRACT.md`, `shared/STARTER_ASSET_PACK.md`, Task 006–007 claims and generated metadata
 
@@ -18,9 +18,9 @@
 
 ## Context
 
-Task 006 technically resolves `idle`, `sit`, `walk`, and `run` in four directions, but human review found that back-facing, lateral, and seated requests do not visually implement their advertised meaning. This is a contract/scope issue before it is an art issue. The recommended release choice is to keep the engine vocabulary extensible while narrowing only `starter-humanoid@1` to front-facing `idle`, `walk`, and `run`.
+Task 006 technically resolves `idle`, `sit`, `walk`, and `run` in four directions, but human review found that back-facing, lateral, and seated requests do not visually implement their advertised meaning. This is a contract/scope issue before it is an art issue. APPROVAL-001 selected Option 1: keep the engine vocabulary extensible while narrowing only `starter-humanoid@1` to front-facing `idle`, `walk`, and `run`.
 
-This task has authority to refine the executable starter-rig contract and the draft shared documents, but it must not choose the product scope before APPROVAL-001 is recorded.
+This task has authority to apply the approved decision to the executable starter-rig contract and the draft shared documents.
 
 ## Scope
 
@@ -38,7 +38,7 @@ This task has authority to refine the executable starter-rig contract and the dr
 
 ## Acceptance criteria
 
-- [ ] APPROVAL-001 records the chosen release selector set.
+- [x] APPROVAL-001 records the chosen release selector set.
 - [ ] The starter rig, generator, pack metadata, tests, and Pages copy advertise exactly the same clips and directions.
 - [ ] A request outside the advertised set fails clearly and cannot resolve through a misleading static or front-facing fallback.
 - [ ] General schema/core APIs remain capable of representing future rig-defined clips and directions unless the approval explicitly says otherwise.

@@ -58,10 +58,10 @@
       "task": "TASK-006",
       "title": "Animation pipeline",
       "status": "changes-requested",
-      "summary": "Timing and ground contact passed, but stuck layers and unsupported back/lateral/sit claims require Tasks 010–011.",
+      "summary": "Option 1 is approved: Task 010 will narrow the starter rig to front idle/walk/run, then Task 011 repairs stuck equipped layers.",
       "href": "validation/task-006/",
-      "review": ["Approve the release selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
-      "commit": "6b09d71"
+      "review": ["Apply the approved reduced selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
+      "commit": "pending"
     },
     {
       "task": "TASK-007",

@@ -2,9 +2,10 @@
 
 ## APPROVAL-001 — starter animation scope for the first release
 
-- **Status:** PENDING
+- **Status:** APPROVED — OPTION 1
 - **Needed before:** TASK-010 begins
 - **Raised:** 2026-08-26
+- **Approved:** 2026-08-26
 
 ### Context
 
@@ -19,9 +20,9 @@ Task 006 human review found three separately tracked coverage defects: the adver
 
 Option 1 makes the first release smaller but honest, removes misleading generated coverage, and isolates Task 011 to repairing visible layers in the useful walk/run cycles. Option 2 preserves the original feature breadth but substantially expands art, validation, and review work. Either choice requires the rig, generator, validator, shared docs, task claims, and Pages artifacts to agree.
 
-### Approval signal
+### Decision
 
-Record `APPROVED: Option 1` or `APPROVED: Option 2` here. Until then, Task 010 and Task 011 remain blocked; Tasks 012, 014, and 015 may proceed independently, while Task 013 follows Task 012.
+The owner approved Option 1. `starter-humanoid@1` will advertise front-facing `idle`, `walk`, and `run` for the first release. Back, left, right, and `sit` are deferred. The engine remains extensible for future rigs to define those selectors. Task 010 is now ready; Task 011 remains blocked only until Task 010 applies the approved scope.
 
 ---
 

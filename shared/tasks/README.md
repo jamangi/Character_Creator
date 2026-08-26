@@ -13,7 +13,7 @@ Tasks are ordered by dependency, not by who performs them. Parallel work is safe
 | 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | IN PROGRESS | 004, 006 | Coherent, stress-testing content pack |
 | 008 | [Portable integration API](TASK-008-MEDIUM-portable-integration-api.md) | BLOCKED | 003, 005, 006 | Framework-agnostic consumption example |
 | 009 | [Release hardening](TASK-009-HIGH-release-hardening.md) | BLOCKED | 007, 008 | Tested and documented first release |
-| 010 | [Animation release scope](TASK-010-HIGH-animation-release-scope.md) | BLOCKED | 001, 002, APPROVAL-001 | Honest starter-rig selector contract |
+| 010 | [Animation release scope](TASK-010-HIGH-animation-release-scope.md) | READY | 001, 002 | Honest starter-rig selector contract |
 | 011 | [Animation fragment motion](TASK-011-HIGH-animation-fragment-motion.md) | BLOCKED | 010 | Equipped layers follow retained motion |
 | 012 | [Role-scoped palette rendering](TASK-012-HIGH-role-scoped-palette-rendering.md) | READY | 002, 003 | Semantic palette isolation in reusable rendering |
 | 013 | [Studio history transactions](TASK-013-MEDIUM-studio-history-transactions.md) | BLOCKED | 003, 012 | Undoable palette and hero changes |

@@ -88,7 +88,7 @@
       "summary": "Each equipped mouth now defines neutral portrait/full-body output while named expressions retain their preset-authored curves.",
       "href": "validation/task-017/",
       "review": ["Four distinct neutral mouths", "Selected mouth persists across portrait/full-body", "Named cheerful expression remains consistent"],
-      "commit": "pending"
+      "commit": "d0a1b7e"
     }
   ]
 }

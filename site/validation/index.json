@@ -51,7 +51,7 @@
       "status": "ready-for-review",
       "summary": "Palette isolation and output projections are ready for independent review; history transactions remain Task 013.",
       "href": "validation/task-005/",
-      "review": ["Palette roles affect only labeled regions", "Palette and hero-template Undo/Redo", "Portrait/sprite projection changes"],
+      "review": ["Palette roles affect only labeled regions", "Portrait/sprite projection changes", "History transactions deferred to Task 013"],
       "commit": "721e389"
     },
     {

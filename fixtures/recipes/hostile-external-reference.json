@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [],
+  "palette": {},
+  "parameters": {
+    "payload": "data:image/png;base64,not-allowed"
+  },
+  "seed": 0
+}

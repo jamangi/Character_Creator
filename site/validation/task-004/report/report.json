@@ -1,0 +1,76 @@
+{
+  "reportVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "pack": {
+    "id": "starter.character-creator",
+    "version": "1.0.0"
+  },
+  "generatedAt": "2026-08-25T19:00:00.000Z",
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "reviewRequired": 1
+  },
+  "levels": [
+    {
+      "level": "schema",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "files",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "compatibility",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "coverage",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "geometry",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "visual",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 1,
+      "status": "review"
+    },
+    {
+      "level": "distribution",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    }
+  ],
+  "findings": [
+    {
+      "level": "visual",
+      "diagnostic": {
+        "code": "VISUAL_REVIEW_REQUIRED",
+        "severity": "review-required",
+        "path": "$",
+        "message": "Automated checks passed to the visual-review boundary; inspect labeled contact sheets"
+      }
+    }
+  ]
+}

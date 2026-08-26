@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.earrings",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Drop Earrings",
+    "tags": [
+      "accessory",
+      "earrings"
+    ],
+    "thumbnail": "thumbnails/accessory-earrings.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "ear-accessory"
+    ],
+    "exclusiveGroup": "ear-accessory",
+    "requires": [
+      "appearance:ears"
+    ],
+    "conflicts": [],
+    "provides": [
+      "appearance:earrings",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "accent.base": {
+        "default": "#E8B955",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/accessory-earrings/full-body-back-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-earrings/full-body-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/accessory-earrings/full-body-left-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/accessory-earrings/full-body-right-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-earrings/portrait-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/accessory-earrings/sprite-back.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/accessory-earrings/sprite-front.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/accessory-earrings/sprite-left.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/accessory-earrings/sprite-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-earrings"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-97aefdf730b0828f93239fec44f11ec99dafc8305751891dfcd555e4777ccc53"
+  }
+}

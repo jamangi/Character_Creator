@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.pendant",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Scarf Pendant",
+    "tags": [
+      "accessory",
+      "dependency"
+    ],
+    "thumbnail": "thumbnails/accessory-pendant.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "charm"
+    ],
+    "exclusiveGroup": "charm",
+    "requires": [
+      "asset:starter.accessory.scarf"
+    ],
+    "conflicts": [],
+    "provides": [
+      "appearance:pendant",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "accent.base": {
+        "default": "#62DDE1",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/accessory-pendant/full-body-back-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-pendant/full-body-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/accessory-pendant/full-body-left-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/accessory-pendant/full-body-right-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-pendant/portrait-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/accessory-pendant/sprite-back.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/accessory-pendant/sprite-front.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/accessory-pendant/sprite-left.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/accessory-pendant/sprite-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-pendant"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-3411a20d9f6fe4d69f1429628259c060143ccb0123ef96044961d39b7461d94e"
+  }
+}

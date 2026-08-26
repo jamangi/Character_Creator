@@ -10,11 +10,11 @@ A task marked `Human validation: Required` must:
 
 1. Publish its browser-viewable output beneath `site/validation/<task-id>/`. Keep historical task paths stable.
 2. Add or update one entry in `site/validation/index.json`.
-3. Link the artifact from the landing page registry; `site/app.js` renders registry entries automatically.
+3. Link the artifact from the Studio's review strip; the Studio reads `site/validation/index.json` and renders registry entries automatically.
 4. State what changed, what the reviewer should inspect, known limitations, and the source commit.
 5. Avoid claiming approval in the task merely because deployment succeeded. Technical validation and human acceptance are separate.
 
-When the interactive Studio is ready, it may replace the landing page's preview panel or become the main route. The review registry and historical artifacts must remain reachable.
+The interactive Studio is the main route. The review registry appears beneath it, and historical artifact URLs remain stable.
 
 ## Registry shape
 

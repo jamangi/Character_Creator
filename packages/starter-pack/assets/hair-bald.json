@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.hair.bald",
+  "version": "1.0.0",
+  "kind": "hair",
+  "display": {
+    "name": "Bald",
+    "tags": [
+      "bald",
+      "hair"
+    ],
+    "thumbnail": "thumbnails/hair-bald.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "hair"
+    ],
+    "exclusiveGroup": "hair",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:hair",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "hair.base": {
+        "default": "#2A2035",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/hair-bald/full-body-back-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-bald/full-body-front-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/hair-bald/full-body-left-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/hair-bald/full-body-right-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-bald/portrait-front-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/hair-bald/sprite-back.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/hair-bald/sprite-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/hair-bald/sprite-left.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/hair-bald/sprite-right.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-bald"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-a848b056351772673be097fb099e27d30197d7cad0a070368ee7b352611a0976"
+  }
+}

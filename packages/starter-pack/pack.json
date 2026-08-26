@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.character-creator",
+  "version": "1.0.0",
+  "engine": ">=0.1.0 <1.0.0",
+  "rigFamilies": [
+    "starter-humanoid@1"
+  ],
+  "assets": [
+    {
+      "id": "starter.accessory.backpack",
+      "manifest": "assets/accessory-backpack.json",
+      "contentHash": "sha256-9308fb84967290c99467afe34b450ad40a7ad7451db39773127a2b8613fdfb0e"
+    },
+    {
+      "id": "starter.accessory.brim-hat",
+      "manifest": "assets/accessory-brim-hat.json",
+      "contentHash": "sha256-d99925d03603f5ee20f939a581e6d33f98cc353ac2a75ec360fc8f5eb9b504c8"
+    },
+    {
+      "id": "starter.accessory.communicator",
+      "manifest": "assets/accessory-communicator.json",
+      "contentHash": "sha256-dcf0b1baa993e2eb5ba9b473f1e01b9a4791b50698fecd54f6fda4d3944c86e2"
+    },
+    {
+      "id": "starter.accessory.earrings",
+      "manifest": "assets/accessory-earrings.json",
+      "contentHash": "sha256-97aefdf730b0828f93239fec44f11ec99dafc8305751891dfcd555e4777ccc53"
+    },
+    {
+      "id": "starter.accessory.glasses",
+      "manifest": "assets/accessory-glasses.json",
+      "contentHash": "sha256-fe8d6eaed5c0a05f08d7bf677d0a7116ed44d6da8dd1b3ae43f4ed4e6c836836"
+    },
+    {
+      "id": "starter.accessory.pendant",
+      "manifest": "assets/accessory-pendant.json",
+      "contentHash": "sha256-3411a20d9f6fe4d69f1429628259c060143ccb0123ef96044961d39b7461d94e"
+    },
+    {
+      "id": "starter.accessory.scarf",
+      "manifest": "assets/accessory-scarf.json",
+      "contentHash": "sha256-3a662bb9ae6cbaebcfc467c217d001baa177318ad4fc34069019fe6495e29d96"
+    },
+    {
+      "id": "starter.accessory.sketchbook",
+      "manifest": "assets/accessory-sketchbook.json",
+      "contentHash": "sha256-7d352c789778738aa7ab52a6307afc67a521a09d940da8d5a8fcba654737a65b"
+    },
+    {
+      "id": "starter.accessory.utility-harness",
+      "manifest": "assets/accessory-utility-harness.json",
+      "contentHash": "sha256-ff61b2921c3ae3d605cd93bc498e67beb6e757c33082f8d634cf917a27371498"
+    },
+    {
+      "id": "starter.accessory.wings",
+      "manifest": "assets/accessory-wings.json",
+      "contentHash": "sha256-940078b78abf2772403daad824ad7af4db6e1dcfb2e55a0acf0541ca391da1e5"
+    },
+    {
+      "id": "starter.base.broad",
+      "manifest": "assets/base-broad.json",
+      "contentHash": "sha256-aab0408b7297dfff84b9db8d9dd312ef41cff0b0c3f6268f785b35ae522ca61f"
+    },
+    {
+      "id": "starter.base.petite",
+      "manifest": "assets/base-petite.json",
+      "contentHash": "sha256-30933006ef78fcfd5517b1a009ad779e4163ffdcf73a1c5a7e7e6d74345dd098"
+    },
+    {
+      "id": "starter.base.standard",
+      "manifest": "assets/base-standard.json",
+      "contentHash": "sha256-52b9f24c4dfeacc17f28c429b81fa1d63795f3c562fefe5e6e49864bc4136f54"
+    },
+    {
+      "id": "starter.body.crystal-arm",
+      "manifest": "assets/body-crystal-arm.json",
+      "contentHash": "sha256-cff75330a7205c3719901bd4552ea8b7e522ff07c3f1f567a76dd06b73e89c50"
+    },
+    {
+      "id": "starter.body.vine-arm",
+      "manifest": "assets/body-vine-arm.json",
+      "contentHash": "sha256-7b4517d4f89a6313f926197dc8c8959c512fa95461e9867a2361035671f66631"
+    },
+    {
+      "id": "starter.bottom.fitted-pants",
+      "manifest": "assets/bottom-fitted-pants.json",
+      "contentHash": "sha256-62ef8e0dc6693a19507072dd580f9fee1423952b18597fc799b1a01ed101f844"
+    },
+    {
+      "id": "starter.bottom.shorts",
+      "manifest": "assets/bottom-shorts.json",
+      "contentHash": "sha256-e454524e0c1b7e9c3f7da09093c9c62ba6de2c5f507bf37beb3dbb614ab2bcec"
+    },
+    {
+      "id": "starter.bottom.wide-trousers",
+      "manifest": "assets/bottom-wide-trousers.json",
+      "contentHash": "sha256-981596ba8896e736fed7cc77c0f5b2a0d408973201fdaa64420adc18ce052adf"
+    },
+    {
+      "id": "starter.brows.arched",
+      "manifest": "assets/brows-arched.json",
+      "contentHash": "sha256-00945a7a0a37e815812dde685706ca0f58c28a2578866d753896cceeeec5790a"
+    },
+    {
+      "id": "starter.brows.bold",
+      "manifest": "assets/brows-bold.json",
+      "contentHash": "sha256-cbc0e459a66608d156ec33b17dfd534f0ed7fe8274c0198c7e746308040a4ec1"
+    },
+    {
+      "id": "starter.brows.soft",
+      "manifest": "assets/brows-soft.json",
+      "contentHash": "sha256-547a015070ef9833a742857ec36424187e41e001b56dc737327c883b8f6131a1"
+    },
+    {
+      "id": "starter.brows.straight",
+      "manifest": "assets/brows-straight.json",
+      "contentHash": "sha256-9dedb163620ed62c417d7675448a97282ab3d9ac05de30be3463197013b35a51"
+    },
+    {
+      "id": "starter.ears.fae",
+      "manifest": "assets/ears-fae.json",
+      "contentHash": "sha256-f6dc8e24eab7a34c7c38736fae77f1d457c052f6082d5ae0c6c506c069d4e4da"
+    },
+    {
+      "id": "starter.ears.pointed",
+      "manifest": "assets/ears-pointed.json",
+      "contentHash": "sha256-1f5aa292ac4fa0e98e66f04d863a5ad884933c53024b7858bea7e3e128a2aeb4"
+    },
+    {
+      "id": "starter.ears.round",
+      "manifest": "assets/ears-round.json",
+      "contentHash": "sha256-70def31c366291afd9ec7d92f37c2cd3fa481c1b0144f95fef33f0884d06264f"
+    },
+    {
+      "id": "starter.eyes.almond",
+      "manifest": "assets/eyes-almond.json",
+      "contentHash": "sha256-8571249769964c396af6a46951bde91e27ffd3735e8dbc80631c268a6ed4b847"
+    },
+    {
+      "id": "starter.eyes.bright",
+      "manifest": "assets/eyes-bright.json",
+      "contentHash": "sha256-23e6f3417d067c569847193c29a30a170931b66dacbcbc33a114739dbfe49ef9"
+    },
+    {
+      "id": "starter.eyes.deep",
+      "manifest": "assets/eyes-deep.json",
+      "contentHash": "sha256-34fb04bcfd49ac3ededd354fe4b0298486b5b5c733abe287afd401f07820f356"
+    },
+    {
+      "id": "starter.eyes.round",
+      "manifest": "assets/eyes-round.json",
+      "contentHash": "sha256-9fd0f124f45e1c7c0220e77660639ec24ce460142612aa392f133904b7343b21"
+    },
+    {
+      "id": "starter.hair.asymmetric",
+      "manifest": "assets/hair-asymmetric.json",
+      "contentHash": "sha256-d463ac5fe322c4a29685b0a6a3d3a64efaf617da80a19c6ee4dd34a93d24c032"
+    },
+    {
+      "id": "starter.hair.bald",
+      "manifest": "assets/hair-bald.json",
+      "contentHash": "sha256-a848b056351772673be097fb099e27d30197d7cad0a070368ee7b352611a0976"
+    },
+    {
+      "id": "starter.hair.bob",
+      "manifest": "assets/hair-bob.json",
+      "contentHash": "sha256-5ff8b6678f98968ece52639d41e4a7c2860e9708985dd8d81c9318316cc5c931"
+    },
+    {
+      "id": "starter.hair.coiled",
+      "manifest": "assets/hair-coiled.json",
+      "contentHash": "sha256-4749992c7121fda23c470b7060a79ea6ad64a427e0cc5ff1fbda9c312f826e07"
+    },
+    {
+      "id": "starter.hair.cropped",
+      "manifest": "assets/hair-cropped.json",
+      "contentHash": "sha256-2de530df51b77135b0ae344e03657b5e17751ada75b518ce24835689d8b2c7ea"
+    },
+    {
+      "id": "starter.hair.long-straight",
+      "manifest": "assets/hair-long-straight.json",
+      "contentHash": "sha256-a3ee967cd7f1c8b6ccdbf7ecc312b3c6ff90e36984a1bfeeb0a7518ef89c187a"
+    },
+    {
+      "id": "starter.hair.long-wavy",
+      "manifest": "assets/hair-long-wavy.json",
+      "contentHash": "sha256-57d0df382cbdb48baea927560926e5769d5f3d4979d13954a74eef1b68c32adb"
+    },
+    {
+      "id": "starter.hair.ponytail",
+      "manifest": "assets/hair-ponytail.json",
+      "contentHash": "sha256-e743836c1ec4b3e3dbaa02740212756bc312cf9fce502dba677c7a3b15f75483"
+    },
+    {
+      "id": "starter.head.oval",
+      "manifest": "assets/head-oval.json",
+      "contentHash": "sha256-6dd7fd4849c10f62167d982ef0604215b0185af56feb9685293ff79ad05696fc"
+    },
+    {
+      "id": "starter.head.round",
+      "manifest": "assets/head-round.json",
+      "contentHash": "sha256-48f4d3c77e04f2216587a8762c738da5357221395be34357750f4bd1b2a49fbc"
+    },
+    {
+      "id": "starter.head.soft-square",
+      "manifest": "assets/head-soft-square.json",
+      "contentHash": "sha256-98c35903dbe2c06c4ea29ab50a4e4e78be49ce70a4f17c97902899329d76d138"
+    },
+    {
+      "id": "starter.marking.freckles",
+      "manifest": "assets/marking-freckles.json",
+      "contentHash": "sha256-ef6593817905c3954dd7ad89d53365a99c78eef7fc46ac5235157e053d3a0f25"
+    },
+    {
+      "id": "starter.marking.liner",
+      "manifest": "assets/marking-liner.json",
+      "contentHash": "sha256-69f24cd5d8f2085644f2a83bb023f3538f67cf5bf61f924e44e3ea0bf99a6374"
+    },
+    {
+      "id": "starter.marking.runes",
+      "manifest": "assets/marking-runes.json",
+      "contentHash": "sha256-4a4d0bf8afe149590d805d1a6e7b847d204bac607b919e320ff0abee27f0fa84"
+    },
+    {
+      "id": "starter.marking.scar",
+      "manifest": "assets/marking-scar.json",
+      "contentHash": "sha256-1ebdf9cc8c3f0e51e1f36b857d8be96a5666b13582bdd8c470101da38cd6563d"
+    },
+    {
+      "id": "starter.mouth.firm",
+      "manifest": "assets/mouth-firm.json",
+      "contentHash": "sha256-5b357a95990a985c0da2ff7a80957b57376a3714673c7aee2dfb89f775421111"
+    },
+    {
+      "id": "starter.mouth.smile",
+      "manifest": "assets/mouth-smile.json",
+      "contentHash": "sha256-be52e15bc3c5032bb5d4667223a8bff1ecad7e2aa0c26bc7f0bed7e5aee5062f"
+    },
+    {
+      "id": "starter.mouth.smirk",
+      "manifest": "assets/mouth-smirk.json",
+      "contentHash": "sha256-5f959e7db26af20703ee18c82bc023db271fb691d83d107c81313b87ec5a2fe1"
+    },
+    {
+      "id": "starter.mouth.soft",
+      "manifest": "assets/mouth-soft.json",
+      "contentHash": "sha256-80c2b0af729dc5b44b72c58c81445d3daf0a4c4c858c89447676f2cd2da5b59c"
+    },
+    {
+      "id": "starter.nose.bridge",
+      "manifest": "assets/nose-bridge.json",
+      "contentHash": "sha256-6ca5d83bea3b5b9bf6913e03489094829b3d065c884fca8c94bf782f03a39ca6"
+    },
+    {
+      "id": "starter.nose.button",
+      "manifest": "assets/nose-button.json",
+      "contentHash": "sha256-869dee1c825a4bcefdd1f2f7afc9e45041a45c89961995770e1110aa948377f0"
+    },
+    {
+      "id": "starter.nose.soft",
+      "manifest": "assets/nose-soft.json",
+      "contentHash": "sha256-530135babfc9a56f2606fd9267ba93ac49bfa4dce808b03b30ca9ded24492e70"
+    },
+    {
+      "id": "starter.outerwear.long-coat",
+      "manifest": "assets/outerwear-long-coat.json",
+      "contentHash": "sha256-95a92638217f12ef6c7738f33ede2b464a36313c4072a71e6a61f69ef56ff4fb"
+    },
+    {
+      "id": "starter.outerwear.short-jacket",
+      "manifest": "assets/outerwear-short-jacket.json",
+      "contentHash": "sha256-59d0fc77b24ed4c265fa09cf356326e88782cbec0abcd55b37b07723d84296e2"
+    },
+    {
+      "id": "starter.outfit.simple",
+      "manifest": "assets/outfit-simple.json",
+      "contentHash": "sha256-b652399b09588d75c39e4fdfbea72e343a73a47284c41cca6f55c7e6646126d2"
+    },
+    {
+      "id": "starter.shoes.boots",
+      "manifest": "assets/shoes-boots.json",
+      "contentHash": "sha256-8da1280948398853d0ce2596be60dd77ede2e8f62303b33e17914fdd2eeb00b4"
+    },
+    {
+      "id": "starter.shoes.crystal-feet",
+      "manifest": "assets/shoes-crystal-feet.json",
+      "contentHash": "sha256-08a6569259bbe7fc5d639d81d8f7f2534c886d418846b3f79caf1729972e21aa"
+    },
+    {
+      "id": "starter.shoes.low",
+      "manifest": "assets/shoes-low.json",
+      "contentHash": "sha256-87093afa9e86df0637901f5673ed3ccac1a80d1e5207927e74d2df4eb42db8fe"
+    },
+    {
+      "id": "starter.shoes.tall-boots",
+      "manifest": "assets/shoes-tall-boots.json",
+      "contentHash": "sha256-ef6f0c2d2d57c15645cf1e39c5c2db3fc9ef113bff8f40f7f9fc5ea30949a8ec"
+    },
+    {
+      "id": "starter.top.fitted-shirt",
+      "manifest": "assets/top-fitted-shirt.json",
+      "contentHash": "sha256-fb376b4acb9f19b201856bab9eefd85edaf5c866a1923356bec0fc7cdbe21ad9"
+    },
+    {
+      "id": "starter.top.formal-vest",
+      "manifest": "assets/top-formal-vest.json",
+      "contentHash": "sha256-7e9094f1c3df3b82b79823f9dc1efc7ddc67cb7e7793dbd3b6973b1880fce96a"
+    },
+    {
+      "id": "starter.top.loose-shirt",
+      "manifest": "assets/top-loose-shirt.json",
+      "contentHash": "sha256-2c9db7aa26c9bf3730f42e6ebdfc21f56b276d7eb7e5260c785c2c1e19e8d27a"
+    },
+    {
+      "id": "starter.top.sweater",
+      "manifest": "assets/top-sweater.json",
+      "contentHash": "sha256-039243f6a99c025d47510896285c6fdc85795ee9a7cbd2caad8f91c3fa6da970"
+    }
+  ],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null
+  }
+}

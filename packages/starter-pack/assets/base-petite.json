@@ -1,0 +1,3298 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.base.petite",
+  "version": "1.0.0",
+  "kind": "base-body",
+  "display": {
+    "name": "Petite Body",
+    "tags": [
+      "body",
+      "petite"
+    ],
+    "thumbnail": "thumbnails/base-petite.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:petite-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "base-body"
+    ],
+    "exclusiveGroup": "base-body",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:body",
+      "appearance:eyes",
+      "appearance:mouth",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "skin.base": {
+        "default": "#C98261",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body.back.core",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-back-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.back.left-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-back-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.front.core",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-front-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.front.left-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-front-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.left.core",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.left.left-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.right.core",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.right.left-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/base-petite/full-body-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait.front.core",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-petite/portrait-front-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "face.eyes",
+        "face.mouth"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "face.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite.idle.back.center.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-back-center-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.back.center.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-back-center-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.front.center.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-front-center-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.front.center.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-front-center-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.left.center.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-left-center-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.left.center.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-left-center-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.right.center.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-right-center-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.right.center.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-petite/sprite-idle-right-center-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-back-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-back-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-back-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-back-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.flight-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-back-flight-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.flight-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-back-flight-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.flight-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-back-flight-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.back.flight-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-back-flight-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-front-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-front-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-front-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-front-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-front-flight-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-front-flight-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-front-flight-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-front-flight-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-left-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-left-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-left-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-left-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.flight-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-left-flight-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.flight-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-left-flight-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.flight-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-left-flight-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.left.flight-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-left-flight-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-right-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-run-right-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-right-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-run-right-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.flight-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-right-flight-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.flight-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-petite/sprite-run-right-flight-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.flight-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-right-flight-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.right.flight-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-petite/sprite-run-right-flight-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.back.seated.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-back-seated-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.back.seated.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-back-seated-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.front.seated.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-front-seated-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.front.seated.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-front-seated-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.left.seated.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-left-seated-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.left.seated.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-left-seated-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.right.seated.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-right-seated-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.sit.right.seated.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "sit",
+        "frame": "seated"
+      },
+      "source": "images/base-petite/sprite-sit-right-seated-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-back-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-back-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-back-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-back-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.pass-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-back-pass-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.pass-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-back-pass-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.pass-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-back-pass-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.back.pass-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "back",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-back-pass-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-front-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-front-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-front-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-front-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-front-pass-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-front-pass-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-front-pass-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-front-pass-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-left-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-left-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-left-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-left-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.pass-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-left-pass-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.pass-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-left-pass-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.pass-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-left-pass-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.left.pass-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "left",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-left-pass-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.contact-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-right-contact-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.contact-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-petite/sprite-walk-right-contact-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.contact-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-right-contact-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.contact-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-petite/sprite-walk-right-contact-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.pass-left.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-right-pass-left-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.pass-left.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-petite/sprite-walk-right-pass-left-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.pass-right.core",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-right-pass-right-core.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.head.skin",
+        "body.torso.skin",
+        "body.arm.right.skin",
+        "body.leg.left.skin",
+        "body.leg.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.head.base",
+        "body.torso.base",
+        "body.arm.right.base",
+        "body.legs.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.right.pass-right.left-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "right",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-petite/sprite-walk-right-pass-right-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-30933006ef78fcfd5517b1a009ad779e4163ffdcf73a1c5a7e7e6d74345dd098"
+  }
+}

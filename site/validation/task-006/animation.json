@@ -1,0 +1,551 @@
+{
+  "hero": "Everyday Layered",
+  "loop": true,
+  "atlas": {
+    "file": "atlas.png",
+    "width": 690,
+    "height": 590
+  },
+  "frames": [
+    {
+      "key": "idle.front.center",
+      "file": "frames/idle-front-center.png",
+      "durationMs": 500,
+      "contacts": [
+        "foot.left.sole",
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "idle.back.center",
+      "file": "frames/idle-back-center.png",
+      "durationMs": 500,
+      "contacts": [
+        "foot.left.sole",
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "idle.left.center",
+      "file": "frames/idle-left-center.png",
+      "durationMs": 500,
+      "contacts": [
+        "foot.left.sole",
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "idle.right.center",
+      "file": "frames/idle-right-center.png",
+      "durationMs": 500,
+      "contacts": [
+        "foot.left.sole",
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.front.contact-left",
+      "file": "frames/run-front-contact-left.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.front.flight-left",
+      "file": "frames/run-front-flight-left.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.front.contact-right",
+      "file": "frames/run-front-contact-right.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.front.flight-right",
+      "file": "frames/run-front-flight-right.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.back.contact-left",
+      "file": "frames/run-back-contact-left.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.back.flight-left",
+      "file": "frames/run-back-flight-left.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 590,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.back.contact-right",
+      "file": "frames/run-back-contact-right.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 492,
+      "y": 2,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.back.flight-right",
+      "file": "frames/run-back-flight-right.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.left.contact-left",
+      "file": "frames/run-left-contact-left.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 492,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.left.flight-left",
+      "file": "frames/run-left-flight-left.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.left.contact-right",
+      "file": "frames/run-left-contact-right.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 590,
+      "y": 100,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.left.flight-right",
+      "file": "frames/run-left-flight-right.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.right.contact-left",
+      "file": "frames/run-right-contact-left.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.right.flight-left",
+      "file": "frames/run-right-flight-left.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.right.contact-right",
+      "file": "frames/run-right-contact-right.png",
+      "durationMs": 85,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "run.right.flight-right",
+      "file": "frames/run-right-flight-right.png",
+      "durationMs": 85,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 492,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "sit.front.seated",
+      "file": "frames/sit-front-seated.png",
+      "durationMs": 500,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "sit.back.seated",
+      "file": "frames/sit-back-seated.png",
+      "durationMs": 500,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 590,
+      "y": 198,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "sit.left.seated",
+      "file": "frames/sit-left-seated.png",
+      "durationMs": 500,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "sit.right.seated",
+      "file": "frames/sit-right-seated.png",
+      "durationMs": 500,
+      "contacts": [],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.front.contact-left",
+      "file": "frames/walk-front-contact-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.front.pass-left",
+      "file": "frames/walk-front-pass-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.front.contact-right",
+      "file": "frames/walk-front-contact-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.front.pass-right",
+      "file": "frames/walk-front-pass-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.back.contact-left",
+      "file": "frames/walk-back-contact-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.back.pass-left",
+      "file": "frames/walk-back-pass-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 492,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.back.contact-right",
+      "file": "frames/walk-back-contact-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.back.pass-right",
+      "file": "frames/walk-back-pass-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 590,
+      "y": 296,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.left.contact-left",
+      "file": "frames/walk-left-contact-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.left.pass-left",
+      "file": "frames/walk-left-pass-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 590,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.left.contact-right",
+      "file": "frames/walk-left-contact-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 492,
+      "y": 394,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.left.pass-right",
+      "file": "frames/walk-left-pass-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 2,
+      "y": 492,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.right.contact-left",
+      "file": "frames/walk-right-contact-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 100,
+      "y": 492,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.right.pass-left",
+      "file": "frames/walk-right-pass-left.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.left.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 296,
+      "y": 492,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.right.contact-right",
+      "file": "frames/walk-right-contact-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 198,
+      "y": 492,
+      "width": 96,
+      "height": 96
+    },
+    {
+      "key": "walk.right.pass-right",
+      "file": "frames/walk-right-pass-right.png",
+      "durationMs": 120,
+      "contacts": [
+        "foot.right.sole"
+      ],
+      "groundLine": 88,
+      "mirrored": false,
+      "x": 394,
+      "y": 492,
+      "width": 96,
+      "height": 96
+    }
+  ]
+}

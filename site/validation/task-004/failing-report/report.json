@@ -1,0 +1,77 @@
+{
+  "reportVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "pack": {
+    "id": "starter.character-creator",
+    "version": "1.0.0"
+  },
+  "generatedAt": "2026-08-25T19:00:00.000Z",
+  "summary": {
+    "errors": 1,
+    "warnings": 0,
+    "reviewRequired": 0
+  },
+  "levels": [
+    {
+      "level": "schema",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "files",
+      "errors": 1,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "fail"
+    },
+    {
+      "level": "compatibility",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "coverage",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "geometry",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "visual",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "distribution",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    }
+  ],
+  "findings": [
+    {
+      "level": "files",
+      "diagnostic": {
+        "code": "FILE_MISSING",
+        "severity": "error",
+        "path": "images/accessory-backpack/full-body-back-any.png",
+        "message": "Required file is missing: images/accessory-backpack/full-body-back-any.png",
+        "assetId": "starter.accessory.backpack"
+      }
+    }
+  ]
+}

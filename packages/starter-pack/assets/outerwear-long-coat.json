@@ -1,0 +1,607 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.outerwear.long-coat",
+  "version": "1.0.0",
+  "kind": "outerwear",
+  "display": {
+    "name": "Long Tailed Coat",
+    "tags": [
+      "clothing",
+      "coat",
+      "multi-plane",
+      "shoulder-crossing"
+    ],
+    "thumbnail": "thumbnails/outerwear-long-coat.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "outerwear"
+    ],
+    "exclusiveGroup": "outerwear",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:outerwear",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "garment.secondary": {
+        "default": "#244B3C",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-back-any-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-back-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-back-any-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-front-any-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-front-any-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-left-any-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-left-any-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-right-any-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/full-body-right-any-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any.back",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/portrait-front-any-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-any.front",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outerwear-long-coat/portrait-front-any-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/outerwear-long-coat/sprite-back-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-back.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/outerwear-long-coat/sprite-back-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/outerwear-long-coat/sprite-front-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/outerwear-long-coat/sprite-front-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/outerwear-long-coat/sprite-left-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/outerwear-long-coat/sprite-left-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/outerwear-long-coat/sprite-right-back.png",
+      "plane": "garment-behind-body",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.tail"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/outerwear-long-coat/sprite-right-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-long-coat",
+        "coat.front"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-95a92638217f12ef6c7738f33ede2b464a36313c4072a71e6a61f69ef56ff4fb"
+  }
+}

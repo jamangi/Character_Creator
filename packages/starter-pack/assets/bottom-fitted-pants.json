@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.bottom.fitted-pants",
+  "version": "1.0.0",
+  "kind": "bottom",
+  "display": {
+    "name": "Fitted Pants",
+    "tags": [
+      "clothing",
+      "fitted",
+      "recolorable"
+    ],
+    "thumbnail": "thumbnails/bottom-fitted-pants.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "bottom"
+    ],
+    "exclusiveGroup": "bottom",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:bottom",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "garment.secondary": {
+        "default": "#332A55",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/bottom-fitted-pants/full-body-back-any.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/bottom-fitted-pants/full-body-front-any.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/bottom-fitted-pants/full-body-left-any.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/bottom-fitted-pants/full-body-right-any.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/bottom-fitted-pants/portrait-front-any.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/bottom-fitted-pants/sprite-back.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/bottom-fitted-pants/sprite-front.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/bottom-fitted-pants/sprite-left.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/bottom-fitted-pants/sprite-right.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.bottom-fitted-pants"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-62ef8e0dc6693a19507072dd580f9fee1423952b18597fc799b1a01ed101f844"
+  }
+}

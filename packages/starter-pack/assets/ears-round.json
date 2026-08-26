@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.ears.round",
+  "version": "1.0.0",
+  "kind": "face",
+  "display": {
+    "name": "Round Ears",
+    "tags": [
+      "ears",
+      "face"
+    ],
+    "thumbnail": "thumbnails/ears-round.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "ears"
+    ],
+    "exclusiveGroup": "ears",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:ears",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "skin.base": {
+        "default": "#B96F56",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/ears-round/full-body-back-any.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/ears-round/full-body-front-any.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/ears-round/full-body-left-any.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/ears-round/full-body-right-any.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/ears-round/portrait-front-any.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/ears-round/sprite-back.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/ears-round/sprite-front.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/ears-round/sprite-left.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/ears-round/sprite-right.png",
+      "plane": "face-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "skin.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.ears-round"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-70def31c366291afd9ec7d92f37c2cd3fa481c1b0144f95fef33f0884d06264f"
+  }
+}

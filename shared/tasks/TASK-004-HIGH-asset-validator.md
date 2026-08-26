@@ -1,6 +1,6 @@
 # TASK-004-HIGH-asset-validator
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Give asset creators a fast CLI/library that validates packs and generates useful visual review artifacts.
 - **Depends on:** 001, 002
 - **Unblocks:** 006, 007
@@ -16,12 +16,12 @@
 
 ## Acceptance criteria
 
-- [ ] A single command validates the starter pack and emits a report directory.
-- [ ] Invalid fixtures fail for the intended reason without cascades hiding the root cause.
-- [ ] Contact sheets identify recipe, profile, view/clip/frame, asset versions, and engine version.
-- [ ] CI can use a no-GUI mode and a nonzero exit status.
-- [ ] Reports distinguish errors, warnings, and review-required findings.
-- [ ] Representative contact sheets and a sanitized validation report are published to Pages.
+- [x] A single command validates the starter pack and emits a report directory.
+- [x] Invalid fixtures fail for the intended reason without cascades hiding the root cause.
+- [x] Contact sheets identify recipe, profile, view/clip/frame, asset versions, and engine version.
+- [x] CI can use a no-GUI mode and a nonzero exit status.
+- [x] Reports distinguish errors, warnings, and review-required findings.
+- [x] Representative contact sheets and a sanitized validation report are published to Pages.
 
 ## Validation
 
@@ -33,3 +33,9 @@ Run against all contract fixtures plus deliberately corrupt images and manifests
 - **Pages path:** `site/validation/task-004/`
 
 Publish representative passing and failing reports plus labeled contact sheets. Ask the reviewer whether the report language is understandable, whether defects are easy to locate, and whether the sheets support efficient art review.
+
+## Handoff notes
+
+- Implemented a framework-independent seven-level validator, PNG inspection, stable JSON/HTML reports, native contact sheets, and a CLI with no-GUI/nonzero-exit support in `packages/asset-validator/`.
+- Added one failing fixture for every validator diagnostic and a clean full-starter-pack regression across every hero request.
+- Published passing/failing reports and a representative sheet at `site/validation/task-004/`. Technical acceptance is complete; the task remains `IN PROGRESS` pending human report-usability review.

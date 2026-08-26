@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.communicator",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "One-sided Communicator",
+    "tags": [
+      "accessory",
+      "asymmetric",
+      "no-mirror"
+    ],
+    "thumbnail": "thumbnails/accessory-communicator.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "ear-accessory"
+    ],
+    "exclusiveGroup": "ear-accessory",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:communicator"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "accent.base": {
+        "default": "#E3AC54",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/accessory-communicator/full-body-back-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-communicator/full-body-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/accessory-communicator/full-body-left-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/accessory-communicator/full-body-right-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-communicator/portrait-front-any.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/accessory-communicator/sprite-back.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/accessory-communicator/sprite-front.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/accessory-communicator/sprite-left.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/accessory-communicator/sprite-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-dcf0b1baa993e2eb5ba9b473f1e01b9a4791b50698fecd54f6fda4d3944c86e2"
+  }
+}

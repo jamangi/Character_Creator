@@ -1,6 +1,6 @@
 # TASK-007-HIGH-starter-asset-pack
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Ship a cohesive first asset pack that proves aesthetic range and stresses every important contract feature.
 - **Depends on:** 004, 006
 - **Unblocks:** 009
@@ -16,13 +16,13 @@
 
 ## Acceptance criteria
 
-- [ ] All promised assets and advertised selectors are present.
-- [ ] The pack passes required validator levels and license/provenance checks.
+- [x] All promised assets and advertised selectors are present.
+- [x] The pack passes required validator levels and license/provenance checks.
 - [ ] Three hero recipes pass expression, turnaround, and animation visual review.
 - [ ] Pairwise/adversarial sheets have no untriaged seam, halo, occlusion, or ground-contact defects.
-- [ ] Body-profile fit support is honest and machine-readable.
-- [ ] Pack size and decode/render performance fit documented budgets.
-- [ ] Pages publishes the three hero sheets and navigable combination/stress-test galleries.
+- [x] Body-profile fit support is honest and machine-readable.
+- [x] Pack size and decode/render performance fit documented budgets.
+- [x] Pages publishes the three hero sheets and navigable combination/stress-test galleries.
 
 ## Validation
 
@@ -38,3 +38,10 @@ Publish the three hero recipes first, then the expression, turnaround, animation
 ## Non-goals
 
 Maximizing catalog count, mixing unrelated art styles, or accepting assets solely because they are schema-valid.
+
+## Handoff notes
+
+- Generated 62 CC0 assets under one deterministic flat-shaded art direction: 3 body profiles, 8 skin tones, reusable face channels for 12 expressions, 8 hairstyles, the full clothing list, replacement anatomy, and all required accessory stress cases.
+- Three hero recipes resolve across 12 expressions, 4 full-body views, and 40 animation requests. Technical validation covers 105 hair/head/outer and body-fit cases plus palette/adversarial galleries.
+- The built-in image-generation skill produced three project-bound art-direction references; executable assets remain deterministic Canvas-authored PNG data. Exact prompts are recorded in `packages/starter-pack/REFERENCE_PROMPTS.md`.
+- Published the explicit checkpoint at `site/validation/task-007/`. Hero and pairwise visual-review criteria remain unchecked until a human accepts aesthetic appeal, consistency, seams, occlusion, recolor, and range.

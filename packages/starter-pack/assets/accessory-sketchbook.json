@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.sketchbook",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Sketchbook",
+    "tags": [
+      "accessory",
+      "handheld"
+    ],
+    "thumbnail": "thumbnails/accessory-sketchbook.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "handheld"
+    ],
+    "exclusiveGroup": "handheld",
+    "requires": [
+      "anchor:hand.left.grip"
+    ],
+    "conflicts": [],
+    "provides": [
+      "appearance:handheld"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "accent.base": {
+        "default": "#805842",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/accessory-sketchbook/full-body-back-any.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-sketchbook/full-body-front-any.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/accessory-sketchbook/full-body-left-any.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/accessory-sketchbook/full-body-right-any.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-sketchbook/portrait-front-any.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/accessory-sketchbook/sprite-back.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/accessory-sketchbook/sprite-front.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/accessory-sketchbook/sprite-left.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/accessory-sketchbook/sprite-right.png",
+      "plane": "foreground",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-sketchbook"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-7d352c789778738aa7ab52a6307afc67a521a09d940da8d5a8fcba654737a65b"
+  }
+}

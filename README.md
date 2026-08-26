@@ -28,7 +28,7 @@ This preserves the extensibility of a bald-base system while supporting the stro
 
 ## Repository map
 
-This repository contains the design foundation plus the first executable vertical slice:
+This repository contains the design foundation, portable engine, editing Studio, validation tooling, animation exporter, and deterministic starter content:
 
 - [`root/`](root/README.md) — root-task operating notes, decisions, approvals, and the task template.
 - [`shared/`](shared/README.md) — architecture and contracts that every implementation task must follow.
@@ -37,9 +37,13 @@ This repository contains the design foundation plus the first executable vertica
 - [`packages/schema/`](packages/schema/README.md) — executable JSON Schemas, TypeScript contracts, diagnostics, and normalization.
 - [`packages/core/`](packages/core/README.md) — framework-agnostic catalog and deterministic composition resolution.
 - [`packages/renderer-canvas/`](packages/renderer-canvas/README.md) — Canvas 2D rendering of resolved draw lists.
-- [`fixtures/`](fixtures/) — valid, invalid, and visual conformance fixtures.
+- [`packages/asset-validator/`](packages/asset-validator/README.md) — seven-level asset-pack validation, contact sheets, and artist-facing reports.
+- [`packages/creator-ui/`](packages/creator-ui/README.md) — framework-neutral editing state, history, catalog filtering, and recipe I/O.
+- [`packages/starter-pack/`](packages/starter-pack/README.md) — CC0 starter content, hero recipes, art-direction references, and animation coverage.
+- [`apps/studio/`](apps/studio/) — the responsive reference Creator Studio published at the Pages root.
+- [`fixtures/`](fixtures/) — valid, invalid, recipe, animation, validator, and visual conformance fixtures.
 
-The intended implementation layout is documented in [`shared/ARCHITECTURE.md`](shared/ARCHITECTURE.md). Do not create the planned package directories until the task that owns them begins.
+The implementation layout and package boundaries are documented in [`shared/ARCHITECTURE.md`](shared/ARCHITECTURE.md).
 
 ## Start here
 
@@ -60,6 +64,9 @@ With Node.js and pnpm available:
 pnpm install
 pnpm validate
 pnpm visuals
+pnpm validator --root packages/starter-pack --out artifacts/validator
+pnpm starter-pack
+pnpm review-artifacts
 ```
 
-`pnpm validate` runs project-reference type checking and all contract, resolver, and exact-pixel renderer tests. `pnpm visuals` regenerates the Task 002 fragment fixtures and Pages review artifact.
+`pnpm validate` runs project-reference type checking and the full automated test suite. `pnpm visuals` regenerates the Task 002 fixtures; the remaining commands run the asset validator, regenerate the starter pack and Studio, and rebuild the Pages review artifacts.

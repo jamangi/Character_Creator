@@ -1,0 +1,66 @@
+{
+  "reportVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "pack": {
+    "id": "starter.character-creator",
+    "version": "1.0.0"
+  },
+  "generatedAt": "2026-08-26T00:24:06.128Z",
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "reviewRequired": 0
+  },
+  "levels": [
+    {
+      "level": "schema",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "files",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "compatibility",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "coverage",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "geometry",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "visual",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    },
+    {
+      "level": "distribution",
+      "errors": 0,
+      "warnings": 0,
+      "reviewRequired": 0,
+      "status": "pass"
+    }
+  ],
+  "findings": []
+}

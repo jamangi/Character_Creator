@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "0.0.1",
+  "engineVersion": "0.1.0",
+  "rig": "starter-humanoid@1",
+  "assets": [
+    "starter.base.standard",
+    "starter.hair.long-waves"
+  ],
+  "palette": {
+    "skin.base": "#D79A83",
+    "hair.base": "#3B335C"
+  },
+  "parameters": {
+    "expression": "neutral"
+  },
+  "seed": 7,
+  "metadata": {
+    "name": "Legacy Hero"
+  }
+}

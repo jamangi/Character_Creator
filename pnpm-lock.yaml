@@ -23,6 +23,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.1.11
         version: 4.1.11(vitest@4.1.11)
+      esbuild:
+        specifier: ^0.28.2
+        version: 0.28.2
       pixelmatch:
         specifier: ^7.2.0
         version: 7.2.0
@@ -39,8 +42,32 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@26.3.0)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.3.0)(esbuild@0.28.2)(tsx@4.23.12))
 
+  packages/asset-validator:
+    dependencies:
+      '@character-creator/core':
+        specifier: workspace:*
+        version: link:../core
+      '@character-creator/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@napi-rs/canvas':
+        specifier: ^1.0.8
+        version: 1.0.8
+      pngjs:
+        specifier: ^7.0.0
+        version: 7.0.0
+
   packages/core:
     dependencies:
+      '@character-creator/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/creator-ui:
+    dependencies:
+      '@character-creator/core':
+        specifier: workspace:*
+        version: link:../core
       '@character-creator/schema':
         specifier: workspace:*
         version: link:../schema
@@ -62,6 +89,8 @@ importers:
       ajv-formats:
         specifier: ^3.0.1
         version: 3.0.1(ajv@8.20.0)
+
+  packages/starter-pack: {}
 
 packages:
 

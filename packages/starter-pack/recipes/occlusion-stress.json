@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [
+    {
+      "assetId": "starter.accessory.brim-hat",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.accessory.wings",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.base.broad",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.bottom.wide-trousers",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.brows.bold",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.ears.fae",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.eyes.deep",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.hair.coiled",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.head.round",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.mouth.smile",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.nose.button",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.outerwear.long-coat",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.shoes.low",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.top.sweater",
+      "version": "1.0.0"
+    }
+  ],
+  "palette": {
+    "accent.base": "#54314D",
+    "garment.primary": "#D4A73A",
+    "garment.secondary": "#244B3C",
+    "hair.base": "#8A4A2C",
+    "skin.base": "#714330"
+  },
+  "parameters": {
+    "expression": "neutral"
+  },
+  "seed": 3003,
+  "metadata": {
+    "name": "Occlusion Stress"
+  }
+}

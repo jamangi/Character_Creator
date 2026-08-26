@@ -1,0 +1,5 @@
+[
+  { "code": "MISSING_MOTION_ARTWORK", "fixture": "remove one anatomy-critical frame" },
+  { "code": "FOOT_CONTACT_DRIFT", "fixture": "move a declared contact three pixels above ground" },
+  { "code": "ATLAS_PACK_FAILED", "fixture": "submit a frame wider than the atlas budget" }
+]

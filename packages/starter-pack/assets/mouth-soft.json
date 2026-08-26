@@ -1,0 +1,653 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.mouth.soft",
+  "version": "1.0.0",
+  "kind": "face",
+  "display": {
+    "name": "Soft Mouth",
+    "tags": [
+      "face",
+      "mouth"
+    ],
+    "thumbnail": "thumbnails/mouth-soft.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "mouth"
+    ],
+    "exclusiveGroup": "mouth",
+    "requires": [
+      "appearance:head"
+    ],
+    "conflicts": [],
+    "provides": [
+      "appearance:mouth",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "mouth.base": {
+        "default": "#8B3E5A",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/mouth-soft/full-body-back-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/mouth-soft/full-body-front-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/mouth-soft/full-body-left-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/mouth-soft/full-body-right-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-annoyed",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "annoyed"
+      },
+      "source": "images/mouth-soft/portrait-front-annoyed.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-cheerful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "cheerful"
+      },
+      "source": "images/mouth-soft/portrait-front-cheerful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-concerned",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "concerned"
+      },
+      "source": "images/mouth-soft/portrait-front-concerned.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-confident",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "confident"
+      },
+      "source": "images/mouth-soft/portrait-front-confident.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-determined",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "determined"
+      },
+      "source": "images/mouth-soft/portrait-front-determined.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-focused",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "focused"
+      },
+      "source": "images/mouth-soft/portrait-front-focused.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-neutral",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "neutral"
+      },
+      "source": "images/mouth-soft/portrait-front-neutral.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-playful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "playful"
+      },
+      "source": "images/mouth-soft/portrait-front-playful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-smirk",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "smirk"
+      },
+      "source": "images/mouth-soft/portrait-front-smirk.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-surprised",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "surprised"
+      },
+      "source": "images/mouth-soft/portrait-front-surprised.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-thoughtful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "thoughtful"
+      },
+      "source": "images/mouth-soft/portrait-front-thoughtful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-tired",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "tired"
+      },
+      "source": "images/mouth-soft/portrait-front-tired.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/mouth-soft/sprite-back.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/mouth-soft/sprite-front.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/mouth-soft/sprite-left.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/mouth-soft/sprite-right.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "mouth.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.mouth-soft"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-80c2b0af729dc5b44b72c58c81445d3daf0a4c4c858c89447676f2cd2da5b59c"
+  }
+}

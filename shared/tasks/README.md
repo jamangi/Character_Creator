@@ -5,12 +5,12 @@ Tasks are ordered by dependency, not by who performs them. Parallel work is safe
 | Order | Task | Status | Depends on | Primary result |
 |---:|---|---|---|---|
 | 001 | [Contracts and fixtures](TASK-001-HIGH-contracts-and-fixtures.md) | DONE | — | Executable schema and rig vocabulary |
-| 002 | [Composition vertical slice](TASK-002-HIGH-composition-vertical-slice.md) | IN PROGRESS | 001 | Resolver + Canvas proof across all outputs |
-| 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | READY | 001 | Versioned import/export and migration |
-| 004 | [Asset validator](TASK-004-HIGH-asset-validator.md) | BLOCKED | 001, 002 | Artist-facing conformance tooling |
-| 005 | [Creator Studio](TASK-005-HIGH-creator-studio.md) | BLOCKED | 002, 003 | Reference editing UI |
-| 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | BLOCKED | 002, 004 | Directional clips and sprite export |
-| 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | BLOCKED | 004, 006 | Coherent, stress-testing content pack |
+| 002 | [Composition vertical slice](TASK-002-HIGH-composition-vertical-slice.md) | DONE | 001 | Resolver + Canvas proof across all outputs |
+| 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | DONE | 001 | Versioned import/export and migration |
+| 004 | [Asset validator](TASK-004-HIGH-asset-validator.md) | IN PROGRESS | 001, 002 | Artist-facing conformance tooling |
+| 005 | [Creator Studio](TASK-005-HIGH-creator-studio.md) | IN PROGRESS | 002, 003 | Reference editing UI |
+| 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | IN PROGRESS | 002, 004 | Directional clips and sprite export |
+| 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | IN PROGRESS | 004, 006 | Coherent, stress-testing content pack |
 | 008 | [Portable integration API](TASK-008-MEDIUM-portable-integration-api.md) | BLOCKED | 003, 005, 006 | Framework-agnostic consumption example |
 | 009 | [Release hardening](TASK-009-HIGH-release-hardening.md) | BLOCKED | 007, 008 | Tested and documented first release |
 

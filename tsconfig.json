@@ -3,7 +3,8 @@
   "references": [
     { "path": "packages/schema" },
     { "path": "packages/core" },
-    { "path": "packages/renderer-canvas" }
+    { "path": "packages/renderer-canvas" },
+    { "path": "packages/asset-validator" },
+    { "path": "packages/creator-ui" }
   ]
 }
-

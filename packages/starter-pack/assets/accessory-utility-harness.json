@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.accessory.utility-harness",
+  "version": "1.0.0",
+  "kind": "accessory",
+  "display": {
+    "name": "Utility Harness",
+    "tags": [
+      "accessory",
+      "multi-slot"
+    ],
+    "thumbnail": "thumbnails/accessory-utility-harness.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "handheld",
+      "waist-accessory"
+    ],
+    "exclusiveGroup": "waist-accessory.handheld",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:harness",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "accent.base": {
+        "default": "#5C443A",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/accessory-utility-harness/full-body-back-any.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-utility-harness/full-body-front-any.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/accessory-utility-harness/full-body-left-any.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/accessory-utility-harness/full-body-right-any.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/accessory-utility-harness/portrait-front-any.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/accessory-utility-harness/sprite-back.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/accessory-utility-harness/sprite-front.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/accessory-utility-harness/sprite-left.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/accessory-utility-harness/sprite-right.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-utility-harness"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-ff61b2921c3ae3d605cd93bc498e67beb6e757c33082f8d634cf917a27371498"
+  }
+}

@@ -1,6 +1,6 @@
 # TASK-005-HIGH-creator-studio
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Deliver a reference browser Studio for creating, previewing, diagnosing, importing, and exporting characters.
 - **Depends on:** 002, 003
 - **Unblocks:** 008, 009
@@ -17,13 +17,13 @@
 
 ## Acceptance criteria
 
-- [ ] A user can build all hero recipes without editing JSON.
-- [ ] Invalid equips are explained and never corrupt the last valid recipe.
-- [ ] Undo/redo and export/import preserve exact choices.
-- [ ] Preview switching does not mutate the recipe.
-- [ ] Core and renderer remain usable without the Studio.
-- [ ] Accessibility checks and representative keyboard workflows pass.
-- [ ] The current Studio build is usable from the GitHub Pages main route and links to historical review artifacts remain intact.
+- [x] A user can build all hero recipes without editing JSON.
+- [x] Invalid equips are explained and never corrupt the last valid recipe.
+- [x] Undo/redo and export/import preserve exact choices.
+- [x] Preview switching does not mutate the recipe.
+- [x] Core and renderer remain usable without the Studio.
+- [x] Accessibility checks and representative keyboard workflows pass.
+- [x] The current Studio build is usable from the GitHub Pages main route and links to historical review artifacts remain intact.
 
 ## Validation
 
@@ -35,3 +35,9 @@ Component/unit tests, end-to-end creator flows, accessibility scan, keyboard-onl
 - **Pages path:** Main Pages route plus `site/validation/task-005/`
 
 Publish the interactive Studio and a concise review script covering discovery, equip conflicts, palette changes, undo/redo, output switching, and recipe round-trip. Ask the reviewer to accept or flag usability, clarity, visual hierarchy, and mobile/desktop behavior.
+
+## Handoff notes
+
+- Added `packages/creator-ui/` for DOM-free catalog queries, compatibility-safe equip actions, body profiles, palette state, deterministic randomization, history, preview state, and exact recipe round trips.
+- Published the bundled Studio at the main Pages route using the public resolver and Canvas renderer. Native controls, visible focus, semantic labels, reduced-motion behavior, and wide/narrow layouts are covered.
+- Published the human review script at `site/validation/task-005/`. Technical acceptance is complete; the task remains `IN PROGRESS` pending human usability review.

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [
+    {
+      "assetId": "starter.accessory.glasses",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.accessory.sketchbook",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.base.standard",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.bottom.fitted-pants",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.brows.arched",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.ears.round",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.eyes.round",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.hair.long-wavy",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.head.oval",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.mouth.soft",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.nose.soft",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.outerwear.short-jacket",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.shoes.boots",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.top.fitted-shirt",
+      "version": "1.0.0"
+    }
+  ],
+  "palette": {
+    "accent.base": "#D0A34A",
+    "garment.primary": "#4ED7E8",
+    "garment.secondary": "#70456F",
+    "hair.base": "#39345E",
+    "skin.base": "#B96F56"
+  },
+  "parameters": {
+    "expression": "neutral"
+  },
+  "seed": 1001,
+  "metadata": {
+    "name": "Everyday Layered"
+  }
+}

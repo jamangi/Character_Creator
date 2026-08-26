@@ -1,0 +1,13 @@
+[
+  { "code": "FILE_MISSING", "mutation": "missing" },
+  { "code": "FILE_DECODE_FAILED", "mutation": "decode" },
+  { "code": "IMAGE_DIMENSION_MISMATCH", "mutation": "dimensions" },
+  { "code": "IMAGE_ALPHA_MISSING", "mutation": "alpha" },
+  { "code": "CONTENT_HASH_MISMATCH", "mutation": "hash" },
+  { "code": "BUDGET_EXCEEDED", "mutation": "budget" },
+  { "code": "GEOMETRY_OUT_OF_BOUNDS", "mutation": "bounds" },
+  { "code": "GROUND_CONTACT_INVALID", "mutation": "contact" },
+  { "code": "MIRRORING_UNSAFE", "mutation": "mirror" },
+  { "code": "DISTRIBUTION_METADATA_MISSING", "mutation": "distribution" },
+  { "code": "VISUAL_REVIEW_REQUIRED", "mutation": "visual" }
+]

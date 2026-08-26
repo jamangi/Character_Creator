@@ -1,0 +1,653 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.eyes.almond",
+  "version": "1.0.0",
+  "kind": "face",
+  "display": {
+    "name": "Almond Eyes",
+    "tags": [
+      "eyes",
+      "face"
+    ],
+    "thumbnail": "thumbnails/eyes-almond.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "eyes"
+    ],
+    "exclusiveGroup": "eyes",
+    "requires": [
+      "appearance:head"
+    ],
+    "conflicts": [],
+    "provides": [
+      "appearance:eyes",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "eyes.iris": {
+        "default": "#9C7CFF",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/eyes-almond/full-body-back-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/eyes-almond/full-body-front-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/eyes-almond/full-body-left-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/eyes-almond/full-body-right-any.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-annoyed",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "annoyed"
+      },
+      "source": "images/eyes-almond/portrait-front-annoyed.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-cheerful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "cheerful"
+      },
+      "source": "images/eyes-almond/portrait-front-cheerful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-concerned",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "concerned"
+      },
+      "source": "images/eyes-almond/portrait-front-concerned.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-confident",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "confident"
+      },
+      "source": "images/eyes-almond/portrait-front-confident.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-determined",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "determined"
+      },
+      "source": "images/eyes-almond/portrait-front-determined.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-focused",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "focused"
+      },
+      "source": "images/eyes-almond/portrait-front-focused.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-neutral",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "neutral"
+      },
+      "source": "images/eyes-almond/portrait-front-neutral.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-playful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "playful"
+      },
+      "source": "images/eyes-almond/portrait-front-playful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-smirk",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "smirk"
+      },
+      "source": "images/eyes-almond/portrait-front-smirk.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-surprised",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "surprised"
+      },
+      "source": "images/eyes-almond/portrait-front-surprised.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-thoughtful",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "thoughtful"
+      },
+      "source": "images/eyes-almond/portrait-front-thoughtful.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-tired",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "tired"
+      },
+      "source": "images/eyes-almond/portrait-front-tired.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/eyes-almond/sprite-back.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/eyes-almond/sprite-front.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/eyes-almond/sprite-left.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/eyes-almond/sprite-right.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "eyes.iris"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.eyes-almond"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-8571249769964c396af6a46951bde91e27ffd3735e8dbc80631c268a6ed4b847"
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.hair.cropped",
+  "version": "1.0.0",
+  "kind": "hair",
+  "display": {
+    "name": "Cropped",
+    "tags": [
+      "hair",
+      "short"
+    ],
+    "thumbnail": "thumbnails/hair-cropped.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "hair"
+    ],
+    "exclusiveGroup": "hair",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:hair",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "hair.base": {
+        "default": "#2B2447",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/hair-cropped/full-body-back-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-cropped/full-body-front-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/hair-cropped/full-body-left-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/hair-cropped/full-body-right-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-cropped/portrait-front-any.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/hair-cropped/sprite-back.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/hair-cropped/sprite-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/hair-cropped/sprite-left.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/hair-cropped/sprite-right.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-cropped"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-2de530df51b77135b0ae344e03657b5e17751ada75b518ce24835689d8b2c7ea"
+  }
+}

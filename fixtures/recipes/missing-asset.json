@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [
+    { "assetId": "starter.base.standard", "version": "1.0.0" },
+    { "assetId": "starter.accessory.unavailable", "version": "9.0.0" }
+  ],
+  "palette": {},
+  "parameters": {},
+  "seed": 99
+}

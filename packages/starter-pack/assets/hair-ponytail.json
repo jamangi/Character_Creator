@@ -1,0 +1,606 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.hair.ponytail",
+  "version": "1.0.0",
+  "kind": "hair",
+  "display": {
+    "name": "High Ponytail",
+    "tags": [
+      "hair",
+      "multi-plane",
+      "ponytail"
+    ],
+    "thumbnail": "thumbnails/hair-ponytail.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "hair"
+    ],
+    "exclusiveGroup": "hair",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:hair",
+      "mirror.safe"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "hair.base": {
+        "default": "#6B3B50",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [],
+  "fragments": [
+    {
+      "id": "full-body-back-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-back-any-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-back-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-back-any-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-front-any-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-front-any-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-left-any-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-left-any-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-right-any-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/full-body-right-any-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any.back",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/portrait-front-any-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait-front-any.front",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/hair-ponytail/portrait-front-any-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-back.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/hair-ponytail/sprite-back-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-back.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "back"
+      },
+      "source": "images/hair-ponytail/sprite-back-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/hair-ponytail/sprite-front-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-front.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front"
+      },
+      "source": "images/hair-ponytail/sprite-front-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/hair-ponytail/sprite-left-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-left.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "left"
+      },
+      "source": "images/hair-ponytail/sprite-left-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/hair-ponytail/sprite-right-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-right.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "right"
+      },
+      "source": "images/hair-ponytail/sprite-right-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-ponytail",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-e743836c1ec4b3e3dbaa02740212756bc312cf9fce502dba677c7a3b15f75483"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "skinTones": [
+    "#F6D2B8",
+    "#E9B995",
+    "#D99A72",
+    "#C98261",
+    "#B96F56",
+    "#96543F",
+    "#714330",
+    "#4A2A24"
+  ],
+  "notes": "Highlights move 12% toward warm ivory; shadows move 18% toward dark violet without hue-clipping."
+}

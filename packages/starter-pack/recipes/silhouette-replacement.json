@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "0.1.0",
+  "engineVersion": "0.1.0",
+  "rigFamily": "starter-humanoid@1",
+  "equipped": [
+    {
+      "assetId": "starter.accessory.communicator",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.base.petite",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.body.crystal-arm",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.brows.straight",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.ears.pointed",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.eyes.almond",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.hair.asymmetric",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.head.soft-square",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.mouth.smirk",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.nose.bridge",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.outerwear.short-jacket",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.outfit.simple",
+      "version": "1.0.0"
+    },
+    {
+      "assetId": "starter.shoes.crystal-feet",
+      "version": "1.0.0"
+    }
+  ],
+  "palette": {
+    "accent.base": "#E3AC54",
+    "crystal.base": "#61D8E4",
+    "garment.primary": "#DD6E57",
+    "garment.secondary": "#30283D",
+    "hair.base": "#123F4D",
+    "skin.base": "#C98261"
+  },
+  "parameters": {
+    "expression": "neutral"
+  },
+  "seed": 2002,
+  "metadata": {
+    "name": "Silhouette Replacement"
+  }
+}

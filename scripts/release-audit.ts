@@ -27,7 +27,10 @@ const selected: string[] = [];
 for (const item of roots) {
   try { selected.push(...await filesBelow(join(root, item))); } catch { /* Missing output is reported below. */ }
 }
-const unique = [...new Set(selected)].filter((path) => !excludedPrefixes.includes(relative(root, path).replaceAll("\\", "/"))).sort();
+const unique = [...new Set(selected)].filter((path) => {
+  const name = relative(root, path).replaceAll("\\", "/");
+  return !excludedPrefixes.includes(name) && !name.endsWith("/.tsbuildinfo");
+}).sort();
 const manifest: Array<{ path: string; bytes: number; sha256: string }> = [];
 const absoluteLeaks: string[] = [];
 for (const path of unique) {

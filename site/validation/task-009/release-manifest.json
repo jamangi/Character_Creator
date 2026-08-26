@@ -2,11 +2,6 @@
   "algorithm": "sha256",
   "files": [
     {
-      "path": "packages/asset-validator/dist/.tsbuildinfo",
-      "bytes": 80510,
-      "sha256": "b544a10aca2595d615075ca86ab10ae28ef8fae7e6173d28f2ee66816be66ef0"
-    },
-    {
       "path": "packages/asset-validator/dist/cli.d.ts",
       "bytes": 64,
       "sha256": "6f77e82bfb5dd3b1015dd92c63e427d505f9bbbdaa041cad6c704f41c553a536"
@@ -145,11 +140,6 @@
       "path": "packages/asset-validator/dist/validator.js.map",
       "bytes": 9387,
       "sha256": "7eb807e4f2b96da11f3d1c5a084049e6480a495bce7baa00401616e398cfe1bd"
-    },
-    {
-      "path": "packages/core/dist/.tsbuildinfo",
-      "bytes": 77153,
-      "sha256": "36e0adcae7eb816346b351dc3d09cc9ab0886668ee536609af5d88fc67a7d784"
     },
     {
       "path": "packages/core/dist/animation.d.ts",
@@ -292,11 +282,6 @@
       "sha256": "a7de897b48fe57bf54d6f84169135ff2e89e2fc95ea0a0a815761cc29a41efee"
     },
     {
-      "path": "packages/creator-ui/dist/.tsbuildinfo",
-      "bytes": 77909,
-      "sha256": "7f31a3b8eacfb52cc9c44bbd2e2edd3b5676ef86b8fda75bd3720a2af1278f3c"
-    },
-    {
       "path": "packages/creator-ui/dist/index.d.ts",
       "bytes": 91,
       "sha256": "5f59d62f78e4954dc98d80acce52ce063d22a46baad09baba487190b0c1febc3"
@@ -355,11 +340,6 @@
       "path": "packages/creator-ui/dist/types.js.map",
       "bytes": 102,
       "sha256": "a7de897b48fe57bf54d6f84169135ff2e89e2fc95ea0a0a815761cc29a41efee"
-    },
-    {
-      "path": "packages/renderer-canvas/dist/.tsbuildinfo",
-      "bytes": 78066,
-      "sha256": "0cc20cc186489126c88ce86b78ed719d1cc23fc88e5a36ec2de932afcddff52a"
     },
     {
       "path": "packages/renderer-canvas/dist/atlas.d.ts",
@@ -460,11 +440,6 @@
       "path": "packages/renderer-canvas/dist/types.js.map",
       "bytes": 102,
       "sha256": "a7de897b48fe57bf54d6f84169135ff2e89e2fc95ea0a0a815761cc29a41efee"
-    },
-    {
-      "path": "packages/schema/dist/.tsbuildinfo",
-      "bytes": 90215,
-      "sha256": "31d216c62e084ac083c3d1789bb2ce50494c194afe6edf91b9ee4d58883654fc"
     },
     {
       "path": "packages/schema/dist/diagnostics.d.ts",

@@ -287,7 +287,7 @@ function drawLayer(context: SKRSContext2D, definition: AssetDefinition, request:
       const open = expression === "surprised";
       if (open) ellipse(context, m.cx, m.headY + 22 * s, 5 * s, 7 * s, definition.color, 1 * s);
       else {
-        const curves: Record<string, [number, number, number]> = {
+        const expressionCurves: Record<string, [number, number, number]> = {
           smirk: [23, 24, 18],
           cheerful: [20, 28, 20],
           confident: [21, 26, 20],
@@ -298,7 +298,15 @@ function drawLayer(context: SKRSContext2D, definition: AssetDefinition, request:
           tired: [23, 21, 23],
           determined: [23, 21, 23]
         };
-        const curve = curves[expression] ?? [22, 22, 22];
+        const neutralCurves: Record<string, [number, number, number]> = {
+          "mouth.soft": [22, 24, 22],
+          "mouth.smile": [20, 28, 20],
+          "mouth.firm": [22, 22, 22],
+          "mouth.smirk": [23, 24, 18]
+        };
+        const curve = expression === "neutral" || expression === "*"
+          ? neutralCurves[definition.key] ?? [22, 22, 22]
+          : expressionCurves[expression] ?? [22, 22, 22];
         line(context, [[m.cx - 10 * s, m.headY + curve[0] * s], [m.cx, m.headY + curve[1] * s], [m.cx + 10 * s, m.headY + curve[2] * s]], definition.color, 2.5 * s);
       }
       return;

@@ -2,13 +2,13 @@
   "generatedAt": "2026-08-26T19:00:00.000Z",
   "assets": 62,
   "pngFiles": 1209,
-  "decodedSourceBytes": 1549441,
+  "decodedSourceBytes": 1555538,
   "packBudgetBytes": 33554432,
   "withinPackBudget": true,
   "renderSample": {
     "iterations": 25,
-    "totalMs": 283.36,
-    "averageMs": 11.33,
+    "totalMs": 232.59,
+    "averageMs": 9.3,
     "targetAverageMs": 20
   }
 }

@@ -89,6 +89,7 @@ Do not require every item to contain the full Cartesian product of expressions, 
 
 - Hair and hats usually provide portrait/full-body view fragments and sprite direction/animation fragments, but reuse the same fragment across facial expressions.
 - Eyes, brows, and mouths provide expression variants but do not need walking-leg variants.
+- An equipped mouth asset defines the neutral/dominant mouth channel in portrait and full-body output. Named non-neutral expression presets may override its curve so expression intent remains consistent across mouth selections.
 - Pants and shoes provide motion-frame variants but do not need portrait fragments unless visible in the portrait crop.
 - A static accessory may declare a safe fallback from `walk.left-leg` to `walk.default`; a foot or leg asset may not.
 

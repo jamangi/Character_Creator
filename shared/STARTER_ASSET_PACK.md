@@ -15,6 +15,7 @@ Use one coherent art direction, one rig family, one line-weight/shading guide, a
 - 8 representative skin tones with documented highlight/shadow behavior.
 - 3 head shapes, 3 nose treatments, 4 eye shapes, 4 brow sets, and 4 mouth sets.
 - All 12 expression presets, implemented through reusable face channels.
+- The equipped mouth choice supplies the neutral portrait/full-body mouth; named non-neutral expressions retain their preset-authored curves.
 
 ### Hair and distinguishing features
 

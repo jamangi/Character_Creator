@@ -35,13 +35,14 @@ The Studio exposes four mouth assets, but their portrait/full-body artwork curre
 
 ## Acceptance criteria
 
-- [ ] Every mouth choice has a visibly distinct neutral portrait and full-body result.
-- [ ] Changing only the mouth selection changes neutral mouth pixels and no unrelated equipped choice.
-- [ ] A representative non-neutral expression remains expression-authored for every mouth choice.
-- [ ] Sprite output still omits the mouth without mutating the recipe.
-- [ ] Preview and exported PNG use the same resolved scene.
-- [ ] Automated regression and deterministic artifact generation pass.
-- [ ] Relevant documentation is updated.
+- [x] Every mouth choice has a visibly distinct neutral portrait and full-body result.
+- [x] Changing only the mouth selection changes neutral mouth pixels and no unrelated equipped choice.
+- [x] A representative non-neutral expression remains expression-authored for every mouth choice.
+- [x] Sprite output still omits the mouth without mutating the recipe.
+- [x] Preview and exported PNG use the same resolved scene.
+- [x] Automated regression and deterministic artifact generation pass.
+- [x] Relevant documentation is updated.
+- [ ] The Task 017 visual checkpoint passes owner review.
 
 ## Validation
 
@@ -56,4 +57,4 @@ Publish a four-mouth neutral comparison in portrait and full-body scale plus a r
 
 ## Handoff notes
 
-The owner pre-approved this as the first task in the follow-up remediation order on 2026-08-26. Record final curve mapping, test evidence, artifact provenance, and human result here.
+The owner pre-approved this as the first task in the follow-up remediation order on 2026-08-26. Neutral curve mapping is Soft `[22,24,22]`, Warm Smile `[20,28,20]`, Firm `[22,22,22]`, and Side Smirk `[23,24,18]`; non-neutral presets keep the Task 015 mapping. Generated portrait/full-body hashes are distinct for all four neutral mouths while the cheerful portrait hash is identical across choices. `pnpm validate` passes 79 tests, and two full generation runs produced aggregate hash `a7b40afab7051c14a2104c8dc1ac95ed31112c89ccb829e51a52a8efee9b31dc` across 2,613 deterministic files. Human acceptance remains pending.

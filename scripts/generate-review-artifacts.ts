@@ -36,6 +36,7 @@ const task4Root = join(root, "site/validation/task-004");
 const task5Root = join(root, "site/validation/task-005");
 const task6Root = join(root, "site/validation/task-006");
 const task7Root = join(root, "site/validation/task-007");
+const task17Root = join(root, "site/validation/task-017");
 const generatedAt = "2026-08-26T19:00:00.000Z";
 
 async function withUnknownRetry<T>(operation: () => Promise<T>): Promise<T> {
@@ -90,7 +91,8 @@ for (const generatedPath of [
   join(task6Root, "before"),
   join(task7Root, "renders"),
   join(task7Root, "sheets"),
-  join(task7Root, "galleries")
+  join(task7Root, "galleries"),
+  join(task17Root, "renders")
 ]) await rm(generatedPath, { recursive: true, force: true });
 await rm(join(task6Root, "asymmetric-explicit.png"), { force: true });
 
@@ -391,6 +393,47 @@ await writeFile(join(task5Root, "proofs", "output-profile-projections.json"), `$
   recipeByteIdenticalAfterRendering: outputRecipeAfter === outputRecipeText,
   hiddenSlots: Object.fromEntries(rig.profiles.map((profile) => [profile.id, profile.hiddenSlots ?? []]))
 }, null, 2)}\n`, "utf8");
+
+const mouthAssets = assets
+  .filter((asset) => asset.equip.slots.includes("mouth"))
+  .sort((left, right) => left.display.name.localeCompare(right.display.name));
+const neutralPortraitMouths: RenderedItem[] = [];
+const neutralFullBodyMouths: RenderedItem[] = [];
+const cheerfulPortraitMouths: RenderedItem[] = [];
+const mouthProofCases: Array<Record<string, unknown>> = [];
+for (const mouth of mouthAssets) {
+  const recipe = equip(openFaceRecipe, mouth.id);
+  const neutralPortraitRequest = { profile: "portrait" as const, view: "front", expression: "neutral" };
+  const neutralFullBodyRequest = { profile: "full-body" as const, view: "front", expression: "neutral" };
+  const cheerfulPortraitRequest = { profile: "portrait" as const, view: "front", expression: "cheerful" };
+  const neutralPortrait = await render(recipe, neutralPortraitRequest);
+  const neutralFullBody = await render(recipe, neutralFullBodyRequest);
+  const cheerfulPortrait = await render(recipe, cheerfulPortraitRequest);
+  const key = mouth.id.split(".").at(-1) ?? mouth.id;
+  await saveCanvas(join(task17Root, "renders", `${key}-neutral-portrait.png`), neutralPortrait);
+  await saveCanvas(join(task17Root, "renders", `${key}-neutral-full-body.png`), neutralFullBody);
+  await saveCanvas(join(task17Root, "renders", `${key}-cheerful-portrait.png`), cheerfulPortrait);
+  neutralPortraitMouths.push({ label: `${mouth.display.name} · neutral portrait`, canvas: neutralPortrait, request: neutralPortraitRequest, recipe });
+  neutralFullBodyMouths.push({ label: `${mouth.display.name} · neutral full body`, canvas: neutralFullBody, request: neutralFullBodyRequest, recipe });
+  cheerfulPortraitMouths.push({ label: `${mouth.display.name} · cheerful preset`, canvas: cheerfulPortrait, request: cheerfulPortraitRequest, recipe });
+  mouthProofCases.push({
+    assetId: mouth.id,
+    name: mouth.display.name,
+    neutralPortraitSha256: createHash("sha256").update(neutralPortrait.toBuffer("image/png")).digest("hex"),
+    neutralFullBodySha256: createHash("sha256").update(neutralFullBody.toBuffer("image/png")).digest("hex"),
+    cheerfulPortraitSha256: createHash("sha256").update(cheerfulPortrait.toBuffer("image/png")).digest("hex")
+  });
+}
+const uniqueProofHashes = (key: string): number => new Set(mouthProofCases.map((item) => item[key])).size;
+if (mouthAssets.length !== 4 || uniqueProofHashes("neutralPortraitSha256") !== 4 || uniqueProofHashes("neutralFullBodySha256") !== 4 || uniqueProofHashes("cheerfulPortraitSha256") !== 1) {
+  throw new Error(`Selected-mouth proof failed: ${JSON.stringify(mouthProofCases)}`);
+}
+await saveCanvas(join(task17Root, "selected-mouth-dominance.png"), await contactSheet([
+  ...neutralPortraitMouths,
+  ...neutralFullBodyMouths,
+  ...cheerfulPortraitMouths
+], 4, 250, 405));
+await writeFile(join(task17Root, "selected-mouth-dominance.json"), `${JSON.stringify({ generatedAt, cases: mouthProofCases }, null, 2)}\n`, "utf8");
 
 const allPaths = new Set(assets.flatMap((asset) => [asset.display.thumbnail, ...asset.fragments.map((fragment) => fragment.source)]));
 const files = new Map<string, FileInspection>();

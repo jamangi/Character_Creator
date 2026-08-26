@@ -5,7 +5,7 @@
       "role": "skin.base",
       "hero": "Everyday Layered",
       "value": "#F6D2B8",
-      "changedPixels": 4779
+      "changedPixels": 4791
     },
     {
       "role": "skin.shadow",
@@ -17,7 +17,7 @@
       "role": "mouth.base",
       "hero": "Everyday Layered",
       "value": "#356EEA",
-      "changedPixels": 44
+      "changedPixels": 42
     },
     {
       "role": "hair.base",

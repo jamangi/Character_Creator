@@ -200,7 +200,7 @@ The proposed expression list is a good content target, but it belongs to the rig
 
 `neutral`, `smirk`, `concerned`, `focused`, `cheerful`, `annoyed`, `thoughtful`, `surprised`, `tired`, `confident`, `determined`, `playful`.
 
-For authoring reuse, define an expression as eye/brow/mouth channel choices plus optional overrides. Face assets implement channels; a rig expression preset selects them. Assets such as a hand-to-chin pose may opt into an expression-specific override, but clothing should not duplicate twelve identical portrait files.
+For authoring reuse, define an expression as eye/brow/mouth channel choices plus optional overrides. Face assets implement channels; a rig expression preset selects them. In the starter pack, the equipped mouth supplies the neutral/dominant portrait and full-body curve, while named non-neutral expression presets intentionally override that neutral curve. Assets such as a hand-to-chin pose may opt into an expression-specific override, but clothing should not duplicate twelve identical portrait files.
 
 For sprites, prefer stable clips and frame IDs:
 

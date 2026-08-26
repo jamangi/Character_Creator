@@ -80,6 +80,15 @@
       "href": "validation/sprint-010-015/",
       "review": ["Task 012 changes requested", "Task 014 accepted", "Task 011 accepted", "Task 015 accepted"],
       "commit": "721e389"
+    },
+    {
+      "task": "TASK-017",
+      "title": "Selected mouth dominance",
+      "status": "ready-for-review",
+      "summary": "Each equipped mouth now defines neutral portrait/full-body output while named expressions retain their preset-authored curves.",
+      "href": "validation/task-017/",
+      "review": ["Four distinct neutral mouths", "Selected mouth persists across portrait/full-body", "Named cheerful expression remains consistent"],
+      "commit": "pending"
     }
   ]
 }

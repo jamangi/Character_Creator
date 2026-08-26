@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { resolveAnimation, resolveCharacter } from "@character-creator/core";
@@ -16,6 +17,7 @@ import { validatePack } from "./validator.js";
 
 const root = process.cwd();
 const readJson = (path: string): unknown => JSON.parse(readFileSync(join(root, path), "utf8")) as unknown;
+const fileHash = (path: string): string => createHash("sha256").update(readFileSync(join(root, path))).digest("hex");
 
 function packFixtures(): {
   rig: RigDefinition;
@@ -114,6 +116,27 @@ describe("starter asset pack conformance", () => {
     expect(fullBody.drawList.some((item) => item.contentSlots.includes("shoes"))).toBe(true);
     expect(fullBody.drawList.some((item) => item.contentSlots.includes("mouth"))).toBe(true);
     expect(JSON.stringify(recipe)).toBe(before);
+  });
+
+  it("uses the equipped mouth for neutral output while retaining expression-authored curves", () => {
+    const { assets } = packFixtures();
+    const mouths = assets.filter((asset) => asset.equip.slots.includes("mouth"));
+    expect(mouths).toHaveLength(4);
+    const sourceFor = (asset: AssetManifest, profile: "portrait" | "full-body", expression: string): string => {
+      const fragment = asset.fragments.find((candidate) =>
+        candidate.selector.profile === profile &&
+        candidate.selector.view === "front" &&
+        (candidate.selector.expression === expression || (profile === "full-body" && candidate.selector.expression === "*"))
+      );
+      if (fragment === undefined) throw new Error(`Missing ${asset.id} ${profile}/${expression}`);
+      return `packages/starter-pack/${fragment.source}`;
+    };
+    const neutralPortraitHashes = mouths.map((asset) => fileHash(sourceFor(asset, "portrait", "neutral")));
+    const neutralFullBodyHashes = mouths.map((asset) => fileHash(sourceFor(asset, "full-body", "neutral")));
+    const cheerfulHashes = mouths.map((asset) => fileHash(sourceFor(asset, "portrait", "cheerful")));
+    expect(new Set(neutralPortraitHashes).size).toBe(mouths.length);
+    expect(new Set(neutralFullBodyHashes).size).toBe(mouths.length);
+    expect(new Set(cheerfulHashes).size).toBe(1);
   });
 
   it("gives every visible hero asset exact retained-frame motion groups", () => {

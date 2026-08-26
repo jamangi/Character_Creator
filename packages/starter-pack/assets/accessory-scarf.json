@@ -37,7 +37,7 @@
   },
   "palette": {
     "roles": {
-      "accent.base": {
+      "accessory.neck": {
         "default": "#70456F",
         "mode": "replace"
       }
@@ -61,7 +61,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -94,7 +94,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -127,7 +127,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -160,7 +160,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -193,7 +193,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -227,7 +227,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -262,7 +262,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -297,7 +297,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -332,7 +332,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -367,7 +367,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -402,7 +402,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -437,7 +437,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -472,7 +472,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"
@@ -507,7 +507,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.neck"
       ],
       "contentSlots": [
         "neck-accessory"

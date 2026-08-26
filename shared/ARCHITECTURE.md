@@ -75,7 +75,7 @@ Split the jacket into logical fragments: back/tail, torso, sleeves, and foregrou
 
 ### Replacement limbs and body parts
 
-The module claims coverage tokens and suppresses the corresponding base fragments. A replacement left arm, for example, claims `body.arm.left.skin` and may remap `hand.left.grip`. The resolver rejects the character if required coverage is missing after suppression.
+The module claims coverage tokens and suppresses the corresponding base fragments. The starter base publishes separate anatomical left/right arm fragments; `body-arm-left` and `body-arm-right` replacements suppress only their matching `body.arm.<side>.base` tag and claim only `body.arm.<side>.skin`. In a front view, character-left is screen-right. The resolver rejects the character if required coverage is missing after suppression.
 
 For changes that alter silhouette, garment fit, or several anchors, prefer an atomic **body profile** containing the coordinated head/torso/limb modules plus a compatibility tag such as `fit:petite-v1`. Clothing can declare which fit tags it supports. This is more reliable than pretending every arm fits every sleeve.
 
@@ -94,6 +94,12 @@ Do not require every item to contain the full Cartesian product of expressions, 
 - A static accessory may declare a safe fallback from `walk.left-leg` to `walk.default`; a foot or leg asset may not.
 
 The rig defines legal fallback chains. The validator rejects fallbacks that would visibly break required motion or anatomy.
+
+### Stable palette identity
+
+Palette addresses describe semantic ownership, not equip order. Starter body/clothing roles are `skin.base`, `hair.base`, `garment.top`, `garment.bottom`, `garment.outfit`, `garment.outerwear`, `garment.shoes`, `body.arm.left`, and `body.arm.right`. Accessory roles follow slots: `accessory.hat`, `.face`, `.ear`, `.neck`, `.handheld`, `.back`, `.waist`, and `.charm`. An unequipped role is retained as a deterministic no-op, so colors do not move when another item is equipped or removed.
+
+Schema 0.1 normalization preserves broad legacy keys while deriving missing slot-scoped values. Explicit new values always win; the compatibility projection is deterministic and source-preserving.
 
 Executable sprite fragments identify their coupled part with `motionGroup`. Every visible group needs exact art for an advertised frame unless the asset explicitly provides `motion.static-safe`; otherwise animation resolution emits `MOTION_FALLBACK_UNSAFE`.
 

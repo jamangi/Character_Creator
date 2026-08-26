@@ -1,6 +1,6 @@
 # TASK-008-MEDIUM-portable-integration-api
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Demonstrate that a plain JavaScript project can import only the needed packages and embed the creator or renderer safely.
 - **Depends on:** 003, 005, 006
 - **Unblocks:** 009
@@ -15,12 +15,12 @@
 
 ## Acceptance criteria
 
-- [ ] The example installs/builds from published-style package artifacts.
-- [ ] A host can render a saved recipe without mounting the editor.
-- [ ] A host can mount/unmount the editor without leaked listeners or canvases.
-- [ ] No absolute developer paths or hidden workspace assumptions exist.
-- [ ] Public API and compatibility policy are documented.
-- [ ] The published Pages example proves a standalone host can render and edit a recipe.
+- [x] The example installs/builds from published-style package artifacts.
+- [x] A host can render a saved recipe without mounting the editor.
+- [x] A host can mount/unmount the editor without leaked listeners or canvases.
+- [x] No absolute developer paths or hidden workspace assumptions exist.
+- [x] Public API and compatibility policy are documented.
+- [x] The published Pages example proves a standalone host can render and edit a recipe.
 
 ## Validation
 
@@ -32,3 +32,7 @@ Clean-package smoke test, browser integration test, bundle inspection, CSP-safe 
 - **Pages path:** `site/validation/task-008/`
 
 Publish the vanilla-JS integration as an isolated example, not a repository-internal shortcut. Ask the reviewer to complete a small edit/export/import flow and confirm that the embedded experience is understandable outside the reference Studio.
+
+## Handoff notes
+
+`examples/vanilla-js/` imports only public package names and uses a host-supplied relative asset base URL. It demonstrates a renderer-only canvas plus a mount function whose `destroy()` aborts listeners, unsubscribes state, cancels stale paints, and clears the host. Browser checks confirmed edit, zero-child unmount, and clean remount. The example’s CSP explicitly scopes the 0.1 Ajv runtime-compilation exception; strict-CSP hosts can precompile validators as documented. Owner acceptance remains pending at `site/validation/task-008/`.

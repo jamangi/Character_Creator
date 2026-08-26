@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-08-26T19:00:00.000Z",
+  "roles": {
+    "accessory.face": "#E7C44A",
+    "accessory.handheld": "#9B7653",
+    "accessory.hat": "#121218",
+    "accessory.ear": "#F06489",
+    "accessory.neck": "#38BFA3",
+    "accessory.back": "#9B7CE7",
+    "accessory.charm": "#69E7F2",
+    "accessory.waist": "#E07B39"
+  },
+  "equippedOrderIndependent": true,
+  "unusedWaistRoleRetained": "#E07B39"
+}

@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-08-26T23:00:00.000Z",
+  "releaseVersion": "0.1.0-rc.1",
+  "files": 2958,
+  "totalBytes": 22440584,
+  "packageBytes": {
+    "schema": 239540,
+    "core": 181696,
+    "renderer-canvas": 106934,
+    "asset-validator": 121418,
+    "creator-ui": 104255
+  },
+  "siteBytes": 13112518,
+  "starterBytes": 8574223,
+  "budgets": {
+    "siteBytes": 67108864,
+    "starterBytes": 33554432,
+    "packageEntryBytes": 524288
+  },
+  "checks": {
+    "missingDocs": [],
+    "absoluteDeveloperPaths": [],
+    "exampleInternalImports": [],
+    "siteWithinBudget": true,
+    "starterWithinBudget": true,
+    "packageEntriesWithinBudget": true
+  },
+  "dependencyAudit": {
+    "command": "pnpm audit --audit-level high",
+    "checkedAt": "2026-08-26",
+    "result": "No known vulnerabilities found"
+  },
+  "knownBlockers": [
+    "Owner source-code license choice (APPROVAL-002)"
+  ]
+}

@@ -1,6 +1,6 @@
 # TASK-016-HIGH-remediation-integration-review
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Reconcile the repository and obtain final human acceptance for the corrected Task 005–007 release candidate.
 - **Tracks:** DEFECT-001 through DEFECT-007; CHANGE-001 through CHANGE-008
 - **Depends on:** 012, 013, 017, 018, 019, 020
@@ -36,14 +36,14 @@ The remediation tasks intentionally keep their implementation reads narrow. Task
 
 ## Acceptance criteria
 
-- [ ] `pnpm validate` and the production validator pass on authoritative generated content.
-- [ ] Generated artifacts are reproducible and every internal Pages link resolves.
-- [ ] Studio accessibility and representative keyboard/mobile workflows pass.
+- [x] `pnpm validate` and the production validator pass on authoritative generated content.
+- [x] Generated artifacts are reproducible and every internal Pages link resolves.
+- [x] Studio accessibility and representative keyboard/mobile workflows pass.
 - [ ] Every registered defect/request is `CLOSED`/`DELIVERED` or explicitly deferred with owner approval.
 - [ ] Task 005 output/history checkpoints receive an independent human result.
 - [ ] Task 006 retained animation checkpoint receives an independent human result.
 - [ ] Task 007 expression and remaining pack checkpoints receive an independent human result.
-- [ ] Root/shared architecture, task table, task handoffs, Pages registry, and public copy agree.
+- [x] Root/shared architecture, task table, task handoffs, Pages registry, and public copy agree.
 
 ## Validation
 
@@ -58,4 +58,4 @@ The reviewer may accept or reject each checkpoint independently. Final acceptanc
 
 ## Handoff notes
 
-Record final commit/deployment provenance, automated results, each human decision, remaining deferred scope, and whether Tasks 008–009 are unblocked.
+The authoritative pack, Studio, Task 005–007 artifacts, and Tasks 017–020 evidence were regenerated together. Two repeated full generation runs produced identical aggregate SHA-256 `33c1855e7e30c9d2f412429d54d2aa51dd4b605e7b8160193b4f402f813cbf50`; all internal links across 18 HTML pages resolve. Automated and local browser checks pass; the grouped, independently approvable review is published at `site/validation/release-candidate/`. Task 017 and the prior 011/014/015 checkpoints are accepted. Tasks 018–020, 013, 016, 008, and 009 remain in progress until owner decisions; Task 009 additionally awaits APPROVAL-002 and clean-room verification.

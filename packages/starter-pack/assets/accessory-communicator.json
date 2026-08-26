@@ -34,7 +34,7 @@
   },
   "palette": {
     "roles": {
-      "accent.base": {
+      "accessory.ear": {
         "default": "#E3AC54",
         "mode": "replace"
       }
@@ -58,7 +58,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -92,7 +92,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -126,7 +126,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -160,7 +160,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -194,7 +194,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -229,7 +229,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -265,7 +265,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -301,7 +301,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -337,7 +337,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -373,7 +373,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -409,7 +409,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -445,7 +445,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -481,7 +481,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"
@@ -517,7 +517,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.ear"
       ],
       "contentSlots": [
         "ear-accessory"

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-26T19:00:00.000Z",
+  "states": [
+    {
+      "label": "Base arms · no replacements",
+      "equippedArmAssets": []
+    },
+    {
+      "label": "Left only · vine",
+      "equippedArmAssets": [
+        "starter.body.vine-arm-left"
+      ]
+    },
+    {
+      "label": "Right only · crystal",
+      "equippedArmAssets": [
+        "starter.body.crystal-arm"
+      ]
+    },
+    {
+      "label": "Both · vine left + crystal right",
+      "equippedArmAssets": [
+        "starter.body.vine-arm-left",
+        "starter.body.crystal-arm"
+      ]
+    }
+  ]
+}

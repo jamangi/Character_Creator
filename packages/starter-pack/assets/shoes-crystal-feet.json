@@ -35,7 +35,7 @@
   },
   "palette": {
     "roles": {
-      "crystal.base": {
+      "garment.shoes": {
         "default": "#61D8E4",
         "mode": "replace"
       }
@@ -59,7 +59,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -95,7 +95,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -131,7 +131,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -167,7 +167,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -204,7 +204,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -242,7 +242,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -280,7 +280,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -318,7 +318,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -356,7 +356,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -394,7 +394,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -432,7 +432,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -470,7 +470,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"
@@ -508,7 +508,7 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "garment.shoes"
       ],
       "contentSlots": [
         "shoes"

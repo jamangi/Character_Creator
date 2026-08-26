@@ -8034,12 +8034,28 @@ function sortedRecord(record) {
   );
 }
 function normalizeRecipe(recipe) {
+  const sourcePalette = recipe.palette;
+  const palette = { ...sourcePalette };
+  const inherit = (role, value) => {
+    if (value !== void 0 && sourcePalette[role] === void 0) palette[role] = value;
+  };
+  inherit("garment.top", sourcePalette["garment.primary"]);
+  inherit("garment.outfit", sourcePalette["garment.primary"]);
+  inherit("garment.bottom", sourcePalette["garment.secondary"]);
+  inherit("garment.outerwear", sourcePalette["garment.secondary"]);
+  inherit("garment.shoes", sourcePalette["crystal.base"] ?? sourcePalette["garment.secondary"]);
+  for (const role of ["accessory.hat", "accessory.face", "accessory.ear", "accessory.neck", "accessory.handheld", "accessory.back", "accessory.waist", "accessory.charm"]) {
+    inherit(role, sourcePalette["accent.base"]);
+  }
+  const legacyArm = sourcePalette["crystal.base"] ?? sourcePalette["accent.base"] ?? sourcePalette["skin.base"];
+  inherit("body.arm.left", legacyArm);
+  inherit("body.arm.right", legacyArm);
   const normalized = {
     ...recipe,
     equipped: [...recipe.equipped].sort(
       (left, right) => left.assetId.localeCompare(right.assetId) || (left.version ?? "").localeCompare(right.version ?? "") || (left.variant ?? "").localeCompare(right.variant ?? "")
     ),
-    palette: sortedRecord(recipe.palette),
+    palette: sortedRecord(palette),
     parameters: sortedRecord(recipe.parameters)
   };
   if (recipe.metadata !== void 0) normalized.metadata = sortedRecord(recipe.metadata);
@@ -10031,6 +10047,7 @@ var CreatorStore = class {
   #preview;
   #history = [];
   #future = [];
+  #paletteTransaction;
   #diagnostics = [];
   #listeners = /* @__PURE__ */ new Set();
   constructor(options) {
@@ -10067,6 +10084,7 @@ var CreatorStore = class {
     }).diagnostics;
   }
   #commit(recipe, diagnostics2 = []) {
+    this.#finishPaletteTransaction();
     const errors = this.#validate(recipe);
     if (errors.some((item) => item.severity === "error")) {
       this.#diagnostics = errors;
@@ -10118,6 +10136,41 @@ var CreatorStore = class {
   setPalette(role, value) {
     return this.#commit({ ...this.#recipe, palette: { ...this.#recipe.palette, [role]: value } });
   }
+  previewPalette(role, value) {
+    const candidate = normalizeRecipe({ ...this.#recipe, palette: { ...this.#recipe.palette, [role]: value } });
+    const errors = this.#validate(candidate);
+    if (errors.some((item) => item.severity === "error")) {
+      this.#diagnostics = errors;
+      this.#emit();
+      return { ok: false, snapshot: this.snapshot, diagnostics: errors };
+    }
+    this.#paletteTransaction ??= cloneRecipe(this.#recipe);
+    this.#recipe = candidate;
+    this.#diagnostics = [];
+    this.#emit();
+    return { ok: true, snapshot: this.snapshot, diagnostics: [] };
+  }
+  commitPalettePreview() {
+    const before = this.#paletteTransaction;
+    if (before === void 0) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
+    this.#paletteTransaction = void 0;
+    if (JSON.stringify(before) !== JSON.stringify(this.#recipe)) {
+      this.#history.push(before);
+      if (this.#history.length > 100) this.#history.shift();
+      this.#future = [];
+    }
+    this.#emit();
+    return { ok: true, snapshot: this.snapshot, diagnostics: [] };
+  }
+  #finishPaletteTransaction() {
+    const before = this.#paletteTransaction;
+    if (before === void 0) return;
+    this.#paletteTransaction = void 0;
+    if (JSON.stringify(before) === JSON.stringify(this.#recipe)) return;
+    this.#history.push(before);
+    if (this.#history.length > 100) this.#history.shift();
+    this.#future = [];
+  }
   selectBodyProfile(id) {
     const profile = this.bodyProfiles.find((candidate) => candidate.id === id);
     if (profile === void 0) {
@@ -10132,6 +10185,7 @@ var CreatorStore = class {
     return this.snapshot;
   }
   undo() {
+    this.#finishPaletteTransaction();
     const previous = this.#history.pop();
     if (previous === void 0) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
     this.#future.push(cloneRecipe(this.#recipe));
@@ -10141,6 +10195,7 @@ var CreatorStore = class {
     return { ok: true, snapshot: this.snapshot, diagnostics: [] };
   }
   redo() {
+    this.#finishPaletteTransaction();
     const next = this.#future.pop();
     if (next === void 0) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
     this.#history.push(cloneRecipe(this.#recipe));
@@ -10333,6 +10388,24 @@ var assets = [];
 var rig;
 var heroes = [];
 var renderToken = 0;
+var palettePreviewing = false;
+var paletteLabels = {
+  "body.arm.left": "left arm",
+  "body.arm.right": "right arm",
+  "garment.top": "top",
+  "garment.bottom": "bottom",
+  "garment.outfit": "outfit",
+  "garment.outerwear": "outerwear",
+  "garment.shoes": "shoes",
+  "accessory.hat": "hat accessory",
+  "accessory.face": "face accessory",
+  "accessory.ear": "ear accessory",
+  "accessory.neck": "neck accessory",
+  "accessory.handheld": "handheld accessory",
+  "accessory.back": "back accessory",
+  "accessory.waist": "waist accessory",
+  "accessory.charm": "charm accessory"
+};
 function image(source) {
   return new Promise((resolve, reject) => {
     const element = new Image();
@@ -10376,12 +10449,16 @@ function updateInspector() {
   const roles = new Set(assets.flatMap((asset) => Object.keys(asset.palette.roles)));
   paletteControls.innerHTML = [...roles].sort().map((role) => {
     const fallback = assets.find((asset) => asset.palette.roles[role] !== void 0)?.palette.roles[role]?.default ?? "#ffffff";
-    return `<label><input type="color" data-palette="${role}" value="${snapshot.recipe.palette[role] ?? fallback}"><span>${role.replaceAll(".", " ")}</span></label>`;
+    return `<label><input type="color" data-palette="${role}" value="${snapshot.recipe.palette[role] ?? fallback}"><span>${paletteLabels[role] ?? role.replaceAll(".", " ")}</span></label>`;
   }).join("");
   byId("undo").disabled = !snapshot.canUndo;
   byId("redo").disabled = !snapshot.canRedo;
 }
 function updateAll() {
+  if (palettePreviewing) {
+    void render();
+    return;
+  }
   updateCatalog();
   updateInspector();
   void render();
@@ -10446,8 +10523,22 @@ async function initialize() {
     const input = event.target.closest("[data-palette]");
     const role = input?.dataset["palette"];
     if (input !== null && role !== void 0) {
-      store.setPalette(role, input.value.toUpperCase());
+      palettePreviewing = true;
+      store.previewPalette(role, input.value.toUpperCase());
+      palettePreviewing = false;
     }
+  });
+  paletteControls.addEventListener("change", (event) => {
+    const input = event.target.closest("[data-palette]");
+    const role = input?.dataset["palette"];
+    if (input === null || role === void 0) return;
+    palettePreviewing = true;
+    store.previewPalette(role, input.value.toUpperCase());
+    palettePreviewing = false;
+    store.commitPalettePreview();
+  });
+  paletteControls.addEventListener("focusout", () => {
+    store.commitPalettePreview();
   });
   search.addEventListener("input", updateCatalog);
   compatible.addEventListener("click", () => {

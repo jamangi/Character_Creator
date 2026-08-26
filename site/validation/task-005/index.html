@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="../review.css">
 </head>
 <body>
-  <header><a href="../../">← Studio</a><span class="status">Task 014 accepted · Task 012 changes requested · 2026-08-26</span></header>
+  <header><a href="../../">← Studio</a><span class="status">Remediation ready for grouped review · 2026-08-26</span></header>
   <main>
     <section class="hero">
       <div><p class="eyebrow">TASK-005 · Creator Studio</p><h1>Build visually.<br><span>Export intent.</span></h1></div>
       <div><p class="lede">The main Pages route is the reference Studio. It uses the public resolver and Canvas renderer while reusable history, catalog, compatibility, and recipe state remain framework-neutral.</p><div class="actions"><a class="button" href="../../">Open the Studio</a><a class="button secondary" href="https://github.com/jamangi/Character_Creator/tree/main/packages/creator-ui">State package</a></div></div>
     </section>
     <section id="palette">
-      <p class="eyebrow">TASK-012 · Palette rendering</p><h2>One role changes at a time</h2>
+      <p class="eyebrow">TASK-012 + 019 + 020 · Palette rendering</p><h2>One semantic role changes at a time</h2>
       <p class="muted">Each pair uses the same equipped character. The right image changes only the named role; linework, alpha, and unrelated regions remain authored. Open the JSON for exact changed-pixel counts.</p>
       <div class="actions"><a class="button secondary" href="proofs/palette-role-isolation.json">Isolation metrics</a></div>
-      <a href="proofs/palette-role-isolation.png"><img class="sheet" src="proofs/palette-role-isolation.png" alt="Ten baseline and one-role-only palette comparisons"></a>
+      <a href="proofs/palette-role-isolation.png"><img class="sheet" src="proofs/palette-role-isolation.png" alt="Baseline and one-role-only palette comparisons across face, body, clothing, arm, and accessory roles"></a>
     </section>
     <section id="outputs">
       <p class="eyebrow">TASK-014 · Output projections</p><h2>One recipe, three presentations</h2>
@@ -31,15 +31,16 @@
         <li><strong>Discover:</strong> search for “wavy,” filter Hair, then switch Compatible only on and off.</li>
         <li><strong>Build:</strong> select each of the three hero recipe chips and confirm the body, silhouette, and equipped list change together.</li>
         <li><strong>Conflict safety:</strong> remove a required base layer; the Studio should explain the issue and preserve the last valid recipe.</li>
-          <li><strong>Color:</strong> change one palette swatch and confirm only its labeled region changes. Undo/Redo for palette and hero-template changes is deferred to Task 013 and is not part of this checkpoint.</li>
+          <li><strong>Color:</strong> change one palette swatch and confirm only its labeled body, clothing, arm, or accessory region changes.</li>
+        <li><strong>History:</strong> use the separate <a href="../task-013/">Task 013 script</a> to approve palette and hero-template Undo/Redo independently.</li>
         <li><strong>Outputs:</strong> switch Portrait → Full body → Sprite; recipe JSON must remain unchanged.</li>
         <li><strong>Round trip:</strong> export JSON, reset/randomize, then import the exported recipe and compare exact choices.</li>
         <li><strong>Keyboard and layout:</strong> repeat discovery/equip with Tab, Enter, and Space at desktop and phone width; focus must remain visible.</li>
       </ol>
     </section>
     <section><div class="grid"><article class="card"><p class="eyebrow">Wide</p><h3>Three-column workspace</h3><p>Catalog, preview, and inspector remain simultaneously understandable.</p></article><article class="card"><p class="eyebrow">Narrow</p><h3>Preview comes first</h3><p>Responsive order keeps the rendered character above browsing and detail controls.</p></article><article class="card"><p class="eyebrow">Reduced motion</p><h3>No required animation</h3><p>All editing and validation functions remain usable when motion is disabled.</p></article></div></section>
-    <section><p class="eyebrow">Owner result</p><h2>One accepted; one revised</h2><ul class="checklist"><li><strong>Task 014 accepted:</strong> portrait, full-body, and sprite presentation rules are valid.</li><li><strong>Task 012 changes requested:</strong> retain role isolation while adding selected-mouth, bilateral-arm, category-color, and accessory-color behavior under Tasks 017–020.</li><li><a href="../task-017/"><strong>Task 017 selected-mouth evidence is ready for review.</strong></a></li><li>Previously accepted: discovery, building, conflict safety, recipe round-trip, keyboard use, and responsive layout.</li><li>Task 013 history transactions remain separate and follow the stabilized palette vocabulary.</li></ul></section>
+    <section><p class="eyebrow">Current owner decisions</p><h2>Accepted foundations; focused checks remain</h2><ul class="checklist"><li><strong>Tasks 014 and 017 accepted:</strong> output projections and selected-mouth dominance are valid.</li><li><a href="../task-018/"><strong>Task 018:</strong> bilateral arm modules.</a></li><li><a href="../task-019/"><strong>Task 019 + remaining Task 012:</strong> slot-scoped body/clothing palette isolation.</a></li><li><a href="../task-020/"><strong>Task 020:</strong> stable accessory color identity.</a></li><li><a href="../task-013/"><strong>Task 013:</strong> independently approve palette and hero history.</a></li><li>Previously accepted: discovery, building, conflict safety, recipe round-trip, keyboard use, and responsive layout.</li></ul></section>
   </main>
-  <footer><a href="../../">Character Creator Studio</a><span>Human status: Task 014 accepted · Task 012 remediation in progress</span></footer>
+  <footer><a href="../../">Character Creator Studio</a><span>Human status: Tasks 018–020, 013, and 016 awaiting grouped review</span></footer>
 </body>
 </html>

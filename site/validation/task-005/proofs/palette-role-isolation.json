@@ -5,7 +5,7 @@
       "role": "skin.base",
       "hero": "Everyday Layered",
       "value": "#F6D2B8",
-      "changedPixels": 4791
+      "changedPixels": 3528
     },
     {
       "role": "skin.shadow",
@@ -26,16 +26,46 @@
       "changedPixels": 3424
     },
     {
-      "role": "garment.primary",
+      "role": "garment.top",
       "hero": "Everyday Layered",
       "value": "#FF9B32",
       "changedPixels": 3542
     },
     {
-      "role": "garment.secondary",
+      "role": "garment.bottom",
+      "hero": "Everyday Layered",
+      "value": "#101116",
+      "changedPixels": 4417
+    },
+    {
+      "role": "garment.outfit",
+      "hero": "Silhouette Replacement",
+      "value": "#00E7A5",
+      "changedPixels": 7958
+    },
+    {
+      "role": "garment.outerwear",
       "hero": "Everyday Layered",
       "value": "#35B66F",
-      "changedPixels": 9547
+      "changedPixels": 4558
+    },
+    {
+      "role": "garment.shoes",
+      "hero": "Everyday Layered",
+      "value": "#8B5CF6",
+      "changedPixels": 572
+    },
+    {
+      "role": "body.arm.left",
+      "hero": "Silhouette Replacement",
+      "value": "#FF6B9A",
+      "changedPixels": 993
+    },
+    {
+      "role": "body.arm.right",
+      "hero": "Silhouette Replacement",
+      "value": "#4DE1D0",
+      "changedPixels": 982
     },
     {
       "role": "eyes.iris",
@@ -50,16 +80,46 @@
       "changedPixels": 27
     },
     {
-      "role": "accent.base",
+      "role": "accessory.hat",
       "hero": "Everyday Layered",
-      "value": "#FF5E6C",
-      "changedPixels": 846
+      "value": "#151515",
+      "changedPixels": 1463
     },
     {
-      "role": "crystal.base",
-      "hero": "Silhouette Replacement",
-      "value": "#A6FF4D",
-      "changedPixels": 1799
+      "role": "accessory.face",
+      "hero": "Everyday Layered",
+      "value": "#E7C44A",
+      "changedPixels": 20
+    },
+    {
+      "role": "accessory.ear",
+      "hero": "Everyday Layered",
+      "value": "#FF5E6C",
+      "changedPixels": 80
+    },
+    {
+      "role": "accessory.neck",
+      "hero": "Everyday Layered",
+      "value": "#55D6BE",
+      "changedPixels": 1181
+    },
+    {
+      "role": "accessory.handheld",
+      "hero": "Everyday Layered",
+      "value": "#9B7653",
+      "changedPixels": 826
+    },
+    {
+      "role": "accessory.back",
+      "hero": "Everyday Layered",
+      "value": "#B388EB",
+      "changedPixels": 2989
+    },
+    {
+      "role": "accessory.charm",
+      "hero": "Everyday Layered",
+      "value": "#7AF3FF",
+      "changedPixels": 98
     }
   ]
 }

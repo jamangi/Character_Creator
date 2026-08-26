@@ -37,7 +37,7 @@
   },
   "palette": {
     "roles": {
-      "accent.base": {
+      "accessory.hat": {
         "default": "#54314D",
         "mode": "replace"
       }
@@ -68,7 +68,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -101,7 +101,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -134,7 +134,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -167,7 +167,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -200,7 +200,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -234,7 +234,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -269,7 +269,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -304,7 +304,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -339,7 +339,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -374,7 +374,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -409,7 +409,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -444,7 +444,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -479,7 +479,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"
@@ -514,7 +514,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.hat"
       ],
       "contentSlots": [
         "hat"

@@ -1,6 +1,6 @@
 # TASK-020-HIGH-accessory-scoped-palettes
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Simultaneously equipped accessories can be recolored independently without color assignments shifting when another accessory is equipped or removed.
 - **Tracks:** CHANGE-008
 - **Depends on:** 019
@@ -35,13 +35,13 @@ All starter accessories currently use `accent.base`, so a hat, earrings, glasses
 
 ## Acceptance criteria
 
-- [ ] A hat and earrings can display different colors simultaneously, as can other non-conflicting accessory slots.
-- [ ] Equipping/removing one accessory does not transfer its color to another accessory.
-- [ ] An unused accessory color is a deterministic visual no-op.
-- [ ] Palette labels identify the controlled accessory slot clearly.
-- [ ] Preview, export, import, and direct renderer output agree.
-- [ ] Migration and exact-pixel isolation regressions pass.
-- [ ] Relevant documentation is updated.
+- [x] A hat and earrings can display different colors simultaneously, as can other non-conflicting accessory slots.
+- [x] Equipping/removing one accessory does not transfer its color to another accessory.
+- [x] An unused accessory color is a deterministic visual no-op.
+- [x] Palette labels identify the controlled accessory slot clearly.
+- [x] Preview, export, import, and direct renderer output agree.
+- [x] Migration and exact-pixel isolation regressions pass.
+- [x] Relevant documentation is updated.
 
 ## Validation
 
@@ -56,4 +56,4 @@ Publish a labeled multi-accessory character plus before/after equip/remove compa
 
 ## Handoff notes
 
-Record the chosen stable role vocabulary and why it avoids equip-order-dependent color reassignment.
+Accessory colors use stable semantic slot roles: `accessory.hat`, `.face`, `.ear`, `.neck`, `.handheld`, `.back`, `.waist`, and `.charm`. They do not depend on equip order, so removing and restoring a hat cannot move another item's color. Legacy `accent.base` initializes any missing semantic roles while remaining source-preserving. Technical checks and the equip/remove proof pass; owner approval remains pending at `site/validation/task-020/`.

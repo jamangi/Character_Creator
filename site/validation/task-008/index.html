@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; connect-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'">
+  <title>Portable Character Creator integration</title>
+  <link rel="stylesheet" href="example.css">
+</head>
+<body>
+  <header><a href="../release-candidate/">← Review bundle</a><span>Task 008 · isolated host</span></header>
+  <main>
+    <p class="eyebrow">Published-package integration</p>
+    <h1>A creator that does not depend on the Studio.</h1>
+    <p class="lede">This page loads a published catalog by relative base URL, renders a saved recipe directly, and mounts the optional editor through public package entry points. Its CSP explicitly scopes the current schema validator’s runtime-compilation exception.</p>
+    <section class="proof-grid">
+      <article><h2>Renderer only</h2><p>No editor state is mounted for this canvas.</p><canvas id="direct-render" width="256" height="384" aria-label="Directly rendered saved character"></canvas></article>
+      <article><div class="heading"><div><h2>Mountable editor</h2><p id="lifecycle-status" role="status">Mounted: one editor canvas and one listener set.</p></div><div class="row"><button id="mount" type="button">Mount</button><button id="unmount" type="button">Unmount</button></div></div><div id="embed-host"></div></article>
+    </section>
+    <section><h2>Independent checks</h2><ol><li>Equip an asset, export its recipe, undo, then import the exported recipe.</li><li>Unmount. Confirm the editor disappears and the status reports zero host children.</li><li>Mount again. Confirm one fresh editor appears and remains responsive.</li></ol></section>
+  </main>
+  <script type="module" src="example.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # TASK-013-MEDIUM-studio-history-transactions
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Palette edits and hero-template selections behave as exact, visible, one-step Undo/Redo transactions.
 - **Tracks:** DEFECT-005, DEFECT-006
 - **Depends on:** 003, 020
@@ -34,13 +34,13 @@ After Tasks 012 and 019–020 establish correct rendering and the final palette 
 
 ## Acceptance criteria
 
-- [ ] One completed palette edit adds exactly one history entry.
-- [ ] Undo and Redo restore both exact exported JSON and the visible palette result.
-- [ ] Selecting a hero chip can be undone and redone as one transaction with exact equipped assets and palette values.
-- [ ] Preview-only changes do not add history entries.
-- [ ] A new recipe mutation after Undo clears the redo branch.
-- [ ] `DEFECT-005` and `DEFECT-006` pass independent unit and browser regressions.
-- [ ] Relevant documentation is updated.
+- [x] One completed palette edit adds exactly one history entry.
+- [x] Undo and Redo restore both exact exported JSON and the visible palette result.
+- [x] Selecting a hero chip can be undone and redone as one transaction with exact equipped assets and palette values.
+- [x] Preview-only changes do not add history entries.
+- [x] A new recipe mutation after Undo clears the redo branch.
+- [x] `DEFECT-005` and `DEFECT-006` pass independent unit and browser regressions.
+- [x] Relevant documentation is updated.
 
 ## Validation
 
@@ -55,4 +55,4 @@ Update review step 4 to contain separate palette-history and hero-template-histo
 
 ## Handoff notes
 
-Record the final transaction boundary, treatment of live color input, defect closures, and visual review result. Do not mark Task 005 complete until Task 014 and Task 016 also pass.
+Live color `input` values update the current recipe and render without rebuilding the control; the native `change`/focus completion commits all intermediate values as one history entry. Hero reset remains one store commit. Unit tests cover coalescing, exact JSON, preview exclusion, and redo branching; local browser tests cover visible palette and hero Undo/Redo. DEFECT-005/006 and Task 013 remain ready for independent owner approval at `site/validation/task-013/`.

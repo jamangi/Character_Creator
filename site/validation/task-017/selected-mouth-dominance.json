@@ -4,30 +4,30 @@
     {
       "assetId": "starter.mouth.firm",
       "name": "Firm Mouth",
-      "neutralPortraitSha256": "de06c29f513923f0ebeebc591b28f4e31157a3143033f9b502c73b7595ff751b",
-      "neutralFullBodySha256": "b7ec5121a1b3003c2aa780d220945f0bae7cace6ff1bba8decad1776df4b54c6",
-      "cheerfulPortraitSha256": "9114a7d1fd500cc396ed52d917a9ef369b642fcf835756862719b9c1dc7939a9"
+      "neutralPortraitSha256": "ea517b8860cf9e360d231b7d6c1dcdcc929085603ac2ea614cc8268ac8525cb9",
+      "neutralFullBodySha256": "b5e40a14b6d6511373cd257b8ef0f42859e93a0e494f044332417adb69215a7b",
+      "cheerfulPortraitSha256": "cf27675414cabf98108759981d2c570ed46605151cda8bb88f378c396d7c327c"
     },
     {
       "assetId": "starter.mouth.smirk",
       "name": "Side Smirk",
-      "neutralPortraitSha256": "74f459febd13e3d137fb2bb201c46e0bfe064f1f5c017acee11fcd3a82c4be85",
-      "neutralFullBodySha256": "638f9ca0eef8717a77852369314c95c795d1086af46b9832918f88026dc091c7",
-      "cheerfulPortraitSha256": "9114a7d1fd500cc396ed52d917a9ef369b642fcf835756862719b9c1dc7939a9"
+      "neutralPortraitSha256": "c519ec28ebefd9b84820a50ab2e24bf672ea8491edf6ef6a6092014508873673",
+      "neutralFullBodySha256": "9a0ed47935d895dcf02d3f7dcf4f7f4a30825ea9634215d49dc87b1c0a652b5c",
+      "cheerfulPortraitSha256": "cf27675414cabf98108759981d2c570ed46605151cda8bb88f378c396d7c327c"
     },
     {
       "assetId": "starter.mouth.soft",
       "name": "Soft Mouth",
-      "neutralPortraitSha256": "284fe65c6881b72931af2d938239fa1adbdc178f4e0f2d276b2284b5a2b9abf4",
-      "neutralFullBodySha256": "66601739c092a9f17a87269ec32912a42c013262d2811a5c7804273af89984ad",
-      "cheerfulPortraitSha256": "9114a7d1fd500cc396ed52d917a9ef369b642fcf835756862719b9c1dc7939a9"
+      "neutralPortraitSha256": "940e84fb11a4178570a186dde35d3c14e86723d2acd750327dca343c9cdbdf37",
+      "neutralFullBodySha256": "1d81f727cfed0bb8a4458c6c221d42102c11df601044aba807e6c29516bfb346",
+      "cheerfulPortraitSha256": "cf27675414cabf98108759981d2c570ed46605151cda8bb88f378c396d7c327c"
     },
     {
       "assetId": "starter.mouth.smile",
       "name": "Warm Smile",
-      "neutralPortraitSha256": "9114a7d1fd500cc396ed52d917a9ef369b642fcf835756862719b9c1dc7939a9",
-      "neutralFullBodySha256": "364dee8c46300409a1d1d4b9b7c776ddeb2c90e8637d04fccd1bd4f16dae9b54",
-      "cheerfulPortraitSha256": "9114a7d1fd500cc396ed52d917a9ef369b642fcf835756862719b9c1dc7939a9"
+      "neutralPortraitSha256": "cf27675414cabf98108759981d2c570ed46605151cda8bb88f378c396d7c327c",
+      "neutralFullBodySha256": "35a67c0b87e7a07d5c3b8220abfd7c192cdcd304a791b9bea8fd4ca0672fabf7",
+      "cheerfulPortraitSha256": "cf27675414cabf98108759981d2c570ed46605151cda8bb88f378c396d7c327c"
     }
   ]
 }

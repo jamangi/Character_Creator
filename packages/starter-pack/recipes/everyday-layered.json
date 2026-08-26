@@ -61,9 +61,14 @@
     }
   ],
   "palette": {
-    "accent.base": "#D0A34A",
-    "garment.primary": "#4ED7E8",
-    "garment.secondary": "#70456F",
+    "accessory.face": "#D0A34A",
+    "accessory.handheld": "#805842",
+    "body.arm.left": "#B96F56",
+    "body.arm.right": "#B96F56",
+    "garment.bottom": "#332A55",
+    "garment.outerwear": "#70456F",
+    "garment.shoes": "#654433",
+    "garment.top": "#4ED7E8",
     "hair.base": "#39345E",
     "skin.base": "#B96F56"
   },

@@ -107,11 +107,40 @@ describe("executable JSON contracts", () => {
       "starter.top.simple-shirt"
     ]);
     expect(Object.keys(recipe.value.palette)).toEqual([
+      "body.arm.left",
+      "body.arm.right",
       "coat.base",
       "hair.base",
       "shirt.base",
       "skin.base"
     ]);
+  });
+
+  it("projects legacy broad palette keys into stable slot-scoped roles", () => {
+    const legacy = loadJson<CharacterRecipe>("fixtures/valid/recipes/proof-character.json");
+    legacy.palette = {
+      "skin.base": "#AA7755",
+      "garment.primary": "#1188CC",
+      "garment.secondary": "#202020",
+      "accent.base": "#DDAA33",
+      "crystal.base": "#66DDEE"
+    };
+    const parsed = parseCharacterRecipe(legacy);
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    expect(parsed.value.palette).toMatchObject({
+      "body.arm.left": "#66DDEE",
+      "body.arm.right": "#66DDEE",
+      "garment.top": "#1188CC",
+      "garment.outfit": "#1188CC",
+      "garment.bottom": "#202020",
+      "garment.outerwear": "#202020",
+      "garment.shoes": "#66DDEE",
+      "accessory.hat": "#DDAA33",
+      "accessory.ear": "#DDAA33"
+    });
+    expect(parsed.value.palette["garment.primary"]).toBe("#1188CC");
+    expect(parsed.value.palette["accent.base"]).toBe("#DDAA33");
   });
 
   it("keeps structured diagnostics aligned with their JSON Schema", () => {

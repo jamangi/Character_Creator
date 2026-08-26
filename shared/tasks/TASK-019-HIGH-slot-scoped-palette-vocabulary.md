@@ -1,6 +1,6 @@
 # TASK-019-HIGH-slot-scoped-palette-vocabulary
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Body skin, hair, top, bottom, outfit, outerwear, shoes, left arm, and right arm each have an independent palette control.
 - **Tracks:** CHANGE-007 and final acceptance of DEFECT-007/TASK-012
 - **Depends on:** 018; extends the implemented Task 012 renderer foundation
@@ -37,13 +37,13 @@ Task 012 removed the whole-character tint defect, but owner review found that th
 
 ## Acceptance criteria
 
-- [ ] Every listed non-accessory category has one independent, clearly labeled control.
-- [ ] Changing a category color changes only that category's authored pixels.
-- [ ] Black bottoms and green outerwear can coexist with independently colored shoes and top.
-- [ ] Left- and right-arm module colors are independent when both are equipped.
-- [ ] Empty category roles are deterministic visual no-ops.
-- [ ] Existing recipe migration/normalization behavior is documented and tested.
-- [ ] Task 012 isolation guarantees continue to pass.
+- [x] Every listed non-accessory category has one independent, clearly labeled control.
+- [x] Changing a category color changes only that category's authored pixels.
+- [x] Black bottoms and green outerwear can coexist with independently colored shoes and top.
+- [x] Left- and right-arm module colors are independent when both are equipped.
+- [x] Empty category roles are deterministic visual no-ops.
+- [x] Existing recipe migration/normalization behavior is documented and tested.
+- [x] Task 012 isolation guarantees continue to pass.
 
 ## Validation
 
@@ -58,4 +58,4 @@ Publish a labeled simultaneous-color proof and one-role-at-a-time diffs. Accepta
 
 ## Handoff notes
 
-Record the final role names, compatibility treatment for coarse legacy keys, and any deliberate defaults.
+The final roles are `skin.base`, `hair.base`, `garment.top`, `garment.bottom`, `garment.outfit`, `garment.outerwear`, `garment.shoes`, `body.arm.left`, and `body.arm.right`. Normalization retains legacy keys while projecting missing new roles from `garment.primary`, `garment.secondary`, `crystal.base`, `accent.base`, and `skin.base`; explicit new values always win. Technical isolation and migration checks pass. Owner approval remains pending at `site/validation/task-019/` and will also decide the remaining Task 012/DEFECT-007 palette checkpoint.

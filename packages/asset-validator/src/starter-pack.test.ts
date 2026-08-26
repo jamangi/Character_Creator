@@ -61,9 +61,70 @@ describe("starter asset pack conformance", () => {
     expect(assets.filter((asset) => asset.kind === "top")).toHaveLength(4);
     expect(assets.filter((asset) => asset.kind === "bottom")).toHaveLength(3);
     expect(assets.filter((asset) => asset.kind === "shoes")).toHaveLength(4);
-    expect(assets.filter((asset) => asset.kind === "body-module")).toHaveLength(2);
+    expect(assets.filter((asset) => asset.kind === "body-module")).toHaveLength(4);
     expect(assets.filter((asset) => asset.display.tags.includes("multi-plane")).length).toBeGreaterThanOrEqual(4);
     expect(assets.filter((asset) => asset.display.tags.includes("shoulder-crossing")).length).toBeGreaterThanOrEqual(2);
+  });
+
+  it("publishes independently suppressible bilateral arm fragments and modules", () => {
+    const { rig, assets, recipes } = packFixtures();
+    expect(rig.slots.filter((slot) => slot.id === "body-arm-left" || slot.id === "body-arm-right").map((slot) => slot.id).sort())
+      .toEqual(["body-arm-left", "body-arm-right"]);
+    const base = assets.find((asset) => asset.kind === "base-body");
+    if (base === undefined) throw new Error("Base body missing");
+    for (const side of ["left", "right"] as const) {
+      expect(base.fragments.some((fragment) => fragment.tags.includes(`body.arm.${side}.base`))).toBe(true);
+      const modules = assets.filter((asset) => asset.kind === "body-module" && asset.equip.slots.includes(`body-arm-${side}`));
+      expect(modules).toHaveLength(2);
+      expect(modules.every((asset) => asset.effects.some((effect) => effect.kind === "suppress-tags" && effect.targetTags.includes(`body.arm.${side}.base`)))).toBe(true);
+      expect(modules.every((asset) => Object.keys(asset.palette.roles).includes(`body.arm.${side}`))).toBe(true);
+    }
+    const recipe = recipes[1];
+    if (recipe === undefined) throw new Error("Replacement hero missing");
+    for (const request of [
+      { profile: "portrait" as const, view: "front", expression: "neutral" },
+      { profile: "full-body" as const, view: "front", expression: "neutral" },
+      { profile: "sprite" as const, view: "front", clip: "walk" as const, frame: "contact-left" }
+    ]) {
+      const scene = resolveCharacter({ recipe, rig, catalog: assets, request });
+      expect(scene.diagnostics, JSON.stringify(request)).toEqual([]);
+      expect(scene.drawList.some((item) => item.tags.includes("body.arm.left.replacement"))).toBe(true);
+      expect(scene.drawList.some((item) => item.tags.includes("body.arm.right.replacement"))).toBe(true);
+    }
+  });
+
+  it("uses stable independent palette roles for body, clothing, and accessory slots", () => {
+    const { assets } = packFixtures();
+    const expectedByKind = new Map([
+      ["top", "garment.top"], ["bottom", "garment.bottom"], ["outfit", "garment.outfit"],
+      ["outerwear", "garment.outerwear"], ["shoes", "garment.shoes"]
+    ]);
+    for (const asset of assets) {
+      const expected = expectedByKind.get(asset.kind);
+      if (expected !== undefined) expect(Object.keys(asset.palette.roles)).toEqual([expected]);
+      if (asset.kind === "accessory") expect(Object.keys(asset.palette.roles)[0]).toMatch(/^accessory\.(hat|face|ear|neck|handheld|back|waist|charm)$/);
+    }
+    expect(new Set(assets.filter((asset) => asset.kind === "accessory").flatMap((asset) => Object.keys(asset.palette.roles))).size).toBeGreaterThanOrEqual(7);
+  });
+
+  it("keeps accessory color identity stable across equip and removal", () => {
+    const { rig, assets, recipes } = packFixtures();
+    const recipe = recipes[0];
+    const hat = assets.find((asset) => asset.id === "starter.accessory.brim-hat");
+    if (recipe === undefined || hat === undefined) throw new Error("Accessory fixtures missing");
+    const colored = {
+      ...recipe,
+      palette: { ...recipe.palette, "accessory.face": "#E7C44A", "accessory.hat": "#111118", "accessory.waist": "#FF00FF" }
+    };
+    const withoutHat = resolveCharacter({ recipe: colored, rig, catalog: assets, request: { profile: "full-body", view: "front" } });
+    const withHatRecipe = { ...colored, equipped: [...colored.equipped, { assetId: hat.id, version: hat.version }] };
+    const withHat = resolveCharacter({ recipe: withHatRecipe, rig, catalog: assets, request: { profile: "full-body", view: "front" } });
+    const withoutHatAgain = resolveCharacter({ recipe: { ...withHatRecipe, equipped: withHatRecipe.equipped.filter((selection) => selection.assetId !== hat.id) }, rig, catalog: assets, request: { profile: "full-body", view: "front" } });
+    const glassesPalette = (scene: typeof withHat) => scene.drawList.filter((item) => item.assetId === "starter.accessory.glasses").map((item) => item.palette);
+    expect(glassesPalette(withHat)).toEqual(glassesPalette(withoutHat));
+    expect(glassesPalette(withoutHatAgain)).toEqual(glassesPalette(withoutHat));
+    expect(withoutHat.drawList).toEqual(withoutHatAgain.drawList);
+    expect(withHat.drawList.some((item) => item.assetId === hat.id && item.palette.some((role) => role.role === "accessory.hat" && role.value === "#111118"))).toBe(true);
   });
 
   it("passes validator levels 1–5 and 7 across all hero requests", () => {

@@ -36,7 +36,7 @@
   },
   "palette": {
     "roles": {
-      "accent.base": {
+      "accessory.charm": {
         "default": "#62DDE1",
         "mode": "replace"
       }
@@ -60,7 +60,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -93,7 +93,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -126,7 +126,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -159,7 +159,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -192,7 +192,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -226,7 +226,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -261,7 +261,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -296,7 +296,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -331,7 +331,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -366,7 +366,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -401,7 +401,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -436,7 +436,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -471,7 +471,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"
@@ -506,7 +506,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.charm"
       ],
       "contentSlots": [
         "charm"

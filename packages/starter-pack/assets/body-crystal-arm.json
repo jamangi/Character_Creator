@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "kind": "body-module",
   "display": {
-    "name": "Crystal Left Arm",
+    "name": "Crystal Right Arm",
     "tags": [
       "asymmetric",
       "crystal",
-      "replacement"
+      "replacement",
+      "right"
     ],
     "thumbnail": "thumbnails/body-crystal-arm.png"
   },
@@ -23,18 +24,18 @@
   },
   "equip": {
     "slots": [
-      "body-arm-left"
+      "body-arm-right"
     ],
-    "exclusiveGroup": "body-arm-left",
+    "exclusiveGroup": "body-arm-right",
     "requires": [],
     "conflicts": [],
     "provides": [
-      "appearance:arm.crystal"
+      "appearance:arm.crystal.right"
     ]
   },
   "palette": {
     "roles": {
-      "crystal.base": {
+      "body.arm.right": {
         "default": "#61D8E4",
         "mode": "replace"
       }
@@ -44,13 +45,13 @@
     {
       "kind": "suppress-tags",
       "targetTags": [
-        "body.arm.left.base"
+        "body.arm.right.base"
       ]
     },
     {
       "kind": "provide-coverage",
       "regions": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ]
     }
   ],
@@ -71,18 +72,18 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -108,18 +109,18 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -145,18 +146,18 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -182,18 +183,18 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -204,7 +205,7 @@
       "mirrorSafe": false
     },
     {
-      "id": "portrait-front-any",
+      "id": "portrait.front.any",
       "selector": {
         "profile": "portrait",
         "view": "front",
@@ -219,15 +220,18 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "covers": [],
+      "covers": [
+        "body.arm.right.skin"
+      ],
       "suppresses": [],
       "tags": [
-        "asset.body-crystal-arm"
+        "asset.body-crystal-arm",
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -254,19 +258,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -293,19 +297,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -332,19 +336,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -371,19 +375,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -410,19 +414,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -449,19 +453,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -488,19 +492,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -527,19 +531,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,
@@ -566,19 +570,19 @@
         0
       ],
       "paletteRoles": [
-        "crystal.base"
+        "body.arm.right"
       ],
       "contentSlots": [
-        "body-arm-left"
+        "body-arm-right"
       ],
-      "motionGroup": "main",
+      "motionGroup": "right-arm",
       "covers": [
-        "body.arm.left.skin"
+        "body.arm.right.skin"
       ],
       "suppresses": [],
       "tags": [
         "asset.body-crystal-arm",
-        "body.arm.left.replacement"
+        "body.arm.right.replacement"
       ],
       "bounds": {
         "x": 0,

@@ -1,6 +1,6 @@
 # TASK-017-MEDIUM-selected-mouth-dominance
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** The equipped mouth defines the neutral portrait/full-body mouth, while named non-neutral expressions retain their expression-authored curves.
 - **Tracks:** CHANGE-005
 - **Depends on:** 002, 003
@@ -42,7 +42,7 @@ The Studio exposes four mouth assets, but their portrait/full-body artwork curre
 - [x] Preview and exported PNG use the same resolved scene.
 - [x] Automated regression and deterministic artifact generation pass.
 - [x] Relevant documentation is updated.
-- [ ] The Task 017 visual checkpoint passes owner review.
+- [x] The Task 017 visual checkpoint passes owner review.
 
 ## Validation
 
@@ -57,4 +57,4 @@ Publish a four-mouth neutral comparison in portrait and full-body scale plus a r
 
 ## Handoff notes
 
-The owner pre-approved this as the first task in the follow-up remediation order on 2026-08-26. Neutral curve mapping is Soft `[22,24,22]`, Warm Smile `[20,28,20]`, Firm `[22,22,22]`, and Side Smirk `[23,24,18]`; non-neutral presets keep the Task 015 mapping. Generated portrait/full-body hashes are distinct for all four neutral mouths while the cheerful portrait hash is identical across choices. `pnpm validate` passes 79 tests, and two full generation runs produced aggregate hash `a7b40afab7051c14a2104c8dc1ac95ed31112c89ccb829e51a52a8efee9b31dc` across 2,613 deterministic files. Human acceptance remains pending.
+The owner pre-approved this as the first task in the follow-up remediation order on 2026-08-26. Neutral curve mapping is Soft `[22,24,22]`, Warm Smile `[20,28,20]`, Firm `[22,22,22]`, and Side Smirk `[23,24,18]`; non-neutral presets keep the Task 015 mapping. Generated portrait/full-body hashes are distinct for all four neutral mouths while the cheerful portrait hash is identical across choices. The owner accepted Task 017 on 2026-08-26; CHANGE-005 is delivered and the focused page remains as historical evidence.

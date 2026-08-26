@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-08-26T19:00:00.000Z",
-  "recipeSha256": "ebf83c212299d3f399e65229e686e783580ad33471b0be67004734ae3b2694be",
-  "recipeByteLength": 1088,
+  "recipeSha256": "51ccb3b509ce1b125a13a0202722f10ffa46ef25d17012f8013fe2fdbff995eb",
+  "recipeByteLength": 1224,
   "recipeByteIdenticalAfterRendering": true,
   "hiddenSlots": {
     "full-body": [],

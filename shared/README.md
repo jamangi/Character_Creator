@@ -26,6 +26,7 @@ Everything in this directory is normative for implementation tasks unless a late
 10. Tests must include adversarial asset combinations, not only curated hero characters.
 11. Tasks requiring visual or interactive acceptance publish labeled, stable artifacts through the GitHub Pages hub described in `site/README.md`.
 12. Review feedback is recorded before implementation: defects and change requests retain separate IDs, tests, and human checkpoints even when they share a builder task.
+13. Palette identity is semantic and stable: category/slot roles never shift meaning when equip order changes, and an unused role is a deterministic no-op.
 
 ## Decision hierarchy
 

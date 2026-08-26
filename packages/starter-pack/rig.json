@@ -130,6 +130,13 @@
       ]
     },
     {
+      "id": "body-arm-right",
+      "exclusive": true,
+      "allowedKinds": [
+        "body-module"
+      ]
+    },
+    {
       "id": "bottom",
       "exclusive": true,
       "allowedKinds": [

@@ -40,6 +40,19 @@ async function writeFile(path: string, data: string | Uint8Array, encoding?: Buf
   }
 }
 
+async function removeGenerated(path: string): Promise<void> {
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    try {
+      await rm(path, { recursive: true, force: true });
+      return;
+    } catch (error) {
+      const code = (error as NodeJS.ErrnoException).code;
+      if (!["EBUSY", "EPERM", "UNKNOWN"].includes(code ?? "") || attempt === 9) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 100 * (attempt + 1)));
+    }
+  }
+}
+
 interface AssetDefinition {
   key: string;
   name: string;
@@ -58,6 +71,8 @@ interface AssetDefinition {
   faceChannel?: "head" | "nose" | "eyes" | "brows" | "mouth" | "marking" | "ears";
   mirrorSafe?: boolean;
   shape?: "standard" | "petite" | "broad" | "narrow" | "wide";
+  bodySide?: "left" | "right";
+  extraPaletteRoles?: string[];
 }
 
 interface DrawRequest {
@@ -66,7 +81,7 @@ interface DrawRequest {
   expression?: string;
   clip?: string;
   frame?: string;
-  part: "main" | "back" | "front" | "core" | "left-arm" | "top" | "bottom" | "all";
+  part: "main" | "back" | "front" | "core" | "left-arm" | "right-arm" | "top" | "bottom" | "all";
 }
 
 interface Metrics {
@@ -86,9 +101,9 @@ interface Metrics {
 }
 
 const definitions: AssetDefinition[] = [
-  { key: "base.standard", name: "Standard Body", kind: "base-body", slots: ["base-body"], tags: ["body", "standard"], color: "#B96F56", paletteRole: "skin.base", plane: "body-base", fitTags: ["body:standard-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "standard" },
-  { key: "base.petite", name: "Petite Body", kind: "base-body", slots: ["base-body"], tags: ["body", "petite"], color: "#C98261", paletteRole: "skin.base", plane: "body-base", fitTags: ["body:petite-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "petite" },
-  { key: "base.broad", name: "Broad Body", kind: "base-body", slots: ["base-body"], tags: ["body", "broad"], color: "#714330", paletteRole: "skin.base", plane: "body-base", fitTags: ["body:broad-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "broad" },
+  { key: "base.standard", name: "Standard Body", kind: "base-body", slots: ["base-body"], tags: ["body", "standard"], color: "#B96F56", paletteRole: "skin.base", extraPaletteRoles: ["body.arm.left", "body.arm.right"], plane: "body-base", fitTags: ["body:standard-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "standard" },
+  { key: "base.petite", name: "Petite Body", kind: "base-body", slots: ["base-body"], tags: ["body", "petite"], color: "#C98261", paletteRole: "skin.base", extraPaletteRoles: ["body.arm.left", "body.arm.right"], plane: "body-base", fitTags: ["body:petite-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "petite" },
+  { key: "base.broad", name: "Broad Body", kind: "base-body", slots: ["base-body"], tags: ["body", "broad"], color: "#714330", paletteRole: "skin.base", extraPaletteRoles: ["body.arm.left", "body.arm.right"], plane: "body-base", fitTags: ["body:broad-v1"], provides: ["appearance:body", "appearance:eyes", "appearance:mouth", "mirror.safe"], shape: "broad" },
   ...[
     ["head.oval", "Oval Head", "#B96F56", "standard"], ["head.soft-square", "Soft Square Head", "#C98261", "wide"], ["head.round", "Round Head", "#714330", "petite"]
   ].map(([key, name, color, shape]) => ({ key, name, color, shape, kind: "face", slots: ["head"], tags: ["face", "head"], paletteRole: "skin.base", plane: "face-base", faceChannel: "head", provides: ["appearance:head", "mirror.safe"] } as AssetDefinition)),
@@ -118,31 +133,33 @@ const definitions: AssetDefinition[] = [
   ...[
     ["ears.round", "Round Ears"], ["ears.pointed", "Pointed Ears"], ["ears.fae", "Fae Ears"]
   ].map(([key, name]) => ({ key, name, kind: "face", slots: ["ears"], tags: ["face", "ears"], color: "#B96F56", paletteRole: "skin.base", plane: "face-base", faceChannel: "ears", provides: ["appearance:ears", "mirror.safe"] } as AssetDefinition)),
-  { key: "top.fitted-shirt", name: "Fitted Shirt", kind: "top", slots: ["top"], tags: ["clothing", "fitted", "recolorable"], color: "#4ED7E8", paletteRole: "garment.primary", plane: "garment-main", provides: ["appearance:top", "mirror.safe"], shape: "narrow" },
-  { key: "top.loose-shirt", name: "Loose Shirt", kind: "top", slots: ["top"], tags: ["clothing", "loose", "recolorable"], color: "#D98A6C", paletteRole: "garment.primary", plane: "garment-main", provides: ["appearance:top", "mirror.safe"] },
-  { key: "top.sweater", name: "Archive Sweater", kind: "top", slots: ["top"], tags: ["clothing", "sweater", "recolorable"], color: "#D4A73A", paletteRole: "garment.primary", plane: "garment-main", provides: ["appearance:top", "mirror.safe"], shape: "wide" },
-  { key: "top.formal-vest", name: "Formal Vest", kind: "top", slots: ["top"], tags: ["clothing", "formal"], color: "#3E315D", paletteRole: "garment.primary", plane: "garment-main", provides: ["appearance:top", "mirror.safe"] },
-  { key: "bottom.fitted-pants", name: "Fitted Pants", kind: "bottom", slots: ["bottom"], tags: ["clothing", "fitted", "recolorable"], color: "#332A55", paletteRole: "garment.secondary", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"], shape: "narrow" },
-  { key: "bottom.wide-trousers", name: "Wide Trousers", kind: "bottom", slots: ["bottom"], tags: ["clothing", "wide", "recolorable"], color: "#352F35", paletteRole: "garment.secondary", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"], shape: "wide" },
-  { key: "bottom.shorts", name: "Layered Shorts", kind: "bottom", slots: ["bottom"], tags: ["clothing", "short"], color: "#765247", paletteRole: "garment.secondary", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"] },
-  { key: "outfit.simple", name: "Courier One-piece", kind: "outfit", slots: ["top", "bottom"], tags: ["clothing", "one-piece", "multi-slot"], color: "#DD6E57", paletteRole: "garment.primary", plane: "garment-main", provides: ["appearance:top", "appearance:bottom", "mirror.safe"], shape: "narrow" },
-  { key: "outerwear.short-jacket", name: "Short Jacket", kind: "outerwear", slots: ["outerwear"], tags: ["clothing", "jacket", "layered"], color: "#70456F", paletteRole: "garment.secondary", plane: "garment-overlap", provides: ["appearance:outerwear", "mirror.safe"] },
-  { key: "outerwear.long-coat", name: "Long Tailed Coat", kind: "outerwear", slots: ["outerwear"], tags: ["clothing", "coat", "multi-plane", "shoulder-crossing"], color: "#244B3C", paletteRole: "garment.secondary", plane: "garment-overlap", multiPlane: "coat", provides: ["appearance:outerwear", "mirror.safe"], shape: "wide" },
+  { key: "top.fitted-shirt", name: "Fitted Shirt", kind: "top", slots: ["top"], tags: ["clothing", "fitted", "recolorable"], color: "#4ED7E8", paletteRole: "garment.top", plane: "garment-main", provides: ["appearance:top", "mirror.safe"], shape: "narrow" },
+  { key: "top.loose-shirt", name: "Loose Shirt", kind: "top", slots: ["top"], tags: ["clothing", "loose", "recolorable"], color: "#D98A6C", paletteRole: "garment.top", plane: "garment-main", provides: ["appearance:top", "mirror.safe"] },
+  { key: "top.sweater", name: "Archive Sweater", kind: "top", slots: ["top"], tags: ["clothing", "sweater", "recolorable"], color: "#D4A73A", paletteRole: "garment.top", plane: "garment-main", provides: ["appearance:top", "mirror.safe"], shape: "wide" },
+  { key: "top.formal-vest", name: "Formal Vest", kind: "top", slots: ["top"], tags: ["clothing", "formal"], color: "#3E315D", paletteRole: "garment.top", plane: "garment-main", provides: ["appearance:top", "mirror.safe"] },
+  { key: "bottom.fitted-pants", name: "Fitted Pants", kind: "bottom", slots: ["bottom"], tags: ["clothing", "fitted", "recolorable"], color: "#332A55", paletteRole: "garment.bottom", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"], shape: "narrow" },
+  { key: "bottom.wide-trousers", name: "Wide Trousers", kind: "bottom", slots: ["bottom"], tags: ["clothing", "wide", "recolorable"], color: "#352F35", paletteRole: "garment.bottom", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"], shape: "wide" },
+  { key: "bottom.shorts", name: "Layered Shorts", kind: "bottom", slots: ["bottom"], tags: ["clothing", "short"], color: "#765247", paletteRole: "garment.bottom", plane: "garment-main", provides: ["appearance:bottom", "mirror.safe"] },
+  { key: "outfit.simple", name: "Courier One-piece", kind: "outfit", slots: ["top", "bottom"], tags: ["clothing", "one-piece", "multi-slot"], color: "#DD6E57", paletteRole: "garment.outfit", plane: "garment-main", provides: ["appearance:top", "appearance:bottom", "mirror.safe"], shape: "narrow" },
+  { key: "outerwear.short-jacket", name: "Short Jacket", kind: "outerwear", slots: ["outerwear"], tags: ["clothing", "jacket", "layered"], color: "#70456F", paletteRole: "garment.outerwear", plane: "garment-overlap", provides: ["appearance:outerwear", "mirror.safe"] },
+  { key: "outerwear.long-coat", name: "Long Tailed Coat", kind: "outerwear", slots: ["outerwear"], tags: ["clothing", "coat", "multi-plane", "shoulder-crossing"], color: "#244B3C", paletteRole: "garment.outerwear", plane: "garment-overlap", multiPlane: "coat", provides: ["appearance:outerwear", "mirror.safe"], shape: "wide" },
   ...([
     ["shoes.low", "Low Shoes", "#513D39", "standard"], ["shoes.boots", "Field Boots", "#654433", "standard"], ["shoes.tall-boots", "Tall Boots", "#30283D", "narrow"], ["shoes.crystal-feet", "Crystal Foot Form", "#61D8E4", "narrow"]
-  ] as Array<[string, string, string, AssetDefinition["shape"]]>).map(([key, name, color, shape]) => ({ key, name, color, shape, kind: "shoes", slots: ["shoes"], tags: ["clothing", "shoes", key.includes("crystal") ? "replacement" : "standard"], paletteRole: key.includes("crystal") ? "crystal.base" : "garment.secondary", plane: "garment-overlap", provides: ["appearance:shoes", "mirror.safe"] } as AssetDefinition)),
-  { key: "body.crystal-arm", name: "Crystal Left Arm", kind: "body-module", slots: ["body-arm-left"], tags: ["replacement", "crystal", "asymmetric"], color: "#61D8E4", paletteRole: "crystal.base", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.left.base"] }, { kind: "provide-coverage", regions: ["body.arm.left.skin"] }], provides: ["appearance:arm.crystal"], mirrorSafe: false },
-  { key: "body.vine-arm", name: "Vine Left Arm", kind: "body-module", slots: ["body-arm-left"], tags: ["replacement", "vine", "asymmetric"], color: "#5A8B55", paletteRole: "accent.base", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.left.base"] }, { kind: "provide-coverage", regions: ["body.arm.left.skin"] }], provides: ["appearance:arm.vine"], mirrorSafe: false },
-  { key: "accessory.brim-hat", name: "Archivist Hat", kind: "accessory", slots: ["hat"], tags: ["accessory", "hat", "suppression"], color: "#54314D", paletteRole: "accent.base", plane: "accessory-front", requires: ["appearance:hair"], effects: [{ kind: "suppress-tags", targetTags: ["hair.crown"] }], provides: ["appearance:hat", "mirror.safe"] },
-  { key: "accessory.glasses", name: "Round Glasses", kind: "accessory", slots: ["face-accessory"], tags: ["accessory", "glasses"], color: "#D0A34A", paletteRole: "accent.base", plane: "accessory-front", requires: ["appearance:eyes"], provides: ["appearance:glasses", "mirror.safe"] },
-  { key: "accessory.earrings", name: "Drop Earrings", kind: "accessory", slots: ["ear-accessory"], tags: ["accessory", "earrings"], color: "#E8B955", paletteRole: "accent.base", plane: "accessory-front", requires: ["appearance:ears"], provides: ["appearance:earrings", "mirror.safe"] },
-  { key: "accessory.scarf", name: "Patterned Scarf", kind: "accessory", slots: ["neck-accessory"], tags: ["accessory", "scarf", "conflict"], color: "#70456F", paletteRole: "accent.base", plane: "accessory-front", conflicts: ["asset:starter.outerwear.long-coat"], provides: ["appearance:scarf", "mirror.safe"] },
-  { key: "accessory.sketchbook", name: "Sketchbook", kind: "accessory", slots: ["handheld"], tags: ["accessory", "handheld"], color: "#805842", paletteRole: "accent.base", plane: "foreground", requires: ["anchor:hand.left.grip"], provides: ["appearance:handheld"], mirrorSafe: false },
-  { key: "accessory.wings", name: "Moth Wings", kind: "accessory", slots: ["back-accessory"], tags: ["accessory", "back", "wings"], color: "#9E8458", paletteRole: "accent.base", plane: "accessory-back", provides: ["appearance:back", "mirror.safe"], shape: "wide" },
-  { key: "accessory.backpack", name: "Field Backpack", kind: "accessory", slots: ["back-accessory"], tags: ["accessory", "backpack"], color: "#76513C", paletteRole: "accent.base", plane: "accessory-back", conflicts: ["asset:starter.accessory.wings"], provides: ["appearance:back", "mirror.safe"] },
-  { key: "accessory.communicator", name: "One-sided Communicator", kind: "accessory", slots: ["ear-accessory"], tags: ["accessory", "asymmetric", "no-mirror"], color: "#E3AC54", paletteRole: "accent.base", plane: "accessory-front", provides: ["appearance:communicator"], mirrorSafe: false },
-  { key: "accessory.utility-harness", name: "Utility Harness", kind: "accessory", slots: ["waist-accessory", "handheld"], tags: ["accessory", "multi-slot"], color: "#5C443A", paletteRole: "accent.base", plane: "garment-overlap", provides: ["appearance:harness", "mirror.safe"] },
-  { key: "accessory.pendant", name: "Scarf Pendant", kind: "accessory", slots: ["charm"], tags: ["accessory", "dependency"], color: "#62DDE1", paletteRole: "accent.base", plane: "accessory-front", requires: ["asset:starter.accessory.scarf"], provides: ["appearance:pendant", "mirror.safe"] }
+  ] as Array<[string, string, string, AssetDefinition["shape"]]>).map(([key, name, color, shape]) => ({ key, name, color, shape, kind: "shoes", slots: ["shoes"], tags: ["clothing", "shoes", key.includes("crystal") ? "replacement" : "standard"], paletteRole: "garment.shoes", plane: "garment-overlap", provides: ["appearance:shoes", "mirror.safe"] } as AssetDefinition)),
+  { key: "body.crystal-arm", name: "Crystal Right Arm", kind: "body-module", slots: ["body-arm-right"], tags: ["replacement", "crystal", "asymmetric", "right"], color: "#61D8E4", paletteRole: "body.arm.right", bodySide: "right", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.right.base"] }, { kind: "provide-coverage", regions: ["body.arm.right.skin"] }], provides: ["appearance:arm.crystal.right"], mirrorSafe: false },
+  { key: "body.crystal-arm-left", name: "Crystal Left Arm", kind: "body-module", slots: ["body-arm-left"], tags: ["replacement", "crystal", "asymmetric", "left"], color: "#61D8E4", paletteRole: "body.arm.left", bodySide: "left", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.left.base"] }, { kind: "provide-coverage", regions: ["body.arm.left.skin"] }], provides: ["appearance:arm.crystal.left"], mirrorSafe: false },
+  { key: "body.vine-arm", name: "Vine Right Arm", kind: "body-module", slots: ["body-arm-right"], tags: ["replacement", "vine", "asymmetric", "right"], color: "#5A8B55", paletteRole: "body.arm.right", bodySide: "right", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.right.base"] }, { kind: "provide-coverage", regions: ["body.arm.right.skin"] }], provides: ["appearance:arm.vine.right"], mirrorSafe: false },
+  { key: "body.vine-arm-left", name: "Vine Left Arm", kind: "body-module", slots: ["body-arm-left"], tags: ["replacement", "vine", "asymmetric", "left"], color: "#5A8B55", paletteRole: "body.arm.left", bodySide: "left", plane: "body-base", effects: [{ kind: "suppress-tags", targetTags: ["body.arm.left.base"] }, { kind: "provide-coverage", regions: ["body.arm.left.skin"] }], provides: ["appearance:arm.vine.left"], mirrorSafe: false },
+  { key: "accessory.brim-hat", name: "Archivist Hat", kind: "accessory", slots: ["hat"], tags: ["accessory", "hat", "suppression"], color: "#54314D", paletteRole: "accessory.hat", plane: "accessory-front", requires: ["appearance:hair"], effects: [{ kind: "suppress-tags", targetTags: ["hair.crown"] }], provides: ["appearance:hat", "mirror.safe"] },
+  { key: "accessory.glasses", name: "Round Glasses", kind: "accessory", slots: ["face-accessory"], tags: ["accessory", "glasses"], color: "#D0A34A", paletteRole: "accessory.face", plane: "accessory-front", requires: ["appearance:eyes"], provides: ["appearance:glasses", "mirror.safe"] },
+  { key: "accessory.earrings", name: "Drop Earrings", kind: "accessory", slots: ["ear-accessory"], tags: ["accessory", "earrings"], color: "#E8B955", paletteRole: "accessory.ear", plane: "accessory-front", requires: ["appearance:ears"], provides: ["appearance:earrings", "mirror.safe"] },
+  { key: "accessory.scarf", name: "Patterned Scarf", kind: "accessory", slots: ["neck-accessory"], tags: ["accessory", "scarf", "conflict"], color: "#70456F", paletteRole: "accessory.neck", plane: "accessory-front", conflicts: ["asset:starter.outerwear.long-coat"], provides: ["appearance:scarf", "mirror.safe"] },
+  { key: "accessory.sketchbook", name: "Sketchbook", kind: "accessory", slots: ["handheld"], tags: ["accessory", "handheld"], color: "#805842", paletteRole: "accessory.handheld", plane: "foreground", requires: ["anchor:hand.left.grip"], provides: ["appearance:handheld"], mirrorSafe: false },
+  { key: "accessory.wings", name: "Moth Wings", kind: "accessory", slots: ["back-accessory"], tags: ["accessory", "back", "wings"], color: "#9E8458", paletteRole: "accessory.back", plane: "accessory-back", provides: ["appearance:back", "mirror.safe"], shape: "wide" },
+  { key: "accessory.backpack", name: "Field Backpack", kind: "accessory", slots: ["back-accessory"], tags: ["accessory", "backpack"], color: "#76513C", paletteRole: "accessory.back", plane: "accessory-back", conflicts: ["asset:starter.accessory.wings"], provides: ["appearance:back", "mirror.safe"] },
+  { key: "accessory.communicator", name: "One-sided Communicator", kind: "accessory", slots: ["ear-accessory"], tags: ["accessory", "asymmetric", "no-mirror"], color: "#E3AC54", paletteRole: "accessory.ear", plane: "accessory-front", provides: ["appearance:communicator"], mirrorSafe: false },
+  { key: "accessory.utility-harness", name: "Utility Harness", kind: "accessory", slots: ["waist-accessory", "handheld"], tags: ["accessory", "multi-slot"], color: "#5C443A", paletteRole: "accessory.waist", plane: "garment-overlap", provides: ["appearance:harness", "mirror.safe"] },
+  { key: "accessory.pendant", name: "Scarf Pendant", kind: "accessory", slots: ["charm"], tags: ["accessory", "dependency"], color: "#62DDE1", paletteRole: "accessory.charm", plane: "accessory-front", requires: ["asset:starter.accessory.scarf"], provides: ["appearance:pendant", "mirror.safe"] }
 ];
 
 function hash(value: string): string {
@@ -219,7 +236,6 @@ function drawBody(context: SKRSContext2D, definition: AssetDefinition, request: 
     ellipse(context, m.cx, m.headY, m.headR, m.headR * (definition.shape === "wide" ? .9 : 1.02), definition.color, lineWidth);
     roundedRect(context, m.cx - m.torsoWidth / 2, m.torsoTop, m.torsoWidth, m.torsoHeight, 18 * scale);
     fillStroke(context, definition.color, lineWidth);
-    line(context, [[rightX, m.torsoTop + 12 * scale], [rightX + 10 * scale, m.hipY - 14 * scale]], definition.color, m.limb);
     if (request.profile !== "portrait") {
       const legTop = m.hipY - 3 * scale;
       line(context, [[m.cx - m.torsoWidth * .22, legTop], [m.cx - m.torsoWidth * .22 - m.stride, m.ground - 6 * scale]], definition.color, m.limb * 1.15);
@@ -232,6 +248,9 @@ function drawBody(context: SKRSContext2D, definition: AssetDefinition, request: 
     }
   }
   if (part === "left-arm" || part === "all") {
+    line(context, [[rightX, m.torsoTop + 12 * scale], [rightX + 10 * scale, m.hipY - 14 * scale]], definition.color, m.limb);
+  }
+  if (part === "right-arm" || part === "all") {
     line(context, [[leftX, m.torsoTop + 12 * scale], [leftX - 10 * scale, m.hipY - 14 * scale]], definition.color, m.limb);
   }
 }
@@ -243,9 +262,10 @@ function drawLayer(context: SKRSContext2D, definition: AssetDefinition, request:
   const lw = sprite ? 2 : 4;
   if (definition.kind === "base-body") { drawBody(context, definition, request, request.part); return; }
   if (definition.kind === "body-module") {
-    const x = m.cx - m.torsoWidth / 2 - m.limb * .45;
-    line(context, [[x, m.torsoTop + 10 * s], [x - 12 * s, m.hipY - 12 * s]], definition.color, m.limb * 1.15);
-    for (let index = 0; index < 3; index += 1) line(context, [[x - 4 * s, m.torsoTop + (20 + index * 20) * s], [x - 15 * s, m.torsoTop + (28 + index * 20) * s]], "#D7FBFF", Math.max(1, 2 * s));
+    const direction = definition.bodySide === "left" ? 1 : -1;
+    const x = m.cx + direction * (m.torsoWidth / 2 + m.limb * .45);
+    line(context, [[x, m.torsoTop + 10 * s], [x + direction * 12 * s, m.hipY - 12 * s]], definition.color, m.limb * 1.15);
+    for (let index = 0; index < 3; index += 1) line(context, [[x + direction * 4 * s, m.torsoTop + (20 + index * 20) * s], [x + direction * 15 * s, m.torsoTop + (28 + index * 20) * s]], "#D7FBFF", Math.max(1, 2 * s));
     return;
   }
   if (definition.kind === "hair") {
@@ -417,7 +437,8 @@ function fragment(
   tags: string[],
   covers: string[] = [],
   contentSlots: string[] = definition.slots,
-  motionGroup?: string
+  motionGroup?: string,
+  paletteRole = definition.paletteRole
 ): AssetFragment {
   const [width, height] = dimensions(selector.profile);
   const result: AssetFragment = {
@@ -428,7 +449,7 @@ function fragment(
     order: 0,
     anchor: "canvas.origin",
     pivot: [0, 0],
-    paletteRoles: [definition.paletteRole],
+    paletteRoles: [paletteRole],
     contentSlots,
     ...(motionGroup === undefined ? {} : { motionGroup }),
     covers,
@@ -494,29 +515,40 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
 
   if (definition.kind === "base-body") {
     const portraitCore = await emitFragmentImage(definition, "portrait-front-core", { profile: "portrait", view: "front", expression: "*", part: "core" });
+    const portraitLeftArm = await emitFragmentImage(definition, "portrait-front-left-arm", { profile: "portrait", view: "front", expression: "*", part: "left-arm" });
+    const portraitRightArm = await emitFragmentImage(definition, "portrait-front-right-arm", { profile: "portrait", view: "front", expression: "*", part: "right-arm" });
     fragments.push(fragment(definition, "portrait.front.core", { profile: "portrait", view: "front", expression: "*" }, portraitCore, "body-base", ["body.head.base", "body.torso.base", "face.base"], ["body.head.skin", "body.torso.skin", "face.eyes", "face.mouth"]));
+    fragments.push(fragment(definition, "portrait.front.left-arm", { profile: "portrait", view: "front", expression: "*" }, portraitLeftArm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"], definition.slots, undefined, "body.arm.left"));
+    fragments.push(fragment(definition, "portrait.front.right-arm", { profile: "portrait", view: "front", expression: "*" }, portraitRightArm, "body-base", ["body.arm.right.base"], ["body.arm.right.skin"], definition.slots, undefined, "body.arm.right"));
     for (const view of views["full-body"]) {
       const core = await emitFragmentImage(definition, `full-body-${view}-core`, { profile: "full-body", view, expression: "*", part: "core" });
-      const arm = await emitFragmentImage(definition, `full-body-${view}-left-arm`, { profile: "full-body", view, expression: "*", part: "left-arm" });
-      fragments.push(fragment(definition, `full-body.${view}.core`, { profile: "full-body", view, expression: "*" }, core, "body-base", ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"]));
-      fragments.push(fragment(definition, `full-body.${view}.left-arm`, { profile: "full-body", view, expression: "*" }, arm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"]));
+      const leftArm = await emitFragmentImage(definition, `full-body-${view}-left-arm`, { profile: "full-body", view, expression: "*", part: "left-arm" });
+      const rightArm = await emitFragmentImage(definition, `full-body-${view}-right-arm`, { profile: "full-body", view, expression: "*", part: "right-arm" });
+      fragments.push(fragment(definition, `full-body.${view}.core`, { profile: "full-body", view, expression: "*" }, core, "body-base", ["body.head.base", "body.torso.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.leg.left.skin", "body.leg.right.skin"]));
+      fragments.push(fragment(definition, `full-body.${view}.left-arm`, { profile: "full-body", view, expression: "*" }, leftArm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"], definition.slots, undefined, "body.arm.left"));
+      fragments.push(fragment(definition, `full-body.${view}.right-arm`, { profile: "full-body", view, expression: "*" }, rightArm, "body-base", ["body.arm.right.base"], ["body.arm.right.skin"], definition.slots, undefined, "body.arm.right"));
     }
     for (const clip of rig.clips) for (const view of clip.directions) for (const frameInfo of clip.frames) {
       const request = { profile: "sprite" as const, view, clip: clip.id, frame: frameInfo.id, part: "core" as const };
       const core = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-core`, request);
-      const arm = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-left-arm`, { ...request, part: "left-arm" });
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.core`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, core, "body-base", ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"], definition.slots, "core"));
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.left-arm`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, arm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"], definition.slots, "left-arm"));
+      const leftArm = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-left-arm`, { ...request, part: "left-arm" });
+      const rightArm = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-right-arm`, { ...request, part: "right-arm" });
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.core`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, core, "body-base", ["body.head.base", "body.torso.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.leg.left.skin", "body.leg.right.skin"], definition.slots, "core"));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.left-arm`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, leftArm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"], definition.slots, "left-arm", "body.arm.left"));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.right-arm`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, rightArm, "body-base", ["body.arm.right.base"], ["body.arm.right.skin"], definition.slots, "right-arm", "body.arm.right"));
     }
   } else if (definition.kind === "body-module") {
-    await addGeneral("portrait", "front");
+    const side = definition.bodySide ?? "right";
+    const region = `body.arm.${side}.skin`;
+    const portraitSource = await emitFragmentImage(definition, "portrait-front-any", { profile: "portrait", view: "front", expression: "*", part: "main" });
+    fragments.push(fragment(definition, "portrait.front.any", { profile: "portrait", view: "front", expression: "*" }, portraitSource, definition.plane, [...baseTags, `body.arm.${side}.replacement`], [region]));
     for (const view of views["full-body"]) {
       const source = await emitFragmentImage(definition, `full-body-${view}`, { profile: "full-body", view, part: "main" });
-      fragments.push(fragment(definition, `full-body.${view}`, { profile: "full-body", view, expression: "*" }, source, definition.plane, [...baseTags, "body.arm.left.replacement"], ["body.arm.left.skin"]));
+      fragments.push(fragment(definition, `full-body.${view}`, { profile: "full-body", view, expression: "*" }, source, definition.plane, [...baseTags, `body.arm.${side}.replacement`], [region]));
     }
     for (const clip of rig.clips) for (const view of clip.directions) for (const frameInfo of clip.frames) {
       const source = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id, part: "main" });
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, [...baseTags, "body.arm.left.replacement"], ["body.arm.left.skin"], definition.slots, "main"));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, [...baseTags, `body.arm.${side}.replacement`], [region], definition.slots, `${side}-arm`));
     }
   } else if (definition.kind === "shoes") {
     for (const view of views["full-body"]) {
@@ -553,7 +585,7 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
       conflicts: definition.conflicts ?? [],
       provides: [...(definition.provides ?? []), ...(definition.mirrorSafe === false ? [] : definition.provides?.includes("mirror.safe") ? [] : ["mirror.safe"])]
     },
-    palette: { roles: { [definition.paletteRole]: { default: definition.color === "#00000000" ? "#2A2035" : definition.color, mode: "replace" } } },
+    palette: { roles: Object.fromEntries([definition.paletteRole, ...(definition.extraPaletteRoles ?? [])].map((role) => [role, { default: definition.color === "#00000000" ? "#2A2035" : definition.color, mode: "replace" }])) },
     effects: definition.effects ?? [],
     fragments,
     fallbacks: [],
@@ -602,6 +634,7 @@ rig.clips = rig.clips
 rig.slots = [
   { id: "base-body", exclusive: true, allowedKinds: ["base-body"] },
   { id: "body-arm-left", exclusive: true, allowedKinds: ["body-module"] },
+  { id: "body-arm-right", exclusive: true, allowedKinds: ["body-module"] },
   { id: "head", exclusive: true, allowedKinds: ["face"] },
   { id: "nose", exclusive: true, allowedKinds: ["face"] },
   { id: "eyes", exclusive: true, allowedKinds: ["face"] },
@@ -632,7 +665,7 @@ for (const generatedPath of [
   join(packRoot, "recipes"),
   join(packRoot, "thumbnails"),
   studioRoot
-]) await rm(generatedPath, { recursive: true, force: true });
+]) await removeGenerated(generatedPath);
 await mkdir(join(packRoot, "assets"), { recursive: true });
 await mkdir(join(packRoot, "recipes"), { recursive: true });
 await mkdir(studioRoot, { recursive: true });
@@ -644,9 +677,9 @@ for (const definition of definitions) {
 }
 
 const heroRecipes = [
-  { id: "everyday-layered", name: "Everyday Layered", recipe: recipe("Everyday Layered", 1001, ["starter.base.standard", "starter.head.oval", "starter.nose.soft", "starter.eyes.round", "starter.brows.arched", "starter.mouth.soft", "starter.ears.round", "starter.hair.long-wavy", "starter.top.fitted-shirt", "starter.bottom.fitted-pants", "starter.outerwear.short-jacket", "starter.shoes.boots", "starter.accessory.glasses", "starter.accessory.sketchbook"], { "skin.base": "#B96F56", "hair.base": "#39345E", "garment.primary": "#4ED7E8", "garment.secondary": "#70456F", "accent.base": "#D0A34A" }) },
-  { id: "silhouette-replacement", name: "Silhouette Replacement", recipe: recipe("Silhouette Replacement", 2002, ["starter.base.petite", "starter.head.soft-square", "starter.nose.bridge", "starter.eyes.almond", "starter.brows.straight", "starter.mouth.smirk", "starter.ears.pointed", "starter.hair.asymmetric", "starter.outfit.simple", "starter.outerwear.short-jacket", "starter.shoes.crystal-feet", "starter.body.crystal-arm", "starter.accessory.communicator"], { "skin.base": "#C98261", "hair.base": "#123F4D", "garment.primary": "#DD6E57", "garment.secondary": "#30283D", "crystal.base": "#61D8E4", "accent.base": "#E3AC54" }) },
-  { id: "occlusion-stress", name: "Occlusion Stress", recipe: recipe("Occlusion Stress", 3003, ["starter.base.broad", "starter.head.round", "starter.nose.button", "starter.eyes.deep", "starter.brows.bold", "starter.mouth.smile", "starter.ears.fae", "starter.hair.coiled", "starter.top.sweater", "starter.bottom.wide-trousers", "starter.outerwear.long-coat", "starter.shoes.low", "starter.accessory.brim-hat", "starter.accessory.wings"], { "skin.base": "#714330", "hair.base": "#8A4A2C", "garment.primary": "#D4A73A", "garment.secondary": "#244B3C", "accent.base": "#54314D" }) }
+  { id: "everyday-layered", name: "Everyday Layered", recipe: recipe("Everyday Layered", 1001, ["starter.base.standard", "starter.head.oval", "starter.nose.soft", "starter.eyes.round", "starter.brows.arched", "starter.mouth.soft", "starter.ears.round", "starter.hair.long-wavy", "starter.top.fitted-shirt", "starter.bottom.fitted-pants", "starter.outerwear.short-jacket", "starter.shoes.boots", "starter.accessory.glasses", "starter.accessory.sketchbook"], { "skin.base": "#B96F56", "body.arm.left": "#B96F56", "body.arm.right": "#B96F56", "hair.base": "#39345E", "garment.top": "#4ED7E8", "garment.bottom": "#332A55", "garment.outerwear": "#70456F", "garment.shoes": "#654433", "accessory.face": "#D0A34A", "accessory.handheld": "#805842" }) },
+  { id: "silhouette-replacement", name: "Silhouette Replacement", recipe: recipe("Silhouette Replacement", 2002, ["starter.base.petite", "starter.head.soft-square", "starter.nose.bridge", "starter.eyes.almond", "starter.brows.straight", "starter.mouth.smirk", "starter.ears.pointed", "starter.hair.asymmetric", "starter.outfit.simple", "starter.outerwear.short-jacket", "starter.shoes.crystal-feet", "starter.body.crystal-arm", "starter.body.vine-arm-left", "starter.accessory.communicator"], { "skin.base": "#C98261", "body.arm.left": "#5A8B55", "body.arm.right": "#61D8E4", "hair.base": "#123F4D", "garment.outfit": "#DD6E57", "garment.outerwear": "#70456F", "garment.shoes": "#61D8E4", "accessory.ear": "#E3AC54" }) },
+  { id: "occlusion-stress", name: "Occlusion Stress", recipe: recipe("Occlusion Stress", 3003, ["starter.base.broad", "starter.head.round", "starter.nose.button", "starter.eyes.deep", "starter.brows.bold", "starter.mouth.smile", "starter.ears.fae", "starter.hair.coiled", "starter.top.sweater", "starter.bottom.wide-trousers", "starter.outerwear.long-coat", "starter.shoes.low", "starter.accessory.brim-hat", "starter.accessory.wings"], { "skin.base": "#714330", "body.arm.left": "#714330", "body.arm.right": "#714330", "hair.base": "#8A4A2C", "garment.top": "#D4A73A", "garment.bottom": "#352F35", "garment.outerwear": "#244B3C", "garment.shoes": "#513D39", "accessory.hat": "#54314D", "accessory.back": "#9E8458" }) }
 ];
 
 const bodyProfiles = [

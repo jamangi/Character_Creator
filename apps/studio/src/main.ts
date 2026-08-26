@@ -45,6 +45,25 @@ let assets: AssetManifest[] = [];
 let rig: RigDefinition;
 let heroes: Array<{ id: string; name: string; recipe: CharacterRecipe }> = [];
 let renderToken = 0;
+let palettePreviewing = false;
+
+const paletteLabels: Record<string, string> = {
+  "body.arm.left": "left arm",
+  "body.arm.right": "right arm",
+  "garment.top": "top",
+  "garment.bottom": "bottom",
+  "garment.outfit": "outfit",
+  "garment.outerwear": "outerwear",
+  "garment.shoes": "shoes",
+  "accessory.hat": "hat accessory",
+  "accessory.face": "face accessory",
+  "accessory.ear": "ear accessory",
+  "accessory.neck": "neck accessory",
+  "accessory.handheld": "handheld accessory",
+  "accessory.back": "back accessory",
+  "accessory.waist": "waist accessory",
+  "accessory.charm": "charm accessory"
+};
 
 function image(source: string): Promise<CanvasImageLike> {
   return new Promise((resolve, reject) => {
@@ -97,13 +116,17 @@ function updateInspector(): void {
   const roles = new Set(assets.flatMap((asset) => Object.keys(asset.palette.roles)));
   paletteControls.innerHTML = [...roles].sort().map((role) => {
     const fallback = assets.find((asset) => asset.palette.roles[role] !== undefined)?.palette.roles[role]?.default ?? "#ffffff";
-    return `<label><input type="color" data-palette="${role}" value="${snapshot.recipe.palette[role] ?? fallback}"><span>${role.replaceAll(".", " ")}</span></label>`;
+    return `<label><input type="color" data-palette="${role}" value="${snapshot.recipe.palette[role] ?? fallback}"><span>${paletteLabels[role] ?? role.replaceAll(".", " ")}</span></label>`;
   }).join("");
   byId<HTMLButtonElement>("undo").disabled = !snapshot.canUndo;
   byId<HTMLButtonElement>("redo").disabled = !snapshot.canRedo;
 }
 
 function updateAll(): void {
+  if (palettePreviewing) {
+    void render();
+    return;
+  }
   updateCatalog();
   updateInspector();
   void render();
@@ -171,9 +194,23 @@ async function initialize(): Promise<void> {
     const input = (event.target as HTMLElement).closest<HTMLInputElement>("[data-palette]");
     const role = input?.dataset["palette"];
     if (input !== null && role !== undefined) {
-      store.setPalette(role, input.value.toUpperCase());
+      palettePreviewing = true;
+      store.previewPalette(role, input.value.toUpperCase());
+      palettePreviewing = false;
     }
   });
+  // Native pickers may emit many live input values; change closes that whole
+  // gesture as one exact history transaction.
+  paletteControls.addEventListener("change", (event) => {
+    const input = (event.target as HTMLElement).closest<HTMLInputElement>("[data-palette]");
+    const role = input?.dataset["palette"];
+    if (input === null || role === undefined) return;
+    palettePreviewing = true;
+    store.previewPalette(role, input.value.toUpperCase());
+    palettePreviewing = false;
+    store.commitPalettePreview();
+  });
+  paletteControls.addEventListener("focusout", () => { store.commitPalettePreview(); });
   search.addEventListener("input", updateCatalog);
   compatible.addEventListener("click", () => { compatible.setAttribute("aria-pressed", String(compatible.getAttribute("aria-pressed") !== "true")); updateCatalog(); });
   document.querySelectorAll<HTMLButtonElement>("[data-preview]").forEach((button) => button.addEventListener("click", () => {

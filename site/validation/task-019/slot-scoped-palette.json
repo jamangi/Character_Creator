@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-08-26T19:00:00.000Z",
+  "assigned": {
+    "accessory.face": "#D0A34A",
+    "accessory.handheld": "#805842",
+    "body.arm.left": "#E84D8A",
+    "body.arm.right": "#4DE1D0",
+    "garment.bottom": "#101116",
+    "garment.outerwear": "#35A85C",
+    "garment.shoes": "#7357C7",
+    "garment.top": "#F6A83B",
+    "hair.base": "#6D3B8C",
+    "skin.base": "#C98261"
+  },
+  "legacyProjection": {
+    "garment.primary": [
+      "garment.top",
+      "garment.outfit"
+    ],
+    "garment.secondary": [
+      "garment.bottom",
+      "garment.outerwear",
+      "garment.shoes"
+    ],
+    "skin.base": [
+      "body.arm.left",
+      "body.arm.right"
+    ]
+  }
+}

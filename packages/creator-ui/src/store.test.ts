@@ -67,6 +67,54 @@ describe("framework-neutral Creator Studio state", () => {
     store.setPreview({ profile: "full-body", view: "back", expression: "smirk" });
     store.setPreview({ profile: "sprite", view: "left", clip: "idle", frame: "center" });
     expect(store.exportJson()).toBe(recipe);
+    expect(store.snapshot.canUndo).toBe(false);
+  });
+
+  it("undoes and redoes a palette gesture as one exact recipe transaction", () => {
+    const input = fixtures();
+    const store = new CreatorStore({ ...input });
+    const before = store.exportJson();
+    expect(store.setPalette("skin.base", "#ABCDEF").ok).toBe(true);
+    const changed = store.exportJson();
+    expect(changed).not.toBe(before);
+    expect(store.undo().ok).toBe(true);
+    expect(store.exportJson()).toBe(before);
+    expect(store.redo().ok).toBe(true);
+    expect(store.exportJson()).toBe(changed);
+  });
+
+  it("coalesces many live palette values into one committed history entry", () => {
+    const input = fixtures();
+    const store = new CreatorStore({ ...input });
+    const before = store.exportJson();
+    expect(store.previewPalette("skin.base", "#111111").ok).toBe(true);
+    expect(store.previewPalette("skin.base", "#222222").ok).toBe(true);
+    expect(store.previewPalette("skin.base", "#ABCDEF").ok).toBe(true);
+    const final = store.exportJson();
+    expect(store.commitPalettePreview().ok).toBe(true);
+    expect(store.undo().ok).toBe(true);
+    expect(store.exportJson()).toBe(before);
+    expect(store.undo().ok).toBe(false);
+    expect(store.redo().ok).toBe(true);
+    expect(store.exportJson()).toBe(final);
+  });
+
+  it("undoes a hero reset in one step and clears redo after a new branch", () => {
+    const input = fixtures();
+    const alternate = structuredClone(input.recipe);
+    alternate.seed = 9876;
+    alternate.palette = { ...alternate.palette, "skin.base": "#123456" };
+    const store = new CreatorStore({ ...input });
+    const before = store.exportJson();
+    expect(store.reset(alternate).ok).toBe(true);
+    const hero = store.exportJson();
+    expect(store.undo().ok).toBe(true);
+    expect(store.exportJson()).toBe(before);
+    expect(store.redo().ok).toBe(true);
+    expect(store.exportJson()).toBe(hero);
+    expect(store.undo().ok).toBe(true);
+    expect(store.setPalette("skin.base", "#654321").ok).toBe(true);
+    expect(store.snapshot.canRedo).toBe(false);
   });
 
   it("randomizes deterministically", () => {

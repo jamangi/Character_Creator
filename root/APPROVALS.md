@@ -26,6 +26,32 @@ The owner approved Option 1. `starter-humanoid@1` will advertise front-facing `i
 
 ---
 
+## APPROVAL-002 — source-code license for the first release
+
+- **Status:** APPROVAL PENDING
+- **Needed before:** TASK-009 can be marked DONE or a public source release is tagged
+- **Raised:** 2026-08-26
+
+### Context
+
+The generated starter pack explicitly uses CC0-1.0, but the engine, Studio, validator, examples, and documentation have no repository-level source-code license. Publishing a release without a license leaves users without an explicit grant to use, modify, or redistribute the code. Choosing a license is a legal/product decision and is not inferred from the public repository.
+
+### Options
+
+1. **MIT for code; CC0-1.0 for starter assets (recommended).** A short permissive code license supports broad embedding while keeping the existing public-domain-style starter content grant.
+2. **Apache-2.0 for code; CC0-1.0 for starter assets.** Also permissive, with an explicit patent grant and somewhat longer compliance text.
+3. **Keep source code unlicensed for now.** The Pages review may continue, but Task 009 and any reusable public release remain blocked.
+
+### Consequences
+
+Options 1 or 2 require adding the chosen code license, package license fields, and final attribution notices before Task 009 acceptance. Option 3 makes no new legal grant and preserves the current blocker.
+
+### Decision
+
+Awaiting owner selection. Technical release artifacts may be reviewed independently in the meantime.
+
+---
+
 ## Standing defaults
 
 The following defaults are recommended and may be changed later without invalidating the architecture:

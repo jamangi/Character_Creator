@@ -16,6 +16,27 @@ function sortedRecord<T>(record: Readonly<Record<string, T>>): Record<string, T>
 }
 
 export function normalizeRecipe(recipe: CharacterRecipe): CharacterRecipe {
+  const sourcePalette = recipe.palette;
+  const palette = { ...sourcePalette };
+  const inherit = (role: string, value: string | undefined): void => {
+    if (value !== undefined && sourcePalette[role] === undefined) palette[role] = value;
+  };
+
+  // Schema 0.1 recipes used three broad color roles. Retain those keys for a
+  // source-preserving round trip while projecting them into the stable,
+  // independently addressable role vocabulary introduced by Tasks 019/020.
+  inherit("garment.top", sourcePalette["garment.primary"]);
+  inherit("garment.outfit", sourcePalette["garment.primary"]);
+  inherit("garment.bottom", sourcePalette["garment.secondary"]);
+  inherit("garment.outerwear", sourcePalette["garment.secondary"]);
+  inherit("garment.shoes", sourcePalette["crystal.base"] ?? sourcePalette["garment.secondary"]);
+  for (const role of ["accessory.hat", "accessory.face", "accessory.ear", "accessory.neck", "accessory.handheld", "accessory.back", "accessory.waist", "accessory.charm"]) {
+    inherit(role, sourcePalette["accent.base"]);
+  }
+  const legacyArm = sourcePalette["crystal.base"] ?? sourcePalette["accent.base"] ?? sourcePalette["skin.base"];
+  inherit("body.arm.left", legacyArm);
+  inherit("body.arm.right", legacyArm);
+
   const normalized: CharacterRecipe = {
     ...recipe,
     equipped: [...recipe.equipped].sort((left, right) =>
@@ -23,7 +44,7 @@ export function normalizeRecipe(recipe: CharacterRecipe): CharacterRecipe {
       (left.version ?? "").localeCompare(right.version ?? "") ||
       (left.variant ?? "").localeCompare(right.variant ?? "")
     ),
-    palette: sortedRecord(recipe.palette),
+    palette: sortedRecord(palette),
     parameters: sortedRecord(recipe.parameters)
   };
   if (recipe.metadata !== undefined) normalized.metadata = sortedRecord(recipe.metadata);

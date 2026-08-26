@@ -15,6 +15,8 @@ The authoritative JSON Schemas and TypeScript types now live in `packages/schema
 - Render profiles can hide semantic slots; fragments can refine multi-slot content with `contentSlots`. Projection happens in the resolver and never mutates a recipe.
 - Sprite fragments can declare a `motionGroup`; visible groups require exact advertised-frame coverage unless an asset explicitly provides `motion.static-safe`.
 - Palette role masks in v0.1 are exact authored sRGB default-color keys within each fragment. The resolver carries the role, source color, requested value, and mode to the renderer; alpha and non-key pixels remain unchanged.
+- Palette addresses are semantic and stable. Starter body/clothing roles are category-scoped, bilateral arms use `body.arm.left`/`.right`, and accessories use their semantic slot rather than equip-order numbering. Unused recipe roles are harmless no-ops.
+- Normalization retains legacy `garment.primary`, `garment.secondary`, `accent.base`, and `crystal.base` keys while projecting any missing slot-scoped roles for deterministic 0.1 compatibility.
 
 These choices are exercised by versioned valid and invalid fixtures under `fixtures/`.
 
@@ -173,6 +175,8 @@ A body module is an ordinary data asset with permission to claim anatomy coverag
 - compatible neighboring fit tags;
 - full required motion/view coverage for the regions it replaces;
 - a fallback policy of `forbidden` for anatomy-critical missing frames.
+
+The starter humanoid exposes explicit exclusive `body-arm-left` and `body-arm-right` slots. Its base arms are separate fragments so replacing or restoring either anatomical side never suppresses the other. Laterality is anatomical: in a front-facing image, character-left appears on screen-right.
 
 A body profile is a recipe bundle that equips a tested set of modules atomically. The UI should present profiles as the normal way to change proportions while leaving advanced individual-part mixing available only when compatibility checks pass.
 

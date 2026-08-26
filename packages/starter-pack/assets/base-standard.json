@@ -36,6 +36,14 @@
   },
   "palette": {
     "roles": {
+      "body.arm.left": {
+        "default": "#B96F56",
+        "mode": "replace"
+      },
+      "body.arm.right": {
+        "default": "#B96F56",
+        "mode": "replace"
+      },
       "skin.base": {
         "default": "#B96F56",
         "mode": "replace"
@@ -68,7 +76,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -76,7 +83,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -102,7 +108,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -113,6 +119,41 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.back.right-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/base-standard/full-body-back-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -145,7 +186,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -153,7 +193,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -179,7 +218,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -190,6 +229,41 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.front.right-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-standard/full-body-front-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -222,7 +296,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -230,7 +303,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -256,7 +328,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -267,6 +339,41 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.left.right-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/base-standard/full-body-left-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -299,7 +406,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -307,7 +413,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -333,7 +438,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -344,6 +449,41 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body.right.right-arm",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/base-standard/full-body-right-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -393,6 +533,76 @@
       }
     },
     {
+      "id": "portrait.front.left-arm",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-standard/portrait-front-left-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "portrait.front.right-arm",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/base-standard/portrait-front-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
       "id": "sprite.idle.front.center.core",
       "selector": {
         "profile": "sprite",
@@ -418,7 +628,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -426,7 +635,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -453,7 +661,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -465,6 +673,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.idle.front.center.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/base-standard/sprite-idle-front-center-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -499,7 +744,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -507,7 +751,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -534,7 +777,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -546,6 +789,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-left.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/base-standard/sprite-run-front-contact-left-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -580,7 +860,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -588,7 +867,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -615,7 +893,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -627,6 +905,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.contact-right.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/base-standard/sprite-run-front-contact-right-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -661,7 +976,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -669,7 +983,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -696,7 +1009,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -708,6 +1021,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-left.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/base-standard/sprite-run-front-flight-left-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -742,7 +1092,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -750,7 +1099,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -777,7 +1125,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -789,6 +1137,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.run.front.flight-right.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/base-standard/sprite-run-front-flight-right-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -823,7 +1208,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -831,7 +1215,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -858,7 +1241,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -870,6 +1253,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-left.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/base-standard/sprite-walk-front-contact-left-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -904,7 +1324,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -912,7 +1331,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -939,7 +1357,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -951,6 +1369,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.contact-right.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/base-standard/sprite-walk-front-contact-right-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -985,7 +1440,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -993,7 +1447,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -1020,7 +1473,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -1032,6 +1485,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-left.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/base-standard/sprite-walk-front-pass-left-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,
@@ -1066,7 +1556,6 @@
       "covers": [
         "body.head.skin",
         "body.torso.skin",
-        "body.arm.right.skin",
         "body.leg.left.skin",
         "body.leg.right.skin"
       ],
@@ -1074,7 +1563,6 @@
       "tags": [
         "body.head.base",
         "body.torso.base",
-        "body.arm.right.base",
         "body.legs.base"
       ],
       "bounds": {
@@ -1101,7 +1589,7 @@
         0
       ],
       "paletteRoles": [
-        "skin.base"
+        "body.arm.left"
       ],
       "contentSlots": [
         "base-body"
@@ -1113,6 +1601,43 @@
       "suppresses": [],
       "tags": [
         "body.arm.left.base"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite.walk.front.pass-right.right-arm",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/base-standard/sprite-walk-front-pass-right-right-arm.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.right"
+      ],
+      "contentSlots": [
+        "base-body"
+      ],
+      "motionGroup": "right-arm",
+      "covers": [
+        "body.arm.right.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "body.arm.right.base"
       ],
       "bounds": {
         "x": 0,

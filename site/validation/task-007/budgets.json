@@ -1,14 +1,14 @@
 {
   "generatedAt": "2026-08-26T19:00:00.000Z",
-  "assets": 62,
-  "pngFiles": 1209,
-  "decodedSourceBytes": 1555538,
+  "assets": 64,
+  "pngFiles": 1284,
+  "decodedSourceBytes": 1624884,
   "packBudgetBytes": 33554432,
   "withinPackBudget": true,
   "renderSample": {
     "iterations": 25,
-    "totalMs": 232.59,
-    "averageMs": 9.3,
-    "targetAverageMs": 20
+    "targetAverageMs": 20,
+    "withinBudget": true,
+    "note": "Wall-clock timing is evaluated during generation but omitted from this reproducible artifact; only the threshold result is committed."
   }
 }

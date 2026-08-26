@@ -1,0 +1,2475 @@
+{
+  "inputs": {
+    "packages/schema/src/diagnostics.ts": {
+      "bytes": 840,
+      "imports": [],
+      "format": "esm"
+    },
+    "packages/schema/src/normalize.ts": {
+      "bytes": 4535,
+      "imports": [],
+      "format": "esm"
+    },
+    "packages/schema/src/types.ts": {
+      "bytes": 6335,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js": {
+      "bytes": 4676,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js": {
+      "bytes": 5198,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js",
+          "kind": "require-call",
+          "original": "./code"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js": {
+      "bytes": 23127,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js",
+          "kind": "require-call",
+          "original": "./code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js",
+          "kind": "require-call",
+          "original": "./scope"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js",
+          "kind": "require-call",
+          "original": "./code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js",
+          "kind": "require-call",
+          "original": "./scope"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js": {
+      "bytes": 7103,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js",
+          "kind": "require-call",
+          "original": "./codegen/code"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js": {
+      "bytes": 1440,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js": {
+      "bytes": 5771,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "./util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "./names"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js": {
+      "bytes": 1531,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js",
+          "kind": "require-call",
+          "original": "../errors"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../names"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js": {
+      "bytes": 918,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js": {
+      "bytes": 853,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js": {
+      "bytes": 8409,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js",
+          "kind": "require-call",
+          "original": "../rules"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js",
+          "kind": "require-call",
+          "original": "./applicability"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js",
+          "kind": "require-call",
+          "original": "../errors"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js": {
+      "bytes": 1448,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js": {
+      "bytes": 6216,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../compile/names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js": {
+      "bytes": 5695,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../../vocabularies/code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js",
+          "kind": "require-call",
+          "original": "../errors"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js": {
+      "bytes": 3858,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js": {
+      "bytes": 1177,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js": {
+      "bytes": 2428,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js": {
+      "bytes": 5006,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "./util"
+        },
+        {
+          "path": "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js",
+          "kind": "require-call",
+          "original": "fast-deep-equal"
+        },
+        {
+          "path": "node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js",
+          "kind": "require-call",
+          "original": "json-schema-traverse"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js": {
+      "bytes": 20552,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js",
+          "kind": "require-call",
+          "original": "./boolSchema"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js",
+          "kind": "require-call",
+          "original": "./dataType"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js",
+          "kind": "require-call",
+          "original": "./applicability"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js",
+          "kind": "require-call",
+          "original": "./dataType"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js",
+          "kind": "require-call",
+          "original": "./defaults"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js",
+          "kind": "require-call",
+          "original": "./keyword"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js",
+          "kind": "require-call",
+          "original": "./subschema"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js",
+          "kind": "require-call",
+          "original": "../resolve"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js",
+          "kind": "require-call",
+          "original": "../errors"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js": {
+      "bytes": 337,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js": {
+      "bytes": 543,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js",
+          "kind": "require-call",
+          "original": "./resolve"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js": {
+      "bytes": 10046,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js",
+          "kind": "require-call",
+          "original": "../runtime/validation_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "./names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js",
+          "kind": "require-call",
+          "original": "./resolve"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "./util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js",
+          "kind": "require-call",
+          "original": "./validate"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json": {
+      "bytes": 409,
+      "imports": []
+    },
+    "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js": {
+      "bytes": 20635,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/schemes.js": {
+      "bytes": 7367,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/index.js": {
+      "bytes": 21620,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js",
+          "kind": "require-call",
+          "original": "./lib/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/schemes.js",
+          "kind": "require-call",
+          "original": "./lib/schemes"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js": {
+      "bytes": 218,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/index.js",
+          "kind": "require-call",
+          "original": "fast-uri"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js": {
+      "bytes": 25202,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js",
+          "kind": "require-call",
+          "original": "./compile/validate"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js",
+          "kind": "require-call",
+          "original": "./runtime/validation_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js",
+          "kind": "require-call",
+          "original": "./compile/ref_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js",
+          "kind": "require-call",
+          "original": "./compile/rules"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js",
+          "kind": "require-call",
+          "original": "./compile"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js",
+          "kind": "require-call",
+          "original": "./compile/resolve"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js",
+          "kind": "require-call",
+          "original": "./compile/validate/dataType"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "./compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json",
+          "kind": "require-call",
+          "original": "./refs/data.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js",
+          "kind": "require-call",
+          "original": "./runtime/uri"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js": {
+      "bytes": 267,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js": {
+      "bytes": 5234,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js",
+          "kind": "require-call",
+          "original": "../../compile/ref_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../../compile/names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js",
+          "kind": "require-call",
+          "original": "../../compile"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js": {
+      "bytes": 357,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js",
+          "kind": "require-call",
+          "original": "./id"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js",
+          "kind": "require-call",
+          "original": "./ref"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js": {
+      "bytes": 1036,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js": {
+      "bytes": 1023,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js": {
+      "bytes": 808,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js": {
+      "bytes": 1130,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js",
+          "kind": "require-call",
+          "original": "../../runtime/ucs2length"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js": {
+      "bytes": 1323,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js": {
+      "bytes": 896,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js": {
+      "bytes": 3188,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js": {
+      "bytes": 852,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js": {
+      "bytes": 286,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js",
+          "kind": "require-call",
+          "original": "fast-deep-equal"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js": {
+      "bytes": 3037,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js",
+          "kind": "require-call",
+          "original": "../../compile/validate/dataType"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js",
+          "kind": "require-call",
+          "original": "../../runtime/equal"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js": {
+      "bytes": 852,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js",
+          "kind": "require-call",
+          "original": "../../runtime/equal"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js": {
+      "bytes": 1901,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js",
+          "kind": "require-call",
+          "original": "../../runtime/equal"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js": {
+      "bytes": 1036,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js",
+          "kind": "require-call",
+          "original": "./limitNumber"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js",
+          "kind": "require-call",
+          "original": "./multipleOf"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js",
+          "kind": "require-call",
+          "original": "./limitLength"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js",
+          "kind": "require-call",
+          "original": "./pattern"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js",
+          "kind": "require-call",
+          "original": "./limitProperties"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js",
+          "kind": "require-call",
+          "original": "./required"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js",
+          "kind": "require-call",
+          "original": "./limitItems"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js",
+          "kind": "require-call",
+          "original": "./uniqueItems"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js",
+          "kind": "require-call",
+          "original": "./const"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js",
+          "kind": "require-call",
+          "original": "./enum"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js": {
+      "bytes": 1931,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js": {
+      "bytes": 1993,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js": {
+      "bytes": 354,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js",
+          "kind": "require-call",
+          "original": "./items"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js": {
+      "bytes": 1037,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js",
+          "kind": "require-call",
+          "original": "./additionalItems"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js": {
+      "bytes": 3680,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js": {
+      "bytes": 3198,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js": {
+      "bytes": 1221,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js": {
+      "bytes": 4309,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../../compile/names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js": {
+      "bytes": 2153,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js",
+          "kind": "require-call",
+          "original": "../../compile/validate"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js",
+          "kind": "require-call",
+          "original": "./additionalProperties"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js": {
+      "bytes": 3236,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js": {
+      "bytes": 773,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js": {
+      "bytes": 343,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js",
+          "kind": "require-call",
+          "original": "../code"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js": {
+      "bytes": 2257,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js": {
+      "bytes": 756,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js": {
+      "bytes": 2438,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js": {
+      "bytes": 446,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js": {
+      "bytes": 1529,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js",
+          "kind": "require-call",
+          "original": "./additionalItems"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js",
+          "kind": "require-call",
+          "original": "./prefixItems"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js",
+          "kind": "require-call",
+          "original": "./items"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js",
+          "kind": "require-call",
+          "original": "./items2020"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js",
+          "kind": "require-call",
+          "original": "./contains"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "kind": "require-call",
+          "original": "./dependencies"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js",
+          "kind": "require-call",
+          "original": "./propertyNames"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js",
+          "kind": "require-call",
+          "original": "./additionalProperties"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js",
+          "kind": "require-call",
+          "original": "./properties"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js",
+          "kind": "require-call",
+          "original": "./patternProperties"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js",
+          "kind": "require-call",
+          "original": "./not"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js",
+          "kind": "require-call",
+          "original": "./anyOf"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js",
+          "kind": "require-call",
+          "original": "./oneOf"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js",
+          "kind": "require-call",
+          "original": "./allOf"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js",
+          "kind": "require-call",
+          "original": "./if"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js",
+          "kind": "require-call",
+          "original": "./thenElse"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js": {
+      "bytes": 1261,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../../compile/names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js",
+          "kind": "require-call",
+          "original": "../../compile"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js",
+          "kind": "require-call",
+          "original": "../core/ref"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js": {
+      "bytes": 1985,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../../compile/names"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js",
+          "kind": "require-call",
+          "original": "../core/ref"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js": {
+      "bytes": 522,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js",
+          "kind": "require-call",
+          "original": "./dynamicAnchor"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js": {
+      "bytes": 325,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js",
+          "kind": "require-call",
+          "original": "./dynamicRef"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/index.js": {
+      "bytes": 457,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js",
+          "kind": "require-call",
+          "original": "./dynamicAnchor"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js",
+          "kind": "require-call",
+          "original": "./dynamicRef"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js",
+          "kind": "require-call",
+          "original": "./recursiveAnchor"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js",
+          "kind": "require-call",
+          "original": "./recursiveRef"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/dependentRequired.js": {
+      "bytes": 403,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "kind": "require-call",
+          "original": "../applicator/dependencies"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js": {
+      "bytes": 354,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "kind": "require-call",
+          "original": "./dependencies"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitContains.js": {
+      "bytes": 495,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/next.js": {
+      "bytes": 433,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/dependentRequired.js",
+          "kind": "require-call",
+          "original": "./validation/dependentRequired"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js",
+          "kind": "require-call",
+          "original": "./applicator/dependentSchemas"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitContains.js",
+          "kind": "require-call",
+          "original": "./validation/limitContains"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js": {
+      "bytes": 2608,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js",
+          "kind": "require-call",
+          "original": "../../compile/names"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js": {
+      "bytes": 1588,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/index.js": {
+      "bytes": 350,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js",
+          "kind": "require-call",
+          "original": "./unevaluatedProperties"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js",
+          "kind": "require-call",
+          "original": "./unevaluatedItems"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js": {
+      "bytes": 4317,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js": {
+      "bytes": 209,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js",
+          "kind": "require-call",
+          "original": "./format"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js": {
+      "bytes": 427,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft2020.js": {
+      "bytes": 762,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js",
+          "kind": "require-call",
+          "original": "./core"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js",
+          "kind": "require-call",
+          "original": "./validation"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js",
+          "kind": "require-call",
+          "original": "./applicator"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/index.js",
+          "kind": "require-call",
+          "original": "./dynamic"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/next.js",
+          "kind": "require-call",
+          "original": "./next"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/index.js",
+          "kind": "require-call",
+          "original": "./unevaluated"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js",
+          "kind": "require-call",
+          "original": "./format"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js",
+          "kind": "require-call",
+          "original": "./metadata"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js": {
+      "bytes": 308,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js": {
+      "bytes": 4845,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "../../compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js",
+          "kind": "require-call",
+          "original": "../discriminator/types"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js",
+          "kind": "require-call",
+          "original": "../../compile"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js",
+          "kind": "require-call",
+          "original": "../../compile/ref_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js",
+          "kind": "require-call",
+          "original": "../../compile/util"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/schema.json": {
+      "bytes": 2166,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/applicator.json": {
+      "bytes": 1441,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/unevaluated.json": {
+      "bytes": 472,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/content.json": {
+      "bytes": 479,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/core.json": {
+      "bytes": 1344,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/format-annotation.json": {
+      "bytes": 420,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/meta-data.json": {
+      "bytes": 758,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/validation.json": {
+      "bytes": 2264,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/index.js": {
+      "bytes": 1026,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/schema.json",
+          "kind": "require-call",
+          "original": "./schema.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/applicator.json",
+          "kind": "require-call",
+          "original": "./meta/applicator.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/unevaluated.json",
+          "kind": "require-call",
+          "original": "./meta/unevaluated.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/content.json",
+          "kind": "require-call",
+          "original": "./meta/content.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/core.json",
+          "kind": "require-call",
+          "original": "./meta/core.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/format-annotation.json",
+          "kind": "require-call",
+          "original": "./meta/format-annotation.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/meta-data.json",
+          "kind": "require-call",
+          "original": "./meta/meta-data.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/validation.json",
+          "kind": "require-call",
+          "original": "./meta/validation.json"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/2020.js": {
+      "bytes": 2894,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js",
+          "kind": "require-call",
+          "original": "./core"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft2020.js",
+          "kind": "require-call",
+          "original": "./vocabularies/draft2020"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js",
+          "kind": "require-call",
+          "original": "./vocabularies/discriminator"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/index.js",
+          "kind": "require-call",
+          "original": "./refs/json-schema-2020-12"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js",
+          "kind": "require-call",
+          "original": "./compile/validate"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js",
+          "kind": "require-call",
+          "original": "./runtime/validation_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js",
+          "kind": "require-call",
+          "original": "./compile/ref_error"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js": {
+      "bytes": 12263,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js": {
+      "bytes": 557,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js",
+          "kind": "require-call",
+          "original": "./core"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js",
+          "kind": "require-call",
+          "original": "./validation"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js",
+          "kind": "require-call",
+          "original": "./applicator"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js",
+          "kind": "require-call",
+          "original": "./format"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js",
+          "kind": "require-call",
+          "original": "./metadata"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json": {
+      "bytes": 3811,
+      "imports": []
+    },
+    "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js": {
+      "bytes": 2841,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js",
+          "kind": "require-call",
+          "original": "./core"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js",
+          "kind": "require-call",
+          "original": "./vocabularies/draft7"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js",
+          "kind": "require-call",
+          "original": "./vocabularies/discriminator"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json",
+          "kind": "require-call",
+          "original": "./refs/json-schema-draft-07.json"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js",
+          "kind": "require-call",
+          "original": "./compile/validate"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "./compile/codegen"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js",
+          "kind": "require-call",
+          "original": "./runtime/validation_error"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js",
+          "kind": "require-call",
+          "original": "./compile/ref_error"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js": {
+      "bytes": 2900,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js",
+          "kind": "require-call",
+          "original": "ajv"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "ajv/dist/compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js": {
+      "bytes": 1508,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js",
+          "kind": "require-call",
+          "original": "./formats"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js",
+          "kind": "require-call",
+          "original": "./limit"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js",
+          "kind": "require-call",
+          "original": "ajv/dist/compile/codegen"
+        }
+      ],
+      "format": "cjs"
+    },
+    "packages/schema/src/schemas/asset-pack.schema.json": {
+      "bytes": 1741,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/schemas/asset.schema.json": {
+      "bytes": 9888,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/schemas/common.schema.json": {
+      "bytes": 2382,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/schemas/diagnostic.schema.json": {
+      "bytes": 1944,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/schemas/recipe.schema.json": {
+      "bytes": 1779,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/schemas/rig.schema.json": {
+      "bytes": 6973,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "packages/schema/src/validate.ts": {
+      "bytes": 21472,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/2020.js",
+          "kind": "import-statement",
+          "original": "ajv/dist/2020.js"
+        },
+        {
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js",
+          "kind": "import-statement",
+          "original": "ajv-formats"
+        },
+        {
+          "path": "packages/schema/src/schemas/asset-pack.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/asset-pack.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/schemas/asset.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/asset.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/schemas/common.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/common.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/schemas/diagnostic.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/diagnostic.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/schemas/recipe.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/recipe.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/schemas/rig.schema.json",
+          "kind": "import-statement",
+          "original": "./schemas/rig.schema.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "packages/schema/src/diagnostics.ts",
+          "kind": "import-statement",
+          "original": "./diagnostics.js"
+        },
+        {
+          "path": "packages/schema/src/normalize.ts",
+          "kind": "import-statement",
+          "original": "./normalize.js"
+        },
+        {
+          "path": "packages/schema/src/types.ts",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/schema/src/index.ts": {
+      "bytes": 125,
+      "imports": [
+        {
+          "path": "packages/schema/src/diagnostics.ts",
+          "kind": "import-statement",
+          "original": "./diagnostics.js"
+        },
+        {
+          "path": "packages/schema/src/normalize.ts",
+          "kind": "import-statement",
+          "original": "./normalize.js"
+        },
+        {
+          "path": "packages/schema/src/types.ts",
+          "kind": "import-statement",
+          "original": "./types.js"
+        },
+        {
+          "path": "packages/schema/src/validate.ts",
+          "kind": "import-statement",
+          "original": "./validate.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/core/src/catalog.ts": {
+      "bytes": 1141,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/core/src/resolver.ts": {
+      "bytes": 16253,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        },
+        {
+          "path": "packages/core/src/catalog.ts",
+          "kind": "import-statement",
+          "original": "./catalog.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/core/src/animation.ts": {
+      "bytes": 8092,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        },
+        {
+          "path": "packages/core/src/catalog.ts",
+          "kind": "import-statement",
+          "original": "./catalog.js"
+        },
+        {
+          "path": "packages/core/src/resolver.ts",
+          "kind": "import-statement",
+          "original": "./resolver.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/core/src/recipes.ts": {
+      "bytes": 12218,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        },
+        {
+          "path": "packages/core/src/catalog.ts",
+          "kind": "import-statement",
+          "original": "./catalog.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/core/src/types.ts": {
+      "bytes": 1839,
+      "imports": [],
+      "format": "esm"
+    },
+    "packages/core/src/index.ts": {
+      "bytes": 151,
+      "imports": [
+        {
+          "path": "packages/core/src/catalog.ts",
+          "kind": "import-statement",
+          "original": "./catalog.js"
+        },
+        {
+          "path": "packages/core/src/animation.ts",
+          "kind": "import-statement",
+          "original": "./animation.js"
+        },
+        {
+          "path": "packages/core/src/resolver.ts",
+          "kind": "import-statement",
+          "original": "./resolver.js"
+        },
+        {
+          "path": "packages/core/src/recipes.ts",
+          "kind": "import-statement",
+          "original": "./recipes.js"
+        },
+        {
+          "path": "packages/core/src/types.ts",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/creator-ui/src/store.ts": {
+      "bytes": 8245,
+      "imports": [
+        {
+          "path": "packages/core/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/core"
+        },
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/creator-ui/src/types.ts": {
+      "bytes": 999,
+      "imports": [],
+      "format": "esm"
+    },
+    "packages/creator-ui/src/index.ts": {
+      "bytes": 56,
+      "imports": [
+        {
+          "path": "packages/creator-ui/src/store.ts",
+          "kind": "import-statement",
+          "original": "./store.js"
+        },
+        {
+          "path": "packages/creator-ui/src/types.ts",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/renderer-canvas/src/atlas.ts": {
+      "bytes": 1882,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/renderer-canvas/src/renderer.ts": {
+      "bytes": 5093,
+      "imports": [
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        }
+      ],
+      "format": "esm"
+    },
+    "packages/renderer-canvas/src/types.ts": {
+      "bytes": 1217,
+      "imports": [],
+      "format": "esm"
+    },
+    "packages/renderer-canvas/src/index.ts": {
+      "bytes": 87,
+      "imports": [
+        {
+          "path": "packages/renderer-canvas/src/atlas.ts",
+          "kind": "import-statement",
+          "original": "./atlas.js"
+        },
+        {
+          "path": "packages/renderer-canvas/src/renderer.ts",
+          "kind": "import-statement",
+          "original": "./renderer.js"
+        },
+        {
+          "path": "packages/renderer-canvas/src/types.ts",
+          "kind": "import-statement",
+          "original": "./types.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "examples/vanilla-js/main.ts": {
+      "bytes": 6863,
+      "imports": [
+        {
+          "path": "packages/core/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/core"
+        },
+        {
+          "path": "packages/creator-ui/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/creator-ui"
+        },
+        {
+          "path": "packages/renderer-canvas/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/renderer-canvas"
+        },
+        {
+          "path": "packages/schema/src/index.ts",
+          "kind": "import-statement",
+          "original": "@character-creator/schema"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "site/validation/task-008/example.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 693664
+    },
+    "site/validation/task-008/example.js": {
+      "imports": [],
+      "exports": [
+        "mountCharacterCreator"
+      ],
+      "entryPoint": "examples/vanilla-js/main.ts",
+      "inputs": {
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js": {
+          "bytesInOutput": 2551
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js": {
+          "bytesInOutput": 2556
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js": {
+          "bytesInOutput": 11758
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js": {
+          "bytesInOutput": 3570
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js": {
+          "bytesInOutput": 612
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js": {
+          "bytesInOutput": 3072
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js": {
+          "bytesInOutput": 672
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js": {
+          "bytesInOutput": 570
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js": {
+          "bytesInOutput": 480
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js": {
+          "bytesInOutput": 4095
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js": {
+          "bytesInOutput": 680
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js": {
+          "bytesInOutput": 3106
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js": {
+          "bytesInOutput": 2945
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js": {
+          "bytesInOutput": 1978
+        },
+        "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js": {
+          "bytesInOutput": 736
+        },
+        "node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js": {
+          "bytesInOutput": 1246
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js": {
+          "bytesInOutput": 2073
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js": {
+          "bytesInOutput": 10181
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js": {
+          "bytesInOutput": 206
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js": {
+          "bytesInOutput": 323
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js": {
+          "bytesInOutput": 4688
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json": {
+          "bytesInOutput": 358
+        },
+        "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js": {
+          "bytesInOutput": 7093
+        },
+        "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/schemes.js": {
+          "bytesInOutput": 2526
+        },
+        "node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/index.js": {
+          "bytesInOutput": 7051
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js": {
+          "bytesInOutput": 155
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js": {
+          "bytesInOutput": 12289
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js": {
+          "bytesInOutput": 195
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js": {
+          "bytesInOutput": 2379
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js": {
+          "bytesInOutput": 213
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js": {
+          "bytesInOutput": 666
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js": {
+          "bytesInOutput": 551
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js": {
+          "bytesInOutput": 301
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js": {
+          "bytesInOutput": 629
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js": {
+          "bytesInOutput": 706
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js": {
+          "bytesInOutput": 549
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js": {
+          "bytesInOutput": 1400
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js": {
+          "bytesInOutput": 510
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js": {
+          "bytesInOutput": 157
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js": {
+          "bytesInOutput": 1481
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js": {
+          "bytesInOutput": 439
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js": {
+          "bytesInOutput": 921
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js": {
+          "bytesInOutput": 381
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js": {
+          "bytesInOutput": 1090
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js": {
+          "bytesInOutput": 1075
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js": {
+          "bytesInOutput": 227
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js": {
+          "bytesInOutput": 530
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js": {
+          "bytesInOutput": 1734
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js": {
+          "bytesInOutput": 1565
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js": {
+          "bytesInOutput": 630
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js": {
+          "bytesInOutput": 1741
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js": {
+          "bytesInOutput": 992
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js": {
+          "bytesInOutput": 1168
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js": {
+          "bytesInOutput": 435
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js": {
+          "bytesInOutput": 229
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js": {
+          "bytesInOutput": 912
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js": {
+          "bytesInOutput": 407
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js": {
+          "bytesInOutput": 1105
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js": {
+          "bytesInOutput": 278
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js": {
+          "bytesInOutput": 462
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicAnchor.js": {
+          "bytesInOutput": 724
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/dynamicRef.js": {
+          "bytesInOutput": 726
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveAnchor.js": {
+          "bytesInOutput": 276
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/recursiveRef.js": {
+          "bytesInOutput": 192
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/dynamic/index.js": {
+          "bytesInOutput": 178
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/dependentRequired.js": {
+          "bytesInOutput": 226
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependentSchemas.js": {
+          "bytesInOutput": 208
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitContains.js": {
+          "bytesInOutput": 305
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/next.js": {
+          "bytesInOutput": 159
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedProperties.js": {
+          "bytesInOutput": 1141
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/unevaluatedItems.js": {
+          "bytesInOutput": 828
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/unevaluated/index.js": {
+          "bytesInOutput": 140
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js": {
+          "bytesInOutput": 1930
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js": {
+          "bytesInOutput": 121
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js": {
+          "bytesInOutput": 308
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft2020.js": {
+          "bytesInOutput": 294
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js": {
+          "bytesInOutput": 181
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js": {
+          "bytesInOutput": 2291
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/schema.json": {
+          "bytesInOutput": 1753
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/applicator.json": {
+          "bytesInOutput": 1076
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/unevaluated.json": {
+          "bytesInOutput": 423
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/content.json": {
+          "bytesInOutput": 418
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/core.json": {
+          "bytesInOutput": 987
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/format-annotation.json": {
+          "bytesInOutput": 382
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/meta-data.json": {
+          "bytesInOutput": 531
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/meta/validation.json": {
+          "bytesInOutput": 1542
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-2020-12/index.js": {
+          "bytesInOutput": 344
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/2020.js": {
+          "bytesInOutput": 1691
+        },
+        "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js": {
+          "bytesInOutput": 7725
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js": {
+          "bytesInOutput": 235
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json": {
+          "bytesInOutput": 2481
+        },
+        "node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js": {
+          "bytesInOutput": 1671
+        },
+        "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js": {
+          "bytesInOutput": 1603
+        },
+        "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js": {
+          "bytesInOutput": 783
+        },
+        "packages/schema/src/diagnostics.ts": {
+          "bytesInOutput": 312
+        },
+        "packages/schema/src/index.ts": {
+          "bytesInOutput": 0
+        },
+        "packages/schema/src/normalize.ts": {
+          "bytesInOutput": 2351
+        },
+        "packages/schema/src/types.ts": {
+          "bytesInOutput": 26
+        },
+        "packages/schema/src/validate.ts": {
+          "bytesInOutput": 8289
+        },
+        "packages/schema/src/schemas/asset-pack.schema.json": {
+          "bytesInOutput": 1208
+        },
+        "packages/schema/src/schemas/asset.schema.json": {
+          "bytesInOutput": 5825
+        },
+        "packages/schema/src/schemas/common.schema.json": {
+          "bytesInOutput": 1586
+        },
+        "packages/schema/src/schemas/diagnostic.schema.json": {
+          "bytesInOutput": 1389
+        },
+        "packages/schema/src/schemas/recipe.schema.json": {
+          "bytesInOutput": 1300
+        },
+        "packages/schema/src/schemas/rig.schema.json": {
+          "bytesInOutput": 4145
+        },
+        "packages/core/src/catalog.ts": {
+          "bytesInOutput": 370
+        },
+        "packages/core/src/index.ts": {
+          "bytesInOutput": 0
+        },
+        "packages/core/src/resolver.ts": {
+          "bytesInOutput": 6873
+        },
+        "packages/core/src/recipes.ts": {
+          "bytesInOutput": 5003
+        },
+        "packages/creator-ui/src/store.ts": {
+          "bytesInOutput": 3777
+        },
+        "packages/creator-ui/src/index.ts": {
+          "bytesInOutput": 0
+        },
+        "packages/renderer-canvas/src/index.ts": {
+          "bytesInOutput": 0
+        },
+        "packages/renderer-canvas/src/renderer.ts": {
+          "bytesInOutput": 2156
+        },
+        "examples/vanilla-js/main.ts": {
+          "bytesInOutput": 3734
+        }
+      },
+      "bytes": 196488
+    }
+  }
+}

@@ -16,6 +16,10 @@
       "version": "1.0.0"
     },
     {
+      "assetId": "starter.body.vine-arm-left",
+      "version": "1.0.0"
+    },
+    {
       "assetId": "starter.brows.straight",
       "version": "1.0.0"
     },
@@ -57,10 +61,12 @@
     }
   ],
   "palette": {
-    "accent.base": "#E3AC54",
-    "crystal.base": "#61D8E4",
-    "garment.primary": "#DD6E57",
-    "garment.secondary": "#30283D",
+    "accessory.ear": "#E3AC54",
+    "body.arm.left": "#5A8B55",
+    "body.arm.right": "#61D8E4",
+    "garment.outerwear": "#70456F",
+    "garment.outfit": "#DD6E57",
+    "garment.shoes": "#61D8E4",
     "hair.base": "#123F4D",
     "skin.base": "#C98261"
   },

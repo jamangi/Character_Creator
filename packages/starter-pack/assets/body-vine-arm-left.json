@@ -1,0 +1,605 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "starter.body.vine-arm-left",
+  "version": "1.0.0",
+  "kind": "body-module",
+  "display": {
+    "name": "Vine Left Arm",
+    "tags": [
+      "asymmetric",
+      "left",
+      "replacement",
+      "vine"
+    ],
+    "thumbnail": "thumbnails/body-vine-arm-left.png"
+  },
+  "compatibility": {
+    "rigFamilies": [
+      "starter-humanoid@1"
+    ],
+    "engine": ">=0.1.0 <1.0.0",
+    "fitTags": [
+      "body:shared-v1"
+    ]
+  },
+  "equip": {
+    "slots": [
+      "body-arm-left"
+    ],
+    "exclusiveGroup": "body-arm-left",
+    "requires": [],
+    "conflicts": [],
+    "provides": [
+      "appearance:arm.vine.left"
+    ]
+  },
+  "palette": {
+    "roles": {
+      "body.arm.left": {
+        "default": "#5A8B55",
+        "mode": "replace"
+      }
+    }
+  },
+  "effects": [
+    {
+      "kind": "suppress-tags",
+      "targetTags": [
+        "body.arm.left.base"
+      ]
+    },
+    {
+      "kind": "provide-coverage",
+      "regions": [
+        "body.arm.left.skin"
+      ]
+    }
+  ],
+  "fragments": [
+    {
+      "id": "full-body.back",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/body-vine-arm-left/full-body-back.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body.front",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/body-vine-arm-left/full-body-front.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body.left",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/body-vine-arm-left/full-body-left.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "full-body.right",
+      "selector": {
+        "profile": "full-body",
+        "view": "right",
+        "expression": "*"
+      },
+      "source": "images/body-vine-arm-left/full-body-right.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "portrait.front.any",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/body-vine-arm-left/portrait-front-any.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.idle.front.center",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/body-vine-arm-left/sprite-idle-front-center.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.run.front.contact-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
+      },
+      "source": "images/body-vine-arm-left/sprite-run-front-contact-left.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.run.front.contact-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/body-vine-arm-left/sprite-run-front-contact-right.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.run.front.flight-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/body-vine-arm-left/sprite-run-front-flight-left.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.run.front.flight-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/body-vine-arm-left/sprite-run-front-flight-right.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.walk.front.contact-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/body-vine-arm-left/sprite-walk-front-contact-left.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.walk.front.contact-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/body-vine-arm-left/sprite-walk-front-contact-right.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.walk.front.pass-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/body-vine-arm-left/sprite-walk-front-pass-left.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite.walk.front.pass-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/body-vine-arm-left/sprite-walk-front-pass-right.png",
+      "plane": "body-base",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "body.arm.left"
+      ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "left-arm",
+      "covers": [
+        "body.arm.left.skin"
+      ],
+      "suppresses": [],
+      "tags": [
+        "asset.body-vine-arm-left",
+        "body.arm.left.replacement"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    }
+  ],
+  "fallbacks": [],
+  "provenance": {
+    "authors": [
+      "Character Creator contributors"
+    ],
+    "license": "CC0-1.0",
+    "source": null,
+    "contentHash": "sha256-7a34d3d9b271a02d4ed3ab799ca1140dbc61bbf9e9cf2e5c5ae54b0a042b96db"
+  }
+}

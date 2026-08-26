@@ -40,6 +40,7 @@ export class CreatorStore {
   #preview: RenderRequest;
   #history: CharacterRecipe[] = [];
   #future: CharacterRecipe[] = [];
+  #paletteTransaction: CharacterRecipe | undefined;
   #diagnostics: Diagnostic[] = [];
   #listeners = new Set<Listener>();
 
@@ -84,6 +85,7 @@ export class CreatorStore {
   }
 
   #commit(recipe: CharacterRecipe, diagnostics: Diagnostic[] = []): CreatorActionResult {
+    this.#finishPaletteTransaction();
     const errors = this.#validate(recipe);
     if (errors.some((item) => item.severity === "error")) {
       this.#diagnostics = errors;
@@ -141,6 +143,44 @@ export class CreatorStore {
     return this.#commit({ ...this.#recipe, palette: { ...this.#recipe.palette, [role]: value } });
   }
 
+  previewPalette(role: string, value: string): CreatorActionResult {
+    const candidate = normalizeRecipe({ ...this.#recipe, palette: { ...this.#recipe.palette, [role]: value } });
+    const errors = this.#validate(candidate);
+    if (errors.some((item) => item.severity === "error")) {
+      this.#diagnostics = errors;
+      this.#emit();
+      return { ok: false, snapshot: this.snapshot, diagnostics: errors };
+    }
+    this.#paletteTransaction ??= cloneRecipe(this.#recipe);
+    this.#recipe = candidate;
+    this.#diagnostics = [];
+    this.#emit();
+    return { ok: true, snapshot: this.snapshot, diagnostics: [] };
+  }
+
+  commitPalettePreview(): CreatorActionResult {
+    const before = this.#paletteTransaction;
+    if (before === undefined) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
+    this.#paletteTransaction = undefined;
+    if (JSON.stringify(before) !== JSON.stringify(this.#recipe)) {
+      this.#history.push(before);
+      if (this.#history.length > 100) this.#history.shift();
+      this.#future = [];
+    }
+    this.#emit();
+    return { ok: true, snapshot: this.snapshot, diagnostics: [] };
+  }
+
+  #finishPaletteTransaction(): void {
+    const before = this.#paletteTransaction;
+    if (before === undefined) return;
+    this.#paletteTransaction = undefined;
+    if (JSON.stringify(before) === JSON.stringify(this.#recipe)) return;
+    this.#history.push(before);
+    if (this.#history.length > 100) this.#history.shift();
+    this.#future = [];
+  }
+
   selectBodyProfile(id: string): CreatorActionResult {
     const profile = this.bodyProfiles.find((candidate) => candidate.id === id);
     if (profile === undefined) {
@@ -157,6 +197,7 @@ export class CreatorStore {
   }
 
   undo(): CreatorActionResult {
+    this.#finishPaletteTransaction();
     const previous = this.#history.pop();
     if (previous === undefined) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
     this.#future.push(cloneRecipe(this.#recipe));
@@ -167,6 +208,7 @@ export class CreatorStore {
   }
 
   redo(): CreatorActionResult {
+    this.#finishPaletteTransaction();
     const next = this.#future.pop();
     if (next === undefined) return { ok: false, snapshot: this.snapshot, diagnostics: [] };
     this.#history.push(cloneRecipe(this.#recipe));

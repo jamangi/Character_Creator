@@ -55,7 +55,7 @@ New tasks should read, in order:
 3. [`shared/ASSET_CONTRACT.md`](shared/ASSET_CONTRACT.md)
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
-Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Owner review accepted Tasks 011, 014, and 015 on 2026-08-26. Task 017 is technically complete and awaiting its focused visual decision; Tasks 018–020 follow with bilateral-arm and finer palette-control work, and Task 013 follows the stabilized palette vocabulary.
+Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Owner review accepted Tasks 011, 014, 015, and 017 on 2026-08-26. Tasks 018–020 and 013 are technically complete and included with Tasks 016, 008, and 009 in one independently approvable release-candidate bundle. APPROVAL-002 now records the remaining source-code license decision before Task 009 can finish.
 
 ## Development validation
 
@@ -68,6 +68,8 @@ pnpm visuals
 pnpm validator --root packages/starter-pack --out artifacts/validator
 pnpm starter-pack
 pnpm review-artifacts
+pnpm integration-example
+pnpm release-audit
 ```
 
-`pnpm validate` runs project-reference type checking and the full automated test suite. `pnpm visuals` regenerates the Task 002 fixtures; the remaining commands run the asset validator, regenerate the starter pack and Studio, and rebuild the Pages review artifacts.
+`pnpm validate` runs project-reference type checking and the full automated test suite. `pnpm visuals` regenerates the Task 002 fixtures; the remaining commands run the asset validator, regenerate the starter pack and Studio, rebuild the Pages review artifacts and isolated example, and produce the release integrity/budget summary.

@@ -13,7 +13,10 @@
     "validator": "pnpm build && node packages/asset-validator/dist/cli.js",
     "studio": "pnpm build && tsx scripts/build-studio.ts",
     "starter-pack": "pnpm build && tsx scripts/generate-starter-pack.ts && pnpm studio",
+    "integration-example": "pnpm build && tsx scripts/build-vanilla-example.ts",
+    "check:site-links": "tsx scripts/check-site-links.ts",
     "review-artifacts": "pnpm build && tsx scripts/generate-review-artifacts.ts",
+    "release-audit": "pnpm build && tsx scripts/release-audit.ts",
     "validate": "pnpm typecheck && pnpm test"
   },
   "devDependencies": {

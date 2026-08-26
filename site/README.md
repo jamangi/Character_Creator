@@ -16,6 +16,8 @@ A task marked `Human validation: Required` must:
 
 The interactive Studio is the main route. The review registry appears beneath it, and historical artifact URLs remain stable.
 
+The current grouped release-candidate entry lives at `site/validation/release-candidate/`. It links to independently approvable Task 018, 019, 020, 013, 016, 008, and 009 checkpoints rather than collapsing them into one all-or-nothing decision.
+
 ## Registry shape
 
 ```json
@@ -35,7 +37,7 @@ The interactive Studio is the main route. The review registry appears beneath it
 }
 ```
 
-Allowed status vocabulary is `planned`, `in-progress`, `ready-for-review`, `changes-requested`, and `accepted`.
+Allowed status vocabulary is `planned`, `blocked-on-approval`, `in-progress`, `ready-for-review`, `changes-requested`, `partially-accepted`, and `accepted`.
 
 ## Local check
 

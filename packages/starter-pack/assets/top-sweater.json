@@ -35,7 +35,7 @@
   },
   "palette": {
     "roles": {
-      "garment.primary": {
+      "garment.top": {
         "default": "#D4A73A",
         "mode": "replace"
       }
@@ -59,7 +59,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -92,7 +92,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -125,7 +125,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -158,7 +158,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -191,7 +191,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -225,7 +225,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -260,7 +260,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -295,7 +295,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -330,7 +330,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -365,7 +365,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -400,7 +400,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -435,7 +435,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -470,7 +470,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"
@@ -505,7 +505,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.primary"
+        "garment.top"
       ],
       "contentSlots": [
         "top"

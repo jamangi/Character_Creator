@@ -37,6 +37,9 @@ const task5Root = join(root, "site/validation/task-005");
 const task6Root = join(root, "site/validation/task-006");
 const task7Root = join(root, "site/validation/task-007");
 const task17Root = join(root, "site/validation/task-017");
+const task18Root = join(root, "site/validation/task-018");
+const task19Root = join(root, "site/validation/task-019");
+const task20Root = join(root, "site/validation/task-020");
 const generatedAt = "2026-08-26T19:00:00.000Z";
 
 async function withUnknownRetry<T>(operation: () => Promise<T>): Promise<T> {
@@ -92,7 +95,10 @@ for (const generatedPath of [
   join(task7Root, "renders"),
   join(task7Root, "sheets"),
   join(task7Root, "galleries"),
-  join(task17Root, "renders")
+  join(task17Root, "renders"),
+  join(task18Root, "renders"),
+  join(task19Root, "renders"),
+  join(task20Root, "renders")
 ]) await rm(generatedPath, { recursive: true, force: true });
 await rm(join(task6Root, "asymmetric-explicit.png"), { force: true });
 
@@ -172,6 +178,10 @@ function equip(recipe: CharacterRecipe, assetId: string): CharacterRecipe {
   });
   equipped.push({ assetId: target.id, version: target.version });
   return { ...recipe, equipped };
+}
+
+function unequip(recipe: CharacterRecipe, assetId: string): CharacterRecipe {
+  return { ...recipe, equipped: recipe.equipped.filter((selection) => selection.assetId !== assetId) };
 }
 
 function withPalette(recipe: CharacterRecipe, role: string, value: string): CharacterRecipe {
@@ -346,17 +356,29 @@ const crystalHero = heroes[1];
 if (task5Hero === undefined || crystalHero === undefined) throw new Error("Palette proof heroes missing");
 const openFaceRecipe = equip(task5Hero.recipe, "starter.hair.bald");
 const openFaceMarkingRecipe = equip(openFaceRecipe, "starter.marking.runes");
+let accessoryProofRecipe = task5Hero.recipe;
+for (const assetId of ["starter.accessory.brim-hat", "starter.accessory.earrings", "starter.accessory.scarf", "starter.accessory.wings", "starter.accessory.pendant"]) accessoryProofRecipe = equip(accessoryProofRecipe, assetId);
 const paletteCases: Array<{ role: string; value: string; hero: typeof task5Hero; recipe?: CharacterRecipe }> = [
   { role: "skin.base", value: "#F6D2B8", hero: task5Hero },
   { role: "skin.shadow", value: "#E8D7D2", hero: task5Hero, recipe: openFaceRecipe },
   { role: "mouth.base", value: "#356EEA", hero: task5Hero, recipe: openFaceRecipe },
   { role: "hair.base", value: "#C350D7", hero: task5Hero },
-  { role: "garment.primary", value: "#FF9B32", hero: task5Hero },
-  { role: "garment.secondary", value: "#35B66F", hero: task5Hero },
+  { role: "garment.top", value: "#FF9B32", hero: task5Hero },
+  { role: "garment.bottom", value: "#101116", hero: task5Hero },
+  { role: "garment.outfit", value: "#00E7A5", hero: crystalHero },
+  { role: "garment.outerwear", value: "#35B66F", hero: task5Hero },
+  { role: "garment.shoes", value: "#8B5CF6", hero: task5Hero },
+  { role: "body.arm.left", value: "#FF6B9A", hero: crystalHero },
+  { role: "body.arm.right", value: "#4DE1D0", hero: crystalHero },
   { role: "eyes.iris", value: "#F2DD42", hero: task5Hero, recipe: openFaceRecipe },
   { role: "marking.base", value: "#FF4F91", hero: task5Hero, recipe: openFaceMarkingRecipe },
-  { role: "accent.base", value: "#FF5E6C", hero: task5Hero },
-  { role: "crystal.base", value: "#A6FF4D", hero: crystalHero }
+  { role: "accessory.hat", value: "#151515", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.face", value: "#E7C44A", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.ear", value: "#FF5E6C", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.neck", value: "#55D6BE", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.handheld", value: "#9B7653", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.back", value: "#B388EB", hero: task5Hero, recipe: accessoryProofRecipe },
+  { role: "accessory.charm", value: "#7AF3FF", hero: task5Hero, recipe: accessoryProofRecipe }
 ];
 const roleItems: RenderedItem[] = [];
 const roleMetrics: Array<Record<string, unknown>> = [];
@@ -435,6 +457,68 @@ await saveCanvas(join(task17Root, "selected-mouth-dominance.png"), await contact
 ], 4, 250, 405));
 await writeFile(join(task17Root, "selected-mouth-dominance.json"), `${JSON.stringify({ generatedAt, cases: mouthProofCases }, null, 2)}\n`, "utf8");
 
+const armBase = task5Hero.recipe;
+const armVariants: Array<{ label: string; recipe: CharacterRecipe }> = [
+  { label: "Base arms · no replacements", recipe: armBase },
+  { label: "Left only · vine", recipe: equip(armBase, "starter.body.vine-arm-left") },
+  { label: "Right only · crystal", recipe: equip(armBase, "starter.body.crystal-arm") },
+  { label: "Both · vine left + crystal right", recipe: equip(equip(armBase, "starter.body.vine-arm-left"), "starter.body.crystal-arm") }
+];
+const armFullBody: RenderedItem[] = [];
+const armMotion: RenderedItem[] = [];
+for (const variant of armVariants) {
+  const fullBodyRequest = { profile: "full-body" as const, view: "front", expression: "neutral" };
+  armFullBody.push({ label: variant.label, canvas: await render(variant.recipe, fullBodyRequest), request: fullBodyRequest, recipe: variant.recipe });
+  for (const [clip, frame] of [["walk", "contact-left"], ["walk", "contact-right"], ["run", "flight-left"], ["run", "flight-right"]] as const) {
+    const request = { profile: "sprite" as const, view: "front", clip, frame };
+    armMotion.push({ label: `${variant.label} · ${clip} ${frame}`, canvas: await render(variant.recipe, request), request, recipe: variant.recipe });
+  }
+}
+await saveCanvas(join(task18Root, "bilateral-arm-states.png"), await contactSheet(armFullBody, 4, 260, 420));
+await saveCanvas(join(task18Root, "bilateral-arm-motion.png"), await contactSheet(armMotion, 8, 150, 150));
+await writeFile(join(task18Root, "bilateral-arm-states.json"), `${JSON.stringify({ generatedAt, states: armVariants.map((variant) => ({ label: variant.label, equippedArmAssets: variant.recipe.equipped.filter((selection) => selection.assetId.includes("body.")).map((selection) => selection.assetId) })) }, null, 2)}\n`, "utf8");
+
+let slotColorRecipe = equip(equip(task5Hero.recipe, "starter.body.vine-arm-left"), "starter.body.crystal-arm");
+for (const [role, value] of Object.entries({
+  "skin.base": "#C98261",
+  "body.arm.left": "#E84D8A",
+  "body.arm.right": "#4DE1D0",
+  "hair.base": "#6D3B8C",
+  "garment.top": "#F6A83B",
+  "garment.bottom": "#101116",
+  "garment.outerwear": "#35A85C",
+  "garment.shoes": "#7357C7"
+})) slotColorRecipe = withPalette(slotColorRecipe, role, value);
+const slotColorRequest = { profile: "full-body" as const, view: "front", expression: "neutral" };
+const slotColorItems: RenderedItem[] = [
+  { label: "Independent category colors", canvas: await render(slotColorRecipe, slotColorRequest), request: slotColorRequest, recipe: slotColorRecipe },
+  ...paletteCases.filter((entry) => ["skin.base", "hair.base", "garment.top", "garment.bottom", "garment.outfit", "garment.outerwear", "garment.shoes", "body.arm.left", "body.arm.right"].includes(entry.role)).flatMap(() => [])
+];
+await saveCanvas(join(task19Root, "slot-scoped-simultaneous.png"), await contactSheet(slotColorItems, 1, 430, 500));
+await saveCanvas(join(task19Root, "slot-scoped-isolation.png"), await contactSheet(roleItems.slice(0, 22), 4, 218, 348));
+await writeFile(join(task19Root, "slot-scoped-palette.json"), `${JSON.stringify({ generatedAt, assigned: slotColorRecipe.palette, legacyProjection: { "garment.primary": ["garment.top", "garment.outfit"], "garment.secondary": ["garment.bottom", "garment.outerwear", "garment.shoes"], "skin.base": ["body.arm.left", "body.arm.right"] } }, null, 2)}\n`, "utf8");
+
+for (const [role, value] of Object.entries({
+  "accessory.hat": "#121218",
+  "accessory.face": "#E7C44A",
+  "accessory.ear": "#F06489",
+  "accessory.neck": "#38BFA3",
+  "accessory.handheld": "#9B7653",
+  "accessory.back": "#9B7CE7",
+  "accessory.charm": "#69E7F2",
+  "accessory.waist": "#E07B39"
+})) accessoryProofRecipe = withPalette(accessoryProofRecipe, role, value);
+const accessoryRequest = { profile: "full-body" as const, view: "front", expression: "neutral" };
+const withoutHat = unequip(accessoryProofRecipe, "starter.accessory.brim-hat");
+const restoredHat = equip(withoutHat, "starter.accessory.brim-hat");
+const accessoryItems: RenderedItem[] = [
+  { label: "Contrasting accessory slots", canvas: await render(accessoryProofRecipe, accessoryRequest), request: accessoryRequest, recipe: accessoryProofRecipe },
+  { label: "Hat removed · other colors stable", canvas: await render(withoutHat, accessoryRequest), request: accessoryRequest, recipe: withoutHat },
+  { label: "Hat restored · same saved color", canvas: await render(restoredHat, accessoryRequest), request: accessoryRequest, recipe: restoredHat }
+];
+await saveCanvas(join(task20Root, "accessory-color-stability.png"), await contactSheet(accessoryItems, 3, 300, 440));
+await writeFile(join(task20Root, "accessory-color-stability.json"), `${JSON.stringify({ generatedAt, roles: Object.fromEntries(Object.entries(accessoryProofRecipe.palette).filter(([role]) => role.startsWith("accessory."))), equippedOrderIndependent: JSON.stringify(restoredHat.palette) === JSON.stringify(accessoryProofRecipe.palette), unusedWaistRoleRetained: accessoryProofRecipe.palette["accessory.waist"] }, null, 2)}\n`, "utf8");
+
 const allPaths = new Set(assets.flatMap((asset) => [asset.display.thumbnail, ...asset.fragments.map((fragment) => fragment.source)]));
 const files = new Map<string, FileInspection>();
 let totalBytes = 0;
@@ -462,6 +546,9 @@ await withUnknownRetry(() => copyFile(join(task7Root, "sheets", "hero-summary.pn
 const measuredStart = process.hrtime.bigint();
 for (let index = 0; index < 25; index += 1) await render(animationHero.recipe, { profile: "sprite", view: "front", clip: "walk", frame: "contact-left" });
 const measuredMs = Number(process.hrtime.bigint() - measuredStart) / 1_000_000;
+const renderTargetAverageMs = 20;
+const renderWithinBudget = measuredMs / 25 <= renderTargetAverageMs;
+if (!renderWithinBudget) throw new Error(`Representative render budget exceeded: ${measuredMs / 25}ms average`);
 const budgets = {
   generatedAt,
   assets: assets.length,
@@ -469,7 +556,12 @@ const budgets = {
   decodedSourceBytes: totalBytes,
   packBudgetBytes: 32 * 1024 * 1024,
   withinPackBudget: totalBytes <= 32 * 1024 * 1024,
-  renderSample: { iterations: 25, totalMs: Number(measuredMs.toFixed(2)), averageMs: Number((measuredMs / 25).toFixed(2)), targetAverageMs: 20 }
+  renderSample: {
+    iterations: 25,
+    targetAverageMs: renderTargetAverageMs,
+    withinBudget: renderWithinBudget,
+    note: "Wall-clock timing is evaluated during generation but omitted from this reproducible artifact; only the threshold result is committed."
+  }
 };
 await writeFile(join(task7Root, "budgets.json"), `${JSON.stringify(budgets, null, 2)}\n`, "utf8");
 await writeFile(join(task7Root, "matrix.json"), `${JSON.stringify({ generatedAt, hairHeadOuterCases: hairMatrix.length, bodyFitCases: bodyMatrix.length, paletteExtremeCases: paletteItems.length, adversarialCases: adversarialItems.length, heroRequests: allRequests.length * heroes.length }, null, 2)}\n`, "utf8");

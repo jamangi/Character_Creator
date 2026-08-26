@@ -78,9 +78,19 @@
       "contentHash": "sha256-cff75330a7205c3719901bd4552ea8b7e522ff07c3f1f567a76dd06b73e89c50"
     },
     {
+      "id": "starter.body.crystal-arm-left",
+      "manifest": "assets/body-crystal-arm-left.json",
+      "contentHash": "sha256-efcda0dc7f1fe81fb6225fcc850f8208d30d1f837451f4e1c063fd5fd26bf4bd"
+    },
+    {
       "id": "starter.body.vine-arm",
       "manifest": "assets/body-vine-arm.json",
       "contentHash": "sha256-7b4517d4f89a6313f926197dc8c8959c512fa95461e9867a2361035671f66631"
+    },
+    {
+      "id": "starter.body.vine-arm-left",
+      "manifest": "assets/body-vine-arm-left.json",
+      "contentHash": "sha256-7a34d3d9b271a02d4ed3ab799ca1140dbc61bbf9e9cf2e5c5ae54b0a042b96db"
     },
     {
       "id": "starter.bottom.fitted-pants",

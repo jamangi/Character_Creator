@@ -36,7 +36,7 @@
   },
   "palette": {
     "roles": {
-      "garment.secondary": {
+      "garment.outerwear": {
         "default": "#244B3C",
         "mode": "replace"
       }
@@ -60,7 +60,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -94,7 +94,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -128,7 +128,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -162,7 +162,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -196,7 +196,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -230,7 +230,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -264,7 +264,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -298,7 +298,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -332,7 +332,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -366,7 +366,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -401,7 +401,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -437,7 +437,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -473,7 +473,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -509,7 +509,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -545,7 +545,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -581,7 +581,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -617,7 +617,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -653,7 +653,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -689,7 +689,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -725,7 +725,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -761,7 +761,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -797,7 +797,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -833,7 +833,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -869,7 +869,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -905,7 +905,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -941,7 +941,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -977,7 +977,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"
@@ -1013,7 +1013,7 @@
         0
       ],
       "paletteRoles": [
-        "garment.secondary"
+        "garment.outerwear"
       ],
       "contentSlots": [
         "outerwear"

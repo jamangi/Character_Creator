@@ -36,7 +36,7 @@
   },
   "palette": {
     "roles": {
-      "accent.base": {
+      "accessory.back": {
         "default": "#76513C",
         "mode": "replace"
       }
@@ -60,7 +60,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -93,7 +93,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -126,7 +126,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -159,7 +159,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -192,7 +192,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -226,7 +226,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -261,7 +261,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -296,7 +296,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -331,7 +331,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -366,7 +366,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -401,7 +401,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -436,7 +436,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -471,7 +471,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"
@@ -506,7 +506,7 @@
         0
       ],
       "paletteRoles": [
-        "accent.base"
+        "accessory.back"
       ],
       "contentSlots": [
         "back-accessory"

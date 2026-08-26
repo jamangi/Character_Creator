@@ -49,9 +49,9 @@
       "task": "TASK-005",
       "title": "Creator Studio",
       "status": "changes-requested",
-      "summary": "Task 014 output projections are accepted. Task 012 remains open while Tasks 017–020 address selected-mouth, bilateral-arm, and finer palette-control requests; history remains Task 013.",
+      "summary": "Task 014 and Task 017 are accepted. Bilateral arms, slot/accessory palettes, and exact palette/hero history are technically complete and grouped for independent owner review.",
       "href": "validation/task-005/",
-      "review": ["Task 014 accepted 2026-08-26", "Task 012 changes requested", "Tasks 017–020 created", "History deferred to Task 013"],
+      "review": ["Tasks 014 and 017 accepted 2026-08-26", "Tasks 018–020 ready for review", "Task 013 palette and hero history ready for review"],
       "commit": "721e389"
     },
     {
@@ -84,11 +84,74 @@
     {
       "task": "TASK-017",
       "title": "Selected mouth dominance",
-      "status": "ready-for-review",
-      "summary": "Each equipped mouth now defines neutral portrait/full-body output while named expressions retain their preset-authored curves.",
+      "status": "accepted",
+      "summary": "Accepted 2026-08-26: each equipped mouth defines neutral portrait/full-body output while named expressions retain their preset-authored curves.",
       "href": "validation/task-017/",
-      "review": ["Four distinct neutral mouths", "Selected mouth persists across portrait/full-body", "Named cheerful expression remains consistent"],
+      "review": ["Human validation complete", "Four distinct neutral mouths", "Named cheerful expression remains consistent"],
       "commit": "d0a1b7e"
+    },
+    {
+      "task": "RELEASE-CANDIDATE",
+      "title": "Grouped independent review",
+      "status": "ready-for-review",
+      "summary": "Tasks 018, 019, 020, 013, 016, 008, and 009 are presented in dependency order while keeping every owner decision independent.",
+      "href": "validation/release-candidate/",
+      "review": ["Bilateral arms", "Body/clothing and accessory palette identity", "Palette and hero history", "Portable host", "Release hardening"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-018",
+      "title": "Bilateral arm modules",
+      "status": "ready-for-review",
+      "summary": "Base left/right arms and mirrored crystal/vine replacements are independently equipable with complete retained-frame coverage.",
+      "href": "validation/task-018/",
+      "review": ["Base/left/right/both", "Anatomical laterality", "Walk/run seams and motion"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-019",
+      "title": "Slot-scoped palettes",
+      "status": "ready-for-review",
+      "summary": "Body, clothing, shoes, and bilateral arms have independent semantic palette identities with deterministic legacy projection.",
+      "href": "validation/task-019/",
+      "review": ["Simultaneous contrasting colors", "One-role isolation", "Task 012 closure decision"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-020",
+      "title": "Accessory-scoped palettes",
+      "status": "ready-for-review",
+      "summary": "Accessory colors are addressed by semantic slot and remain stable across equip/remove operations.",
+      "href": "validation/task-020/",
+      "review": ["Contrasting accessories", "Remove/restore identity", "Unused role no-op"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-013",
+      "title": "Studio history transactions",
+      "status": "ready-for-review",
+      "summary": "Live palette gestures coalesce into one history entry and hero-template resets undo/redo exactly.",
+      "href": "validation/task-013/",
+      "review": ["DEFECT-005 palette history", "DEFECT-006 hero history", "Redo branch behavior"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-008",
+      "title": "Portable integration API",
+      "status": "ready-for-review",
+      "summary": "An isolated host renders saved recipes and mounts/unmounts an editor using public package entry points and a configurable asset base URL.",
+      "href": "validation/task-008/",
+      "review": ["Renderer-only mode", "Edit/export/import", "Zero-child cleanup and remount"],
+      "commit": "pending"
+    },
+    {
+      "task": "TASK-009",
+      "title": "Release hardening",
+      "status": "blocked-on-approval",
+      "summary": "The technical release candidate, integrity manifest, budgets, security and authoring docs are ready; source-code licensing awaits APPROVAL-002.",
+      "href": "validation/task-009/",
+      "review": ["Release summary", "Known limitations", "APPROVAL-002 source-code license"],
+      "commit": "pending"
     }
   ]
 }

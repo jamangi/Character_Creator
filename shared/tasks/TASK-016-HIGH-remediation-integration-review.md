@@ -1,6 +1,6 @@
 # TASK-016-HIGH-remediation-integration-review
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Reconcile the repository and obtain final human acceptance for the corrected Task 005–007 release candidate.
 - **Tracks:** DEFECT-001 through DEFECT-007; CHANGE-001 through CHANGE-008
 - **Depends on:** 012, 013, 017, 018, 019, 020
@@ -39,10 +39,10 @@ The remediation tasks intentionally keep their implementation reads narrow. Task
 - [x] `pnpm validate` and the production validator pass on authoritative generated content.
 - [x] Generated artifacts are reproducible and every internal Pages link resolves.
 - [x] Studio accessibility and representative keyboard/mobile workflows pass.
-- [ ] Every registered defect/request is `CLOSED`/`DELIVERED` or explicitly deferred with owner approval.
-- [ ] Task 005 output/history checkpoints receive an independent human result.
-- [ ] Task 006 retained animation checkpoint receives an independent human result.
-- [ ] Task 007 expression and remaining pack checkpoints receive an independent human result.
+- [x] Every registered defect/request is `CLOSED`/`DELIVERED` or explicitly deferred with owner approval.
+- [x] Task 005 output/history checkpoints receive an independent human result.
+- [x] Task 006 retained animation checkpoint receives an independent human result.
+- [x] Task 007 expression and remaining pack checkpoints receive an independent human result.
 - [x] Root/shared architecture, task table, task handoffs, Pages registry, and public copy agree.
 
 ## Validation
@@ -58,4 +58,4 @@ The reviewer may accept or reject each checkpoint independently. Final acceptanc
 
 ## Handoff notes
 
-The authoritative pack, Studio, Task 005–007 artifacts, and Tasks 017–020 evidence were regenerated together. Two repeated full generation runs produced identical aggregate SHA-256 `33c1855e7e30c9d2f412429d54d2aa51dd4b605e7b8160193b4f402f813cbf50`; all internal links across 18 HTML pages resolve. A fresh offline checkout also reproduces every generated artifact with a clean working tree. Automated and local browser checks pass; the grouped, independently approvable review is published at `site/validation/release-candidate/`. Task 017 and the prior 011/014/015 checkpoints are accepted. Tasks 018–020, 013, 016, 008, and 009 remain in progress until owner decisions; Task 009 additionally awaits APPROVAL-002.
+The authoritative pack, Studio, Task 005–007 artifacts, and Tasks 017–020 evidence were regenerated together. Two repeated full generation runs produced identical aggregate SHA-256 `33c1855e7e30c9d2f412429d54d2aa51dd4b605e7b8160193b4f402f813cbf50`; all internal links across 18 HTML pages resolve. A fresh offline checkout also reproduces every generated artifact with a clean working tree. Automated and local browser checks pass; the grouped review is published at `site/validation/release-candidate/`. The owner accepted Tasks 018–020, 013, 016, 008, and 009 on 2026-08-26, completing the reconciled Tasks 001–020 release candidate. All registered defects are closed and all change requests are delivered.

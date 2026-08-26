@@ -42,10 +42,28 @@ for (const path of unique) {
     if (/([A-Z]:\\Users\\|\/Users\/|\/home\/[^/]+\/)/.test(text)) absoluteLeaks.push(name);
   }
 }
-const required = ["docs/INTEGRATION.md", "docs/ASSET_AUTHORING.md", "docs/VERSIONING.md", "SECURITY.md", "LICENSES.md", "RELEASE.md"];
+const required = ["docs/INTEGRATION.md", "docs/ASSET_AUTHORING.md", "docs/VERSIONING.md", "SECURITY.md", "LICENSE", "LICENSES.md", "HOW_TO_MOUNT.md", "RELEASE.md"];
 const missingDocs: string[] = [];
 for (const path of required) {
   try { await stat(join(root, path)); } catch { missingDocs.push(path); }
+}
+const expectedPackageLicenses = new Map<string, string>([
+  ["package.json", "MIT"],
+  ["packages/schema/package.json", "MIT"],
+  ["packages/core/package.json", "MIT"],
+  ["packages/renderer-canvas/package.json", "MIT"],
+  ["packages/asset-validator/package.json", "MIT"],
+  ["packages/creator-ui/package.json", "MIT"],
+  ["packages/starter-pack/package.json", "CC0-1.0"]
+]);
+const packageLicenseMismatches: string[] = [];
+for (const [path, expected] of expectedPackageLicenses) {
+  try {
+    const manifest = JSON.parse(await readFile(join(root, path), "utf8")) as { license?: unknown };
+    if (manifest.license !== expected) packageLicenseMismatches.push(`${path}: expected ${expected}, received ${String(manifest.license)}`);
+  } catch {
+    packageLicenseMismatches.push(`${path}: unreadable package manifest`);
+  }
 }
 const packageBytes = Object.fromEntries(["schema", "core", "renderer-canvas", "asset-validator", "creator-ui"].map((name) => [name, manifest.filter((item) => item.path.startsWith(`packages/${name}/dist/`)).reduce((sum, item) => sum + item.bytes, 0)]));
 const siteBytes = manifest.filter((item) => item.path.startsWith("site/")).reduce((sum, item) => sum + item.bytes, 0);
@@ -63,6 +81,7 @@ const summary = {
   budgets: { siteBytes: 64 * 1024 * 1024, starterBytes: 32 * 1024 * 1024, packageEntryBytes: 512 * 1024 },
   checks: {
     missingDocs,
+    packageLicenseMismatches,
     absoluteDeveloperPaths: absoluteLeaks,
     exampleInternalImports: internalImports,
     siteWithinBudget: siteBytes <= 64 * 1024 * 1024,
@@ -70,11 +89,11 @@ const summary = {
     packageEntriesWithinBudget: Object.values(packageBytes).every((bytes) => bytes <= 512 * 1024)
   },
   dependencyAudit: { command: "pnpm audit --audit-level high", checkedAt: "2026-08-26", result: "No known vulnerabilities found" },
-  knownBlockers: ["Owner source-code license choice (APPROVAL-002)"]
+  knownBlockers: []
 };
 await writeFile(join(outputRoot, "release-manifest.json"), `${JSON.stringify({ algorithm: "sha256", files: manifest }, null, 2)}\n`, "utf8");
 await writeFile(join(outputRoot, "release-summary.json"), `${JSON.stringify(summary, null, 2)}\n`, "utf8");
-if (missingDocs.length > 0 || absoluteLeaks.length > 0 || internalImports.length > 0 || !summary.checks.siteWithinBudget || !summary.checks.starterWithinBudget || !summary.checks.packageEntriesWithinBudget) {
+if (missingDocs.length > 0 || packageLicenseMismatches.length > 0 || absoluteLeaks.length > 0 || internalImports.length > 0 || !summary.checks.siteWithinBudget || !summary.checks.starterWithinBudget || !summary.checks.packageEntriesWithinBudget) {
   throw new Error(`Release audit failed: ${JSON.stringify(summary.checks)}`);
 }
-console.log(`Release audit passed for ${manifest.length} files (${summary.totalBytes} bytes); one owner license decision remains.`);
+console.log(`Release audit passed for ${manifest.length} files (${summary.totalBytes} bytes); no release blockers remain.`);

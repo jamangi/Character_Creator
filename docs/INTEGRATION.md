@@ -1,5 +1,7 @@
 # Integration guide
 
+For a task-oriented choice between embedding the complete Studio and mounting a host-controlled editor, start with [`HOW_TO_MOUNT.md`](../HOW_TO_MOUNT.md). This document defines the lower-level package, recipe, URL, CSP, cleanup, and error-handling contract used by both paths.
+
 ## Supported package boundary
 
 Use only the package entry points: `@character-creator/schema`, `@character-creator/core`, `@character-creator/renderer-canvas`, and optionally `@character-creator/creator-ui`. Renderer-only hosts do not need `creator-ui` or the reference Studio.

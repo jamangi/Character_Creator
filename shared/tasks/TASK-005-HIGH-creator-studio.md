@@ -1,6 +1,6 @@
 # TASK-005-HIGH-creator-studio
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Deliver a reference browser Studio for creating, previewing, diagnosing, importing, and exporting characters.
 - **Depends on:** 002, 003
 - **Unblocks:** 008, 009
@@ -19,8 +19,8 @@
 
 - [x] A user can build all hero recipes without editing JSON.
 - [x] Invalid equips are explained and never corrupt the last valid recipe.
-- [ ] Undo/redo and export/import preserve exact choices.
-- [ ] Palette controls update only their named semantic role in preview and export.
+- [x] Undo/redo and export/import preserve exact choices.
+- [x] Palette controls update only their named semantic role in preview and export.
 - [x] Preview switching does not mutate the recipe.
 - [x] Core and renderer remain usable without the Studio.
 - [x] Accessibility checks and representative keyboard workflows pass.
@@ -42,6 +42,6 @@ Publish the interactive Studio and a concise review script covering discovery, e
 - Added `packages/creator-ui/` for DOM-free catalog queries, compatibility-safe equip actions, body profiles, palette state, deterministic randomization, history, preview state, and exact recipe round trips.
 - Published the bundled Studio at the main Pages route using the public resolver and Canvas renderer. Native controls, visible focus, semantic labels, reduced-motion behavior, and wide/narrow layouts are covered.
 - Human review accepted discovery, building, conflict safety, recipe round-trip, keyboard behavior, and responsive layout on 2026-08-26.
-- Role isolation, the expanded semantic palette vocabulary, and palette/hero history are technically complete under Tasks 012, 019–020, and 013. `DEFECT-005`, `DEFECT-006`, and `DEFECT-007` remain ready for independent owner review. Portrait/sprite presentation changes were accepted as `CHANGE-001` and `CHANGE-002` under Task 014.
-- Owner review accepted selected-mouth dominance (`CHANGE-005`/Task 017) and added bilateral arm modules (`CHANGE-006`), category-scoped palettes (`CHANGE-007`), and accessory-scoped palettes (`CHANGE-008`) under Tasks 018–020. The latter three are ready for review.
-- The task remains `IN PROGRESS` until the grouped owner decisions for Tasks 012–013, 018–020, and Task 016 are recorded.
+- Role isolation, the expanded semantic palette vocabulary, and palette/hero history are complete under Tasks 012, 019–020, and 013. `DEFECT-005`, `DEFECT-006`, and `DEFECT-007` are closed. Portrait/sprite presentation changes were accepted as `CHANGE-001` and `CHANGE-002` under Task 014.
+- Owner review accepted selected-mouth dominance (`CHANGE-005`/Task 017), bilateral arm modules (`CHANGE-006`), category-scoped palettes (`CHANGE-007`), and accessory-scoped palettes (`CHANGE-008`) under Tasks 018–020.
+- The owner accepted the reconciled Creator Studio and grouped release candidate on 2026-08-26. All Creator Studio acceptance criteria are complete.

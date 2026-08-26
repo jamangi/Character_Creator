@@ -1,6 +1,6 @@
 # TASK-008-MEDIUM-portable-integration-api
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Demonstrate that a plain JavaScript project can import only the needed packages and embed the creator or renderer safely.
 - **Depends on:** 003, 005, 006
 - **Unblocks:** 009
@@ -35,4 +35,4 @@ Publish the vanilla-JS integration as an isolated example, not a repository-inte
 
 ## Handoff notes
 
-`examples/vanilla-js/` imports only public package names and uses a host-supplied relative asset base URL. It demonstrates a renderer-only canvas plus a mount function whose `destroy()` aborts listeners, unsubscribes state, cancels stale paints, and clears the host. Browser checks confirmed edit, zero-child unmount, and clean remount. The example’s CSP explicitly scopes the 0.1 Ajv runtime-compilation exception; strict-CSP hosts can precompile validators as documented. Owner acceptance remains pending at `site/validation/task-008/`.
+`examples/vanilla-js/` imports only public package names and uses a host-supplied relative asset base URL. It demonstrates a renderer-only canvas plus a mount function whose `destroy()` aborts listeners, unsubscribes state, cancels stale paints, and clears the host. Browser checks confirmed edit, zero-child unmount, and clean remount. The example’s CSP explicitly scopes the 0.1 Ajv runtime-compilation exception; strict-CSP hosts can precompile validators as documented. `HOW_TO_MOUNT.md` now gives other projects a stable full-Studio and native-package integration path. The owner accepted Task 008 on 2026-08-26.

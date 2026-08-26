@@ -1,6 +1,6 @@
 # TASK-013-MEDIUM-studio-history-transactions
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Palette edits and hero-template selections behave as exact, visible, one-step Undo/Redo transactions.
 - **Tracks:** DEFECT-005, DEFECT-006
 - **Depends on:** 003, 020
@@ -55,4 +55,4 @@ Update review step 4 to contain separate palette-history and hero-template-histo
 
 ## Handoff notes
 
-Live color `input` values update the current recipe and render without rebuilding the control; the native `change`/focus completion commits all intermediate values as one history entry. Hero reset remains one store commit. Unit tests cover coalescing, exact JSON, preview exclusion, and redo branching; local browser tests cover visible palette and hero Undo/Redo. DEFECT-005/006 and Task 013 remain ready for independent owner approval at `site/validation/task-013/`.
+Live color `input` values update the current recipe and render without rebuilding the control; the native `change`/focus completion commits all intermediate values as one history entry. Hero reset remains one store commit. Unit tests cover coalescing, exact JSON, preview exclusion, and redo branching; local browser tests cover visible palette and hero Undo/Redo. The owner accepted both independent history checkpoints on 2026-08-26, completing Task 013 and closing `DEFECT-005` and `DEFECT-006`.

@@ -20,8 +20,11 @@ The release target is the current and previous stable desktop versions of Chrome
 - History is session-only and linear; it is not persisted across reloads.
 - Asset packs are loaded by the host; this release does not include a marketplace, account, cloud save, or remote asset execution.
 - Browser-side JSON Schema parsing currently uses Ajv runtime compilation; strict-CSP hosts should precompile validators or scope the documented `unsafe-eval` exception. Renderer-only hosts do not need it.
-- Task 009 cannot be marked release-complete until the owner chooses the source-code license recorded in `root/APPROVALS.md`.
+
+## Licensing
+
+Source code is MIT-licensed under `LICENSE`. Starter-pack generated art and recipes remain CC0-1.0. See `LICENSES.md` for the attribution boundary.
 
 ## Human acceptance
 
-The release candidate requires owner approval of the grouped visual bundle, the standalone integration flow, documentation discoverability, keyboard/accessibility behavior, known limitations, and the source-code license decision.
+The owner accepted the grouped visual bundle, standalone integration flow, documentation discoverability, keyboard/accessibility behavior, known limitations, and MIT/CC0 license split on 2026-08-26.

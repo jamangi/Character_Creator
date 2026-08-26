@@ -1,6 +1,6 @@
 # TASK-020-HIGH-accessory-scoped-palettes
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Simultaneously equipped accessories can be recolored independently without color assignments shifting when another accessory is equipped or removed.
 - **Tracks:** CHANGE-008
 - **Depends on:** 019
@@ -56,4 +56,4 @@ Publish a labeled multi-accessory character plus before/after equip/remove compa
 
 ## Handoff notes
 
-Accessory colors use stable semantic slot roles: `accessory.hat`, `.face`, `.ear`, `.neck`, `.handheld`, `.back`, `.waist`, and `.charm`. They do not depend on equip order, so removing and restoring a hat cannot move another item's color. Legacy `accent.base` initializes any missing semantic roles while remaining source-preserving. Technical checks and the equip/remove proof pass; owner approval remains pending at `site/validation/task-020/`.
+Accessory colors use stable semantic slot roles: `accessory.hat`, `.face`, `.ear`, `.neck`, `.handheld`, `.back`, `.waist`, and `.charm`. They do not depend on equip order, so removing and restoring a hat cannot move another item's color. Legacy `accent.base` initializes any missing semantic roles while remaining source-preserving. Technical checks and the equip/remove proof pass. The owner accepted Task 020 on 2026-08-26; `CHANGE-008` is delivered.

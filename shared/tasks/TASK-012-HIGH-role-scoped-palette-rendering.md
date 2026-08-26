@@ -1,6 +1,6 @@
 # TASK-012-HIGH-role-scoped-palette-rendering
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Every palette control recolors only its declared semantic role across preview and exported outputs.
 - **Tracks:** DEFECT-007
 - **Depends on:** 002, 003
@@ -61,4 +61,4 @@ Publish a labeled baseline and one-role-at-a-time comparison grid. Ask the revie
 
 ## Handoff notes
 
-The resolver now carries role, authored source color, requested value, and mode per draw item. The Canvas renderer uses exact authored sRGB role colors as deterministic per-fragment masks, preserving alpha and all non-role pixels; the Studio global tint path was removed. Synthetic mode/isolation tests pass. Tasks 019–020 have now replaced coarse body/clothing/accessory bindings with stable semantic roles and regenerated the expanded isolation proof. `DEFECT-007` and Task 012 remain in progress only until the owner decides the Task 019 palette checkpoint.
+The resolver now carries role, authored source color, requested value, and mode per draw item. The Canvas renderer uses exact authored sRGB role colors as deterministic per-fragment masks, preserving alpha and all non-role pixels; the Studio global tint path was removed. Synthetic mode/isolation tests pass. Tasks 019–020 replaced coarse body/clothing/accessory bindings with stable semantic roles and regenerated the expanded isolation proof. The owner accepted the Task 019 palette checkpoint on 2026-08-26, completing Task 012 and closing `DEFECT-007`.

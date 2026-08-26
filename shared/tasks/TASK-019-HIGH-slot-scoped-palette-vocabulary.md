@@ -1,6 +1,6 @@
 # TASK-019-HIGH-slot-scoped-palette-vocabulary
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Body skin, hair, top, bottom, outfit, outerwear, shoes, left arm, and right arm each have an independent palette control.
 - **Tracks:** CHANGE-007 and final acceptance of DEFECT-007/TASK-012
 - **Depends on:** 018; extends the implemented Task 012 renderer foundation
@@ -58,4 +58,4 @@ Publish a labeled simultaneous-color proof and one-role-at-a-time diffs. Accepta
 
 ## Handoff notes
 
-The final roles are `skin.base`, `hair.base`, `garment.top`, `garment.bottom`, `garment.outfit`, `garment.outerwear`, `garment.shoes`, `body.arm.left`, and `body.arm.right`. Normalization retains legacy keys while projecting missing new roles from `garment.primary`, `garment.secondary`, `crystal.base`, `accent.base`, and `skin.base`; explicit new values always win. Technical isolation and migration checks pass. Owner approval remains pending at `site/validation/task-019/` and will also decide the remaining Task 012/DEFECT-007 palette checkpoint.
+The final roles are `skin.base`, `hair.base`, `garment.top`, `garment.bottom`, `garment.outfit`, `garment.outerwear`, `garment.shoes`, `body.arm.left`, and `body.arm.right`. Normalization retains legacy keys while projecting missing new roles from `garment.primary`, `garment.secondary`, `crystal.base`, `accent.base`, and `skin.base`; explicit new values always win. Technical isolation and migration checks pass. The owner accepted Task 019 on 2026-08-26, delivering `CHANGE-007` and completing the remaining Task 012/`DEFECT-007` palette checkpoint.

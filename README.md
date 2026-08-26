@@ -43,6 +43,7 @@ This repository contains the design foundation, portable engine, editing Studio,
 - [`packages/starter-pack/`](packages/starter-pack/README.md) — CC0 starter content, hero recipes, art-direction references, and animation coverage.
 - [`apps/studio/`](apps/studio/) — the responsive reference Creator Studio published at the Pages root.
 - [`fixtures/`](fixtures/) — valid, invalid, recipe, animation, validator, and visual conformance fixtures.
+- [`HOW_TO_MOUNT.md`](HOW_TO_MOUNT.md) — full-Studio embedding and native package mounting guidance for other projects.
 
 The implementation layout and package boundaries are documented in [`shared/ARCHITECTURE.md`](shared/ARCHITECTURE.md).
 
@@ -55,7 +56,9 @@ New tasks should read, in order:
 3. [`shared/ASSET_CONTRACT.md`](shared/ASSET_CONTRACT.md)
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
-Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Owner review accepted Tasks 011, 014, 015, and 017 on 2026-08-26. Tasks 018–020 and 013 are technically complete and included with Tasks 016, 008, and 009 in one independently approvable release-candidate bundle. APPROVAL-002 now records the remaining source-code license decision before Task 009 can finish.
+Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope. APPROVAL-002 selected MIT for source code while retaining CC0-1.0 for starter assets. The owner accepted the complete Tasks 001–020 release candidate on 2026-08-26; the grouped Pages bundle remains available as historical validation evidence.
+
+To reuse the creator in another project, start with [`HOW_TO_MOUNT.md`](HOW_TO_MOUNT.md), then consult [`docs/INTEGRATION.md`](docs/INTEGRATION.md) and the executable [`examples/vanilla-js/`](examples/vanilla-js/) host.
 
 ## Development validation
 

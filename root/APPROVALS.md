@@ -22,15 +22,16 @@ Option 1 makes the first release smaller but honest, removes misleading generate
 
 ### Decision
 
-The owner approved Option 1. `starter-humanoid@1` will advertise front-facing `idle`, `walk`, and `run` for the first release. Back, left, right, and `sit` are deferred. The engine remains extensible for future rigs to define those selectors. Task 010 is now ready; Task 011 remains blocked only until Task 010 applies the approved scope.
+The owner approved Option 1. `starter-humanoid@1` advertises front-facing `idle`, `walk`, and `run` for the first release. Back, left, right, and `sit` are deferred. The engine remains extensible for future rigs to define those selectors. Tasks 010 and 011 implemented this decision and are complete.
 
 ---
 
 ## APPROVAL-002 — source-code license for the first release
 
-- **Status:** APPROVAL PENDING
+- **Status:** APPROVED — OPTION 1
 - **Needed before:** TASK-009 can be marked DONE or a public source release is tagged
 - **Raised:** 2026-08-26
+- **Approved:** 2026-08-26
 
 ### Context
 
@@ -48,7 +49,7 @@ Options 1 or 2 require adding the chosen code license, package license fields, a
 
 ### Decision
 
-Awaiting owner selection. Technical release artifacts may be reviewed independently in the meantime.
+The owner approved Option 1. Project source code, documentation, Studio, validator, examples, and reusable packages use the MIT license in the repository-level `LICENSE`; package metadata declares `MIT`. Starter-pack generated art and recipes retain CC0-1.0 under their existing manifest and package metadata.
 
 ---
 

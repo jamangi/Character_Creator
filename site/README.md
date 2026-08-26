@@ -16,7 +16,7 @@ A task marked `Human validation: Required` must:
 
 The interactive Studio is the main route. The review registry appears beneath it, and historical artifact URLs remain stable.
 
-The current grouped release-candidate entry lives at `site/validation/release-candidate/`. It links to independently approvable Task 018, 019, 020, 013, 016, 008, and 009 checkpoints rather than collapsing them into one all-or-nothing decision.
+The accepted grouped release-candidate record lives at `site/validation/release-candidate/`. It preserves the independently reviewed Task 018, 019, 020, 013, 016, 008, and 009 evidence and the final 2026-08-26 owner decision.
 
 ## Registry shape
 

@@ -1,6 +1,6 @@
 # TASK-018-HIGH-bilateral-arm-modules
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** The Studio offers independently removable left- and right-arm replacement assets with complete output and retained-motion coverage.
 - **Tracks:** CHANGE-006
 - **Depends on:** 004, 010, 011
@@ -57,4 +57,4 @@ Publish labeled base, left-only, right-only, and both-arm full-body renders plus
 
 ## Handoff notes
 
-Base body art now has separate anatomical left/right fragments in portrait, full body, and every retained sprite frame. The existing generic crystal/vine IDs were corrected to anatomical Right arm (screen-left in a front view); new `*-left` mirrored assets occupy `body-arm-left`. Each module suppresses only `body.arm.<side>.base` and provides only `body.arm.<side>.skin`. Automated equip/remove, simultaneous, coverage, palette, and exact retained-frame regressions pass; owner visual approval remains pending at `site/validation/task-018/`.
+Base body art now has separate anatomical left/right fragments in portrait, full body, and every retained sprite frame. The existing generic crystal/vine IDs were corrected to anatomical Right arm (screen-left in a front view); new `*-left` mirrored assets occupy `body-arm-left`. Each module suppresses only `body.arm.<side>.base` and provides only `body.arm.<side>.skin`. Automated equip/remove, simultaneous, coverage, palette, and exact retained-frame regressions pass. The owner accepted Task 018 on 2026-08-26; `CHANGE-006` is delivered.

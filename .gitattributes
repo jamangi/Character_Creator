@@ -1,0 +1,20 @@
+* text=auto
+
+# Generated and hand-authored text must reproduce byte-for-byte on every host.
+*.css text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Binary review and starter-pack artifacts.
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary

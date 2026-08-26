@@ -97,7 +97,7 @@
       "summary": "Tasks 018, 019, 020, 013, 016, 008, and 009 are presented in dependency order while keeping every owner decision independent.",
       "href": "validation/release-candidate/",
       "review": ["Bilateral arms", "Body/clothing and accessory palette identity", "Palette and hero history", "Portable host", "Release hardening"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-018",
@@ -106,7 +106,7 @@
       "summary": "Base left/right arms and mirrored crystal/vine replacements are independently equipable with complete retained-frame coverage.",
       "href": "validation/task-018/",
       "review": ["Base/left/right/both", "Anatomical laterality", "Walk/run seams and motion"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-019",
@@ -115,7 +115,7 @@
       "summary": "Body, clothing, shoes, and bilateral arms have independent semantic palette identities with deterministic legacy projection.",
       "href": "validation/task-019/",
       "review": ["Simultaneous contrasting colors", "One-role isolation", "Task 012 closure decision"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-020",
@@ -124,7 +124,7 @@
       "summary": "Accessory colors are addressed by semantic slot and remain stable across equip/remove operations.",
       "href": "validation/task-020/",
       "review": ["Contrasting accessories", "Remove/restore identity", "Unused role no-op"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-013",
@@ -133,7 +133,7 @@
       "summary": "Live palette gestures coalesce into one history entry and hero-template resets undo/redo exactly.",
       "href": "validation/task-013/",
       "review": ["DEFECT-005 palette history", "DEFECT-006 hero history", "Redo branch behavior"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-008",
@@ -142,7 +142,7 @@
       "summary": "An isolated host renders saved recipes and mounts/unmounts an editor using public package entry points and a configurable asset base URL.",
       "href": "validation/task-008/",
       "review": ["Renderer-only mode", "Edit/export/import", "Zero-child cleanup and remount"],
-      "commit": "pending"
+      "commit": "1c49c05"
     },
     {
       "task": "TASK-009",
@@ -151,7 +151,7 @@
       "summary": "The technical release candidate, integrity manifest, budgets, security and authoring docs are ready; source-code licensing awaits APPROVAL-002.",
       "href": "validation/task-009/",
       "review": ["Release summary", "Known limitations", "APPROVAL-002 source-code license"],
-      "commit": "pending"
+      "commit": "1c49c05"
     }
   ]
 }

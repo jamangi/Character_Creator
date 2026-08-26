@@ -60,6 +60,9 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -89,6 +92,9 @@
       ],
       "paletteRoles": [
         "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
       ],
       "covers": [],
       "suppresses": [],
@@ -120,6 +126,9 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -149,6 +158,9 @@
       ],
       "paletteRoles": [
         "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
       ],
       "covers": [],
       "suppresses": [],
@@ -180,6 +192,9 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -193,12 +208,14 @@
       }
     },
     {
-      "id": "sprite-back",
+      "id": "sprite-idle-front-center",
       "selector": {
         "profile": "sprite",
-        "view": "back"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/marking-runes/sprite-back.png",
+      "source": "images/marking-runes/sprite-idle-front-center.png",
       "plane": "face-features",
       "order": 0,
       "anchor": "canvas.origin",
@@ -209,6 +226,10 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -222,12 +243,14 @@
       }
     },
     {
-      "id": "sprite-front",
+      "id": "sprite-run-front-contact-left",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/marking-runes/sprite-front.png",
+      "source": "images/marking-runes/sprite-run-front-contact-left.png",
       "plane": "face-features",
       "order": 0,
       "anchor": "canvas.origin",
@@ -238,6 +261,10 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -251,12 +278,14 @@
       }
     },
     {
-      "id": "sprite-left",
+      "id": "sprite-run-front-contact-right",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
       },
-      "source": "images/marking-runes/sprite-left.png",
+      "source": "images/marking-runes/sprite-run-front-contact-right.png",
       "plane": "face-features",
       "order": 0,
       "anchor": "canvas.origin",
@@ -267,6 +296,10 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -280,12 +313,14 @@
       }
     },
     {
-      "id": "sprite-right",
+      "id": "sprite-run-front-flight-left",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
       },
-      "source": "images/marking-runes/sprite-right.png",
+      "source": "images/marking-runes/sprite-run-front-flight-left.png",
       "plane": "face-features",
       "order": 0,
       "anchor": "canvas.origin",
@@ -296,6 +331,185 @@
       "paletteRoles": [
         "marking.base"
       ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.marking-runes"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/marking-runes/sprite-run-front-flight-right.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.marking-runes"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/marking-runes/sprite-walk-front-contact-left.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.marking-runes"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/marking-runes/sprite-walk-front-contact-right.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.marking-runes"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/marking-runes/sprite-walk-front-pass-left.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.marking-runes"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/marking-runes/sprite-walk-front-pass-right.png",
+      "plane": "face-features",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "marking.base"
+      ],
+      "contentSlots": [
+        "marking"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [

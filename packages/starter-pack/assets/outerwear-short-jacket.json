@@ -61,6 +61,9 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -90,6 +93,9 @@
       ],
       "paletteRoles": [
         "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
       ],
       "covers": [],
       "suppresses": [],
@@ -121,6 +127,9 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -150,6 +159,9 @@
       ],
       "paletteRoles": [
         "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
       ],
       "covers": [],
       "suppresses": [],
@@ -181,6 +193,9 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -194,12 +209,14 @@
       }
     },
     {
-      "id": "sprite-back",
+      "id": "sprite-idle-front-center",
       "selector": {
         "profile": "sprite",
-        "view": "back"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/outerwear-short-jacket/sprite-back.png",
+      "source": "images/outerwear-short-jacket/sprite-idle-front-center.png",
       "plane": "garment-overlap",
       "order": 0,
       "anchor": "canvas.origin",
@@ -210,6 +227,10 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -223,12 +244,14 @@
       }
     },
     {
-      "id": "sprite-front",
+      "id": "sprite-run-front-contact-left",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/outerwear-short-jacket/sprite-front.png",
+      "source": "images/outerwear-short-jacket/sprite-run-front-contact-left.png",
       "plane": "garment-overlap",
       "order": 0,
       "anchor": "canvas.origin",
@@ -239,6 +262,10 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -252,12 +279,14 @@
       }
     },
     {
-      "id": "sprite-left",
+      "id": "sprite-run-front-contact-right",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
       },
-      "source": "images/outerwear-short-jacket/sprite-left.png",
+      "source": "images/outerwear-short-jacket/sprite-run-front-contact-right.png",
       "plane": "garment-overlap",
       "order": 0,
       "anchor": "canvas.origin",
@@ -268,6 +297,10 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -281,12 +314,14 @@
       }
     },
     {
-      "id": "sprite-right",
+      "id": "sprite-run-front-flight-left",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
       },
-      "source": "images/outerwear-short-jacket/sprite-right.png",
+      "source": "images/outerwear-short-jacket/sprite-run-front-flight-left.png",
       "plane": "garment-overlap",
       "order": 0,
       "anchor": "canvas.origin",
@@ -297,6 +332,185 @@
       "paletteRoles": [
         "garment.secondary"
       ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-short-jacket"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/outerwear-short-jacket/sprite-run-front-flight-right.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-short-jacket"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/outerwear-short-jacket/sprite-walk-front-contact-left.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-short-jacket"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/outerwear-short-jacket/sprite-walk-front-contact-right.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-short-jacket"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/outerwear-short-jacket/sprite-walk-front-pass-left.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outerwear-short-jacket"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/outerwear-short-jacket/sprite-walk-front-pass-right.png",
+      "plane": "garment-overlap",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.secondary"
+      ],
+      "contentSlots": [
+        "outerwear"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [

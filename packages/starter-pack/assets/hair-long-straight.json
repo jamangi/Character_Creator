@@ -62,6 +62,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -92,6 +95,9 @@
       ],
       "paletteRoles": [
         "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
       ],
       "covers": [],
       "suppresses": [],
@@ -124,6 +130,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -154,6 +163,9 @@
       ],
       "paletteRoles": [
         "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
       ],
       "covers": [],
       "suppresses": [],
@@ -186,6 +198,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -216,6 +231,9 @@
       ],
       "paletteRoles": [
         "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
       ],
       "covers": [],
       "suppresses": [],
@@ -248,6 +266,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -278,6 +299,9 @@
       ],
       "paletteRoles": [
         "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
       ],
       "covers": [],
       "suppresses": [],
@@ -310,6 +334,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -341,6 +368,9 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -355,12 +385,14 @@
       }
     },
     {
-      "id": "sprite-back.back",
+      "id": "sprite-idle-front-center.back",
       "selector": {
         "profile": "sprite",
-        "view": "back"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/hair-long-straight/sprite-back-back.png",
+      "source": "images/hair-long-straight/sprite-idle-front-center-back.png",
       "plane": "hair-back",
       "order": 0,
       "anchor": "canvas.origin",
@@ -371,6 +403,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -385,12 +421,14 @@
       }
     },
     {
-      "id": "sprite-back.front",
+      "id": "sprite-idle-front-center.front",
       "selector": {
         "profile": "sprite",
-        "view": "back"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/hair-long-straight/sprite-back-front.png",
+      "source": "images/hair-long-straight/sprite-idle-front-center-front.png",
       "plane": "hair-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -401,6 +439,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -415,12 +457,14 @@
       }
     },
     {
-      "id": "sprite-front.back",
+      "id": "sprite-run-front-contact-left.back",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/hair-long-straight/sprite-front-back.png",
+      "source": "images/hair-long-straight/sprite-run-front-contact-left-back.png",
       "plane": "hair-back",
       "order": 0,
       "anchor": "canvas.origin",
@@ -431,6 +475,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -445,12 +493,14 @@
       }
     },
     {
-      "id": "sprite-front.front",
+      "id": "sprite-run-front-contact-left.front",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/hair-long-straight/sprite-front-front.png",
+      "source": "images/hair-long-straight/sprite-run-front-contact-left-front.png",
       "plane": "hair-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -461,6 +511,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -475,12 +529,14 @@
       }
     },
     {
-      "id": "sprite-left.back",
+      "id": "sprite-run-front-contact-right.back",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
       },
-      "source": "images/hair-long-straight/sprite-left-back.png",
+      "source": "images/hair-long-straight/sprite-run-front-contact-right-back.png",
       "plane": "hair-back",
       "order": 0,
       "anchor": "canvas.origin",
@@ -491,6 +547,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -505,12 +565,14 @@
       }
     },
     {
-      "id": "sprite-left.front",
+      "id": "sprite-run-front-contact-right.front",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
       },
-      "source": "images/hair-long-straight/sprite-left-front.png",
+      "source": "images/hair-long-straight/sprite-run-front-contact-right-front.png",
       "plane": "hair-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -521,6 +583,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -535,12 +601,14 @@
       }
     },
     {
-      "id": "sprite-right.back",
+      "id": "sprite-run-front-flight-left.back",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
       },
-      "source": "images/hair-long-straight/sprite-right-back.png",
+      "source": "images/hair-long-straight/sprite-run-front-flight-left-back.png",
       "plane": "hair-back",
       "order": 0,
       "anchor": "canvas.origin",
@@ -551,6 +619,10 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -565,12 +637,14 @@
       }
     },
     {
-      "id": "sprite-right.front",
+      "id": "sprite-run-front-flight-left.front",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
       },
-      "source": "images/hair-long-straight/sprite-right-front.png",
+      "source": "images/hair-long-straight/sprite-run-front-flight-left-front.png",
       "plane": "hair-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -581,6 +655,370 @@
       "paletteRoles": [
         "hair.base"
       ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/hair-long-straight/sprite-run-front-flight-right-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/hair-long-straight/sprite-run-front-flight-right-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-contact-left-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-contact-left-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-contact-right-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-contact-right-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-pass-left-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-pass-left-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.crown"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right.back",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-pass-right-back.png",
+      "plane": "hair-back",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "back",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.hair-long-straight",
+        "hair.back"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right.front",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/hair-long-straight/sprite-walk-front-pass-right-front.png",
+      "plane": "hair-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "hair.base"
+      ],
+      "contentSlots": [
+        "hair"
+      ],
+      "motionGroup": "front",
       "covers": [],
       "suppresses": [],
       "tags": [

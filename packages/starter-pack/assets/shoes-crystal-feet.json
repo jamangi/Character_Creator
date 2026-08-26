@@ -61,6 +61,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -93,6 +96,9 @@
       ],
       "paletteRoles": [
         "crystal.base"
+      ],
+      "contentSlots": [
+        "shoes"
       ],
       "covers": [
         "body.leg.left.skin",
@@ -127,6 +133,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -160,6 +169,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -173,40 +185,6 @@
         "y": 0,
         "width": 256,
         "height": 384
-      }
-    },
-    {
-      "id": "sprite.idle.back.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/shoes-crystal-feet/sprite-idle-back-center.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
       }
     },
     {
@@ -228,210 +206,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
+      "contentSlots": [
+        "shoes"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.idle.left.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/shoes-crystal-feet/sprite-idle-left-center.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.idle.right.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/shoes-crystal-feet/sprite-idle-right-center.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.back.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-back-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.back.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-back-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.back.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-back-flight-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.back.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-back-flight-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -466,6 +244,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -500,6 +282,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -534,6 +320,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -568,550 +358,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
+      "contentSlots": [
+        "shoes"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.left.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-left-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.left.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-left-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.left.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-left-flight-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.left.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-left-flight-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.right.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-right-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.right.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-right-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.right.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-right-flight-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.run.right.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-run-right-flight-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.sit.back.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/shoes-crystal-feet/sprite-sit-back-seated.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.sit.front.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "front",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/shoes-crystal-feet/sprite-sit-front-seated.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.sit.left.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/shoes-crystal-feet/sprite-sit-left-seated.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.sit.right.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/shoes-crystal-feet/sprite-sit-right-seated.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.back.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-back-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.back.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-back-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.back.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-back-pass-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.back.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-back-pass-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -1146,6 +396,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -1180,6 +434,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -1214,6 +472,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "shoes"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"
@@ -1248,278 +510,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
+      "contentSlots": [
+        "shoes"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.left.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-left-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.left.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-left-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.left.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-left-pass-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.left.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-left-pass-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.right.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-right-contact-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.right.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-right-contact-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.right.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-right-pass-left.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.leg.left.skin",
-        "body.leg.right.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.shoes-crystal-feet"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      }
-    },
-    {
-      "id": "sprite.walk.right.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/shoes-crystal-feet/sprite-walk-right-pass-right.png",
-      "plane": "garment-overlap",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.leg.left.skin",
         "body.leg.right.skin"

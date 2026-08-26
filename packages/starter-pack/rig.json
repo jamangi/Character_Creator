@@ -53,17 +53,18 @@
         "width": 224,
         "height": 224
       },
-      "sampling": "smooth"
+      "sampling": "smooth",
+      "hiddenSlots": [
+        "bottom",
+        "shoes"
+      ]
     },
     {
       "id": "sprite",
       "width": 96,
       "height": 96,
       "views": [
-        "front",
-        "back",
-        "left",
-        "right"
+        "front"
       ],
       "requiredCoverage": [
         "body.head.skin",
@@ -79,7 +80,10 @@
         "width": 88,
         "height": 88
       },
-      "sampling": "nearest"
+      "sampling": "nearest",
+      "hiddenSlots": [
+        "mouth"
+      ]
     }
   ],
   "planes": [
@@ -460,10 +464,7 @@
       "id": "idle",
       "loop": true,
       "directions": [
-        "front",
-        "back",
-        "left",
-        "right"
+        "front"
       ],
       "frames": [
         {
@@ -480,10 +481,7 @@
       "id": "run",
       "loop": true,
       "directions": [
-        "front",
-        "back",
-        "left",
-        "right"
+        "front"
       ],
       "frames": [
         {
@@ -513,30 +511,10 @@
       ]
     },
     {
-      "id": "sit",
-      "loop": true,
-      "directions": [
-        "front",
-        "back",
-        "left",
-        "right"
-      ],
-      "frames": [
-        {
-          "id": "seated",
-          "durationMs": 500,
-          "contacts": []
-        }
-      ]
-    },
-    {
       "id": "walk",
       "loop": true,
       "directions": [
-        "front",
-        "back",
-        "left",
-        "right"
+        "front"
       ],
       "frames": [
         {

@@ -45,7 +45,6 @@ let assets: AssetManifest[] = [];
 let rig: RigDefinition;
 let heroes: Array<{ id: string; name: string; recipe: CharacterRecipe }> = [];
 let renderToken = 0;
-let activeTint: string | undefined;
 
 function image(source: string): Promise<CanvasImageLike> {
   return new Promise((resolve, reject) => {
@@ -67,19 +66,12 @@ async function render(): Promise<void> {
   const token = ++renderToken;
   renderState.textContent = "Resolving…";
   const scene = resolveCharacter({ recipe: store.snapshot.recipe, rig, catalog: store.catalog, request: currentRequest() });
-  const result = await renderResolvedScene(scene, { canvas: canvas as unknown as CanvasLike, loadImage: image });
+  const result = await renderResolvedScene(scene, {
+    canvas: canvas as unknown as CanvasLike,
+    createCanvas: (width, height) => Object.assign(document.createElement("canvas"), { width, height }) as unknown as CanvasLike,
+    loadImage: image
+  });
   if (token !== renderToken) return;
-  if (activeTint !== undefined) {
-    const context = canvas.getContext("2d");
-    if (context !== null) {
-      context.save();
-      context.globalCompositeOperation = "source-atop";
-      context.globalAlpha = .22;
-      context.fillStyle = activeTint;
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      context.restore();
-    }
-  }
   const actionErrors = store.snapshot.diagnostics.filter((item) => item.severity === "error");
   const errors = actionErrors.length > 0 ? actionErrors : result.diagnostics.filter((item) => item.severity === "error");
   renderState.textContent = errors.length === 0 ? `${scene.drawList.length} layers · deterministic` : `${errors.length} issue${errors.length === 1 ? "" : "s"}`;
@@ -179,7 +171,6 @@ async function initialize(): Promise<void> {
     const input = (event.target as HTMLElement).closest<HTMLInputElement>("[data-palette]");
     const role = input?.dataset["palette"];
     if (input !== null && role !== undefined) {
-      activeTint = input.value;
       store.setPalette(role, input.value.toUpperCase());
     }
   });

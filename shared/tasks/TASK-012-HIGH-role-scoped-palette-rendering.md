@@ -1,6 +1,6 @@
 # TASK-012-HIGH-role-scoped-palette-rendering
 
-- **Status:** READY
+- **Status:** IN PROGRESS
 - **Outcome:** Every palette control recolors only its declared semantic role across preview and exported outputs.
 - **Tracks:** DEFECT-007
 - **Depends on:** 002, 003
@@ -39,14 +39,14 @@ This task has authority to refine palette/mask contract fields if one image need
 
 ## Acceptance criteria
 
-- [ ] `DEFECT-007` has a failing regression before the fix and passes afterward.
-- [ ] Changing `mouth.base` changes mouth pixels only; unrelated regions remain unchanged.
-- [ ] Changing `skin.base` and `skin.shadow` affects only their declared skin regions and remains independently controllable.
-- [ ] Hair, garment, accent, eye, marking, and crystal roles do not cross-affect one another.
-- [ ] A role absent from the current character is a deterministic no-op, not a global tint.
-- [ ] Preview and exported images are pixel-equivalent for the same resolved request.
-- [ ] Direct renderer use outside the Studio receives the same palette behavior.
-- [ ] Relevant schema, validator, fixtures, and documentation are updated if the palette contract changes.
+- [x] `DEFECT-007` has a failing regression before the fix and passes afterward.
+- [x] Changing `mouth.base` changes mouth pixels only; unrelated regions remain unchanged.
+- [x] Changing `skin.base` and `skin.shadow` affects only their declared skin regions and remains independently controllable.
+- [x] Hair, garment, accent, eye, marking, and crystal roles do not cross-affect one another.
+- [x] A role absent from the current character is a deterministic no-op, not a global tint.
+- [x] Preview and exported images are pixel-equivalent for the same resolved request.
+- [x] Direct renderer use outside the Studio receives the same palette behavior.
+- [x] Relevant schema, validator, fixtures, and documentation are updated if the palette contract changes.
 
 ## Validation
 
@@ -61,4 +61,4 @@ Publish a labeled baseline and one-role-at-a-time comparison grid. Ask the revie
 
 ## Handoff notes
 
-Record the palette application/mask strategy, any contract revision, renderer tests, `DEFECT-007` status, and visual result. Do not mark Task 005 complete until Tasks 013, 014, and 016 also pass.
+The resolver now carries role, authored source color, requested value, and mode per draw item. The Canvas renderer uses exact authored sRGB role colors as deterministic per-fragment masks, preserving alpha and all non-role pixels; the Studio global tint path was removed. Synthetic mode/isolation tests and ten labeled role comparisons pass. DEFECT-007 is `READY FOR REVIEW`; Task 005 and Task 013 remain open pending human palette acceptance and history work.

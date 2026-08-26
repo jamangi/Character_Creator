@@ -8049,7 +8049,10 @@ function normalizeRecipe(recipe) {
 function normalizeRig(rig2) {
   return {
     ...rig2,
-    profiles: [...rig2.profiles].sort((a, b) => a.id.localeCompare(b.id)),
+    profiles: rig2.profiles.map((profile) => ({
+      ...profile,
+      ...profile.hiddenSlots === void 0 ? {} : { hiddenSlots: sortedUnique(profile.hiddenSlots) }
+    })).sort((a, b) => a.id.localeCompare(b.id)),
     planes: [...rig2.planes],
     slots: [...rig2.slots].sort((a, b) => a.id.localeCompare(b.id)),
     regions: [...rig2.regions].sort((a, b) => a.id.localeCompare(b.id)),
@@ -8079,7 +8082,10 @@ function normalizeAsset(asset) {
       provides: sortedUnique(asset.equip.provides)
     },
     palette: { roles: sortedRecord(asset.palette.roles) },
-    fragments: [...asset.fragments].sort((a, b) => a.id.localeCompare(b.id)),
+    fragments: asset.fragments.map((fragment) => ({
+      ...fragment,
+      ...fragment.contentSlots === void 0 ? {} : { contentSlots: sortedUnique(fragment.contentSlots) }
+    })).sort((a, b) => a.id.localeCompare(b.id)),
     fallbacks: [...asset.fallbacks].sort(
       (a, b) => a.axis.localeCompare(b.axis) || a.from.localeCompare(b.from) || a.to.localeCompare(b.to)
     )
@@ -8240,6 +8246,13 @@ var asset_schema_default = {
           uniqueItems: true,
           items: { $ref: "common.schema.json#/$defs/localId" }
         },
+        contentSlots: {
+          type: "array",
+          minItems: 1,
+          uniqueItems: true,
+          items: { $ref: "common.schema.json#/$defs/localId" }
+        },
+        motionGroup: { $ref: "common.schema.json#/$defs/localId" },
         covers: {
           type: "array",
           uniqueItems: true,
@@ -8587,6 +8600,7 @@ var diagnostic_schema_default = {
         "DISTRIBUTION_METADATA_MISSING",
         "VISUAL_REVIEW_REQUIRED",
         "MISSING_MOTION_ARTWORK",
+        "MOTION_FALLBACK_UNSAFE",
         "FOOT_CONTACT_DRIFT",
         "ATLAS_PACK_FAILED",
         "RENDER_FAILED"
@@ -8710,6 +8724,11 @@ var rig_schema_default = {
             uniqueItems: true,
             items: { $ref: "common.schema.json#/$defs/localId" }
           },
+          hiddenSlots: {
+            type: "array",
+            uniqueItems: true,
+            items: { $ref: "common.schema.json#/$defs/localId" }
+          },
           safeArea: { $ref: "common.schema.json#/$defs/rect" },
           sampling: { enum: ["nearest", "smooth"] }
         }
@@ -8804,7 +8823,7 @@ var rig_schema_default = {
     },
     clips: {
       type: "array",
-      minItems: 4,
+      minItems: 1,
       uniqueItems: true,
       items: {
         type: "object",
@@ -8996,14 +9015,23 @@ function duplicateIdDiagnostics(values, path) {
   return diagnostics2;
 }
 function rigSemanticDiagnostics(rig2) {
-  return sortDiagnostics([
+  const diagnostics2 = [
     ...duplicateIdDiagnostics(rig2.profiles, "$.profiles"),
     ...duplicateIdDiagnostics(rig2.slots, "$.slots"),
     ...duplicateIdDiagnostics(rig2.regions, "$.regions"),
     ...duplicateIdDiagnostics(rig2.anchors, "$.anchors"),
     ...duplicateIdDiagnostics(rig2.expressions, "$.expressions"),
     ...duplicateIdDiagnostics(rig2.clips, "$.clips")
-  ]);
+  ];
+  const slots = new Set(rig2.slots.map((slot) => slot.id));
+  rig2.profiles.forEach((profile, profileIndex) => profile.hiddenSlots?.forEach((slot, slotIndex) => {
+    if (!slots.has(slot)) diagnostics2.push(diagnostic(
+      "UNKNOWN_SLOT",
+      `$.profiles[${profileIndex}].hiddenSlots[${slotIndex}]`,
+      `Unknown profile-hidden slot ${slot}`
+    ));
+  }));
+  return sortDiagnostics(diagnostics2);
 }
 function compareSemver(left, right) {
   const leftParts = (left.split(/[+-]/)[0] ?? "0.0.0").split(".").slice(0, 3).map(Number);
@@ -9178,6 +9206,16 @@ function assetSemanticDiagnostics(asset, rig2) {
           )
         );
       }
+    });
+    fragment.contentSlots?.forEach((slot, slotIndex) => {
+      if (!slots.has(slot)) diagnostics2.push(
+        diagnostic(
+          "UNKNOWN_SLOT",
+          `${path}.contentSlots[${slotIndex}]`,
+          `Unknown fragment content slot ${slot}`,
+          { assetId: asset.id }
+        )
+      );
     });
     fragment.occludesWith?.forEach((mask, maskIndex) => {
       if (!masks.has(mask)) {
@@ -9637,7 +9675,7 @@ function resolveCharacter(input) {
   for (const { fragment } of selected) {
     for (const tag of fragment.suppresses) suppressedTags.add(tag);
   }
-  const visible = selected.filter(
+  const unsuppressed = selected.filter(
     ({ fragment }) => !fragment.tags.some((tag) => suppressedTags.has(tag))
   );
   const profile = input.rig.profiles.find(
@@ -9652,6 +9690,10 @@ function resolveCharacter(input) {
       equipped2
     );
   }
+  const hiddenSlots = new Set(profile.hiddenSlots ?? []);
+  const visible = unsuppressed.filter(
+    ({ asset, fragment }) => !(fragment.contentSlots ?? asset.equip.slots).some((slot) => hiddenSlots.has(slot))
+  );
   const coverage = new Set(visible.flatMap(({ fragment }) => fragment.covers));
   const missing = profile.requiredCoverage.filter((region) => !coverage.has(region));
   for (const region of missing) {
@@ -9678,12 +9720,15 @@ function resolveCharacter(input) {
         )
       );
     }
-    const palette = Object.fromEntries(
-      fragment.paletteRoles.map((role) => [
+    const palette = fragment.paletteRoles.map((role) => {
+      const definition = asset.palette.roles[role];
+      return {
         role,
-        recipe.palette[role] ?? asset.palette.roles[role]?.default ?? "#00000000"
-      ])
-    );
+        source: definition?.default ?? "#00000000",
+        value: recipe.palette[role] ?? definition?.default ?? "#00000000",
+        mode: definition?.mode ?? "replace"
+      };
+    });
     return {
       assetId: asset.id,
       assetVersion: asset.version,
@@ -9696,6 +9741,8 @@ function resolveCharacter(input) {
       offset: fragment.offset ?? [0, 0],
       pivot: fragment.pivot,
       palette,
+      contentSlots: [...fragment.contentSlots ?? asset.equip.slots],
+      ...fragment.motionGroup === void 0 ? {} : { motionGroup: fragment.motionGroup },
       tags: [...fragment.tags],
       covers: [...fragment.covers],
       selector: fragment.selector
@@ -10147,6 +10194,60 @@ var CreatorStore = class {
 };
 
 // packages/renderer-canvas/src/renderer.ts
+function channels(color) {
+  return [
+    Number.parseInt(color.slice(1, 3), 16),
+    Number.parseInt(color.slice(3, 5), 16),
+    Number.parseInt(color.slice(5, 7), 16)
+  ];
+}
+function clamp(value) {
+  return Math.max(0, Math.min(255, Math.round(value)));
+}
+function applyPaletteMode(source, authored, target, mode) {
+  if (mode === "replace") return target;
+  if (mode === "multiply") return source.map((value, index) => {
+    const base = authored[index] ?? 0;
+    const next = target[index] ?? 0;
+    return clamp(base === 0 ? next : value * next / base);
+  });
+  return source.map((value, index) => {
+    const base = authored[index] ?? 255;
+    const next = target[index] ?? 255;
+    return clamp(base === 255 ? next : 255 - (255 - value) * (255 - next) / (255 - base));
+  });
+}
+function recolor(image2, bindings, options) {
+  const canvas2 = options.createCanvas(image2.width, image2.height);
+  const context = canvas2.getContext("2d");
+  if (context === null) throw new Error("Palette canvas did not provide a 2D rendering context");
+  context.clearRect(0, 0, image2.width, image2.height);
+  context.drawImage(image2, 0, 0);
+  const pixels = context.getImageData(0, 0, image2.width, image2.height);
+  const prepared = bindings.map((binding) => ({
+    ...binding,
+    sourceChannels: channels(binding.source),
+    valueChannels: channels(binding.value)
+  }));
+  for (let offset = 0; offset < pixels.data.length; offset += 4) {
+    if ((pixels.data[offset + 3] ?? 0) === 0) continue;
+    for (const binding of prepared) {
+      if (pixels.data[offset] !== binding.sourceChannels[0] || pixels.data[offset + 1] !== binding.sourceChannels[1] || pixels.data[offset + 2] !== binding.sourceChannels[2]) continue;
+      const next = applyPaletteMode(
+        [pixels.data[offset] ?? 0, pixels.data[offset + 1] ?? 0, pixels.data[offset + 2] ?? 0],
+        binding.sourceChannels,
+        binding.valueChannels,
+        binding.mode
+      );
+      pixels.data[offset] = next[0];
+      pixels.data[offset + 1] = next[1];
+      pixels.data[offset + 2] = next[2];
+      break;
+    }
+  }
+  context.putImageData(pixels, 0, 0);
+  return canvas2;
+}
 async function renderResolvedScene(scene, options) {
   const diagnostics2 = [...scene.diagnostics];
   options.canvas.width = scene.width;
@@ -10164,6 +10265,7 @@ async function renderResolvedScene(scene, options) {
     return { canvas: options.canvas, scene, diagnostics: sortDiagnostics(diagnostics2) };
   }
   const cache = /* @__PURE__ */ new Map();
+  const paletteCache = /* @__PURE__ */ new Map();
   for (const item of scene.drawList) {
     try {
       let image2 = cache.get(item.source);
@@ -10171,11 +10273,17 @@ async function renderResolvedScene(scene, options) {
         image2 = await options.loadImage(item.source);
         cache.set(item.source, image2);
       }
-      const x = item.anchor.x + item.offset[0] - item.pivot[0] * image2.width;
-      const y = item.anchor.y + item.offset[1] - item.pivot[1] * image2.height;
+      const paletteKey = `${item.source}|${JSON.stringify(item.palette)}`;
+      let drawable = paletteCache.get(paletteKey);
+      if (drawable === void 0) {
+        drawable = recolor(image2, item.palette, options);
+        paletteCache.set(paletteKey, drawable);
+      }
+      const x = item.anchor.x + item.offset[0] - item.pivot[0] * drawable.width;
+      const y = item.anchor.y + item.offset[1] - item.pivot[1] * drawable.height;
       context.save();
       context.translate(x, y);
-      context.drawImage(image2, 0, 0);
+      context.drawImage(drawable, 0, 0);
       context.restore();
     } catch (error) {
       diagnostics2.push(
@@ -10225,7 +10333,6 @@ var assets = [];
 var rig;
 var heroes = [];
 var renderToken = 0;
-var activeTint;
 function image(source) {
   return new Promise((resolve, reject) => {
     const element = new Image();
@@ -10242,19 +10349,12 @@ async function render() {
   const token = ++renderToken;
   renderState.textContent = "Resolving\u2026";
   const scene = resolveCharacter({ recipe: store.snapshot.recipe, rig, catalog: store.catalog, request: currentRequest() });
-  const result = await renderResolvedScene(scene, { canvas, loadImage: image });
+  const result = await renderResolvedScene(scene, {
+    canvas,
+    createCanvas: (width, height) => Object.assign(document.createElement("canvas"), { width, height }),
+    loadImage: image
+  });
   if (token !== renderToken) return;
-  if (activeTint !== void 0) {
-    const context = canvas.getContext("2d");
-    if (context !== null) {
-      context.save();
-      context.globalCompositeOperation = "source-atop";
-      context.globalAlpha = 0.22;
-      context.fillStyle = activeTint;
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      context.restore();
-    }
-  }
   const actionErrors = store.snapshot.diagnostics.filter((item) => item.severity === "error");
   const errors = actionErrors.length > 0 ? actionErrors : result.diagnostics.filter((item) => item.severity === "error");
   renderState.textContent = errors.length === 0 ? `${scene.drawList.length} layers \xB7 deterministic` : `${errors.length} issue${errors.length === 1 ? "" : "s"}`;
@@ -10346,7 +10446,6 @@ async function initialize() {
     const input = event.target.closest("[data-palette]");
     const role = input?.dataset["palette"];
     if (input !== null && role !== void 0) {
-      activeTint = input.value;
       store.setPalette(role, input.value.toUpperCase());
     }
   });

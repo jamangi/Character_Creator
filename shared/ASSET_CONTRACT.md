@@ -12,6 +12,9 @@ The authoritative JSON Schemas and TypeScript types now live in `packages/schema
 - Fragment `order` is a bounded local value (`-10` through `10` for the starter rig). Only the rig defines the global plane order.
 - Suppression targets fragment tags. Replacement coverage is independently declared through fragment `covers` and `provide-coverage` effects.
 - Parsing returns structured diagnostics with stable codes and JSON paths. Prototype-pollution keys are rejected before schema evaluation.
+- Render profiles can hide semantic slots; fragments can refine multi-slot content with `contentSlots`. Projection happens in the resolver and never mutates a recipe.
+- Sprite fragments can declare a `motionGroup`; visible groups require exact advertised-frame coverage unless an asset explicitly provides `motion.static-safe`.
+- Palette role masks in v0.1 are exact authored sRGB default-color keys within each fragment. The resolver carries the role, source color, requested value, and mode to the renderer; alpha and non-key pixels remain unchanged.
 
 These choices are exercised by versioned valid and invalid fixtures under `fixtures/`.
 
@@ -123,6 +126,7 @@ A fragment may additionally declare:
 - `plane` and bounded `order`;
 - `bounds` and safe overflow intent;
 - palette-role bindings and blend modes from an allowlist;
+- semantic `contentSlots` for output-profile projection and a stable `motionGroup` for coupled-frame validation;
 - hit-test/selection mask when transparent bounds would be misleading.
 
 ## Semantic planes
@@ -203,6 +207,8 @@ For sprites, prefer stable clips and frame IDs:
 - `idle` and `sit`: directional, normally one or more explicitly timed frames;
 - `walk` and `run`: directional cycles with named contact/pass frames and foot-contact metadata;
 - `left` and `right`: may mirror only when the entire equipped draw list declares mirroring safe. Text, asymmetric accessories, scars, and handed items commonly forbid reflection.
+
+The vocabulary above remains available across rigs. `starter-humanoid@1` currently advertises only front-facing `idle`, `walk`, and `run`; unsupported starter requests fail rather than falling back to misleading art.
 
 ## Validation levels
 

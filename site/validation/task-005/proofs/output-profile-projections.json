@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-08-26T19:00:00.000Z",
+  "recipeSha256": "ebf83c212299d3f399e65229e686e783580ad33471b0be67004734ae3b2694be",
+  "recipeByteLength": 1088,
+  "recipeByteIdenticalAfterRendering": true,
+  "hiddenSlots": {
+    "full-body": [],
+    "portrait": [
+      "bottom",
+      "shoes"
+    ],
+    "sprite": [
+      "mouth"
+    ]
+  }
+}

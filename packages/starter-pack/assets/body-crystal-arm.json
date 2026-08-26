@@ -73,6 +73,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
       "covers": [
         "body.arm.left.skin"
       ],
@@ -106,6 +109,9 @@
       ],
       "paletteRoles": [
         "crystal.base"
+      ],
+      "contentSlots": [
+        "body-arm-left"
       ],
       "covers": [
         "body.arm.left.skin"
@@ -141,6 +147,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
       "covers": [
         "body.arm.left.skin"
       ],
@@ -174,6 +183,9 @@
       ],
       "paletteRoles": [
         "crystal.base"
+      ],
+      "contentSlots": [
+        "body-arm-left"
       ],
       "covers": [
         "body.arm.left.skin"
@@ -209,6 +221,9 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -219,41 +234,6 @@
         "y": 0,
         "width": 256,
         "height": 256
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.idle.back.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/body-crystal-arm/sprite-idle-back-center.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
       },
       "mirrorSafe": false
     },
@@ -276,216 +256,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.arm.left.skin"
+      "contentSlots": [
+        "body-arm-left"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.idle.left.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/body-crystal-arm/sprite-idle-left-center.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.idle.right.center",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "idle",
-        "frame": "center"
-      },
-      "source": "images/body-crystal-arm/sprite-idle-right-center.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.back.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-back-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.back.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-back-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.back.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-back-flight-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.back.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-back-flight-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -521,6 +295,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -556,6 +334,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -591,6 +373,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -626,566 +412,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.arm.left.skin"
+      "contentSlots": [
+        "body-arm-left"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.left.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-left-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.left.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-left-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.left.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-left-flight-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.left.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-left-flight-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.right.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-right-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.right.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-right-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.right.flight-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "flight-left"
-      },
-      "source": "images/body-crystal-arm/sprite-run-right-flight-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.run.right.flight-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "run",
-        "frame": "flight-right"
-      },
-      "source": "images/body-crystal-arm/sprite-run-right-flight-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.sit.back.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/body-crystal-arm/sprite-sit-back-seated.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.sit.front.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "front",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/body-crystal-arm/sprite-sit-front-seated.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.sit.left.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/body-crystal-arm/sprite-sit-left-seated.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.sit.right.seated",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "sit",
-        "frame": "seated"
-      },
-      "source": "images/body-crystal-arm/sprite-sit-right-seated.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.back.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-back-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.back.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-back-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.back.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-back-pass-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.back.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "back",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-back-pass-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -1221,6 +451,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -1256,6 +490,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -1291,6 +529,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
+      "contentSlots": [
+        "body-arm-left"
+      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],
@@ -1326,286 +568,10 @@
       "paletteRoles": [
         "crystal.base"
       ],
-      "covers": [
-        "body.arm.left.skin"
+      "contentSlots": [
+        "body-arm-left"
       ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.left.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-left-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.left.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-left-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.left.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-left-pass-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.left.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "left",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-left-pass-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.right.contact-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "contact-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-right-contact-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.right.contact-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "contact-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-right-contact-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.right.pass-left",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "pass-left"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-right-pass-left.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
-      "covers": [
-        "body.arm.left.skin"
-      ],
-      "suppresses": [],
-      "tags": [
-        "asset.body-crystal-arm",
-        "body.arm.left.replacement"
-      ],
-      "bounds": {
-        "x": 0,
-        "y": 0,
-        "width": 96,
-        "height": 96
-      },
-      "mirrorSafe": false
-    },
-    {
-      "id": "sprite.walk.right.pass-right",
-      "selector": {
-        "profile": "sprite",
-        "view": "right",
-        "clip": "walk",
-        "frame": "pass-right"
-      },
-      "source": "images/body-crystal-arm/sprite-walk-right-pass-right.png",
-      "plane": "body-base",
-      "order": 0,
-      "anchor": "canvas.origin",
-      "pivot": [
-        0,
-        0
-      ],
-      "paletteRoles": [
-        "crystal.base"
-      ],
+      "motionGroup": "main",
       "covers": [
         "body.arm.left.skin"
       ],

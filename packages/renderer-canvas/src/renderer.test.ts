@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
-import { resolveCharacter, type RenderRequest } from "@character-creator/core";
+import { resolveCharacter, type RenderRequest, type ResolvedScene } from "@character-creator/core";
 import {
   parseAssetManifest,
   parseCharacterRecipe,
@@ -13,7 +13,7 @@ import {
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 import { describe, expect, it } from "vitest";
-import { renderResolvedScene } from "./renderer.js";
+import { applyPaletteMode, renderResolvedScene } from "./renderer.js";
 import type { CanvasImageLike, CanvasLike } from "./types.js";
 
 const root = process.cwd();
@@ -61,8 +61,28 @@ async function renderPng(
   const canvas = createCanvas(scene.width, scene.height);
   const result = await renderResolvedScene(scene, {
     canvas: canvas as unknown as CanvasLike,
+    createCanvas: (width, height) => createCanvas(width, height) as unknown as CanvasLike,
     loadImage: async (source) =>
       (await loadImage(join(root, source))) as unknown as CanvasImageLike
+  });
+  expect(result.diagnostics).toEqual([]);
+  return canvas.toBuffer("image/png");
+}
+
+async function renderStarterPng(
+  recipe: CharacterRecipe,
+  rig: RigDefinition,
+  assets: AssetManifest[],
+  request: RenderRequest
+): Promise<Buffer> {
+  const scene = resolveCharacter({ recipe, rig, catalog: assets, request });
+  expect(scene.diagnostics).toEqual([]);
+  const canvas = createCanvas(scene.width, scene.height);
+  const result = await renderResolvedScene(scene, {
+    canvas: canvas as unknown as CanvasLike,
+    createCanvas: (width, height) => createCanvas(width, height) as unknown as CanvasLike,
+    loadImage: async (source) =>
+      (await loadImage(join(root, "packages/starter-pack", source))) as unknown as CanvasImageLike
   });
   expect(result.diagnostics).toEqual([]);
   return canvas.toBuffer("image/png");
@@ -129,5 +149,96 @@ describe("Canvas 2D deterministic rendering", () => {
       )
     ).toBe(0);
   });
-});
 
+  it("recolors only authored role pixels while preserving alpha and fixed linework", async () => {
+    const source = createCanvas(3, 1);
+    const sourceContext = source.getContext("2d");
+    sourceContext.fillStyle = "#112233";
+    sourceContext.fillRect(0, 0, 1, 1);
+    sourceContext.fillStyle = "#2A2035";
+    sourceContext.fillRect(1, 0, 1, 1);
+    const scene: ResolvedScene = {
+      width: 3,
+      height: 1,
+      sampling: "nearest",
+      request: { profile: "sprite", view: "front", expression: "neutral", clip: "idle", frame: "center" },
+      drawList: [{
+        assetId: "test.palette.sample",
+        assetVersion: "1.0.0",
+        fragmentId: "main",
+        source: "sample.png",
+        plane: "body-base",
+        planeIndex: 0,
+        order: 0,
+        anchor: { x: 0, y: 0 },
+        offset: [0, 0],
+        pivot: [0, 0],
+        palette: [{ role: "sample.base", source: "#112233", value: "#AABBCC", mode: "replace" }],
+        contentSlots: ["sample"],
+        tags: [],
+        covers: [],
+        selector: { profile: "sprite", view: "front", clip: "idle", frame: "center" }
+      }],
+      diagnostics: [],
+      provenance: {
+        engineVersion: "0.1.0",
+        schemaVersion: "0.1.0",
+        rig: { id: "test-rig@1", version: "1.0.0" },
+        recipeFingerprint: "test",
+        request: { profile: "sprite", view: "front", expression: "neutral", clip: "idle", frame: "center" },
+        assets: []
+      }
+    };
+    const output = createCanvas(3, 1);
+    const result = await renderResolvedScene(scene, {
+      canvas: output as unknown as CanvasLike,
+      createCanvas: (width, height) => createCanvas(width, height) as unknown as CanvasLike,
+      loadImage: async () => source as unknown as CanvasImageLike
+    });
+    expect(result.diagnostics).toEqual([]);
+    expect(Array.from(output.getContext("2d").getImageData(0, 0, 3, 1).data)).toEqual([
+      170, 187, 204, 255,
+      42, 32, 53, 255,
+      0, 0, 0, 0
+    ]);
+  });
+
+  it("maps authored colors to requested colors for every palette mode", () => {
+    const authored: [number, number, number] = [64, 128, 192];
+    const target: [number, number, number] = [180, 90, 45];
+    expect(applyPaletteMode(authored, authored, target, "replace")).toEqual(target);
+    expect(applyPaletteMode(authored, authored, target, "multiply")).toEqual(target);
+    expect(applyPaletteMode(authored, authored, target, "screen")).toEqual(target);
+  });
+
+  it("renders scene differences across retained walk and run motion for all three heroes", async () => {
+    const catalog = json("packages/starter-pack/catalog.json") as {
+      rig: unknown;
+      assets: unknown[];
+      heroRecipes: Array<{ id: string; recipe: unknown }>;
+    };
+    const parsedRig = parseRig(catalog.rig);
+    if (!parsedRig.ok) throw new Error("Starter rig failed to parse");
+    const assets = catalog.assets.map((value) => {
+      const parsed = parseAssetManifest(value, parsedRig.value);
+      if (!parsed.ok) throw new Error(JSON.stringify(parsed.diagnostics));
+      return parsed.value;
+    });
+    for (const hero of catalog.heroRecipes) {
+      const parsedRecipe = parseCharacterRecipe(hero.recipe);
+      if (!parsedRecipe.ok) throw new Error(`Hero ${hero.id} failed to parse`);
+      for (const [clip, left, right] of [
+        ["walk", "contact-left", "contact-right"],
+        ["run", "contact-left", "flight-left"]
+      ] as const) {
+        const first = PNG.sync.read(await renderStarterPng(parsedRecipe.value, parsedRig.value, assets, {
+          profile: "sprite", view: "front", clip, frame: left
+        }));
+        const second = PNG.sync.read(await renderStarterPng(parsedRecipe.value, parsedRig.value, assets, {
+          profile: "sprite", view: "front", clip, frame: right
+        }));
+        expect(pixelmatch(first.data, second.data, undefined, first.width, first.height, { threshold: 0 }), `${hero.id} ${clip}`).toBeGreaterThan(0);
+      }
+    }
+  });
+});

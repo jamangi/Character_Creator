@@ -34,7 +34,10 @@ export function normalizeRecipe(recipe: CharacterRecipe): CharacterRecipe {
 export function normalizeRig(rig: RigDefinition): RigDefinition {
   return {
     ...rig,
-    profiles: [...rig.profiles].sort((a, b) => a.id.localeCompare(b.id)),
+    profiles: rig.profiles.map((profile) => ({
+      ...profile,
+      ...(profile.hiddenSlots === undefined ? {} : { hiddenSlots: sortedUnique(profile.hiddenSlots) })
+    })).sort((a, b) => a.id.localeCompare(b.id)),
     planes: [...rig.planes],
     slots: [...rig.slots].sort((a, b) => a.id.localeCompare(b.id)),
     regions: [...rig.regions].sort((a, b) => a.id.localeCompare(b.id)),
@@ -65,7 +68,10 @@ export function normalizeAsset(asset: AssetManifest): AssetManifest {
       provides: sortedUnique(asset.equip.provides)
     },
     palette: { roles: sortedRecord(asset.palette.roles) },
-    fragments: [...asset.fragments].sort((a, b) => a.id.localeCompare(b.id)),
+    fragments: asset.fragments.map((fragment) => ({
+      ...fragment,
+      ...(fragment.contentSlots === undefined ? {} : { contentSlots: sortedUnique(fragment.contentSlots) })
+    })).sort((a, b) => a.id.localeCompare(b.id)),
     fallbacks: [...asset.fallbacks].sort((a, b) =>
       a.axis.localeCompare(b.axis) || a.from.localeCompare(b.from) || a.to.localeCompare(b.to)
     )
@@ -79,4 +85,3 @@ export function normalizeAssetPack(pack: AssetPackManifest): AssetPackManifest {
     assets: [...pack.assets].sort((a, b) => a.id.localeCompare(b.id))
   };
 }
-

@@ -48,29 +48,38 @@
     {
       "task": "TASK-005",
       "title": "Creator Studio",
-      "status": "changes-requested",
-      "summary": "Core workflows passed; palette isolation, history, and output-projection changes are tracked in Tasks 012–014.",
+      "status": "ready-for-review",
+      "summary": "Palette isolation and output projections are ready for independent review; history transactions remain Task 013.",
       "href": "validation/task-005/",
       "review": ["Palette roles affect only labeled regions", "Palette and hero-template Undo/Redo", "Portrait/sprite projection changes"],
-      "commit": "6b09d71"
+      "commit": "pending"
     },
     {
       "task": "TASK-006",
       "title": "Animation pipeline",
-      "status": "changes-requested",
-      "summary": "Option 1 is approved: Task 010 will narrow the starter rig to front idle/walk/run, then Task 011 repairs stuck equipped layers.",
+      "status": "ready-for-review",
+      "summary": "The starter scope is front idle/walk/run and all visible equipped layers now supply exact retained-frame motion.",
       "href": "validation/task-006/",
       "review": ["Apply the approved reduced selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
-      "commit": "b1c689d"
+      "commit": "pending"
     },
     {
       "task": "TASK-007",
       "title": "Starter asset pack",
-      "status": "changes-requested",
-      "summary": "The pack passed with a focused expression-polarity request; animation sheets will also inherit the Task 011 repair.",
+      "status": "ready-for-review",
+      "summary": "Corrected expression polarity and repaired retained animation sheets are published for focused review.",
       "href": "validation/task-007/",
       "review": ["Positive expressions read as smiles", "Reflective/negative expressions read appropriately", "Updated motion sheets"],
-      "commit": "6b09d71"
+      "commit": "pending"
+    },
+    {
+      "task": "SPRINT-010-015",
+      "title": "Remediation visual checkpoint",
+      "status": "ready-for-review",
+      "summary": "One grouped checkpoint with independent decisions for palette rendering, output projections, retained animation motion, and expression intent.",
+      "href": "validation/sprint-010-015/",
+      "review": ["Task 012 palette roles", "Task 014 output profiles", "Task 011 retained animation", "Task 015 expressions"],
+      "commit": "pending"
     }
   ]
 }

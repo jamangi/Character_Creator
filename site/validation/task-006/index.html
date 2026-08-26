@@ -7,19 +7,20 @@
   <link rel="stylesheet" href="../review.css">
 </head>
 <body>
-  <header><a href="../../">← Studio</a><span class="status">Changes requested · 2026-08-26</span></header>
+  <header><a href="../../">← Studio</a><span class="status">Ready for focused review · 2026-08-26</span></header>
   <main>
     <section class="hero">
-      <div><p class="eyebrow">TASK-006 · Animation pipeline</p><h1>Motion needs<br><span>one coherent body.</span></h1></div>
-      <div><p class="lede">Timing and ground contact passed review. Equipped layers remain visually stuck over moving anatomy, while back, lateral, and seated selectors do not yet communicate their advertised meaning.</p><div class="actions"><a class="button" href="atlas.png">Open atlas</a><a class="button secondary" href="animation.json">Frame metadata</a><a class="button secondary" href="contact-sheet.png">Contact sheet</a></div></div>
+      <div><p class="eyebrow">TASK-011 · Retained animation repair</p><h1>One character.<br><span>One coherent motion.</span></h1></div>
+      <div><p class="lede">The approved starter scope is now exactly front-facing idle, walk, and run. Every visible equipped layer supplies exact retained-frame art, while the engine remains capable of broader future rigs.</p><div class="actions"><a class="button" href="atlas.png">Open 9-frame atlas</a><a class="button secondary" href="animation.json">Frame metadata</a><a class="button secondary" href="contact-sheet.png">Contact sheet</a></div></div>
     </section>
+    <section><p class="eyebrow">DEFECT-001 · Before and after</p><h2>Attached layers now follow the body</h2><p class="muted">The top row preserves the reviewer’s reported frames. The bottom row shows retained repaired frames: trousers stride with the legs, and hair, glasses, torso clothing, outerwear, and accessories share the run bob.</p><a href="motion-before-after.png"><img class="sheet" src="motion-before-after.png" alt="Reported stuck animation frames above repaired retained frames"></a></section>
     <section>
-      <p class="eyebrow">Interactive evidence</p><h2>Current unaccepted baseline</h2>
-      <div class="player"><div class="controls"><label>Clip<select id="clip"><option>idle</option><option>sit</option><option>walk</option><option>run</option></select></label><label>Direction<select id="direction"><option>front</option><option>back</option><option>left</option><option>right</option></select></label><button id="play" type="button" aria-pressed="true">Pause</button><div class="link-row"><button id="previous" type="button">← Frame</button><button id="next" type="button">Frame →</button></div><label><span><input id="overlays" type="checkbox" checked> Ground/contact overlays</span></label><p id="frame-label" class="muted" role="status"></p></div><div class="screens"><div class="screen-wrap native"><p class="eyebrow">Native 96×96</p><canvas id="native" width="96" height="96"></canvas></div><div class="screen-wrap enlarged"><p class="eyebrow">Enlarged 4×</p><canvas id="enlarged" width="96" height="96"></canvas></div></div></div>
+      <p class="eyebrow">Interactive evidence</p><h2>Retained release cycles</h2>
+      <div class="player"><div class="controls"><label>Clip<select id="clip"><option>idle</option><option>walk</option><option>run</option></select></label><label>Direction<select id="direction"><option>front</option></select></label><button id="play" type="button" aria-pressed="true">Pause</button><div class="link-row"><button id="previous" type="button">← Frame</button><button id="next" type="button">Frame →</button></div><label><span><input id="overlays" type="checkbox" checked> Ground/contact overlays</span></label><p id="frame-label" class="muted" role="status"></p></div><div class="screens"><div class="screen-wrap native"><p class="eyebrow">Native 96×96</p><canvas id="native" width="96" height="96"></canvas></div><div class="screen-wrap enlarged"><p class="eyebrow">Enlarged 4×</p><canvas id="enlarged" width="96" height="96"></canvas></div></div></div>
     </section>
-    <section><p class="eyebrow">Review result</p><h2>Option 1 approved</h2><ul class="checklist"><li>DEFECT-001: garments, hair, and accessories do not follow retained frame motion.</li><li>APPROVAL-001: the first starter rig will advertise front-facing idle, walk, and run.</li><li>Task 010 removes back, left, right, and sit from advertised starter-rig coverage while preserving general engine extensibility.</li><li>Task 011 repairs equipped-layer motion across the retained frames.</li></ul></section>
+    <section><p class="eyebrow">Independent decision</p><h2>Task 011 approval requested</h2><ul class="checklist"><li>Confirm bottoms/outfits follow the leg stride.</li><li>Confirm upper garments, hair, face layers, and accessories follow the run bob.</li><li>Confirm multi-plane hair and outerwear stay ordered and attached without jitter.</li><li>Confirm the retained idle, walk, and run silhouettes read well at native and enlarged scale.</li></ul></section>
   </main>
-  <footer><a href="../../">Character Creator Studio</a><span>Human status: changes requested · Tasks 010–011</span></footer>
+  <footer><a href="../../">Character Creator Studio</a><span>Human status: Task 010 complete · awaiting Task 011 decision</span></footer>
   <script src="player.js"></script>
 </body>
 </html>

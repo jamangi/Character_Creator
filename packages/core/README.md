@@ -6,3 +6,4 @@ Framework-agnostic catalog indexing and deterministic character resolution.
 
 Draw order is determined by rig plane, bounded local order, asset ID, and fragment ID. Rendering backends do not resolve conflicts, suppression, or coverage.
 
+Rig-profile `hiddenSlots` and fragment `contentSlots` produce deterministic output projections before coverage and draw-list construction. Animation resolution also requires exact `motionGroup` coverage for visible equipped fragments unless an asset explicitly declares `motion.static-safe`.

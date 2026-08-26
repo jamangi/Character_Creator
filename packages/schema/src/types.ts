@@ -63,6 +63,7 @@ export type DiagnosticCode =
   | "DISTRIBUTION_METADATA_MISSING"
   | "VISUAL_REVIEW_REQUIRED"
   | "MISSING_MOTION_ARTWORK"
+  | "MOTION_FALLBACK_UNSAFE"
   | "FOOT_CONTACT_DRIFT"
   | "ATLAS_PACK_FAILED"
   | "RENDER_FAILED";
@@ -107,6 +108,7 @@ export interface RigProfile {
   requiredCoverage: string[];
   safeArea: Rect;
   sampling: SamplingMode;
+  hiddenSlots?: string[];
 }
 
 export interface RigAnchor extends Point {
@@ -202,6 +204,8 @@ export interface AssetFragment {
   offset?: [number, number];
   pivot: [number, number];
   paletteRoles: string[];
+  contentSlots?: string[];
+  motionGroup?: string;
   covers: string[];
   suppresses: string[];
   occludesWith?: string[];

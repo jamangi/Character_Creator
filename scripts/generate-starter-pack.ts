@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile as writeFileOnce } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { createCanvas, type SKRSContext2D } from "@napi-rs/canvas";
 import {
@@ -28,6 +28,18 @@ const author = "Character Creator contributors";
 const license = "CC0-1.0";
 const expressions = ["neutral", "smirk", "concerned", "focused", "cheerful", "annoyed", "thoughtful", "surprised", "tired", "confident", "determined", "playful"] as const;
 
+async function writeFile(path: string, data: string | Uint8Array, encoding?: BufferEncoding): Promise<void> {
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    try {
+      await writeFileOnce(path, data, encoding);
+      return;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "UNKNOWN" || attempt === 5) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 50 * (attempt + 1)));
+    }
+  }
+}
+
 interface AssetDefinition {
   key: string;
   name: string;
@@ -54,7 +66,7 @@ interface DrawRequest {
   expression?: string;
   clip?: string;
   frame?: string;
-  part: "main" | "back" | "front" | "core" | "left-arm" | "all";
+  part: "main" | "back" | "front" | "core" | "left-arm" | "top" | "bottom" | "all";
 }
 
 interface Metrics {
@@ -208,9 +220,11 @@ function drawBody(context: SKRSContext2D, definition: AssetDefinition, request: 
     roundedRect(context, m.cx - m.torsoWidth / 2, m.torsoTop, m.torsoWidth, m.torsoHeight, 18 * scale);
     fillStroke(context, definition.color, lineWidth);
     line(context, [[rightX, m.torsoTop + 12 * scale], [rightX + 10 * scale, m.hipY - 14 * scale]], definition.color, m.limb);
-    const legTop = m.hipY - 3 * scale;
-    line(context, [[m.cx - m.torsoWidth * .22, legTop], [m.cx - m.torsoWidth * .22 - m.stride, m.ground - 6 * scale]], definition.color, m.limb * 1.15);
-    line(context, [[m.cx + m.torsoWidth * .22, legTop], [m.cx + m.torsoWidth * .22 + m.stride, m.ground - 6 * scale]], definition.color, m.limb * 1.15);
+    if (request.profile !== "portrait") {
+      const legTop = m.hipY - 3 * scale;
+      line(context, [[m.cx - m.torsoWidth * .22, legTop], [m.cx - m.torsoWidth * .22 - m.stride, m.ground - 6 * scale]], definition.color, m.limb * 1.15);
+      line(context, [[m.cx + m.torsoWidth * .22, legTop], [m.cx + m.torsoWidth * .22 + m.stride, m.ground - 6 * scale]], definition.color, m.limb * 1.15);
+    }
     if (request.view !== "back") {
       ellipse(context, m.cx - m.headR * .35, m.headY - 2 * scale, 2.6 * scale, 3 * scale, "#2A2035", 0);
       ellipse(context, m.cx + m.headR * .35, m.headY - 2 * scale, 2.6 * scale, 3 * scale, "#2A2035", 0);
@@ -273,8 +287,19 @@ function drawLayer(context: SKRSContext2D, definition: AssetDefinition, request:
       const open = expression === "surprised";
       if (open) ellipse(context, m.cx, m.headY + 22 * s, 5 * s, 7 * s, definition.color, 1 * s);
       else {
-        const lift = ["smirk", "cheerful", "confident", "playful"].includes(expression) ? -3 : ["concerned", "tired"].includes(expression) ? 3 : 0;
-        line(context, [[m.cx - 10 * s, m.headY + 22 * s], [m.cx, m.headY + (24 + lift) * s], [m.cx + 10 * s, m.headY + 22 * s]], definition.color, 2.5 * s);
+        const curves: Record<string, [number, number, number]> = {
+          smirk: [23, 24, 18],
+          cheerful: [20, 28, 20],
+          confident: [21, 26, 20],
+          playful: [19, 27, 22],
+          thoughtful: [23, 21, 23],
+          concerned: [25, 20, 25],
+          annoyed: [24, 20, 24],
+          tired: [23, 21, 23],
+          determined: [23, 21, 23]
+        };
+        const curve = curves[expression] ?? [22, 22, 22];
+        line(context, [[m.cx - 10 * s, m.headY + curve[0] * s], [m.cx, m.headY + curve[1] * s], [m.cx + 10 * s, m.headY + curve[2] * s]], definition.color, 2.5 * s);
       }
       return;
     }
@@ -298,9 +323,11 @@ function drawLayer(context: SKRSContext2D, definition: AssetDefinition, request:
   }
   if (definition.kind === "top" || definition.kind === "outfit") {
     const width = m.torsoWidth * (definition.shape === "wide" ? 1.12 : definition.shape === "narrow" ? .9 : 1);
-    roundedRect(context, m.cx - width / 2, m.torsoTop + 3 * s, width, m.torsoHeight * .76, 12 * s);
-    fillStroke(context, definition.color, lw);
-    if (definition.kind === "outfit") {
+    if (request.part !== "bottom") {
+      roundedRect(context, m.cx - width / 2, m.torsoTop + 3 * s, width, m.torsoHeight * .76, 12 * s);
+      fillStroke(context, definition.color, lw);
+    }
+    if (definition.kind === "outfit" && request.part !== "top") {
       line(context, [[m.cx - width * .25, m.hipY], [m.cx - width * .25 - m.stride, m.ground - 7 * s]], definition.color, m.limb * 1.45);
       line(context, [[m.cx + width * .25, m.hipY], [m.cx + width * .25 + m.stride, m.ground - 7 * s]], definition.color, m.limb * 1.45);
     }
@@ -380,7 +407,9 @@ function fragment(
   source: string,
   plane: string,
   tags: string[],
-  covers: string[] = []
+  covers: string[] = [],
+  contentSlots: string[] = definition.slots,
+  motionGroup?: string
 ): AssetFragment {
   const [width, height] = dimensions(selector.profile);
   const result: AssetFragment = {
@@ -392,6 +421,8 @@ function fragment(
     anchor: "canvas.origin",
     pivot: [0, 0],
     paletteRoles: [definition.paletteRole],
+    contentSlots,
+    ...(motionGroup === undefined ? {} : { motionGroup }),
     covers,
     suppresses: [],
     tags,
@@ -417,23 +448,39 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
   const views = {
     portrait: ["front"],
     "full-body": rig.profiles.find((profile) => profile.id === "full-body")?.views ?? ["front"],
-    sprite: ["front", "back", "left", "right"]
+    sprite: rig.profiles.find((profile) => profile.id === "sprite")?.views ?? ["front"]
   } as const;
   const baseTags = [`asset.${safeKey(definition)}`];
 
-  const addGeneral = async (profile: RenderProfileId, view: string, expression = "*"): Promise<void> => {
-    const selector: FragmentSelector = { profile, view, expression };
-    const suffix = `${profile}-${view}-${expression.replace("*", "any")}`;
+  const addGeneral = async (
+    profile: RenderProfileId,
+    view: string,
+    expression = "*",
+    motion?: { clip: NonNullable<FragmentSelector["clip"]>; frame: string }
+  ): Promise<void> => {
+    const selector: FragmentSelector = motion === undefined
+      ? { profile, view, expression }
+      : { profile, view, clip: motion.clip, frame: motion.frame };
+    const suffix = motion === undefined
+      ? `${profile}-${view}-${expression.replace("*", "any")}`
+      : `${profile}-${motion.clip}-${view}-${motion.frame}`;
+    if (definition.kind === "outfit") {
+      for (const part of ["top", "bottom"] as const) {
+        const source = await emitFragmentImage(definition, `${suffix}-${part}`, { profile, view, expression, ...(motion === undefined ? {} : motion), part });
+        fragments.push(fragment(definition, `${suffix}.${part}`, selector, source, definition.plane, [...baseTags, `outfit.${part}`], [], [part], profile === "sprite" ? part : undefined));
+      }
+      return;
+    }
     if (definition.multiPlane !== undefined) {
       const backPlane = definition.multiPlane === "hair" ? "hair-back" : "garment-behind-body";
       const frontPlane = definition.multiPlane === "hair" ? "hair-front" : "garment-overlap";
-      const back = await emitFragmentImage(definition, `${suffix}-back`, { profile, view, expression, part: "back" });
-      const front = await emitFragmentImage(definition, `${suffix}-front`, { profile, view, expression, part: "front" });
-      fragments.push(fragment(definition, `${suffix}.back`, selector, back, backPlane, [...baseTags, definition.multiPlane === "hair" ? "hair.back" : "coat.tail"]));
-      fragments.push(fragment(definition, `${suffix}.front`, selector, front, frontPlane, [...baseTags, definition.multiPlane === "hair" ? "hair.crown" : "coat.front"]));
+      const back = await emitFragmentImage(definition, `${suffix}-back`, { profile, view, expression, ...(motion === undefined ? {} : motion), part: "back" });
+      const front = await emitFragmentImage(definition, `${suffix}-front`, { profile, view, expression, ...(motion === undefined ? {} : motion), part: "front" });
+      fragments.push(fragment(definition, `${suffix}.back`, selector, back, backPlane, [...baseTags, definition.multiPlane === "hair" ? "hair.back" : "coat.tail"], [], definition.slots, profile === "sprite" ? "back" : undefined));
+      fragments.push(fragment(definition, `${suffix}.front`, selector, front, frontPlane, [...baseTags, definition.multiPlane === "hair" ? "hair.crown" : "coat.front"], [], definition.slots, profile === "sprite" ? "front" : undefined));
     } else {
-      const source = await emitFragmentImage(definition, suffix, { profile, view, expression, part: "main" });
-      fragments.push(fragment(definition, suffix, selector, source, definition.plane, baseTags));
+      const source = await emitFragmentImage(definition, suffix, { profile, view, expression, ...(motion === undefined ? {} : motion), part: "main" });
+      fragments.push(fragment(definition, suffix, selector, source, definition.plane, baseTags, [], definition.slots, profile === "sprite" ? "main" : undefined));
     }
   };
 
@@ -450,8 +497,8 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
       const request = { profile: "sprite" as const, view, clip: clip.id, frame: frameInfo.id, part: "core" as const };
       const core = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-core`, request);
       const arm = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}-left-arm`, { ...request, part: "left-arm" });
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.core`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, core, "body-base", ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"]));
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.left-arm`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, arm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"]));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.core`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, core, "body-base", ["body.head.base", "body.torso.base", "body.arm.right.base", "body.legs.base"], ["body.head.skin", "body.torso.skin", "body.arm.right.skin", "body.leg.left.skin", "body.leg.right.skin"], definition.slots, "core"));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}.left-arm`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, arm, "body-base", ["body.arm.left.base"], ["body.arm.left.skin"], definition.slots, "left-arm"));
     }
   } else if (definition.kind === "body-module") {
     await addGeneral("portrait", "front");
@@ -461,7 +508,7 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
     }
     for (const clip of rig.clips) for (const view of clip.directions) for (const frameInfo of clip.frames) {
       const source = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id, part: "main" });
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, [...baseTags, "body.arm.left.replacement"], ["body.arm.left.skin"]));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, [...baseTags, "body.arm.left.replacement"], ["body.arm.left.skin"], definition.slots, "main"));
     }
   } else if (definition.kind === "shoes") {
     for (const view of views["full-body"]) {
@@ -470,25 +517,15 @@ async function buildAsset(definition: AssetDefinition, rig: RigDefinition): Prom
     }
     for (const clip of rig.clips) for (const view of clip.directions) for (const frameInfo of clip.frames) {
       const source = await emitFragmentImage(definition, `sprite-${clip.id}-${view}-${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id, part: "main" });
-      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, baseTags, ["body.leg.left.skin", "body.leg.right.skin"]));
+      fragments.push(fragment(definition, `sprite.${clip.id}.${view}.${frameInfo.id}`, { profile: "sprite", view, clip: clip.id, frame: frameInfo.id }, source, definition.plane, baseTags, ["body.leg.left.skin", "body.leg.right.skin"], definition.slots, "main"));
     }
   } else {
     const expressionAware = definition.faceChannel === "eyes" || definition.faceChannel === "brows" || definition.faceChannel === "mouth";
     if (expressionAware) for (const expression of expressions) await addGeneral("portrait", "front", expression);
     else await addGeneral("portrait", "front");
     for (const view of views["full-body"]) await addGeneral("full-body", view);
-    for (const view of views.sprite) {
-      const selector: FragmentSelector = { profile: "sprite", view };
-      const suffix = `sprite-${view}`;
-      if (definition.multiPlane !== undefined) {
-        const back = await emitFragmentImage(definition, `${suffix}-back`, { profile: "sprite", view, part: "back" });
-        const front = await emitFragmentImage(definition, `${suffix}-front`, { profile: "sprite", view, part: "front" });
-        fragments.push(fragment(definition, `${suffix}.back`, selector, back, definition.multiPlane === "hair" ? "hair-back" : "garment-behind-body", [...baseTags, definition.multiPlane === "hair" ? "hair.back" : "coat.tail"]));
-        fragments.push(fragment(definition, `${suffix}.front`, selector, front, definition.multiPlane === "hair" ? "hair-front" : "garment-overlap", [...baseTags, definition.multiPlane === "hair" ? "hair.crown" : "coat.front"]));
-      } else {
-        const source = await emitFragmentImage(definition, suffix, { profile: "sprite", view, part: "main" });
-        fragments.push(fragment(definition, suffix, selector, source, definition.plane, baseTags));
-      }
+    for (const clip of rig.clips) for (const view of clip.directions) for (const frameInfo of clip.frames) {
+      await addGeneral("sprite", view, "*", { clip: clip.id, frame: frameInfo.id });
     }
   }
 
@@ -544,6 +581,16 @@ if (!sourceRig.ok) throw new Error(JSON.stringify(sourceRig.diagnostics, null, 2
 const rig = structuredClone(sourceRig.value);
 const fullBody = rig.profiles.find((profile) => profile.id === "full-body");
 if (fullBody !== undefined) fullBody.views = ["front", "back", "left", "right"];
+const portrait = rig.profiles.find((profile) => profile.id === "portrait");
+if (portrait !== undefined) portrait.hiddenSlots = ["bottom", "shoes"];
+const sprite = rig.profiles.find((profile) => profile.id === "sprite");
+if (sprite !== undefined) {
+  sprite.views = ["front"];
+  sprite.hiddenSlots = ["mouth"];
+}
+rig.clips = rig.clips
+  .filter((clip) => clip.id === "idle" || clip.id === "walk" || clip.id === "run")
+  .map((clip) => ({ ...clip, directions: ["front"] }));
 rig.slots = [
   { id: "base-body", exclusive: true, allowedKinds: ["base-body"] },
   { id: "body-arm-left", exclusive: true, allowedKinds: ["body-module"] },
@@ -571,6 +618,13 @@ rig.slots = [
 const checkedRig = parseRig(rig);
 if (!checkedRig.ok) throw new Error(JSON.stringify(checkedRig.diagnostics, null, 2));
 
+for (const generatedPath of [
+  join(packRoot, "assets"),
+  join(packRoot, "images"),
+  join(packRoot, "recipes"),
+  join(packRoot, "thumbnails"),
+  studioRoot
+]) await rm(generatedPath, { recursive: true, force: true });
 await mkdir(join(packRoot, "assets"), { recursive: true });
 await mkdir(join(packRoot, "recipes"), { recursive: true });
 await mkdir(studioRoot, { recursive: true });

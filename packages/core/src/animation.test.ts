@@ -57,6 +57,27 @@ describe("directional animation resolution", () => {
     expect(result.diagnostics.some((item) => item.code === "MISSING_MOTION_ARTWORK")).toBe(true);
   });
 
+  it("rejects a direction-only static garment fallback with a stable diagnostic", () => {
+    const input = proof();
+    const parsedTop = parseAssetManifest(json("fixtures/valid/assets/top-simple-shirt.json"), input.rig);
+    if (!parsedTop.ok) throw new Error("Top fixture failed");
+    const recipe = {
+      ...input.recipe,
+      equipped: [...input.recipe.equipped, { assetId: parsedTop.value.id, version: parsedTop.value.version }]
+    };
+    const result = resolveAnimation({
+      recipe,
+      rig: input.rig,
+      catalog: [input.asset, parsedTop.value],
+      clip: "walk",
+      directions: ["front"]
+    });
+    expect(result.diagnostics).toContainEqual(expect.objectContaining({
+      code: "MOTION_FALLBACK_UNSAFE",
+      severity: "error"
+    }));
+  });
+
   it("forbids mirroring an asymmetric equipped fragment", () => {
     const input = proof();
     input.asset.fragments = input.asset.fragments.filter((fragment) => fragment.selector.view !== "right");

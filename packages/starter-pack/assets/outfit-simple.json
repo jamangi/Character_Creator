@@ -46,13 +46,13 @@
   "effects": [],
   "fragments": [
     {
-      "id": "full-body-back-any",
+      "id": "full-body-back-any.bottom",
       "selector": {
         "profile": "full-body",
         "view": "back",
         "expression": "*"
       },
-      "source": "images/outfit-simple/full-body-back-any.png",
+      "source": "images/outfit-simple/full-body-back-any-bottom.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -63,10 +63,14 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "bottom"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -76,13 +80,47 @@
       }
     },
     {
-      "id": "full-body-front-any",
+      "id": "full-body-back-any.top",
+      "selector": {
+        "profile": "full-body",
+        "view": "back",
+        "expression": "*"
+      },
+      "source": "images/outfit-simple/full-body-back-any-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-front-any.bottom",
       "selector": {
         "profile": "full-body",
         "view": "front",
         "expression": "*"
       },
-      "source": "images/outfit-simple/full-body-front-any.png",
+      "source": "images/outfit-simple/full-body-front-any-bottom.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -93,10 +131,14 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "bottom"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -106,13 +148,47 @@
       }
     },
     {
-      "id": "full-body-left-any",
+      "id": "full-body-front-any.top",
+      "selector": {
+        "profile": "full-body",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outfit-simple/full-body-front-any-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-left-any.bottom",
       "selector": {
         "profile": "full-body",
         "view": "left",
         "expression": "*"
       },
-      "source": "images/outfit-simple/full-body-left-any.png",
+      "source": "images/outfit-simple/full-body-left-any-bottom.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -123,10 +199,14 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "bottom"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -136,13 +216,47 @@
       }
     },
     {
-      "id": "full-body-right-any",
+      "id": "full-body-left-any.top",
+      "selector": {
+        "profile": "full-body",
+        "view": "left",
+        "expression": "*"
+      },
+      "source": "images/outfit-simple/full-body-left-any-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "full-body-right-any.bottom",
       "selector": {
         "profile": "full-body",
         "view": "right",
         "expression": "*"
       },
-      "source": "images/outfit-simple/full-body-right-any.png",
+      "source": "images/outfit-simple/full-body-right-any-bottom.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -153,10 +267,14 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "bottom"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -166,13 +284,13 @@
       }
     },
     {
-      "id": "portrait-front-any",
+      "id": "full-body-right-any.top",
       "selector": {
-        "profile": "portrait",
-        "view": "front",
+        "profile": "full-body",
+        "view": "right",
         "expression": "*"
       },
-      "source": "images/outfit-simple/portrait-front-any.png",
+      "source": "images/outfit-simple/full-body-right-any-top.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -183,10 +301,48 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "top"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 384
+      }
+    },
+    {
+      "id": "portrait-front-any.bottom",
+      "selector": {
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
+      },
+      "source": "images/outfit-simple/portrait-front-any-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -196,12 +352,13 @@
       }
     },
     {
-      "id": "sprite-back",
+      "id": "portrait-front-any.top",
       "selector": {
-        "profile": "sprite",
-        "view": "back"
+        "profile": "portrait",
+        "view": "front",
+        "expression": "*"
       },
-      "source": "images/outfit-simple/sprite-back.png",
+      "source": "images/outfit-simple/portrait-front-any-top.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -212,10 +369,50 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "top"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "id": "sprite-idle-front-center.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
+      },
+      "source": "images/outfit-simple/sprite-idle-front-center-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -225,12 +422,14 @@
       }
     },
     {
-      "id": "sprite-front",
+      "id": "sprite-idle-front-center.top",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/outfit-simple/sprite-front.png",
+      "source": "images/outfit-simple/sprite-idle-front-center-top.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -241,10 +440,15 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.top"
       ],
       "bounds": {
         "x": 0,
@@ -254,12 +458,14 @@
       }
     },
     {
-      "id": "sprite-left",
+      "id": "sprite-run-front-contact-left.bottom",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/outfit-simple/sprite-left.png",
+      "source": "images/outfit-simple/sprite-run-front-contact-left-bottom.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -270,10 +476,15 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.bottom"
       ],
       "bounds": {
         "x": 0,
@@ -283,12 +494,14 @@
       }
     },
     {
-      "id": "sprite-right",
+      "id": "sprite-run-front-contact-left.top",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/outfit-simple/sprite-right.png",
+      "source": "images/outfit-simple/sprite-run-front-contact-left-top.png",
       "plane": "garment-main",
       "order": 0,
       "anchor": "canvas.origin",
@@ -299,10 +512,519 @@
       "paletteRoles": [
         "garment.primary"
       ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
       "covers": [],
       "suppresses": [],
       "tags": [
-        "asset.outfit-simple"
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-contact-right.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/outfit-simple/sprite-run-front-contact-right-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-contact-right.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
+      },
+      "source": "images/outfit-simple/sprite-run-front-contact-right-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-left.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/outfit-simple/sprite-run-front-flight-left-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-left.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
+      },
+      "source": "images/outfit-simple/sprite-run-front-flight-left-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/outfit-simple/sprite-run-front-flight-right-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-run-front-flight-right.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/outfit-simple/sprite-run-front-flight-right-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-contact-left-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-left.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-contact-left-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-contact-right-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-contact-right.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-contact-right-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-pass-left-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-left.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-pass-left-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right.bottom",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-pass-right-bottom.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "bottom"
+      ],
+      "motionGroup": "bottom",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.bottom"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      }
+    },
+    {
+      "id": "sprite-walk-front-pass-right.top",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/outfit-simple/sprite-walk-front-pass-right-top.png",
+      "plane": "garment-main",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "garment.primary"
+      ],
+      "contentSlots": [
+        "top"
+      ],
+      "motionGroup": "top",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.outfit-simple",
+        "outfit.top"
       ],
       "bounds": {
         "x": 0,

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-25T19:00:00.000Z",
+  "generatedAt": "2026-08-26T19:00:00.000Z",
   "assets": 62,
-  "pngFiles": 1267,
-  "decodedSourceBytes": 1720666,
+  "pngFiles": 1209,
+  "decodedSourceBytes": 1549441,
   "packBudgetBytes": 33554432,
   "withinPackBudget": true,
   "renderSample": {
     "iterations": 25,
-    "totalMs": 188.85,
-    "averageMs": 7.55,
+    "totalMs": 283.36,
+    "averageMs": 11.33,
     "targetAverageMs": 20
   }
 }

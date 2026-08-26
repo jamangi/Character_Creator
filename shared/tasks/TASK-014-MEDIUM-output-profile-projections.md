@@ -1,6 +1,6 @@
 # TASK-014-MEDIUM-output-profile-projections
 
-- **Status:** READY
+- **Status:** IN PROGRESS
 - **Outcome:** Portrait output omits bottoms/shoes and sprite output omits mouths without changing the character recipe.
 - **Tracks:** CHANGE-001, CHANGE-002
 - **Depends on:** 002, 003
@@ -37,14 +37,14 @@ The profile visibility decision belongs before the resolved draw list reaches th
 
 ## Acceptance criteria
 
-- [ ] A recipe equipped with bottom and shoes resolves no such draw items for portrait output.
-- [ ] A recipe equipped with a mouth resolves no mouth draw item for sprite output.
-- [ ] The same recipe still resolves those assets in full-body output.
-- [ ] Switching or exporting outputs leaves canonical recipe JSON byte-identical.
-- [ ] Preview and downloaded PNG/sprite frames match the same resolved scenes.
-- [ ] No new missing-coverage, suppression, or compatibility errors are introduced.
-- [ ] `CHANGE-001` and `CHANGE-002` each have independent regression and visual evidence.
-- [ ] Relevant documentation is updated.
+- [x] A recipe equipped with bottom and shoes resolves no such draw items for portrait output.
+- [x] A recipe equipped with a mouth resolves no mouth draw item for sprite output.
+- [x] The same recipe still resolves those assets in full-body output.
+- [x] Switching or exporting outputs leaves canonical recipe JSON byte-identical.
+- [x] Preview and downloaded PNG/sprite frames match the same resolved scenes.
+- [x] No new missing-coverage, suppression, or compatibility errors are introduced.
+- [x] `CHANGE-001` and `CHANGE-002` each have independent regression and visual evidence.
+- [x] Relevant documentation is updated.
 
 ## Validation
 
@@ -59,4 +59,4 @@ Publish side-by-side portrait/full-body/sprite renders from one labeled recipe a
 
 ## Handoff notes
 
-Record the chosen semantic rule, any contract fields added, affected golden images, request closures, and human result. Do not mark Task 005 complete until Tasks 012, 013, and 016 also pass.
+Rig profiles declare `hiddenSlots`; fragments may refine multi-slot assets through `contentSlots`. The starter portrait hides bottom/shoes and uses portrait-authored base art without legs; the sprite hides mouth. Resolver, preview, export, coverage, and recipe-identity tests share this policy. CHANGE-001 and CHANGE-002 are `READY FOR REVIEW`; no human result is recorded yet.

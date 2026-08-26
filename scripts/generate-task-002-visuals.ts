@@ -620,6 +620,7 @@ async function renderProof(
   const canvas = createCanvas(scene.width, scene.height);
   const result = await renderResolvedScene(scene, {
     canvas: canvas as unknown as CanvasLike,
+    createCanvas: (width, height) => createCanvas(width, height) as unknown as CanvasLike,
     loadImage: async (source) =>
       (await loadImage(join(root, source))) as unknown as CanvasImageLike
   });

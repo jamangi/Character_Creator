@@ -55,7 +55,7 @@ New tasks should read, in order:
 3. [`shared/ASSET_CONTRACT.md`](shared/ASSET_CONTRACT.md)
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
-Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope; no owner decision currently blocks Task 010.
+Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Tasks 011, 012, 014, and 015 are technically complete and awaiting independent visual decisions; Task 013 remains blocked on palette acceptance.
 
 ## Development validation
 

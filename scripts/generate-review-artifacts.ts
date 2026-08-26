@@ -1,5 +1,6 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { mkdir, writeFile, copyFile } from "node:fs/promises";
+import { mkdir, writeFile as writeFileOnce, copyFile, rm } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { createCanvas, loadImage, type Canvas, type SKRSContext2D } from "@napi-rs/canvas";
 import {
@@ -32,9 +33,26 @@ import {
 const root = process.cwd();
 const packRoot = join(root, "packages/starter-pack");
 const task4Root = join(root, "site/validation/task-004");
+const task5Root = join(root, "site/validation/task-005");
 const task6Root = join(root, "site/validation/task-006");
 const task7Root = join(root, "site/validation/task-007");
-const generatedAt = "2026-08-25T19:00:00.000Z";
+const generatedAt = "2026-08-26T19:00:00.000Z";
+
+async function withUnknownRetry<T>(operation: () => Promise<T>): Promise<T> {
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    try {
+      return await operation();
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "UNKNOWN" || attempt === 5) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 50 * (attempt + 1)));
+    }
+  }
+  throw new Error("Retry loop exhausted");
+}
+
+async function writeFile(path: string, data: string | Uint8Array, encoding?: BufferEncoding): Promise<void> {
+  await withUnknownRetry(() => writeFileOnce(path, data, encoding));
+}
 
 function json(path: string): unknown {
   return JSON.parse(requireText(path)) as unknown;
@@ -66,6 +84,16 @@ const heroes = heroDefinitions.map(([id, name]) => {
   return { id, name, recipe: parsed.value };
 });
 
+for (const generatedPath of [
+  join(task5Root, "proofs"),
+  join(task6Root, "frames"),
+  join(task6Root, "before"),
+  join(task7Root, "renders"),
+  join(task7Root, "sheets"),
+  join(task7Root, "galleries")
+]) await rm(generatedPath, { recursive: true, force: true });
+await rm(join(task6Root, "asymmetric-explicit.png"), { force: true });
+
 interface RenderedItem {
   label: string;
   canvas: Canvas;
@@ -78,6 +106,7 @@ async function render(recipe: CharacterRecipe, request: RenderRequest): Promise<
   const canvas = createCanvas(scene.width, scene.height);
   const result = await renderResolvedScene(scene, {
     canvas: canvas as unknown as CanvasLike,
+    createCanvas: (width, height) => createCanvas(width, height) as unknown as CanvasLike,
     loadImage: (source) => loadImage(join(packRoot, source))
   });
   const errors = result.diagnostics.filter((item) => item.severity === "error");
@@ -143,17 +172,21 @@ function equip(recipe: CharacterRecipe, assetId: string): CharacterRecipe {
   return { ...recipe, equipped };
 }
 
-function tint(source: Canvas, color: string): Canvas {
-  const canvas = createCanvas(source.width, source.height);
-  const context = canvas.getContext("2d");
-  context.drawImage(source, 0, 0);
-  context.globalCompositeOperation = "source-atop";
-  context.globalAlpha = .28;
-  context.fillStyle = color;
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.globalAlpha = 1;
-  context.globalCompositeOperation = "source-over";
-  return canvas;
+function withPalette(recipe: CharacterRecipe, role: string, value: string): CharacterRecipe {
+  return { ...recipe, palette: { ...recipe.palette, [role]: value } };
+}
+
+function changedPixels(left: Canvas, right: Canvas): number {
+  const leftPixels = left.getContext("2d").getImageData(0, 0, left.width, left.height).data;
+  const rightPixels = right.getContext("2d").getImageData(0, 0, right.width, right.height).data;
+  let changed = 0;
+  for (let offset = 0; offset < leftPixels.length; offset += 4) {
+    if (leftPixels[offset] !== rightPixels[offset] ||
+        leftPixels[offset + 1] !== rightPixels[offset + 1] ||
+        leftPixels[offset + 2] !== rightPixels[offset + 2] ||
+        leftPixels[offset + 3] !== rightPixels[offset + 3]) changed += 1;
+  }
+  return changed;
 }
 
 const heroSummary: RenderedItem[] = [];
@@ -228,7 +261,8 @@ await saveCanvas(join(task7Root, "galleries", "body-fit-matrix.png"), await cont
 const paletteItems: RenderedItem[] = [];
 for (const [name, color] of [["light", "#F6D2B8"], ["dark", "#4A2A24"], ["saturated-cyan", "#00E5FF"], ["saturated-coral", "#FF5B70"], ["desaturated", "#8B8793"], ["high-contrast", "#DFFF00"]] as const) {
   const request = { profile: "full-body" as const, view: "front", expression: "neutral" };
-  paletteItems.push({ label: name, canvas: tint(await render(heroes[0]?.recipe ?? (() => { throw new Error("Hero missing"); })(), request), color), request, recipe: heroes[0]?.recipe ?? (() => { throw new Error("Hero missing"); })() });
+  const value = withPalette(heroes[0]?.recipe ?? (() => { throw new Error("Hero missing"); })(), "skin.base", color);
+  paletteItems.push({ label: `skin.base · ${name}`, canvas: await render(value, request), request, recipe: value });
 }
 await saveCanvas(join(task7Root, "galleries", "palette-extremes.png"), await contactSheet(paletteItems, 3, 285, 420));
 
@@ -270,18 +304,93 @@ await saveCanvas(join(task6Root, "atlas.png"), atlas);
 await saveCanvas(join(task6Root, "contact-sheet.png"), await contactSheet(task6Frames, 8, 148, 150));
 await writeFile(join(task6Root, "animation.json"), `${JSON.stringify({ hero: animationHero.name, loop: true, atlas: { file: "atlas.png", width: packed.width, height: packed.height }, frames: animationMetadata }, null, 2)}\n`, "utf8");
 
-const asymmetricHero = heroes[1];
-if (asymmetricHero !== undefined) {
-  const asymmetricItems: RenderedItem[] = [];
-  for (const view of ["left", "right"] as const) for (const clipId of ["walk", "run"] as const) {
-    const clip = rig.clips.find((candidate) => candidate.id === clipId);
-    for (const frame of clip?.frames ?? []) {
-      const request = { profile: "sprite" as const, view, clip: clipId, frame: frame.id };
-      asymmetricItems.push({ label: `${clipId} · ${view} · ${frame.id} · explicit`, canvas: await render(asymmetricHero.recipe, request), request, recipe: asymmetricHero.recipe });
-    }
-  }
-  await saveCanvas(join(task6Root, "asymmetric-explicit.png"), await contactSheet(asymmetricItems, 8, 148, 150));
+const defectEvidence = [
+  ["walk-frame-01.png", "Before · reported walk 1"],
+  ["walk-frame-02.png", "Before · reported walk 2"],
+  ["run-frame-01.png", "Before · reported run 1"],
+  ["run-frame-02.png", "Before · reported run 2"],
+  ["run-frame-03.png", "Before · reported run 3"],
+  ["run-frame-04.png", "Before · reported run 4"]
+] as const;
+const beforeItems: RenderedItem[] = [];
+for (const [filename, itemLabel] of defectEvidence) {
+  const source = join(root, "shared/defects/DEFECT-001-animation-fragments-stuck", filename);
+  const destination = join(task6Root, "before", filename);
+  await mkdir(dirname(destination), { recursive: true });
+  await copyFile(source, destination);
+  const loaded = await loadImage(source);
+  const canvas = createCanvas(loaded.width, loaded.height);
+  canvas.getContext("2d").drawImage(loaded, 0, 0);
+  beforeItems.push({ label: itemLabel, canvas, request: { profile: "sprite", view: "front", clip: "walk", frame: "contact-left" }, recipe: animationHero.recipe });
 }
+const afterKeys = [
+  "walk.front.contact-left",
+  "walk.front.contact-right",
+  "run.front.contact-left",
+  "run.front.flight-left",
+  "run.front.contact-right",
+  "run.front.flight-right"
+];
+const afterItems = afterKeys.map((key) => {
+  const index = animationMetadata.findIndex((item) => item["key"] === key);
+  const item = task6Frames[index];
+  if (item === undefined) throw new Error(`Missing repaired motion frame ${key}`);
+  return { ...item, label: `After · ${key.replaceAll(".", " · ")}` };
+});
+await saveCanvas(join(task6Root, "motion-before-after.png"), await contactSheet([...beforeItems, ...afterItems], 6, 150, 150));
+
+const task5Hero = heroes[0];
+const crystalHero = heroes[1];
+if (task5Hero === undefined || crystalHero === undefined) throw new Error("Palette proof heroes missing");
+const openFaceRecipe = equip(task5Hero.recipe, "starter.hair.bald");
+const openFaceMarkingRecipe = equip(openFaceRecipe, "starter.marking.runes");
+const paletteCases: Array<{ role: string; value: string; hero: typeof task5Hero; recipe?: CharacterRecipe }> = [
+  { role: "skin.base", value: "#F6D2B8", hero: task5Hero },
+  { role: "skin.shadow", value: "#E8D7D2", hero: task5Hero, recipe: openFaceRecipe },
+  { role: "mouth.base", value: "#356EEA", hero: task5Hero, recipe: openFaceRecipe },
+  { role: "hair.base", value: "#C350D7", hero: task5Hero },
+  { role: "garment.primary", value: "#FF9B32", hero: task5Hero },
+  { role: "garment.secondary", value: "#35B66F", hero: task5Hero },
+  { role: "eyes.iris", value: "#F2DD42", hero: task5Hero, recipe: openFaceRecipe },
+  { role: "marking.base", value: "#FF4F91", hero: task5Hero, recipe: openFaceMarkingRecipe },
+  { role: "accent.base", value: "#FF5E6C", hero: task5Hero },
+  { role: "crystal.base", value: "#A6FF4D", hero: crystalHero }
+];
+const roleItems: RenderedItem[] = [];
+const roleMetrics: Array<Record<string, unknown>> = [];
+for (const paletteCase of paletteCases) {
+  const recipe = paletteCase.recipe ?? paletteCase.hero.recipe;
+  const request = { profile: "full-body" as const, view: "front", expression: "neutral" };
+  const baseline = await render(recipe, request);
+  const changedRecipe = withPalette(recipe, paletteCase.role, paletteCase.value);
+  const changed = await render(changedRecipe, request);
+  const count = changedPixels(baseline, changed);
+  if (count === 0) throw new Error(`Palette proof role ${paletteCase.role} changed no pixels`);
+  roleItems.push(
+    { label: `${paletteCase.role} · baseline`, canvas: baseline, request, recipe },
+    { label: `${paletteCase.role} · only`, canvas: changed, request, recipe: changedRecipe }
+  );
+  roleMetrics.push({ role: paletteCase.role, hero: paletteCase.hero.name, value: paletteCase.value, changedPixels: count });
+}
+await saveCanvas(join(task5Root, "proofs", "palette-role-isolation.png"), await contactSheet(roleItems, 4, 218, 348));
+await writeFile(join(task5Root, "proofs", "palette-role-isolation.json"), `${JSON.stringify({ generatedAt, cases: roleMetrics }, null, 2)}\n`, "utf8");
+
+const outputRecipeText = JSON.stringify(task5Hero.recipe);
+const outputItems: RenderedItem[] = [];
+for (const request of [
+  { profile: "portrait" as const, view: "front", expression: "neutral" },
+  { profile: "full-body" as const, view: "front", expression: "neutral" },
+  { profile: "sprite" as const, view: "front", clip: "idle" as const, frame: "center" }
+]) outputItems.push({ label: request.profile, canvas: await render(task5Hero.recipe, request), request, recipe: task5Hero.recipe });
+await saveCanvas(join(task5Root, "proofs", "output-profile-projections.png"), await contactSheet(outputItems, 3, 280, 430));
+const outputRecipeAfter = JSON.stringify(task5Hero.recipe);
+await writeFile(join(task5Root, "proofs", "output-profile-projections.json"), `${JSON.stringify({
+  generatedAt,
+  recipeSha256: createHash("sha256").update(outputRecipeText).digest("hex"),
+  recipeByteLength: Buffer.byteLength(outputRecipeText),
+  recipeByteIdenticalAfterRendering: outputRecipeAfter === outputRecipeText,
+  hiddenSlots: Object.fromEntries(rig.profiles.map((profile) => [profile.id, profile.hiddenSlots ?? []]))
+}, null, 2)}\n`, "utf8");
 
 const allPaths = new Set(assets.flatMap((asset) => [asset.display.thumbnail, ...asset.fragments.map((fragment) => fragment.source)]));
 const files = new Map<string, FileInspection>();
@@ -299,13 +408,13 @@ const allRequests: ValidationRenderCase["requests"] = [
 const renderCases = heroes.map((hero) => ({ id: hero.id, recipe: hero.recipe, requests: allRequests }));
 const passingReport = validatePack({ rig, pack, assets, files, renderCases, generatedAt });
 if (passingReport.summary.errors > 0) throw new Error(JSON.stringify(passingReport.findings, null, 2));
-await writeValidationReport(passingReport, join(task4Root, "report"));
+await withUnknownRetry(() => writeValidationReport(passingReport, join(task4Root, "report")));
 const failingFiles = new Map(files);
 const firstSource = assets[0]?.fragments[0]?.source;
 if (firstSource !== undefined) failingFiles.delete(firstSource);
 const failingReport = validatePack({ rig, pack, assets, files: failingFiles, renderCases: [], noVisual: true, generatedAt });
-await writeValidationReport(failingReport, join(task4Root, "failing-report"));
-await copyFile(join(task7Root, "sheets", "hero-summary.png"), join(task4Root, "contact-sheet.png"));
+await withUnknownRetry(() => writeValidationReport(failingReport, join(task4Root, "failing-report")));
+await withUnknownRetry(() => copyFile(join(task7Root, "sheets", "hero-summary.png"), join(task4Root, "contact-sheet.png")));
 
 const measuredStart = process.hrtime.bigint();
 for (let index = 0; index < 25; index += 1) await render(animationHero.recipe, { profile: "sprite", view: "front", clip: "walk", frame: "contact-left" });

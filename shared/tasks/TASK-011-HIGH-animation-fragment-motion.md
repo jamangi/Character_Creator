@@ -1,6 +1,6 @@
 # TASK-011-HIGH-animation-fragment-motion
 
-- **Status:** BLOCKED
+- **Status:** IN PROGRESS
 - **Outcome:** Every visible equipped fragment follows the pose and vertical motion of each retained starter-rig animation frame.
 - **Tracks:** DEFECT-001
 - **Depends on:** 010
@@ -36,14 +36,14 @@ The current generator emits exact frame selectors for base bodies, body modules,
 
 ## Acceptance criteria
 
-- [ ] `DEFECT-001` is covered by a failing regression before the fix and passes afterward.
-- [ ] Bottoms/outfits follow retained leg strides; torso garments follow body bob; head-worn layers follow head motion.
-- [ ] Multi-plane hair and outerwear remain synchronized without crossing their declared layer order.
-- [ ] Asymmetric and rigid accessories use explicit legal motion behavior and do not drift from their attachment.
-- [ ] Validator output identifies missing body-coupled motion coverage by stable diagnostic code.
-- [ ] All three hero recipes pass automated retained-frame coverage and pixel/scene-difference checks.
+- [x] `DEFECT-001` is covered by a failing regression before the fix and passes afterward.
+- [x] Bottoms/outfits follow retained leg strides; torso garments follow body bob; head-worn layers follow head motion.
+- [x] Multi-plane hair and outerwear remain synchronized without crossing their declared layer order.
+- [x] Asymmetric and rigid accessories use explicit legal motion behavior and do not drift from their attachment.
+- [x] Validator output identifies missing body-coupled motion coverage by stable diagnostic code.
+- [x] All three hero recipes pass automated retained-frame coverage and pixel/scene-difference checks.
 - [ ] Task 006's updated motion artifact passes human review at native and enlarged scale.
-- [ ] Relevant documentation is updated.
+- [x] Relevant documentation is updated.
 
 ## Validation
 
@@ -58,4 +58,4 @@ Publish labeled before/after frame strips for `DEFECT-001` and retained cycles f
 
 ## Handoff notes
 
-Record whether each slot uses authored frame art or a declared transform, the new validator diagnostic, regenerated baselines, and the human review result. Do not mark Task 006 complete until Task 016 reconciles the full review.
+Every visible starter slot now uses exact authored frame art grouped by `motionGroup`; no starter asset currently claims `motion.static-safe`. The new stable validator diagnostic is `MOTION_FALLBACK_UNSAFE`. All 9-frame hero baselines and the Task 006 before/after sheet were regenerated. DEFECT-001 is `READY FOR REVIEW`; human acceptance remains unchecked and Task 006 stays in progress until Task 016.

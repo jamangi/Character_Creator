@@ -60,6 +60,9 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -90,6 +93,9 @@
       ],
       "paletteRoles": [
         "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
       ],
       "covers": [],
       "suppresses": [],
@@ -122,6 +128,9 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -152,6 +161,9 @@
       ],
       "paletteRoles": [
         "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
       ],
       "covers": [],
       "suppresses": [],
@@ -184,6 +196,9 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -198,12 +213,14 @@
       "mirrorSafe": false
     },
     {
-      "id": "sprite-back",
+      "id": "sprite-idle-front-center",
       "selector": {
         "profile": "sprite",
-        "view": "back"
+        "view": "front",
+        "clip": "idle",
+        "frame": "center"
       },
-      "source": "images/accessory-communicator/sprite-back.png",
+      "source": "images/accessory-communicator/sprite-idle-front-center.png",
       "plane": "accessory-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -214,6 +231,10 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -228,12 +249,14 @@
       "mirrorSafe": false
     },
     {
-      "id": "sprite-front",
+      "id": "sprite-run-front-contact-left",
       "selector": {
         "profile": "sprite",
-        "view": "front"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-left"
       },
-      "source": "images/accessory-communicator/sprite-front.png",
+      "source": "images/accessory-communicator/sprite-run-front-contact-left.png",
       "plane": "accessory-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -244,6 +267,10 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -258,12 +285,14 @@
       "mirrorSafe": false
     },
     {
-      "id": "sprite-left",
+      "id": "sprite-run-front-contact-right",
       "selector": {
         "profile": "sprite",
-        "view": "left"
+        "view": "front",
+        "clip": "run",
+        "frame": "contact-right"
       },
-      "source": "images/accessory-communicator/sprite-left.png",
+      "source": "images/accessory-communicator/sprite-run-front-contact-right.png",
       "plane": "accessory-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -274,6 +303,10 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [
@@ -288,12 +321,14 @@
       "mirrorSafe": false
     },
     {
-      "id": "sprite-right",
+      "id": "sprite-run-front-flight-left",
       "selector": {
         "profile": "sprite",
-        "view": "right"
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-left"
       },
-      "source": "images/accessory-communicator/sprite-right.png",
+      "source": "images/accessory-communicator/sprite-run-front-flight-left.png",
       "plane": "accessory-front",
       "order": 0,
       "anchor": "canvas.origin",
@@ -304,6 +339,190 @@
       "paletteRoles": [
         "accent.base"
       ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-run-front-flight-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "run",
+        "frame": "flight-right"
+      },
+      "source": "images/accessory-communicator/sprite-run-front-flight-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-walk-front-contact-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-left"
+      },
+      "source": "images/accessory-communicator/sprite-walk-front-contact-left.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-walk-front-contact-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "contact-right"
+      },
+      "source": "images/accessory-communicator/sprite-walk-front-contact-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-walk-front-pass-left",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-left"
+      },
+      "source": "images/accessory-communicator/sprite-walk-front-pass-left.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
+      "covers": [],
+      "suppresses": [],
+      "tags": [
+        "asset.accessory-communicator"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "mirrorSafe": false
+    },
+    {
+      "id": "sprite-walk-front-pass-right",
+      "selector": {
+        "profile": "sprite",
+        "view": "front",
+        "clip": "walk",
+        "frame": "pass-right"
+      },
+      "source": "images/accessory-communicator/sprite-walk-front-pass-right.png",
+      "plane": "accessory-front",
+      "order": 0,
+      "anchor": "canvas.origin",
+      "pivot": [
+        0,
+        0
+      ],
+      "paletteRoles": [
+        "accent.base"
+      ],
+      "contentSlots": [
+        "ear-accessory"
+      ],
+      "motionGroup": "main",
       "covers": [],
       "suppresses": [],
       "tags": [

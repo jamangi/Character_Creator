@@ -1,7 +1,7 @@
 # TASK-006-HIGH-animation-pipeline
 
 - **Status:** IN PROGRESS
-- **Outcome:** Resolve, preview, and export complete directional idle/sit/walk/run sprite animations with reliable timing and foot contact.
+- **Outcome:** Resolve, preview, and export each rig's advertised sprite clips with reliable timing, motion coverage, and foot contact.
 - **Depends on:** 002, 004
 - **Unblocks:** 007, 008
 - **Owned paths:** animation modules in core/renderer, atlas exporter, sprite fixtures, `site/validation/task-006/`, `site/validation/index.json`
@@ -9,14 +9,14 @@
 ## Scope
 
 - Implement rig-defined clips, named frames, durations, loops, pivots, ground line, and foot-contact metadata.
-- Implement explicit left/right art and safe mirroring rules.
+- Preserve explicit left/right art and safe mirroring rules for rigs that advertise those directions.
 - Validate anatomy-critical frame coverage and legal fallback.
 - Export individual frames, metadata, and deterministic packed atlases.
 - Add preview playback with frame stepping and overlays for pivot, bounds, ground, and contacts.
 
 ## Acceptance criteria
 
-- [x] All four clips resolve in four directions for the proof assets.
+- [x] Every currently advertised starter clip/direction resolves without fallback (`idle`, `walk`, and `run`, front-facing).
 - [x] Asymmetric assets never mirror unless explicitly safe.
 - [x] Foot contact remains within rig tolerance across compatible body/shoe combinations.
 - [x] Atlas coordinates and metadata are deterministic.
@@ -37,7 +37,8 @@ Publish all clips and directions at native and enlarged scale, including the asy
 ## Handoff notes
 
 - Added rig-driven animation resolution, explicit safe-mirroring checks, critical-frame enforcement, duration/contact/ground metadata, numeric contact tolerance, and deterministic shelf atlas packing.
-- The starter pack supplies exact base/body-module/shoe art for every `idle`, `sit`, `walk`, and `run` frame in all four directions; the asymmetric hero uses explicit left and right artwork.
+- The original proof supplied broader technical selectors, but APPROVAL-001 superseded that release claim after visual review. The starter pack now supplies exact visible-layer art for the approved 9 front idle/walk/run requests; future rigs may still advertise the broader vocabulary.
 - Human review accepted ground contact and native-scale timing on 2026-08-26, but rejected visual motion coverage.
 - `DEFECT-001` records static equipped layers over moving anatomy. `DEFECT-002`, `DEFECT-003`, and `DEFECT-004` independently record incorrect back, lateral, and seated meaning.
 - Task 010 owns the release-scope decision/contract correction; Task 011 owns retained-frame motion repair. The task remains `IN PROGRESS` until the resulting animation checkpoint is accepted.
+- Task 010 is complete: the starter rig now advertises 9 front idle/walk/run requests. Task 011 has regenerated exact motion-group art for every visible equipped layer and published a labeled before/after checkpoint. Human re-review remains pending.

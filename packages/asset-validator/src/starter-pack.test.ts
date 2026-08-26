@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { resolveAnimation } from "@character-creator/core";
+import { resolveAnimation, resolveCharacter } from "@character-creator/core";
 import {
   parseAssetManifest,
   parseAssetPack,
@@ -82,6 +82,57 @@ describe("starter asset pack conformance", () => {
     for (const recipe of recipes) for (const clip of rig.clips) {
       const animation = resolveAnimation({ recipe, rig, catalog: assets, clip: clip.id });
       expect(animation.diagnostics, `${recipe.metadata?.["name"]} ${clip.id}`).toEqual([]);
+    }
+  });
+
+  it("advertises only the approved front idle/walk/run selector matrix", () => {
+    const { rig, assets, recipes } = packFixtures();
+    expect(rig.profiles.find((profile) => profile.id === "sprite")?.views).toEqual(["front"]);
+    expect(rig.clips.map((clip) => clip.id)).toEqual(["idle", "run", "walk"]);
+    expect(rig.clips.every((clip) => clip.directions.length === 1 && clip.directions[0] === "front")).toBe(true);
+    const recipe = recipes[0];
+    if (recipe === undefined) throw new Error("Hero fixture missing");
+    expect(resolveAnimation({ recipe, rig, catalog: assets, clip: "sit" }).diagnostics)
+      .toContainEqual(expect.objectContaining({ code: "UNKNOWN_CLIP" }));
+    expect(resolveAnimation({ recipe, rig, catalog: assets, clip: "walk", directions: ["back"] }).diagnostics)
+      .toContainEqual(expect.objectContaining({ code: "UNKNOWN_VIEW" }));
+  });
+
+  it("projects profile-hidden slots without mutating the canonical recipe", () => {
+    const { rig, assets, recipes } = packFixtures();
+    const recipe = recipes[0];
+    if (recipe === undefined) throw new Error("Hero fixture missing");
+    const before = JSON.stringify(recipe);
+    const portrait = resolveCharacter({ recipe, rig, catalog: assets, request: { profile: "portrait", view: "front" } });
+    const fullBody = resolveCharacter({ recipe, rig, catalog: assets, request: { profile: "full-body", view: "front" } });
+    const sprite = resolveCharacter({ recipe, rig, catalog: assets, request: { profile: "sprite", view: "front", clip: "idle", frame: "center" } });
+    expect(portrait.diagnostics).toEqual([]);
+    expect(sprite.diagnostics).toEqual([]);
+    expect(portrait.drawList.some((item) => item.contentSlots.some((slot) => slot === "bottom" || slot === "shoes"))).toBe(false);
+    expect(sprite.drawList.some((item) => item.contentSlots.includes("mouth"))).toBe(false);
+    expect(fullBody.drawList.some((item) => item.contentSlots.includes("bottom"))).toBe(true);
+    expect(fullBody.drawList.some((item) => item.contentSlots.includes("shoes"))).toBe(true);
+    expect(fullBody.drawList.some((item) => item.contentSlots.includes("mouth"))).toBe(true);
+    expect(JSON.stringify(recipe)).toBe(before);
+  });
+
+  it("gives every visible hero asset exact retained-frame motion groups", () => {
+    const { rig, assets, recipes } = packFixtures();
+    const assetById = new Map(assets.map((asset) => [asset.id, asset]));
+    const hidden = new Set(rig.profiles.find((profile) => profile.id === "sprite")?.hiddenSlots ?? []);
+    for (const recipe of recipes) for (const selection of recipe.equipped) {
+      const asset = assetById.get(selection.assetId);
+      if (asset === undefined || asset.equip.slots.every((slot) => hidden.has(slot))) continue;
+      const sprite = asset.fragments.filter((fragment) => fragment.selector.profile === "sprite");
+      const groups = new Set(sprite.map((fragment) => fragment.motionGroup ?? "main"));
+      for (const clip of rig.clips) for (const frame of clip.frames) for (const group of groups) {
+        expect(sprite.some((fragment) =>
+          (fragment.motionGroup ?? "main") === group &&
+          fragment.selector.view === "front" &&
+          fragment.selector.clip === clip.id &&
+          fragment.selector.frame === frame.id
+        ), `${asset.id} ${group} ${clip.id}.${frame.id}`).toBe(true);
+      }
     }
   });
 });

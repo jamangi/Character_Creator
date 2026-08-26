@@ -183,14 +183,23 @@ function duplicateIdDiagnostics(
 }
 
 function rigSemanticDiagnostics(rig: RigDefinition): Diagnostic[] {
-  return sortDiagnostics([
+  const diagnostics = [
     ...duplicateIdDiagnostics(rig.profiles, "$.profiles"),
     ...duplicateIdDiagnostics(rig.slots, "$.slots"),
     ...duplicateIdDiagnostics(rig.regions, "$.regions"),
     ...duplicateIdDiagnostics(rig.anchors, "$.anchors"),
     ...duplicateIdDiagnostics(rig.expressions, "$.expressions"),
     ...duplicateIdDiagnostics(rig.clips, "$.clips")
-  ]);
+  ];
+  const slots = new Set(rig.slots.map((slot) => slot.id));
+  rig.profiles.forEach((profile, profileIndex) => profile.hiddenSlots?.forEach((slot, slotIndex) => {
+    if (!slots.has(slot)) diagnostics.push(diagnostic(
+      "UNKNOWN_SLOT",
+      `$.profiles[${profileIndex}].hiddenSlots[${slotIndex}]`,
+      `Unknown profile-hidden slot ${slot}`
+    ));
+  }));
+  return sortDiagnostics(diagnostics);
 }
 
 function compareSemver(left: string, right: string): number {
@@ -379,6 +388,16 @@ function assetSemanticDiagnostics(asset: AssetManifest, rig: RigDefinition): Dia
           )
         );
       }
+    });
+    fragment.contentSlots?.forEach((slot, slotIndex) => {
+      if (!slots.has(slot)) diagnostics.push(
+        diagnostic(
+          "UNKNOWN_SLOT",
+          `${path}.contentSlots[${slotIndex}]`,
+          `Unknown fragment content slot ${slot}`,
+          { assetId: asset.id }
+        )
+      );
     });
     fragment.occludesWith?.forEach((mask, maskIndex) => {
       if (!masks.has(mask)) {

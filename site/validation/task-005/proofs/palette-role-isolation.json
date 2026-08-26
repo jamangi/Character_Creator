@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-08-26T19:00:00.000Z",
+  "cases": [
+    {
+      "role": "skin.base",
+      "hero": "Everyday Layered",
+      "value": "#F6D2B8",
+      "changedPixels": 4779
+    },
+    {
+      "role": "skin.shadow",
+      "hero": "Everyday Layered",
+      "value": "#E8D7D2",
+      "changedPixels": 23
+    },
+    {
+      "role": "mouth.base",
+      "hero": "Everyday Layered",
+      "value": "#356EEA",
+      "changedPixels": 44
+    },
+    {
+      "role": "hair.base",
+      "hero": "Everyday Layered",
+      "value": "#C350D7",
+      "changedPixels": 3424
+    },
+    {
+      "role": "garment.primary",
+      "hero": "Everyday Layered",
+      "value": "#FF9B32",
+      "changedPixels": 3542
+    },
+    {
+      "role": "garment.secondary",
+      "hero": "Everyday Layered",
+      "value": "#35B66F",
+      "changedPixels": 9547
+    },
+    {
+      "role": "eyes.iris",
+      "hero": "Everyday Layered",
+      "value": "#F2DD42",
+      "changedPixels": 72
+    },
+    {
+      "role": "marking.base",
+      "hero": "Everyday Layered",
+      "value": "#FF4F91",
+      "changedPixels": 27
+    },
+    {
+      "role": "accent.base",
+      "hero": "Everyday Layered",
+      "value": "#FF5E6C",
+      "changedPixels": 846
+    },
+    {
+      "role": "crystal.base",
+      "hero": "Silhouette Replacement",
+      "value": "#A6FF4D",
+      "changedPixels": 1799
+    }
+  ]
+}

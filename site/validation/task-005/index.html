@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="../review.css">
 </head>
 <body>
-  <header><a href="../../">← Studio</a><span class="status">Changes requested · 2026-08-26</span></header>
+  <header><a href="../../">← Studio</a><span class="status">Ready for focused review · 2026-08-26</span></header>
   <main>
     <section class="hero">
       <div><p class="eyebrow">TASK-005 · Creator Studio</p><h1>Build visually.<br><span>Export intent.</span></h1></div>
       <div><p class="lede">The main Pages route is the reference Studio. It uses the public resolver and Canvas renderer while reusable history, catalog, compatibility, and recipe state remain framework-neutral.</p><div class="actions"><a class="button" href="../../">Open the Studio</a><a class="button secondary" href="https://github.com/jamangi/Character_Creator/tree/main/packages/creator-ui">State package</a></div></div>
+    </section>
+    <section id="palette">
+      <p class="eyebrow">TASK-012 · Palette rendering</p><h2>One role changes at a time</h2>
+      <p class="muted">Each pair uses the same equipped character. The right image changes only the named role; linework, alpha, and unrelated regions remain authored. Open the JSON for exact changed-pixel counts.</p>
+      <div class="actions"><a class="button secondary" href="proofs/palette-role-isolation.json">Isolation metrics</a></div>
+      <a href="proofs/palette-role-isolation.png"><img class="sheet" src="proofs/palette-role-isolation.png" alt="Ten baseline and one-role-only palette comparisons"></a>
+    </section>
+    <section id="outputs">
+      <p class="eyebrow">TASK-014 · Output projections</p><h2>One recipe, three presentations</h2>
+      <p class="muted">Portrait omits the lower body, bottoms, and shoes. Sprite omits the mouth. Full-body remains complete, and the canonical recipe hash is unchanged before and after all three renders.</p>
+      <div class="actions"><a class="button secondary" href="proofs/output-profile-projections.json">Recipe identity proof</a></div>
+      <a href="proofs/output-profile-projections.png"><img class="sheet" src="proofs/output-profile-projections.png" alt="Portrait, full-body, and sprite outputs from one unchanged recipe"></a>
     </section>
     <section>
       <p class="eyebrow">Concise review script</p><h2>One complete workflow</h2>
@@ -26,8 +38,8 @@
       </ol>
     </section>
     <section><div class="grid"><article class="card"><p class="eyebrow">Wide</p><h3>Three-column workspace</h3><p>Catalog, preview, and inspector remain simultaneously understandable.</p></article><article class="card"><p class="eyebrow">Narrow</p><h3>Preview comes first</h3><p>Responsive order keeps the rendered character above browsing and detail controls.</p></article><article class="card"><p class="eyebrow">Reduced motion</p><h3>No required animation</h3><p>All editing and validation functions remain usable when motion is disabled.</p></article></div></section>
-    <section><p class="eyebrow">Review result</p><h2>Focused changes requested</h2><ul class="checklist"><li>Accepted: discovery, building, conflict safety, recipe round-trip, keyboard use, and responsive layout.</li><li>Task 012: each palette role must affect only its labeled region rather than tinting the whole character.</li><li>Task 013: palette edits and hero-template selection must be visibly and exactly undoable.</li><li>Task 014: portraits omit bottom/shoes and sprites omit mouths without mutating the recipe.</li></ul></section>
+    <section><p class="eyebrow">Independent decisions</p><h2>Two focused approvals requested</h2><ul class="checklist"><li><strong>Task 012:</strong> approve or reject palette isolation and preserved line/highlight quality.</li><li><strong>Task 014:</strong> approve or reject the portrait, full-body, and sprite presentation rules.</li><li>Previously accepted: discovery, building, conflict safety, recipe round-trip, keyboard use, and responsive layout.</li><li>Task 013 history transactions remain separate and are not part of this checkpoint.</li></ul></section>
   </main>
-  <footer><a href="../../">Character Creator Studio</a><span>Human status: changes requested · Tasks 012–014</span></footer>
+  <footer><a href="../../">Character Creator Studio</a><span>Human status: awaiting Task 012 and Task 014 decisions</span></footer>
 </body>
 </html>

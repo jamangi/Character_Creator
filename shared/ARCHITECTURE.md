@@ -61,6 +61,8 @@ The resolver is the heart of the product. It:
 
 No renderer-specific object should leak into this step.
 
+Render profiles may declare semantic `hiddenSlots`, and multi-slot fragments may refine their contribution through `contentSlots`. The resolver applies that projection before coverage and draw-list construction, so every renderer and export adapter sees the same intentional portrait/sprite visibility without changing the recipe.
+
 ## Solving the difficult cases
 
 ### Hair in front of and behind the head
@@ -91,6 +93,10 @@ Do not require every item to contain the full Cartesian product of expressions, 
 - A static accessory may declare a safe fallback from `walk.left-leg` to `walk.default`; a foot or leg asset may not.
 
 The rig defines legal fallback chains. The validator rejects fallbacks that would visibly break required motion or anatomy.
+
+Executable sprite fragments identify their coupled part with `motionGroup`. Every visible group needs exact art for an advertised frame unless the asset explicitly provides `motion.static-safe`; otherwise animation resolution emits `MOTION_FALLBACK_UNSAFE`.
+
+The first `starter-humanoid@1` release intentionally advertises only front-facing `idle`, `walk`, and `run` (9 requests). Back, left, right, and `sit` remain representable for future rigs but are not starter-pack claims.
 
 ## Planned package boundaries
 
@@ -153,7 +159,7 @@ Build catalog browsing, equip/unequip, palette controls, undo/redo, diagnostics,
 
 ### Stage 5 — animation and full starter pack
 
-Complete directional idle/sit/walk/run coverage, frame timing, atlas export, and the aesthetic test pack. Add automated permutation sampling and visual regression baselines.
+Complete each rig's explicitly advertised clip/direction matrix, frame timing, atlas export, and the aesthetic test pack. Add automated permutation sampling and visual regression baselines.
 
 ### Stage 6 — integration and release hardening
 

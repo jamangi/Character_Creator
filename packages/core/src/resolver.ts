@@ -401,7 +401,7 @@ export function resolveCharacter(input: ResolveCharacterInput): ResolvedScene {
     for (const tag of fragment.suppresses) suppressedTags.add(tag);
   }
 
-  const visible = selected.filter(
+  const unsuppressed = selected.filter(
     ({ fragment }) => !fragment.tags.some((tag) => suppressedTags.has(tag))
   );
   const profile = input.rig.profiles.find(
@@ -416,6 +416,10 @@ export function resolveCharacter(input: ResolveCharacterInput): ResolvedScene {
       equipped
     );
   }
+  const hiddenSlots = new Set(profile.hiddenSlots ?? []);
+  const visible = unsuppressed.filter(({ asset, fragment }) =>
+    !(fragment.contentSlots ?? asset.equip.slots).some((slot) => hiddenSlots.has(slot))
+  );
   const coverage = new Set(visible.flatMap(({ fragment }) => fragment.covers));
   const missing = profile.requiredCoverage.filter((region) => !coverage.has(region));
   for (const region of missing) {
@@ -444,12 +448,15 @@ export function resolveCharacter(input: ResolveCharacterInput): ResolvedScene {
           )
         );
       }
-      const palette = Object.fromEntries(
-        fragment.paletteRoles.map((role) => [
+      const palette = fragment.paletteRoles.map((role) => {
+        const definition = asset.palette.roles[role];
+        return {
           role,
-          recipe.palette[role] ?? asset.palette.roles[role]?.default ?? "#00000000"
-        ])
-      );
+          source: definition?.default ?? "#00000000",
+          value: recipe.palette[role] ?? definition?.default ?? "#00000000",
+          mode: definition?.mode ?? "replace"
+        };
+      });
       return {
         assetId: asset.id,
         assetVersion: asset.version,
@@ -462,6 +469,8 @@ export function resolveCharacter(input: ResolveCharacterInput): ResolvedScene {
         offset: fragment.offset ?? [0, 0],
         pivot: fragment.pivot,
         palette,
+        contentSlots: [...(fragment.contentSlots ?? asset.equip.slots)],
+        ...(fragment.motionGroup === undefined ? {} : { motionGroup: fragment.motionGroup }),
         tags: [...fragment.tags],
         covers: [...fragment.covers],
         selector: fragment.selector

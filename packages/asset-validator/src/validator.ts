@@ -5,7 +5,7 @@ import {
   type AssetFragment,
   type Diagnostic
 } from "@character-creator/schema";
-import { resolveCharacter } from "@character-creator/core";
+import { resolveAnimation, resolveCharacter } from "@character-creator/core";
 import type {
   FileInspection,
   ValidatePackInput,
@@ -183,6 +183,17 @@ export function validatePack(input: ValidatePackInput): ValidationReport {
           ));
         }
       }
+    }
+    for (const clip of input.rig.clips) {
+      const animation = resolveAnimation({
+        recipe: renderCase.recipe,
+        rig: input.rig,
+        catalog: input.assets,
+        clip: clip.id
+      });
+      for (const item of animation.diagnostics.filter((diagnostic) =>
+        diagnostic.code === "MISSING_MOTION_ARTWORK" || diagnostic.code === "MOTION_FALLBACK_UNSAFE"
+      )) add(findings, "coverage", item);
     }
   }
 

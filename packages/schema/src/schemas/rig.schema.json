@@ -59,6 +59,11 @@
             "uniqueItems": true,
             "items": { "$ref": "common.schema.json#/$defs/localId" }
           },
+          "hiddenSlots": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "$ref": "common.schema.json#/$defs/localId" }
+          },
           "safeArea": { "$ref": "common.schema.json#/$defs/rect" },
           "sampling": { "enum": ["nearest", "smooth"] }
         }
@@ -153,7 +158,7 @@
     },
     "clips": {
       "type": "array",
-      "minItems": 4,
+      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "type": "object",

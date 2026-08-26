@@ -1,6 +1,6 @@
 # TASK-015-LOW-expression-intent-mapping
 
-- **Status:** READY
+- **Status:** IN PROGRESS
 - **Outcome:** Starter-pack mouth curves communicate the intended positive, reflective, and negative expression groups.
 - **Tracks:** CHANGE-004
 - **Depends on:** 004
@@ -34,13 +34,13 @@ The current Canvas coordinate/sign mapping makes `cheerful`, `confident`, `playf
 
 ## Acceptance criteria
 
-- [ ] Positive expressions no longer read as frowns.
-- [ ] Thoughtful, concerned, and annoyed do not read as cheerful smiles.
-- [ ] Smirk remains asymmetric and distinct from cheerful.
-- [ ] All 12 presets remain recognizably differentiated by the combined eye/brow/mouth result.
-- [ ] Generator reruns are deterministic and all automated validation passes.
+- [x] Positive expressions no longer read as frowns.
+- [x] Thoughtful, concerned, and annoyed do not read as cheerful smiles.
+- [x] Smirk remains asymmetric and distinct from cheerful.
+- [x] All 12 presets remain recognizably differentiated by the combined eye/brow/mouth result.
+- [x] Generator reruns are deterministic and all automated validation passes.
 - [ ] `CHANGE-004` passes visual review on all three hero sheets.
-- [ ] Relevant documentation is updated.
+- [x] Relevant documentation is updated.
 
 ## Validation
 
@@ -55,4 +55,4 @@ Publish updated labeled expression sheets for all three heroes. Acceptance requi
 
 ## Handoff notes
 
-Record the final expression-to-mouth mapping, regenerated baselines, request status, and human result. Do not mark Task 007 complete until the animation remediation and Task 016 also pass.
+Positive curves now use upward corners at three intensities, with `smirk` and `playful` asymmetric. `thoughtful` and `tired` are shallow downward/reflective curves; `concerned` and `annoyed` are stronger downward curves; `determined` remains firm. All three 12-expression sheets were regenerated deterministically. CHANGE-004 is `READY FOR REVIEW`; no human result is recorded yet.

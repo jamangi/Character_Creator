@@ -41,6 +41,11 @@ export interface ResolveAnimationInput {
 
 const criticalKinds = new Set<AssetManifest["kind"]>(["base-body", "body-module", "shoes"]);
 
+function isVisibleInSprite(asset: AssetManifest, rig: RigDefinition): boolean {
+  const hidden = new Set(rig.profiles.find((profile) => profile.id === "sprite")?.hiddenSlots ?? []);
+  return !asset.equip.slots.every((slot) => hidden.has(slot));
+}
+
 function hasMotionFragment(
   asset: AssetManifest,
   direction: Direction,
@@ -69,6 +74,23 @@ function mirrorSafe(asset: AssetManifest, clip: ClipId, frame: string): boolean 
     ).every((fragment) => fragment.mirrorSafe !== false);
 }
 
+function hasCoupledMotionFragment(
+  asset: AssetManifest,
+  direction: Direction,
+  clip: ClipId,
+  frame: string
+): boolean {
+  if (asset.equip.provides.includes("motion.static-safe")) return true;
+  const sprite = asset.fragments.filter((fragment) => fragment.selector.profile === "sprite");
+  const groups = new Set(sprite.map((fragment) => fragment.motionGroup ?? "main"));
+  return groups.size > 0 && [...groups].every((group) => sprite.some((fragment) =>
+    (fragment.motionGroup ?? "main") === group &&
+    fragment.selector.view === direction &&
+    fragment.selector.clip === clip &&
+    fragment.selector.frame === frame
+  ));
+}
+
 export function resolveAnimation(input: ResolveAnimationInput): ResolvedAnimation {
   const catalog = isAssetCatalog(input.catalog) ? input.catalog : createCatalog(input.catalog).catalog;
   const clip = input.rig.clips.find((candidate) => candidate.id === input.clip);
@@ -83,19 +105,34 @@ export function resolveAnimation(input: ResolveAnimationInput): ResolvedAnimatio
   const selectedAssets = input.recipe.equipped
     .map((selection) => catalog.assets.get(selection.assetId))
     .filter((asset): asset is AssetManifest => asset !== undefined);
-  const critical = selectedAssets.filter((asset) => criticalKinds.has(asset.kind));
+  const visibleAssets = selectedAssets.filter((asset) => isVisibleInSprite(asset, input.rig));
+  const critical = visibleAssets.filter((asset) => criticalKinds.has(asset.kind));
   const directions = input.directions ?? clip.directions;
   const frames: ResolvedAnimationFrame[] = [];
   const diagnostics: Diagnostic[] = [];
   for (const direction of directions) {
+    if (!clip.directions.includes(direction)) {
+      diagnostics.push(diagnostic(
+        "UNKNOWN_VIEW",
+        `$.animation.${clip.id}.${direction}`,
+        `Direction ${direction} is not advertised for clip ${clip.id}`,
+        { details: { clip: clip.id, direction, supported: clip.directions } }
+      ));
+      continue;
+    }
     for (const frame of clip.frames) {
       const missing = critical.filter((asset) => !hasMotionFragment(asset, direction, clip.id, frame.id, input.rig));
+      const unsafeFallback = visibleAssets.filter((asset) =>
+        !criticalKinds.has(asset.kind) && !hasCoupledMotionFragment(asset, direction, clip.id, frame.id)
+      );
       let sourceDirection = direction;
       let mirrored = false;
-      if (missing.length > 0 && direction === input.rig.mirroring.to) {
+      if ((missing.length > 0 || unsafeFallback.length > 0) && direction === input.rig.mirroring.to) {
         const canMirror = critical.every((asset) =>
           hasMotionFragment(asset, input.rig.mirroring.from, clip.id, frame.id, input.rig) && mirrorSafe(asset, clip.id, frame.id)
-        ) && selectedAssets.every((asset) => mirrorSafe(asset, clip.id, frame.id));
+        ) && visibleAssets.every((asset) =>
+          hasCoupledMotionFragment(asset, input.rig.mirroring.from, clip.id, frame.id) && mirrorSafe(asset, clip.id, frame.id)
+        );
         if (canMirror) {
           sourceDirection = input.rig.mirroring.from;
           mirrored = true;
@@ -104,7 +141,7 @@ export function resolveAnimation(input: ResolveAnimationInput): ResolvedAnimatio
             "MIRRORING_UNSAFE",
             `$.animation.${clip.id}.${direction}.${frame.id}`,
             `Missing explicit ${direction} art cannot be mirrored safely`,
-            { details: { assets: missing.map((asset) => asset.id) } }
+            { details: { assets: [...missing, ...unsafeFallback].map((asset) => asset.id) } }
           ));
         }
       } else if (missing.length > 0) {
@@ -115,6 +152,12 @@ export function resolveAnimation(input: ResolveAnimationInput): ResolvedAnimatio
           { details: { assets: missing.map((asset) => asset.id), direction, clip: clip.id, frame: frame.id } }
         ));
       }
+      if (unsafeFallback.length > 0 && !mirrored) diagnostics.push(diagnostic(
+        "MOTION_FALLBACK_UNSAFE",
+        `$.animation.${clip.id}.${direction}.${frame.id}`,
+        `Body-coupled motion art is missing for ${unsafeFallback.map((asset) => asset.id).join(", ")}`,
+        { details: { assets: unsafeFallback.map((asset) => asset.id), direction, clip: clip.id, frame: frame.id } }
+      ));
       const scene = resolveCharacter({
         recipe: input.recipe,
         rig: input.rig,

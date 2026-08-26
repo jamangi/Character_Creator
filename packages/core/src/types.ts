@@ -41,7 +41,14 @@ export interface ResolvedDrawItem {
   anchor: { x: number; y: number };
   offset: [number, number];
   pivot: [number, number];
-  palette: Record<string, string>;
+  palette: Array<{
+    role: string;
+    source: string;
+    value: string;
+    mode: "multiply" | "screen" | "replace";
+  }>;
+  contentSlots: string[];
+  motionGroup?: string;
   tags: string[];
   covers: string[];
   selector: AssetFragment["selector"];
@@ -72,4 +79,3 @@ export interface ResolveCharacterInput {
   rig: RigDefinition;
   request: RenderRequest;
 }
-

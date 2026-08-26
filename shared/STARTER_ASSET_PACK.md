@@ -42,8 +42,9 @@ Use one coherent art direction, one rig family, one line-weight/shading guide, a
 
 ### Sprite coverage
 
-- `idle`, `sit`, `walk`, and `run` in front, back, left, and right directions.
-- Walk/run cycles should use named contact/pass frames rather than only `left_leg` and `right_leg`; a useful first cycle is four frames per direction, with timing and foot-contact metadata.
+- First-release approved scope: front-facing `idle`, `walk`, and `run` only. Back, left, right, and `sit` are deferred without narrowing the general engine vocabulary.
+- Walk/run cycles use four named contact/pass/flight frames with timing and foot-contact metadata, for 9 total advertised animation requests.
+- Every visible equipped fragment supplies exact art for each retained frame and declares a stable motion group; static fallback requires an explicit safety capability.
 - Three hero recipes must have complete, hand-reviewed sprite coverage before the broader matrix is called release-ready.
 
 ## Three hero recipes
@@ -54,7 +55,7 @@ The pack should intentionally show range while staying within one art style:
 2. **Silhouette replacement:** petite body profile, asymmetrical hair, arm/foot replacement, fitted outfit, and an accessory that forbids mirroring.
 3. **Occlusion stress:** broad body profile, textured or voluminous hair, long tailed coat, hat/hair interaction, and back item.
 
-Each hero gets the complete expression sheet, four-view full-body turnaround, and directional sprite sheet. These are the visual bar and regression baselines.
+Each hero gets the complete expression sheet, four-view full-body turnaround, and the retained front-facing sprite cycles. These are the visual bar and regression baselines.
 
 ## Combination test matrix
 

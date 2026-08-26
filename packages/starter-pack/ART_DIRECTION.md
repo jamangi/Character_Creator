@@ -9,7 +9,9 @@
 
 ## Palette roles
 
-The pack uses semantic roles (`skin.base`, `hair.base`, `garment.primary`, `garment.secondary`, and `accent.base`). Eight skin palettes document light-to-dark defaults. Linework and highlight colors remain authored, while declared roles are available to renderer adapters for recoloring.
+The pack uses semantic roles (`skin.base`, `skin.shadow`, `mouth.base`, `eyes.iris`, `hair.base`, `garment.primary`, `garment.secondary`, `marking.base`, `accent.base`, and `crystal.base`). Eight skin palettes document light-to-dark defaults. Exact authored role colors act as per-fragment masks; linework, alpha, and fixed highlight colors remain authored while the renderer recolors only matching role pixels.
+
+Portrait art omits base legs and the profile hides bottom/shoe content. Sprite output hides mouth content. These are presentation rules only; all equipped choices remain in the canonical recipe.
 
 ## Export settings
 

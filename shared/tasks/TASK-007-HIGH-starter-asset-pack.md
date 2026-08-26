@@ -42,7 +42,8 @@ Maximizing catalog count, mixing unrelated art styles, or accepting assets solel
 ## Handoff notes
 
 - Generated 62 CC0 assets under one deterministic flat-shaded art direction: 3 body profiles, 8 skin tones, reusable face channels for 12 expressions, 8 hairstyles, the full clothing list, replacement anatomy, and all required accessory stress cases.
-- Three hero recipes resolve across 12 expressions, 4 full-body views, and 40 animation requests. Technical validation covers 105 hair/head/outer and body-fit cases plus palette/adversarial galleries.
+- Three hero recipes resolve across 12 expressions, 4 full-body views, and the approved 9 retained animation requests. Technical validation covers 105 hair/head/outer and body-fit cases plus palette/adversarial galleries.
 - The built-in image-generation skill produced three project-bound art-direction references; executable assets remain deterministic Canvas-authored PNG data. Exact prompts are recorded in `packages/starter-pack/REFERENCE_PROMPTS.md`.
 - Human review accepted the pack subject to `CHANGE-004`: positive expression names currently receive downward mouth curves while several reflective/negative names receive upward curves.
 - Task 015 owns expression polarity. Task 011's animation repair also affects the hero motion sheets, so the hero and pairwise visual-review criteria remain unchecked until the focused re-review passes.
+- Tasks 011 and 015 have regenerated the retained motion and expression sheets. Both focused human decisions remain pending, so Task 007 stays `IN PROGRESS`.

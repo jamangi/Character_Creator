@@ -1,6 +1,6 @@
 # TASK-010-HIGH-animation-release-scope
 
-- **Status:** READY
+- **Status:** DONE
 - **Outcome:** Make the starter rig's advertised animation selectors exactly match the release scope approved by the owner.
 - **Tracks:** DEFECT-002, DEFECT-003, DEFECT-004, CHANGE-003
 - **Depends on:** 001, 002
@@ -39,11 +39,11 @@ This task has authority to apply the approved decision to the executable starter
 ## Acceptance criteria
 
 - [x] APPROVAL-001 records the chosen release selector set.
-- [ ] The starter rig, generator, pack metadata, tests, and Pages copy advertise exactly the same clips and directions.
-- [ ] A request outside the advertised set fails clearly and cannot resolve through a misleading static or front-facing fallback.
-- [ ] General schema/core APIs remain capable of representing future rig-defined clips and directions unless the approval explicitly says otherwise.
-- [ ] `DEFECT-002`, `DEFECT-003`, and `DEFECT-004` each record an independent resolution.
-- [ ] Relevant documentation is updated without claiming Task 006 human acceptance.
+- [x] The starter rig, generator, pack metadata, tests, and Pages copy advertise exactly the same clips and directions.
+- [x] A request outside the advertised set fails clearly and cannot resolve through a misleading static or front-facing fallback.
+- [x] General schema/core APIs remain capable of representing future rig-defined clips and directions unless the approval explicitly says otherwise.
+- [x] `DEFECT-002`, `DEFECT-003`, and `DEFECT-004` each record an independent resolution.
+- [x] Relevant documentation is updated without claiming Task 006 human acceptance.
 
 ## Validation
 
@@ -58,4 +58,4 @@ The product decision itself is the owner checkpoint in APPROVAL-001. Visual qual
 
 ## Handoff notes
 
-Record the approved selector matrix, compatibility impact, migrated or removed generated files, closed defect IDs, and any follow-up tasks required if the full-scope option is selected.
+Implemented APPROVAL-001 Option 1 as 9 retained requests: front idle (1), walk (4), and run (4). Removed obsolete back/left/right/sit generated sprite files and metadata. Unsupported directions and clips now fail with `UNKNOWN_VIEW` and `UNKNOWN_CLIP`; the schema and core types retain their wider vocabulary for future rigs. Closed DEFECT-002, DEFECT-003, and DEFECT-004 without claiming Task 006 visual acceptance.

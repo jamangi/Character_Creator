@@ -1,6 +1,6 @@
 # TASK-004-HIGH-asset-validator
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Give asset creators a fast CLI/library that validates packs and generates useful visual review artifacts.
 - **Depends on:** 001, 002
 - **Unblocks:** 006, 007
@@ -38,4 +38,5 @@ Publish representative passing and failing reports plus labeled contact sheets. 
 
 - Implemented a framework-independent seven-level validator, PNG inspection, stable JSON/HTML reports, native contact sheets, and a CLI with no-GUI/nonzero-exit support in `packages/asset-validator/`.
 - Added one failing fixture for every validator diagnostic and a clean full-starter-pack regression across every hero request.
-- Published passing/failing reports and a representative sheet at `site/validation/task-004/`. Technical acceptance is complete; the task remains `IN PROGRESS` pending human report-usability review.
+- Published passing/failing reports and a representative sheet at `site/validation/task-004/`.
+- Human validation accepted the report language, failure localization, and review-sheet presentation on 2026-08-26. The task is complete.

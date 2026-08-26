@@ -1,6 +1,31 @@
 # Approvals
 
-No decisions currently block the proposed development sequence.
+## APPROVAL-001 — starter animation scope for the first release
+
+- **Status:** PENDING
+- **Needed before:** TASK-010 begins
+- **Raised:** 2026-08-26
+
+### Context
+
+Task 006 human review found three separately tracked coverage defects: the advertised back view uses front-facing equipped fragments (`DEFECT-002`), left/right do not communicate a lateral orientation (`DEFECT-003`), and `sit` is visually the idle pose (`DEFECT-004`). The owner proposed removing those selectors so the first release can focus on front-facing idle, walk, and run plus the independent stuck-fragment repair.
+
+### Options
+
+1. **Reduce only the starter-rig release scope (recommended).** `starter-humanoid@1` advertises front-facing `idle`, `walk`, and `run`. Back, left, right, and `sit` are deferred. The general schema and engine remain capable of future rig-defined directions and clips.
+2. **Keep the full Task 006 scope.** Author correct base, clothing, hair, accessory, asymmetry, and seated art for all four directions and four clips before release. This requires additional high-effort art/animation tasks before Task 011 can finish.
+
+### Consequences
+
+Option 1 makes the first release smaller but honest, removes misleading generated coverage, and isolates Task 011 to repairing visible layers in the useful walk/run cycles. Option 2 preserves the original feature breadth but substantially expands art, validation, and review work. Either choice requires the rig, generator, validator, shared docs, task claims, and Pages artifacts to agree.
+
+### Approval signal
+
+Record `APPROVED: Option 1` or `APPROVED: Option 2` here. Until then, Task 010 and Task 011 remain blocked; Tasks 012, 014, and 015 may proceed independently, while Task 013 follows Task 012.
+
+---
+
+## Standing defaults
 
 The following defaults are recommended and may be changed later without invalidating the architecture:
 

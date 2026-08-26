@@ -32,6 +32,7 @@ This repository contains the design foundation, portable engine, editing Studio,
 
 - [`root/`](root/README.md) — root-task operating notes, decisions, approvals, and the task template.
 - [`shared/`](shared/README.md) — architecture and contracts that every implementation task must follow.
+- [`shared/DEFECTS.md`](shared/DEFECTS.md) and [`shared/CHANGE_REQUESTS.md`](shared/CHANGE_REQUESTS.md) — review findings, evidence, architecture impact, and builder ownership.
 - [`shared/tasks/`](shared/tasks/README.md) — ordered, independently assignable development tasks.
 - [`site/`](site/README.md) — the GitHub Pages review hub and published validation artifacts.
 - [`packages/schema/`](packages/schema/README.md) — executable JSON Schemas, TypeScript contracts, diagnostics, and normalization.
@@ -54,7 +55,7 @@ New tasks should read, in order:
 3. [`shared/ASSET_CONTRACT.md`](shared/ASSET_CONTRACT.md)
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
-Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). There are no blocking approvals at present.
+Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 currently blocks the starter animation-scope tasks; unrelated remediation may proceed.
 
 ## Development validation
 

@@ -38,4 +38,6 @@ Publish all clips and directions at native and enlarged scale, including the asy
 
 - Added rig-driven animation resolution, explicit safe-mirroring checks, critical-frame enforcement, duration/contact/ground metadata, numeric contact tolerance, and deterministic shelf atlas packing.
 - The starter pack supplies exact base/body-module/shoe art for every `idle`, `sit`, `walk`, and `run` frame in all four directions; the asymmetric hero uses explicit left and right artwork.
-- Published frame stepping, native/enlarged playback, overlays, atlas metadata, contact sheets, and asymmetric evidence at `site/validation/task-006/`. Technical acceptance is complete; human motion review remains.
+- Human review accepted ground contact and native-scale timing on 2026-08-26, but rejected visual motion coverage.
+- `DEFECT-001` records static equipped layers over moving anatomy. `DEFECT-002`, `DEFECT-003`, and `DEFECT-004` independently record incorrect back, lateral, and seated meaning.
+- Task 010 owns the release-scope decision/contract correction; Task 011 owns retained-frame motion repair. The task remains `IN PROGRESS` until the resulting animation checkpoint is accepted.

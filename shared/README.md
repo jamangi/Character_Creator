@@ -7,6 +7,9 @@ Everything in this directory is normative for implementation tasks unless a late
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — package boundaries, composition pipeline, invariants, and staged delivery.
 - [`ASSET_CONTRACT.md`](ASSET_CONTRACT.md) — the draft manifest, fragment, coverage, compatibility, and validation contract.
 - [`STARTER_ASSET_PACK.md`](STARTER_ASSET_PACK.md) — the smallest useful art package and its aesthetic test matrix.
+- [`DEFECTS.md`](DEFECTS.md) — independently closable observed failures, architecture impact, evidence, and fix ownership.
+- [`CHANGE_REQUESTS.md`](CHANGE_REQUESTS.md) — accepted or pending changes to product behavior and scope.
+- [`defects/`](defects/README.md) — preserved reviewer evidence keyed by defect ID.
 - [`tasks/README.md`](tasks/README.md) — task ordering and coordination.
 
 ## Shared invariants
@@ -22,6 +25,7 @@ Everything in this directory is normative for implementation tasks unless a late
 9. Pixel-art and illustration packs do not share a rig family unless their dimensions, anchors, and sampling rules truly match.
 10. Tests must include adversarial asset combinations, not only curated hero characters.
 11. Tasks requiring visual or interactive acceptance publish labeled, stable artifacts through the GitHub Pages hub described in `site/README.md`.
+12. Review feedback is recorded before implementation: defects and change requests retain separate IDs, tests, and human checkpoints even when they share a builder task.
 
 ## Decision hierarchy
 

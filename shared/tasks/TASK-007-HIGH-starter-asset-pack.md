@@ -19,7 +19,7 @@
 - [x] All promised assets and advertised selectors are present.
 - [x] The pack passes required validator levels and license/provenance checks.
 - [ ] Three hero recipes pass expression, turnaround, and animation visual review.
-- [ ] Pairwise/adversarial sheets have no untriaged seam, halo, occlusion, or ground-contact defects.
+- [x] Pairwise/adversarial sheets have no untriaged seam, halo, occlusion, or ground-contact defects.
 - [x] Body-profile fit support is honest and machine-readable.
 - [x] Pack size and decode/render performance fit documented budgets.
 - [x] Pages publishes the three hero sheets and navigable combination/stress-test galleries.
@@ -44,4 +44,5 @@ Maximizing catalog count, mixing unrelated art styles, or accepting assets solel
 - Generated 62 CC0 assets under one deterministic flat-shaded art direction: 3 body profiles, 8 skin tones, reusable face channels for 12 expressions, 8 hairstyles, the full clothing list, replacement anatomy, and all required accessory stress cases.
 - Three hero recipes resolve across 12 expressions, 4 full-body views, and 40 animation requests. Technical validation covers 105 hair/head/outer and body-fit cases plus palette/adversarial galleries.
 - The built-in image-generation skill produced three project-bound art-direction references; executable assets remain deterministic Canvas-authored PNG data. Exact prompts are recorded in `packages/starter-pack/REFERENCE_PROMPTS.md`.
-- Published the explicit checkpoint at `site/validation/task-007/`. Hero and pairwise visual-review criteria remain unchecked until a human accepts aesthetic appeal, consistency, seams, occlusion, recolor, and range.
+- Human review accepted the pack subject to `CHANGE-004`: positive expression names currently receive downward mouth curves while several reflective/negative names receive upward curves.
+- Task 015 owns expression polarity. Task 011's animation repair also affects the hero motion sheets, so the hero and pairwise visual-review criteria remain unchecked until the focused re-review passes.

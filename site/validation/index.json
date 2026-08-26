@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "entries": [
     {
       "task": "FOUNDATION",
@@ -10,7 +10,7 @@
       "review": [
         "Hybrid base-plus-replacement model",
         "Multi-plane asset bundles",
-        "Nine-task dependency sequence"
+        "Dependency-ordered task sequence"
       ],
       "commit": "b944104"
     },
@@ -39,38 +39,38 @@
     {
       "task": "TASK-004",
       "title": "Asset validator",
-      "status": "ready-for-review",
-      "summary": "Seven validation levels, stable reports, CI mode, and labeled review sheets are technically passing.",
+      "status": "accepted",
+      "summary": "Accepted on 2026-08-26: report language, failure localization, and contact-sheet presentation are valid.",
       "href": "validation/task-004/",
-      "review": ["Report clarity", "Failure localization", "Contact-sheet efficiency"],
-      "commit": "753fbf8"
+      "review": ["Human validation complete"],
+      "commit": "pending"
     },
     {
       "task": "TASK-005",
       "title": "Creator Studio",
-      "status": "ready-for-review",
-      "summary": "The main Pages route is an accessible responsive Studio backed by public resolver and renderer APIs.",
+      "status": "changes-requested",
+      "summary": "Core workflows passed; palette isolation, history, and output-projection changes are tracked in Tasks 012–014.",
       "href": "validation/task-005/",
-      "review": ["Discovery and equip clarity", "Keyboard/mobile behavior", "Recipe round trip"],
-      "commit": "753fbf8"
+      "review": ["Palette roles affect only labeled regions", "Palette and hero-template Undo/Redo", "Portrait/sprite projection changes"],
+      "commit": "pending"
     },
     {
       "task": "TASK-006",
       "title": "Animation pipeline",
-      "status": "ready-for-review",
-      "summary": "Forty directional frames, timing, contacts, deterministic atlas packing, and explicit asymmetric art are ready.",
+      "status": "changes-requested",
+      "summary": "Timing and ground contact passed, but stuck layers and unsupported back/lateral/sit claims require Tasks 010–011.",
       "href": "validation/task-006/",
-      "review": ["Timing and foot sliding", "Jitter and silhouettes", "Directional consistency"],
-      "commit": "753fbf8"
+      "review": ["Approve the release selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
+      "commit": "pending"
     },
     {
       "task": "TASK-007",
       "title": "Starter asset pack",
-      "status": "ready-for-review",
-      "summary": "Sixty-two cohesive assets and the full hero/combination matrix pass technical validation and await explicit visual sign-off.",
+      "status": "changes-requested",
+      "summary": "The pack passed with a focused expression-polarity request; animation sheets will also inherit the Task 011 repair.",
       "href": "validation/task-007/",
-      "review": ["Aesthetic appeal", "Art-direction consistency", "Seams, occlusion, recolor, and range"],
-      "commit": "753fbf8"
+      "review": ["Positive expressions read as smiles", "Reflective/negative expressions read appropriately", "Updated motion sheets"],
+      "commit": "pending"
     }
   ]
 }

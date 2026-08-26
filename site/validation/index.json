@@ -34,7 +34,7 @@
       "summary": "Canonical import/export, deterministic migrations, aliases, bounded parsing, and source-preserving preview are complete.",
       "href": "https://github.com/jamangi/Character_Creator/tree/main/packages/core/src/recipes.ts",
       "review": ["Automated acceptance; no human checkpoint"],
-      "commit": "pending"
+      "commit": "753fbf8"
     },
     {
       "task": "TASK-004",
@@ -43,7 +43,7 @@
       "summary": "Seven validation levels, stable reports, CI mode, and labeled review sheets are technically passing.",
       "href": "validation/task-004/",
       "review": ["Report clarity", "Failure localization", "Contact-sheet efficiency"],
-      "commit": "pending"
+      "commit": "753fbf8"
     },
     {
       "task": "TASK-005",
@@ -52,7 +52,7 @@
       "summary": "The main Pages route is an accessible responsive Studio backed by public resolver and renderer APIs.",
       "href": "validation/task-005/",
       "review": ["Discovery and equip clarity", "Keyboard/mobile behavior", "Recipe round trip"],
-      "commit": "pending"
+      "commit": "753fbf8"
     },
     {
       "task": "TASK-006",
@@ -61,7 +61,7 @@
       "summary": "Forty directional frames, timing, contacts, deterministic atlas packing, and explicit asymmetric art are ready.",
       "href": "validation/task-006/",
       "review": ["Timing and foot sliding", "Jitter and silhouettes", "Directional consistency"],
-      "commit": "pending"
+      "commit": "753fbf8"
     },
     {
       "task": "TASK-007",
@@ -70,7 +70,7 @@
       "summary": "Sixty-two cohesive assets and the full hero/combination matrix pass technical validation and await explicit visual sign-off.",
       "href": "validation/task-007/",
       "review": ["Aesthetic appeal", "Art-direction consistency", "Seams, occlusion, recolor, and range"],
-      "commit": "pending"
+      "commit": "753fbf8"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "generatedAt": "2026-08-26T23:00:00.000Z",
   "releaseVersion": "0.1.0-rc.1",
   "files": 2958,
-  "totalBytes": 22440584,
+  "totalBytes": 21568737,
   "packageBytes": {
     "schema": 239540,
     "core": 181696,
@@ -10,7 +10,7 @@
     "asset-validator": 121418,
     "creator-ui": 104255
   },
-  "siteBytes": 13112518,
+  "siteBytes": 12240671,
   "starterBytes": 8574223,
   "budgets": {
     "siteBytes": 67108864,

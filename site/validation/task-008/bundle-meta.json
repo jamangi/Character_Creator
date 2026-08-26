@@ -2001,7 +2001,7 @@
       "format": "esm"
     },
     "packages/creator-ui/src/store.ts": {
-      "bytes": 8245,
+      "bytes": 9908,
       "imports": [
         {
           "path": "packages/core/src/index.ts",
@@ -2117,7 +2117,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 693664
+      "bytes": 262327
     },
     "site/validation/task-008/example.js": {
       "imports": [],
@@ -2454,7 +2454,7 @@
           "bytesInOutput": 5003
         },
         "packages/creator-ui/src/store.ts": {
-          "bytesInOutput": 3777
+          "bytesInOutput": 4550
         },
         "packages/creator-ui/src/index.ts": {
           "bytesInOutput": 0
@@ -2469,7 +2469,7 @@
           "bytesInOutput": 3734
         }
       },
-      "bytes": 196488
+      "bytes": 197261
     }
   }
 }

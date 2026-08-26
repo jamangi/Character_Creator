@@ -13888,8 +13888,8 @@
     },
     {
       "path": "site/studio.js.map",
-      "bytes": 686481,
-      "sha256": "c443363eb9428eac1904a69688924e78d458390d9a7af9e6767dea17a3e22e81"
+      "bytes": 245198,
+      "sha256": "5fca2c3349fb60551da1ef60094dfe8445ba766eba94ff195ea49fae1737cdc0"
     },
     {
       "path": "site/styles.css",
@@ -14629,7 +14629,7 @@
     {
       "path": "site/validation/task-008/bundle-meta.json",
       "bytes": 87530,
-      "sha256": "82fc78736f2e6d1bb5f4c850a83098b793cbd16c93a142350b6945d1fcec4a6d"
+      "sha256": "769a8975633ac5ac413c9710e22cd1d85eb5fa9a3ed986b30705234ab7338050"
     },
     {
       "path": "site/validation/task-008/example.css",
@@ -14638,13 +14638,13 @@
     },
     {
       "path": "site/validation/task-008/example.js",
-      "bytes": 196488,
-      "sha256": "d9e1bbf4e69a4566ec1bdcd1aaeb9fde89df50c0e335fe2d20c4b074290e3f9b"
+      "bytes": 197261,
+      "sha256": "1c01e0e191eaa67263942f22ff9d397c09f3eb5ea992466e03b21b487164079a"
     },
     {
       "path": "site/validation/task-008/example.js.map",
-      "bytes": 693664,
-      "sha256": "d67dc8fd71e0e98eb0bc62a162ad1eef61832dc028942cb1edfc9c9a77603954"
+      "bytes": 262327,
+      "sha256": "1095a34184f9b9bb65b6dcccc2fc73a73dc9b9f7dedbfcd122e59ff5db8eb36c"
     },
     {
       "path": "site/validation/task-008/index.html",

@@ -15,6 +15,7 @@ await build({
   platform: "browser",
   target: ["es2022"],
   sourcemap: true,
+  sourcesContent: false,
   minify: false,
   logLevel: "info",
   alias: {

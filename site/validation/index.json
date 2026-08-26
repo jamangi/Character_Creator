@@ -52,7 +52,7 @@
       "summary": "Palette isolation and output projections are ready for independent review; history transactions remain Task 013.",
       "href": "validation/task-005/",
       "review": ["Palette roles affect only labeled regions", "Palette and hero-template Undo/Redo", "Portrait/sprite projection changes"],
-      "commit": "pending"
+      "commit": "721e389"
     },
     {
       "task": "TASK-006",
@@ -61,7 +61,7 @@
       "summary": "The starter scope is front idle/walk/run and all visible equipped layers now supply exact retained-frame motion.",
       "href": "validation/task-006/",
       "review": ["Apply the approved reduced selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
-      "commit": "pending"
+      "commit": "721e389"
     },
     {
       "task": "TASK-007",
@@ -70,7 +70,7 @@
       "summary": "Corrected expression polarity and repaired retained animation sheets are published for focused review.",
       "href": "validation/task-007/",
       "review": ["Positive expressions read as smiles", "Reflective/negative expressions read appropriately", "Updated motion sheets"],
-      "commit": "pending"
+      "commit": "721e389"
     },
     {
       "task": "SPRINT-010-015",
@@ -79,7 +79,7 @@
       "summary": "One grouped checkpoint with independent decisions for palette rendering, output projections, retained animation motion, and expression intent.",
       "href": "validation/sprint-010-015/",
       "review": ["Task 012 palette roles", "Task 014 output profiles", "Task 011 retained animation", "Task 015 expressions"],
-      "commit": "pending"
+      "commit": "721e389"
     }
   ]
 }

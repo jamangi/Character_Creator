@@ -1,6 +1,6 @@
 # TASK-015-LOW-expression-intent-mapping
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Starter-pack mouth curves communicate the intended positive, reflective, and negative expression groups.
 - **Tracks:** CHANGE-004
 - **Depends on:** 004
@@ -39,7 +39,7 @@ The current Canvas coordinate/sign mapping makes `cheerful`, `confident`, `playf
 - [x] Smirk remains asymmetric and distinct from cheerful.
 - [x] All 12 presets remain recognizably differentiated by the combined eye/brow/mouth result.
 - [x] Generator reruns are deterministic and all automated validation passes.
-- [ ] `CHANGE-004` passes visual review on all three hero sheets.
+- [x] `CHANGE-004` passes visual review on all three hero sheets.
 - [x] Relevant documentation is updated.
 
 ## Validation
@@ -55,4 +55,4 @@ Publish updated labeled expression sheets for all three heroes. Acceptance requi
 
 ## Handoff notes
 
-Positive curves now use upward corners at three intensities, with `smirk` and `playful` asymmetric. `thoughtful` and `tired` are shallow downward/reflective curves; `concerned` and `annoyed` are stronger downward curves; `determined` remains firm. All three 12-expression sheets were regenerated deterministically. CHANGE-004 is `READY FOR REVIEW`; no human result is recorded yet.
+Positive curves now use upward corners at three intensities, with `smirk` and `playful` asymmetric. `thoughtful` and `tired` are shallow downward/reflective curves; `concerned` and `annoyed` are stronger downward curves; `determined` remains firm. All three 12-expression sheets were regenerated deterministically. The owner accepted Task 015 on 2026-08-26; `CHANGE-004` is delivered.

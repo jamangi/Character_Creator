@@ -1,6 +1,6 @@
 # TASK-006-HIGH-animation-pipeline
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Resolve, preview, and export each rig's advertised sprite clips with reliable timing, motion coverage, and foot contact.
 - **Depends on:** 002, 004
 - **Unblocks:** 007, 008
@@ -38,7 +38,7 @@ Publish all clips and directions at native and enlarged scale, including the asy
 
 - Added rig-driven animation resolution, explicit safe-mirroring checks, critical-frame enforcement, duration/contact/ground metadata, numeric contact tolerance, and deterministic shelf atlas packing.
 - The original proof supplied broader technical selectors, but APPROVAL-001 superseded that release claim after visual review. The starter pack now supplies exact visible-layer art for the approved 9 front idle/walk/run requests; future rigs may still advertise the broader vocabulary.
-- Human review accepted ground contact and native-scale timing on 2026-08-26, but rejected visual motion coverage.
+- Human review accepted ground contact and native-scale timing on 2026-08-26, but initially rejected visual motion coverage.
 - `DEFECT-001` records static equipped layers over moving anatomy. `DEFECT-002`, `DEFECT-003`, and `DEFECT-004` independently record incorrect back, lateral, and seated meaning.
-- Task 010 owns the release-scope decision/contract correction; Task 011 owns retained-frame motion repair. The task remains `IN PROGRESS` until the resulting animation checkpoint is accepted.
-- Task 010 is complete: the starter rig now advertises 9 front idle/walk/run requests. Task 011 has regenerated exact motion-group art for every visible equipped layer and published a labeled before/after checkpoint. Human re-review remains pending.
+- Task 010 owns the release-scope decision/contract correction; Task 011 owns retained-frame motion repair.
+- Task 010 is complete: the starter rig now advertises 9 front idle/walk/run requests. Task 011 regenerated exact motion-group art for every visible equipped layer and published a labeled before/after checkpoint. The owner accepted Task 011 and the repaired Task 006 animation checkpoint on 2026-08-26; this task is complete.

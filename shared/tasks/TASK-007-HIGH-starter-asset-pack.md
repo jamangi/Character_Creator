@@ -1,6 +1,6 @@
 # TASK-007-HIGH-starter-asset-pack
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Ship a cohesive first asset pack that proves aesthetic range and stresses every important contract feature.
 - **Depends on:** 004, 006
 - **Unblocks:** 009
@@ -18,7 +18,7 @@
 
 - [x] All promised assets and advertised selectors are present.
 - [x] The pack passes required validator levels and license/provenance checks.
-- [ ] Three hero recipes pass expression, turnaround, and animation visual review.
+- [x] Three hero recipes pass expression, turnaround, and animation visual review.
 - [x] Pairwise/adversarial sheets have no untriaged seam, halo, occlusion, or ground-contact defects.
 - [x] Body-profile fit support is honest and machine-readable.
 - [x] Pack size and decode/render performance fit documented budgets.
@@ -44,6 +44,6 @@ Maximizing catalog count, mixing unrelated art styles, or accepting assets solel
 - Generated 62 CC0 assets under one deterministic flat-shaded art direction: 3 body profiles, 8 skin tones, reusable face channels for 12 expressions, 8 hairstyles, the full clothing list, replacement anatomy, and all required accessory stress cases.
 - Three hero recipes resolve across 12 expressions, 4 full-body views, and the approved 9 retained animation requests. Technical validation covers 105 hair/head/outer and body-fit cases plus palette/adversarial galleries.
 - The built-in image-generation skill produced three project-bound art-direction references; executable assets remain deterministic Canvas-authored PNG data. Exact prompts are recorded in `packages/starter-pack/REFERENCE_PROMPTS.md`.
-- Human review accepted the pack subject to `CHANGE-004`: positive expression names currently receive downward mouth curves while several reflective/negative names receive upward curves.
-- Task 015 owns expression polarity. Task 011's animation repair also affects the hero motion sheets, so the hero and pairwise visual-review criteria remain unchecked until the focused re-review passes.
-- Tasks 011 and 015 have regenerated the retained motion and expression sheets. Both focused human decisions remain pending, so Task 007 stays `IN PROGRESS`.
+- Human review initially accepted the pack subject to `CHANGE-004`: positive expression names received downward mouth curves while several reflective/negative names received upward curves.
+- Task 015 owns expression polarity. Task 011's animation repair also affects the hero motion sheets.
+- Tasks 011 and 015 regenerated the retained motion and expression sheets. The owner accepted both focused checkpoints on 2026-08-26, completing the Task 007 visual criteria. Later content expansions are tracked independently by Tasks 017–020 and do not reopen this accepted baseline.

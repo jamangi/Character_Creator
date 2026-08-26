@@ -3,7 +3,7 @@
 - **Status:** BLOCKED
 - **Outcome:** Palette edits and hero-template selections behave as exact, visible, one-step Undo/Redo transactions.
 - **Tracks:** DEFECT-005, DEFECT-006
-- **Depends on:** 003, 012
+- **Depends on:** 003, 020
 - **Unblocks:** 016 and completion review for 005
 - **Owned paths:** `packages/creator-ui/`, Studio history bindings in `apps/studio/`, history fixtures/tests, `site/validation/task-005/`
 
@@ -16,7 +16,7 @@
 
 ## Context
 
-After Task 012 establishes correct role-scoped rendering, palette and reset operations still need reliable recipe transactions. Color inputs may emit multiple events per gesture, and human review could not verify that palette changes or hero-chip resets were truly reversible. The fix must make recipe history and rendered state agree, not merely change a button's enabled state.
+After Tasks 012 and 019–020 establish correct rendering and the final palette vocabulary, palette and reset operations still need reliable recipe transactions. Color inputs may emit multiple events per gesture, and human review could not verify that palette changes or hero-chip resets were truly reversible. The fix must make recipe history and rendered state agree, not merely change a button's enabled state. Waiting for Task 020 avoids writing history and migration assertions against palette keys that are about to change.
 
 ## Scope
 

@@ -1,6 +1,6 @@
 # TASK-011-HIGH-animation-fragment-motion
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Every visible equipped fragment follows the pose and vertical motion of each retained starter-rig animation frame.
 - **Tracks:** DEFECT-001
 - **Depends on:** 010
@@ -42,7 +42,7 @@ The current generator emits exact frame selectors for base bodies, body modules,
 - [x] Asymmetric and rigid accessories use explicit legal motion behavior and do not drift from their attachment.
 - [x] Validator output identifies missing body-coupled motion coverage by stable diagnostic code.
 - [x] All three hero recipes pass automated retained-frame coverage and pixel/scene-difference checks.
-- [ ] Task 006's updated motion artifact passes human review at native and enlarged scale.
+- [x] Task 006's updated motion artifact passes human review at native and enlarged scale.
 - [x] Relevant documentation is updated.
 
 ## Validation
@@ -58,4 +58,4 @@ Publish labeled before/after frame strips for `DEFECT-001` and retained cycles f
 
 ## Handoff notes
 
-Every visible starter slot now uses exact authored frame art grouped by `motionGroup`; no starter asset currently claims `motion.static-safe`. The new stable validator diagnostic is `MOTION_FALLBACK_UNSAFE`. All 9-frame hero baselines and the Task 006 before/after sheet were regenerated. DEFECT-001 is `READY FOR REVIEW`; human acceptance remains unchecked and Task 006 stays in progress until Task 016.
+Every visible starter slot now uses exact authored frame art grouped by `motionGroup`; no starter asset currently claims `motion.static-safe`. The new stable validator diagnostic is `MOTION_FALLBACK_UNSAFE`. All 9-frame hero baselines and the Task 006 before/after sheet were regenerated. The owner accepted the repaired retained animation on 2026-08-26; `DEFECT-001` is closed and Task 006 is complete.

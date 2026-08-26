@@ -61,4 +61,4 @@ Publish a labeled baseline and one-role-at-a-time comparison grid. Ask the revie
 
 ## Handoff notes
 
-The resolver now carries role, authored source color, requested value, and mode per draw item. The Canvas renderer uses exact authored sRGB role colors as deterministic per-fragment masks, preserving alpha and all non-role pixels; the Studio global tint path was removed. Synthetic mode/isolation tests and ten labeled role comparisons pass. DEFECT-007 is `READY FOR REVIEW`; Task 005 and Task 013 remain open pending human palette acceptance and history work.
+The resolver now carries role, authored source color, requested value, and mode per draw item. The Canvas renderer uses exact authored sRGB role colors as deterministic per-fragment masks, preserving alpha and all non-role pixels; the Studio global tint path was removed. Synthetic mode/isolation tests and ten labeled role comparisons pass. Owner review on 2026-08-26 requested finer body/clothing and accessory role identities (`CHANGE-007` and `CHANGE-008`). `DEFECT-007` and Task 012 therefore remain in progress through Tasks 019–020; Task 013 waits for that stable vocabulary.

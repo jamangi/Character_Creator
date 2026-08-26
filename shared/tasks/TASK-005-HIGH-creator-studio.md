@@ -42,5 +42,6 @@ Publish the interactive Studio and a concise review script covering discovery, e
 - Added `packages/creator-ui/` for DOM-free catalog queries, compatibility-safe equip actions, body profiles, palette state, deterministic randomization, history, preview state, and exact recipe round trips.
 - Published the bundled Studio at the main Pages route using the public resolver and Canvas renderer. Native controls, visible focus, semantic labels, reduced-motion behavior, and wide/narrow layouts are covered.
 - Human review accepted discovery, building, conflict safety, recipe round-trip, keyboard behavior, and responsive layout on 2026-08-26.
-- Role isolation is open as `DEFECT-007` under Task 012. Palette history and hero-template history remain independently open as `DEFECT-005` and `DEFECT-006` under Task 013. Portrait/sprite presentation changes are accepted as `CHANGE-001` and `CHANGE-002` under Task 014.
-- The task remains `IN PROGRESS` until Tasks 012–014 and the focused human re-review pass.
+- Role isolation is open as `DEFECT-007` under Tasks 012 and 019–020. Palette history and hero-template history remain independently open as `DEFECT-005` and `DEFECT-006` under Task 013. Portrait/sprite presentation changes were accepted as `CHANGE-001` and `CHANGE-002` under Task 014.
+- Owner review added selected-mouth dominance (`CHANGE-005`), bilateral arm modules (`CHANGE-006`), category-scoped palettes (`CHANGE-007`), and accessory-scoped palettes (`CHANGE-008`) under Tasks 017–020.
+- The task remains `IN PROGRESS` until Tasks 012, 013, and 017–020 plus the focused human re-review pass.

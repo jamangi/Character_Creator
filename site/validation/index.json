@@ -48,37 +48,37 @@
     {
       "task": "TASK-005",
       "title": "Creator Studio",
-      "status": "ready-for-review",
-      "summary": "Palette isolation and output projections are ready for independent review; history transactions remain Task 013.",
+      "status": "changes-requested",
+      "summary": "Task 014 output projections are accepted. Task 012 remains open while Tasks 017–020 address selected-mouth, bilateral-arm, and finer palette-control requests; history remains Task 013.",
       "href": "validation/task-005/",
-      "review": ["Palette roles affect only labeled regions", "Portrait/sprite projection changes", "History transactions deferred to Task 013"],
+      "review": ["Task 014 accepted 2026-08-26", "Task 012 changes requested", "Tasks 017–020 created", "History deferred to Task 013"],
       "commit": "721e389"
     },
     {
       "task": "TASK-006",
       "title": "Animation pipeline",
-      "status": "ready-for-review",
-      "summary": "The starter scope is front idle/walk/run and all visible equipped layers now supply exact retained-frame motion.",
+      "status": "accepted",
+      "summary": "Accepted 2026-08-26: the starter scope is front idle/walk/run and all visible equipped layers supply exact retained-frame motion.",
       "href": "validation/task-006/",
-      "review": ["Apply the approved reduced selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
+      "review": ["Human validation complete", "DEFECT-001 closed"],
       "commit": "721e389"
     },
     {
       "task": "TASK-007",
       "title": "Starter asset pack",
-      "status": "ready-for-review",
-      "summary": "Corrected expression polarity and repaired retained animation sheets are published for focused review.",
+      "status": "accepted",
+      "summary": "Accepted 2026-08-26: corrected expression polarity and repaired retained animation sheets complete the starter-pack checkpoint.",
       "href": "validation/task-007/",
-      "review": ["Positive expressions read as smiles", "Reflective/negative expressions read appropriately", "Updated motion sheets"],
+      "review": ["Human validation complete", "CHANGE-004 delivered"],
       "commit": "721e389"
     },
     {
       "task": "SPRINT-010-015",
       "title": "Remediation visual checkpoint",
-      "status": "ready-for-review",
-      "summary": "One grouped checkpoint with independent decisions for palette rendering, output projections, retained animation motion, and expression intent.",
+      "status": "partially-accepted",
+      "summary": "Owner accepted Tasks 014, 011, and 015 on 2026-08-26. Task 012 received follow-up changes now tracked by Tasks 017–020.",
       "href": "validation/sprint-010-015/",
-      "review": ["Task 012 palette roles", "Task 014 output profiles", "Task 011 retained animation", "Task 015 expressions"],
+      "review": ["Task 012 changes requested", "Task 014 accepted", "Task 011 accepted", "Task 015 accepted"],
       "commit": "721e389"
     }
   ]

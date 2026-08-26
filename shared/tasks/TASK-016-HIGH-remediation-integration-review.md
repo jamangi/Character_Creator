@@ -2,8 +2,8 @@
 
 - **Status:** BLOCKED
 - **Outcome:** Reconcile the repository and obtain final human acceptance for the corrected Task 005–007 release candidate.
-- **Tracks:** DEFECT-001 through DEFECT-007; CHANGE-001 through CHANGE-004
-- **Depends on:** 011, 012, 013, 014, 015
+- **Tracks:** DEFECT-001 through DEFECT-007; CHANGE-001 through CHANGE-008
+- **Depends on:** 012, 013, 017, 018, 019, 020
 - **Unblocks:** 008, 009
 - **Owned paths:** cross-repository documentation/status reconciliation, `site/`, `shared/DEFECTS.md`, `shared/CHANGE_REQUESTS.md`, Task 005–007 handoff/status records
 
@@ -17,7 +17,7 @@
 
 ## Context
 
-The remediation tasks intentionally keep their implementation reads narrow. Once their technical and focused visual checks pass, this task pays the broader integration cost once: regenerate all derived artifacts, scan executable contracts against documentation, and present one coherent release-candidate review.
+The remediation tasks intentionally keep their implementation reads narrow. Tasks 011, 014, and 015 were accepted on 2026-08-26; owner follow-up added Tasks 017–020 and kept Task 012 open. Once those technical and focused visual checks plus Task 013 pass, this task pays the broader integration cost once: regenerate all derived artifacts, scan executable contracts against documentation, and present one coherent release-candidate review.
 
 ## Scope
 

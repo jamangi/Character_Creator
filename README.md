@@ -55,7 +55,7 @@ New tasks should read, in order:
 3. [`shared/ASSET_CONTRACT.md`](shared/ASSET_CONTRACT.md)
 4. Their assigned task in [`shared/tasks/`](shared/tasks/README.md)
 
-Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Tasks 011, 012, 014, and 015 are technically complete and awaiting independent visual decisions; Task 013 remains blocked on palette acceptance.
+Open product decisions that require owner input belong in [`root/APPROVALS.md`](root/APPROVALS.md). APPROVAL-001 selected the reduced first-release animation scope, now implemented by Task 010. Owner review accepted Tasks 011, 014, and 015 on 2026-08-26. Task 012 remains open while Tasks 017–020 address selected-mouth, bilateral-arm, and finer palette-control requests; Task 013 follows the stabilized palette vocabulary.
 
 ## Development validation
 

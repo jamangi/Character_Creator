@@ -1,6 +1,6 @@
 # TASK-014-MEDIUM-output-profile-projections
 
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Outcome:** Portrait output omits bottoms/shoes and sprite output omits mouths without changing the character recipe.
 - **Tracks:** CHANGE-001, CHANGE-002
 - **Depends on:** 002, 003
@@ -59,4 +59,4 @@ Publish side-by-side portrait/full-body/sprite renders from one labeled recipe a
 
 ## Handoff notes
 
-Rig profiles declare `hiddenSlots`; fragments may refine multi-slot assets through `contentSlots`. The starter portrait hides bottom/shoes and uses portrait-authored base art without legs; the sprite hides mouth. Resolver, preview, export, coverage, and recipe-identity tests share this policy. CHANGE-001 and CHANGE-002 are `READY FOR REVIEW`; no human result is recorded yet.
+Rig profiles declare `hiddenSlots`; fragments may refine multi-slot assets through `contentSlots`. The starter portrait hides bottom/shoes and uses portrait-authored base art without legs; the sprite hides mouth. Resolver, preview, export, coverage, and recipe-identity tests share this policy. The owner accepted Task 014 on 2026-08-26; `CHANGE-001` and `CHANGE-002` are delivered. The later selected-mouth request is independently tracked as `CHANGE-005`/Task 017 and does not alter these accepted projection rules.

@@ -9,17 +9,29 @@ Tasks are ordered by dependency, not by who performs them. Parallel work is safe
 | 003 | [Portable recipes](TASK-003-MEDIUM-portable-recipes.md) | DONE | 001 | Versioned import/export and migration |
 | 004 | [Asset validator](TASK-004-HIGH-asset-validator.md) | DONE | 001, 002 | Artist-facing conformance tooling |
 | 005 | [Creator Studio](TASK-005-HIGH-creator-studio.md) | IN PROGRESS | 002, 003 | Reference editing UI |
-| 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | IN PROGRESS | 002, 004 | Directional clips and sprite export |
-| 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | IN PROGRESS | 004, 006 | Coherent, stress-testing content pack |
+| 006 | [Animation pipeline](TASK-006-HIGH-animation-pipeline.md) | DONE | 002, 004 | Directional clips and sprite export |
+| 007 | [Starter asset pack](TASK-007-HIGH-starter-asset-pack.md) | DONE | 004, 006 | Coherent, stress-testing content pack |
 | 008 | [Portable integration API](TASK-008-MEDIUM-portable-integration-api.md) | BLOCKED | 003, 005, 006 | Framework-agnostic consumption example |
 | 009 | [Release hardening](TASK-009-HIGH-release-hardening.md) | BLOCKED | 007, 008 | Tested and documented first release |
 | 010 | [Animation release scope](TASK-010-HIGH-animation-release-scope.md) | DONE | 001, 002 | Honest starter-rig selector contract |
-| 011 | [Animation fragment motion](TASK-011-HIGH-animation-fragment-motion.md) | IN PROGRESS | 010 | Equipped layers follow retained motion |
+| 011 | [Animation fragment motion](TASK-011-HIGH-animation-fragment-motion.md) | DONE | 010 | Equipped layers follow retained motion |
 | 012 | [Role-scoped palette rendering](TASK-012-HIGH-role-scoped-palette-rendering.md) | IN PROGRESS | 002, 003 | Semantic palette isolation in reusable rendering |
-| 013 | [Studio history transactions](TASK-013-MEDIUM-studio-history-transactions.md) | BLOCKED | 003, 012 | Undoable palette and hero changes |
-| 014 | [Output profile projections](TASK-014-MEDIUM-output-profile-projections.md) | IN PROGRESS | 002, 003 | Portrait/sprite presentation rules |
-| 015 | [Expression intent mapping](TASK-015-LOW-expression-intent-mapping.md) | IN PROGRESS | 004 | Correct expression polarity |
-| 016 | [Remediation integration review](TASK-016-HIGH-remediation-integration-review.md) | BLOCKED | 011–015 | Reconciled release candidate and sign-off |
+| 013 | [Studio history transactions](TASK-013-MEDIUM-studio-history-transactions.md) | BLOCKED | 003, 020 | Undoable palette and hero changes |
+| 014 | [Output profile projections](TASK-014-MEDIUM-output-profile-projections.md) | DONE | 002, 003 | Portrait/sprite presentation rules |
+| 015 | [Expression intent mapping](TASK-015-LOW-expression-intent-mapping.md) | DONE | 004 | Correct expression polarity |
+| 016 | [Remediation integration review](TASK-016-HIGH-remediation-integration-review.md) | BLOCKED | 012, 013, 017–020 | Reconciled release candidate and sign-off |
+| 017 | [Selected mouth dominance](TASK-017-MEDIUM-selected-mouth-dominance.md) | IN PROGRESS | 002, 003 | Equipped mouth controls neutral output |
+| 018 | [Bilateral arm modules](TASK-018-HIGH-bilateral-arm-modules.md) | READY | 004, 010, 011 | Independently removable left/right arms |
+| 019 | [Slot-scoped palette vocabulary](TASK-019-HIGH-slot-scoped-palette-vocabulary.md) | BLOCKED | 018 | Independent body and clothing colors |
+| 020 | [Accessory-scoped palettes](TASK-020-HIGH-accessory-scoped-palettes.md) | BLOCKED | 019 | Stable independent accessory colors |
+
+## Recommended continuation
+
+1. Finish Task 017 first because it is an isolated, user-visible selection defect with no schema dependency.
+2. Complete Task 018 before palette expansion so both arm slots exist before their color identities are standardized.
+3. Complete Task 019, then Task 020: the shared slot-scoped palette vocabulary is the foundation for stable accessory-specific controls.
+4. Complete Task 013 only after the palette key set is stable, avoiding history regressions and migration churn.
+5. Reconcile Task 005 and the remaining Task 012 acceptance in Task 016, then proceed to Task 008 and Task 009.
 
 ## Coordination rules
 

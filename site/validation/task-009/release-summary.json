@@ -1,12 +1,12 @@
 {
   "generatedAt": "2026-08-26T23:00:00.000Z",
   "releaseVersion": "0.1.0-rc.1",
-  "files": 2953,
-  "totalBytes": 21164884,
+  "files": 2941,
+  "totalBytes": 21120249,
   "packageBytes": {
-    "schema": 149325,
-    "core": 104543,
-    "renderer-canvas": 28868,
+    "schema": 136054,
+    "core": 82285,
+    "renderer-canvas": 19762,
     "asset-validator": 40908,
     "creator-ui": 26346
   },

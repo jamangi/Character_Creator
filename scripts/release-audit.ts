@@ -29,7 +29,7 @@ for (const item of roots) {
 }
 const unique = [...new Set(selected)].filter((path) => {
   const name = relative(root, path).replaceAll("\\", "/");
-  return !excludedPrefixes.includes(name) && !name.endsWith("/.tsbuildinfo");
+  return !excludedPrefixes.includes(name) && !name.endsWith("/.tsbuildinfo") && !name.includes(".test.");
 }).sort();
 const manifest: Array<{ path: string; bytes: number; sha256: string }> = [];
 const absoluteLeaks: string[] = [];

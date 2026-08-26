@@ -43,7 +43,7 @@
       "summary": "Accepted on 2026-08-26: report language, failure localization, and contact-sheet presentation are valid.",
       "href": "validation/task-004/",
       "review": ["Human validation complete"],
-      "commit": "pending"
+      "commit": "6b09d71"
     },
     {
       "task": "TASK-005",
@@ -52,7 +52,7 @@
       "summary": "Core workflows passed; palette isolation, history, and output-projection changes are tracked in Tasks 012–014.",
       "href": "validation/task-005/",
       "review": ["Palette roles affect only labeled regions", "Palette and hero-template Undo/Redo", "Portrait/sprite projection changes"],
-      "commit": "pending"
+      "commit": "6b09d71"
     },
     {
       "task": "TASK-006",
@@ -61,7 +61,7 @@
       "summary": "Timing and ground contact passed, but stuck layers and unsupported back/lateral/sit claims require Tasks 010–011.",
       "href": "validation/task-006/",
       "review": ["Approve the release selector scope", "Repair body-coupled layer motion", "Recheck silhouette continuity"],
-      "commit": "pending"
+      "commit": "6b09d71"
     },
     {
       "task": "TASK-007",
@@ -70,7 +70,7 @@
       "summary": "The pack passed with a focused expression-polarity request; animation sheets will also inherit the Task 011 repair.",
       "href": "validation/task-007/",
       "review": ["Positive expressions read as smiles", "Reflective/negative expressions read appropriately", "Updated motion sheets"],
-      "commit": "pending"
+      "commit": "6b09d71"
     }
   ]
 }
